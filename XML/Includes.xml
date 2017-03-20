@@ -1241,6 +1241,7 @@
 					<height>80</height>
 					<fadetime>400</fadetime>
 					<texture>$VAR[HeaderIcon]</texture>
+					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)]</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [![Window.IsActive(movieinformation) + [[Skin.HasSetting(Overlay.Resumable) + ListItem.IsResumable] | [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(Overlay.Unwatched)] | [String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(Overlay.Watched)]]]]</visible>
@@ -1268,6 +1269,8 @@
 				</control>
 				<!--<control type="group"><visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible><control type="progress" id="32"><description>progress control</description><left>19</left><top>17</top><right>19</right><height>90</height></control><control type="label"><top>59</top><left>117</left><width min="1228" max="1678">auto</width><align>left</align><height>45</height><font>topbar</font><scroll>true</scroll><scrollspeed>150</scrollspeed><textcolor>$VAR[ColorMenuVar]</textcolor><label>$INFO[Skin.String(D_Helper),[B][UPPERCASE],[/UPPERCASE][/B] ]$INFO[Control.GetLabel(31),[UPPERCASE],[/UPPERCASE]]</label></control></control>-->
 				<control type="group">
+					<visible>!Control.IsVisible(12345)</visible>
+					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Window.IsActive(movieinformation) + [Skin.HasSetting(Overlay.Resumable) | [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(Overlay.Unwatched)] | [String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(Overlay.Watched)]]]</visible>
 					<top>27</top>
 					<left>27</left>
@@ -1293,6 +1296,8 @@
 					</control>
 				</control>
 				<control type="group">
+					<visible>!Control.IsVisible(12345)</visible>
+					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))</visible>
 					<top>13</top>
 					<left>13</left>

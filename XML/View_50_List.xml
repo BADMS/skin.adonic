@@ -148,6 +148,7 @@
 								<width>790</width>
 								<height>70</height>
 								<font>font30</font>
+								<scroll>true</scroll>
 								<label>$VAR[ListMainLabelVar]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -157,6 +158,7 @@
 								<width>755</width>
 								<height>70</height>
 								<font>font30</font>
+								<scroll>true</scroll>
 								<label>$VAR[ListMainLabelVar]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -165,6 +167,7 @@
 								<top>52</top>
 								<width>790</width>
 								<height>60</height>
+								<scroll>true</scroll>
 								<label>$VAR[ListSubLabelVar]</label>
 							</control>
 							<control type="label">
@@ -173,6 +176,7 @@
 								<height>116</height>
 								<font>font15</font>
 								<align>right</align>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label2]</label>
 								<visible>Container.Content(addons) | Container.Content(songs)</visible>
 							</control>
@@ -314,6 +318,7 @@
 							<width>1380</width>
 							<height>70</height>
 							<font>font30</font>
+							<scroll>true</scroll>
 							<label>$VAR[ListMainLabelVar]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
@@ -323,6 +328,7 @@
 							<width>1345</width>
 							<height>70</height>
 							<font>font30</font>
+							<scroll>true</scroll>
 							<label>$VAR[ListMainLabelVar]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
@@ -331,6 +337,7 @@
 							<top>52</top>
 							<width>1380</width>
 							<height>60</height>
+							<scroll>true</scroll>
 							<label>$VAR[ListSubLabelVar]</label>
 						</control>
 						<control type="label">
@@ -338,6 +345,7 @@
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
+							<scroll>true</scroll>
 							<label>$INFO[ListItem.Label2]</label>
 							<visible>Container.Content(addons) | Container.Content(songs)</visible>
 						</control>
@@ -453,6 +461,7 @@
 								<width>895</width>
 								<height>60</height>
 								<font>font15</font>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -461,6 +470,7 @@
 								<width>860</width>
 								<height>60</height>
 								<font>font15</font>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -469,6 +479,7 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label2]</label>
 								<visible>Container.Content(addons) | Container.Content(songs)</visible>
 							</control>
@@ -591,6 +602,7 @@
 								<width>1485</width>
 								<height>60</height>
 								<font>font15</font>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
@@ -599,6 +611,7 @@
 								<width>1850</width>
 								<height>60</height>
 								<font>font15</font>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
@@ -607,6 +620,7 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
+								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label2]</label>
 								<visible>Container.Content(addons) | Container.Content(songs)</visible>
 							</control>
