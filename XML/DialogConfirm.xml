@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9010</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+		<origin x="60" y="0">true</origin>
+	</coordinates>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" delay="300" end="100" time="300" />
+	</animation>
+	<controls>
+		<include content="DialogBackgroundCommonsFake">
+			<param name="DialogBackgroundWidth" value="916" />
+			<param name="DialogBackgroundHeight" value="494" />
+			<param name="DialogHeaderLabel" value="" />
+			<param name="DialogHeaderId" value="1" />
+		</include>
+		<control type="progress" id="20">
+			<left>-60</left>
+			<description>Progressbar</description>
+			<top>1074</top>
+			<width>1920</width>
+			<height>6</height>
+			<info>System.Progressbar</info>
+		</control>
+		<control type="label">
+			<left>57</left>
+			<top>494</top>
+			<width>1680</width>
+			<height>45</height>
+			<font>font28_title</font>
+			<align>left</align>
+			<label>$INFO[Control.GetLabel(1),[B],[/B] ]</label>
+		</control>
+		<control type="textbox" id="9">
+			<left>57</left>
+			<top>535</top>
+			<width>1680</width>
+			<height>45</height>
+			<font>topbar</font>
+			<align>left</align>
+			<label>-</label>
+			<autoscroll time="3000" delay="40000000" repeat="5000">false</autoscroll>
+		</control>
+		<control type="grouplist" id="9001">
+			<left>60</left>
+			<top>604</top>
+			<width>1680</width>
+			<height>310</height>
+			<align>center</align>
+			<itemgap>0</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="button" id="11">
+				<description>OK button</description>
+				<textoffsetx>2000</textoffsetx>
+			</control>
+			<control type="button" id="10">
+				<description>Cancel button</description>
+				<textoffsetx>2000</textoffsetx>
+			</control>
+			<control type="button" id="12">
+				<description>Custom button</description>
+				<textoffsetx>2000</textoffsetx>
+			</control>
+		</control>
+		<control type="wraplist" id="9010">
+			<left>-184</left>
+			<top>604</top>
+			<width>2540</width>
+			<height>384</height>
+			<onup>back</onup>
+			<ondown>back</ondown>
+			<pagecontrol>-</pagecontrol>
+			<scrolltime tween="quadratic" easing="out">300</scrolltime>
+			<focusposition>3</focusposition>
+			<movement>1</movement>
+			<orientation>horizontal</orientation>
+			<itemlayout height="310" width="310">
+				<control type="image">
+					<bordersize>6</bordersize>
+					<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>$VAR[IconColorVar]</colordiffuse>
+				</control>
+			</itemlayout>
+			<focusedlayout height="310" width="310">
+				<control type="image">
+					<bordersize>6</bordersize>
+					<texture fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Ok</description>
+					<label>Ok</label>
+					<icon>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}yes.png</icon>
+					<thumb>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}yes.png</thumb>
+					<onclick>SendClick(11)</onclick>
+					<visible>Control.IsVisible(11)</visible>
+				</item>
+				<item id="2">
+					<description>Cancel</description>
+					<label>Cancel</label>
+					<icon>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}no.png</icon>
+					<thumb>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}no.png</thumb>
+					<onclick>SendClick(10)</onclick>
+					<visible>Control.IsVisible(10)</visible>
+				</item>
+				<item id="3">
+					<description>Custom</description>
+					<label>Custom</label>
+					<icon>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}info.png</icon>
+					<thumb>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}info.png</thumb>
+					<onclick>SendClick(12)</onclick>
+					<visible>Control.IsVisible(12)</visible>
+				</item>
+			</content>
+		</control>
+	</controls>
+</window>
