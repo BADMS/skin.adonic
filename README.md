@@ -1,0 +1,2 @@
+# skin.adonic
+Kodi skin
