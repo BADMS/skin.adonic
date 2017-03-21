@@ -1183,19 +1183,19 @@ msgstr ""
 #Weather plugin
 
 msgctxt "#31901"
-msgid "36 Hour Forecast"
+msgid "36 Hours"
 msgstr ""
 
 msgctxt "#31902"
-msgid "Hourly Forecast"
+msgid "Hourly"
 msgstr ""
 
 msgctxt "#31903"
-msgid "Weekend Forecast"
+msgid "Weekend"
 msgstr ""
 
 msgctxt "#31904"
-msgid "10 Day Forecast"
+msgid "10 Days"
 msgstr ""
 
 msgctxt "#31905"

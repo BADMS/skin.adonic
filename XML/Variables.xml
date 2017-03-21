@@ -210,6 +210,7 @@
 		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Container(9000).ListItem.Property(background)]</value>
 
 		<!-- Custom background -->
+		<value condition="Window.IsVisible(MyWeather.xml)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</value>
 	</variable>
 	<variable name="GlobalFanartSetting">
 		<value condition="Skin.HasSetting(Disable.Fanart)">$LOCALIZE[20445]: $LOCALIZE[24023]</value>
@@ -905,6 +906,7 @@
     	<value condition="Window.IsActive(settings) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$INFO[System.FriendlyName]</value>
     	<value condition="Window.IsActive(home) + Window.IsVisible(virtualkeyboard)">$LOCALIZE[137]</value>
     	<value condition="Window.IsActive(home) + Window.IsVisible(busydialog)">$LOCALIZE[503]</value>
+		<value condition="Window.IsActive(MyWeather.xml)">$INFO[Window(weather).Property(Location)]</value>
     	<value condition="Window.IsActive(home) | ControlGroup(97631).HasFocus">$VAR[LibraryStatsVar]</value>
     	<!-- 
 		<value condition="!Window.IsActive(movieinformation) + String.IsEmpty(Window(Home).Property(RefreshItem)">$INFO[Container.NumItems,, $LOCALIZE[31025]]</value>
@@ -1047,7 +1049,7 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),$LOCALIZE[31130])">$LOCALIZE[20342]: $INFO[Window(Home).Property(PlaylistCount)] - $LOCALIZE[16102]: $INFO[Window(Home).Property(PlaylistWatched)] - $LOCALIZE[16101]: $INFO[Window(Home).Property(PlaylistUnWatched)] - $LOCALIZE[575]: $INFO[Window(Home).Property(PlaylistInProgress)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),$LOCALIZE[31131])">$LOCALIZE[20343]: $INFO[Window(Home).Property(PlaylistTVShowCount)] - $LOCALIZE[20360]: $INFO[Window(Home).Property(PlaylistEpisodes)] - $LOCALIZE[16101]: $INFO[Window(Home).Property(PlaylistEpisodesUnWatched)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),$LOCALIZE[31132])">$LOCALIZE[20389]: $INFO[Window(Home).Property(PlaylistCount)] - $LOCALIZE[16102]: $INFO[Window(Home).Property(PlaylistWatched)] - $LOCALIZE[16101]: $INFO[Window(Home).Property(PlaylistUnWatched)] - $LOCALIZE[575]: $INFO[Window(Home).Property(PlaylistInProgress)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Label, $LOCALIZE[8])">$INFO[Window(weather).Property(Location)]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Label, $LOCALIZE[8]) | Window.IsActive(MyWeather.xml)">$INFO[Window(weather).Property(Location)]</value>
 		<value>$INFO[Container(9000).ListItem.Label]</value>
 	</variable>
 	<variable name="WidgetLimit">

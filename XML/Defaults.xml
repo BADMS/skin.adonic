@@ -181,7 +181,6 @@
 		<top>0</top>
 		<height>60</height>
 		<textoffsetx>0</textoffsetx>
-		<aligny>center</aligny>
 		<texturefocus colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texturefocus>
 		<sliderwidth>150</sliderwidth>
 		<sliderheight>20</sliderheight>

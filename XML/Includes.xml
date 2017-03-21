@@ -1232,9 +1232,12 @@
 					<height>58</height>
 					<fadetime>400</fadetime>
 					<texture diffuse="upmask.png" colordiffuse="$VAR[MenuPanelBackgroundColorHighlightVar]">$VAR[MenuPanelBackground]</texture>
-					<visible>[ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting)]]</visible>
+					<visible>[ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]</visible>
 				</control>
 				<control type="image">
+					<animation type="Conditional" condition="[ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
+						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
+					</animation>
 					<top>20</top>
 					<left>20</left>
 					<width>80</width>
