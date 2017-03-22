@@ -130,7 +130,7 @@
 		<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 		<onup condition="Window.IsActive(movieinformation)">61</onup>
 		<onup condition="String.Contains(Window.Property(xmlfile),settings)">9990</onup>
-		<onup condition="Window.IsVisible(MyWeather.xml)">97600</onup>
+		<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 		<onup condition="Window.IsVisible(DialogButtonMenu.xml) + Window.IsActive(VideoFullScreen.xml)">SetFocus(9000)</onup>
 		<onup condition="Window.IsVisible(DialogButtonMenu.xml)">back</onup>
 		<onup condition="Window.IsVisible(DialogConfirm.xml)">back</onup>
