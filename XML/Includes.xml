@@ -725,6 +725,7 @@
 			<onclick>SetProperty(Dialog.14.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.14.BuiltIn,SetProperty(FIVE_daemon_set,None,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11116">
 			<description>widget</description>
@@ -754,6 +755,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11117">
 			<description>widget</description>
@@ -783,6 +785,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),blur) | String.IsEqual(Window(home).Property(FIVE_daemon_set),blur)</visible>
 		</control>
 		<control type="button" id="11118">
@@ -809,6 +812,7 @@
 			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
 			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=8",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),posterize) | String.IsEqual(Window(home).Property(FIVE_daemon_set),posterize)</visible>
 		</control>
 		<control type="button" id="11119">
@@ -818,6 +822,7 @@
 			<label2>$INFO[Skin.String(colorbox_pixelsize)]</label2>
 			<onclick>Skin.SetString(colorbox_pixelsize)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),pixelate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
 		</control>
 		<control type="radiobutton" id="11218">
@@ -1232,10 +1237,10 @@
 					<height>58</height>
 					<fadetime>400</fadetime>
 					<texture diffuse="upmask.png" colordiffuse="$VAR[MenuPanelBackgroundColorHighlightVar]">$VAR[MenuPanelBackground]</texture>
-					<visible>[ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]</visible>
+					<visible>!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]</visible>
 				</control>
 				<control type="image">
-					<animation type="Conditional" condition="[ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
+					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
 						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
 					</animation>
 					<top>20</top>
