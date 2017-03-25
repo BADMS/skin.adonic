@@ -5557,7 +5557,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -5732,7 +5732,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -5907,7 +5907,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6082,7 +6082,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6257,7 +6257,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6432,7 +6432,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6607,7 +6607,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6782,7 +6782,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6957,7 +6957,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7132,7 +7132,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7307,7 +7307,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7484,7 +7484,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7659,7 +7659,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7834,7 +7834,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8009,7 +8009,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8184,7 +8184,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8359,7 +8359,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8534,7 +8534,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8709,7 +8709,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8884,7 +8884,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -9059,7 +9059,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -9234,7 +9234,7 @@
 			<height>310</height>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
+			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>

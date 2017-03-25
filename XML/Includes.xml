@@ -688,6 +688,7 @@
 			<onclick>SetProperty(Dialog.14.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.14.BuiltIn,SetProperty(cfa_daemon_set,None,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
+			<onunfocus>SetProperty(cfa_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11115">
 			<description>widget</description>
@@ -762,7 +763,7 @@
 			<include>ButtonCommonValues</include>
 			<label>32000</label>
 			<label2>$INFO[Skin.String(colorbox_blursize)]</label2>
-			<onclick>SetProperty(RefreshItem,$LOCALIZE[31999],home)</onclick>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32000],home)</onclick>
 			<onclick>SetProperty(Dialog.NumItems,10)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,1)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=1",home))</onclick>
@@ -793,7 +794,7 @@
 			<include>ButtonCommonValues</include>
 			<label>32002</label>
 			<label2>$INFO[Skin.String(colorbox_bitsize)]</label2>
-			<onclick>SetProperty(RefreshItem,$LOCALIZE[31999],home)</onclick>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32002],home)</onclick>
 			<onclick>SetProperty(Dialog.NumItems,8)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,1)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=1",home))</onclick>
@@ -820,10 +821,33 @@
 			<include>ButtonCommonValues</include>
 			<label>32001</label>
 			<label2>$INFO[Skin.String(colorbox_pixelsize)]</label2>
-			<onclick>Skin.SetString(colorbox_pixelsize)</onclick>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32001],home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
 			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),pixelate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
+		</control>
+		<control type="button" id="11120">
+			<description>widget</description>
+			<include>ButtonCommonValues</include>
+			<label>353</label>
+			<label2>#$INFO[Skin.String(colorbox_black)]</label2>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[353],home)</onclick>
+			<onclick>Skin.SetString(colorbox_black)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+		</control>
+		<control type="button" id="11121">
+			<description>widget</description>
+			<include>ButtonCommonValues</include>
+			<label>742</label>
+			<label2>#$INFO[Skin.String(colorbox_white)]</label2>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[742],home)</onclick>
+			<onclick>Skin.SetString(colorbox_white)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="radiobutton" id="11218">
 			<label>31977</label>
@@ -843,6 +867,7 @@
 			<label>31974</label>
 			<label2>$INFO[Skin.String(View.Panel.Image)]</label2>
 			<include>ButtonCommonValues</include>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[31974],home)</onclick>
 			<onclick>Skin.SetImage(View.Panel.Image, special://skin/extras)</onclick>
 		</control>
 		<control type="button" id="11221">
@@ -1248,6 +1273,7 @@
 					<width>80</width>
 					<height>80</height>
 					<fadetime>400</fadetime>
+					<colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse>
 					<texture>$VAR[HeaderIcon]</texture>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
@@ -1429,11 +1455,14 @@
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
+					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>
 				<control type="grouplist">
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
+					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+					<visible>!Window.IsVisible(DialogSettings.xml)</visible>
 					<visible>!String.IsEqual(System.CurrentControlID, 3)</visible>
 					<visible>!String.IsEqual(System.CurrentControlID, 6)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 9010)</visible>

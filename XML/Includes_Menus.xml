@@ -116,6 +116,22 @@
 				<onclick condition="Container.Content(episodes)">Back</onclick>
 				<visible>Container.Content(episodes) | Container.Content(seasons)</visible>
 			</item>
+			<item id="90007">
+				<label>24025</label>
+				<label2>$LOCALIZE[24025]</label2>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]context.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]context.png</thumb>
+				<onclick>Back</onclick>
+				<onclick>ContextMenu</onclick>
+				<visible>!String.Contains(Window.Property(xmlfile),settings)</visible>
+				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+				<visible>!Window.IsActive(AddonBrowser.xml)</visible>
+				<visible>!Window.IsActive(settings)</visible>
+				<visible>!Window.IsActive(home)</visible>
+				<visible>!Window.IsActive(movieinformation)</visible>
+				<visible>!Window.IsActive(MyWeather.xml)</visible>
+				<visible>!String.IsEqual(ListItem.DBTYPE,set)</visible>
+			</item>
 			<!--<item id="90002"><label>10000</label><label2>$LOCALIZE[10000]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb><onclick>Back</onclick><onclick>ActivateWindow(Home)</onclick><visible>!Window.IsActive(home)</visible></item><item id="90003"><label>210</label><label2>$LOCALIZE[210]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb><onclick>Back</onclick><onclick>Back</onclick><visible>!Window.IsActive(home)</visible></item>-->
 			<include>skinshortcuts-mainmenu</include>
 		</content>

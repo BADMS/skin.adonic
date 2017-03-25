@@ -11,7 +11,6 @@
 	</animation>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="0,0" end="-150,0" time="320" tween="cubic" easing="inout" condition="Window.IsActive(numericinput)">Conditional</animation>
 			<include content="DialogBackgroundCommonsFake">
 				<param name="DialogBackgroundWidth" value="1320" />
 				<param name="DialogBackgroundHeight" value="552" />
@@ -19,6 +18,7 @@
 				<param name="DialogHeaderId" value="311" />
 			</include>
 			<control type="edit" id="312">
+				<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 				<left>57</left>
 				<top>536</top>
 				<width>1715</width>
@@ -40,6 +40,7 @@
 					<orientation>horizontal</orientation>
 					<control type="button" id="309">
 						<description>Layout</description>
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>1006</label>
 						<onup condition="!Control.IsVisible(5000)">300</onup>
 						<onup condition="Control.IsVisible(5000)">5000</onup>
@@ -135,9 +136,10 @@
 				<control type="grouplist">
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
-				<top>62</top>
+					<top>62</top>
 					<control type="togglebutton" id="304">
 						<description>Symbols</description>
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>@#!*</label>
 						<altlabel>@#!*</altlabel>
 						<onup>309</onup>
@@ -147,6 +149,7 @@
 					</control>
 					<control type="button" id="307">
 						<description>IP Adress</description>
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>IP</label>
 						<onup>309</onup>
 						<ondown>303</ondown>
@@ -230,9 +233,10 @@
 				<control type="grouplist">
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
-				<top>124</top>
+					<top>124</top>
 					<control type="togglebutton" id="303">
 						<description>Caps</description>
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>20179</label>
 						<altlabel>$LOCALIZE[20179]</altlabel>
 						<onup>307</onup>
@@ -316,9 +320,10 @@
 				<control type="grouplist">
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
-				<top>186</top>
+					<top>186</top>
 					<control type="togglebutton" id="302">
 						<description>Shift</description>
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>$LOCALIZE[20178]</label>
 						<altlabel>$LOCALIZE[20178]</altlabel>
 						<onup>303</onup>
@@ -408,6 +413,7 @@
 					<orientation>horizontal</orientation>
 					<top>248</top>
 					<control type="button" id="300">
+						<animation effect="fade" start="100" end="0" time="0" tween="cubic" easing="inout" reversible="true" condition="Window.IsActive(numericinput)">Conditional</animation>
 						<label>$LOCALIZE[20177]</label>
 						<onup>302</onup>
 						<ondown condition="!Control.IsVisible(5000)">304</ondown>

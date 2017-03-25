@@ -11,7 +11,9 @@
 	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_quality,8)</onload>
 	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_blursize,5)</onload>
 	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_bitsize,1)</onload>
-	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_pixelsize,15)</onload>
+	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_pixelsize,12)</onload>
+	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_black,000000)</onload>
+	<onload condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_white,ffffff)</onload>
 	<onload condition="Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,ff000000)</onload>
 	<onload condition="!Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,-)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onload>
@@ -32,6 +34,8 @@
 	<onload>AlarmClock(nms2,SetProperty(NINE_manual_set,"var=blursize,set=$INFO[Skin.String(colorbox_blursize)]",home),00:07,true)</onload>
 	<onload>AlarmClock(nms3,SetProperty(NINE_manual_set,"var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]",home),00:09,true)</onload>
 	<onload>AlarmClock(nms4,SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home),00:11,true)</onload>
+	<onload>AlarmClock(nms5,SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home),00:13,true)</onload>
+	<onload>AlarmClock(nms6,SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:15,true)</onload>
 	<controls>
 		<control type="button" id="10">
 			<description>trigger</description>

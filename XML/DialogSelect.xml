@@ -15,7 +15,7 @@
 	</animation>
 	<controls>
 		<control type="group">
-            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
 			<include content="DialogBackgroundCommonsFake">
 				<param name="DialogBackgroundWidth" value="1090" />
 				<param name="DialogBackgroundHeight" value="960" />
@@ -26,18 +26,19 @@
 				<left>0</left>
 				<top>604</top>
 				<control type="wraplist" id="3">
-					<width>1730</width>
+					<left>60</left>
+					<width>1670</width>
 					<height>310</height>
 					<onup>9010</onup>
 					<ondown>9010</ondown>
-					<onleft>back</onleft>
+					<onleft>9001</onleft>
 					<onright>60</onright>
 					<focusposition>2</focusposition>
 					<pagecontrol>60</pagecontrol>
 					<movement>0</movement>
 					<orientation>Vertical</orientation>
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
-					<itemlayout height="62" width="1730">
+					<itemlayout height="62" width="1670">
 						<control type="label">
 							<font>font30</font>
 							<align>center</align>
@@ -45,7 +46,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="62" width="1730">
+					<focusedlayout height="62" width="1670">
 						<control type="image">
 							<texture>background.png</texture>
 							<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
@@ -154,26 +155,39 @@
 					<orientation>vertical</orientation>
 					<showonepage>true</showonepage>
 				</control>
-			</control>
-			<control type="grouplist" id="9001">
-				<left>0</left>
-				<top>-1840</top>
-				<height>120</height>
-				<width>1090</width>
-				<ondown condition="Control.IsVisible(3)">3</ondown>
-				<ondown condition="Control.IsVisible(6)">6</ondown>
-				<onup condition="Control.IsVisible(3)">3</onup>
-				<onup condition="Control.IsVisible(6)">6</onup>
-				<align>center</align>
-				<itemgap>0</itemgap>
-				<orientation>horizontal</orientation>
-				<control type="button" id="5">
-					<description>Manual button</description>
-					<label>-</label>
-				</control>
-				<control type="button" id="7">
-					<description>Cancel button</description>
-					<label>222</label>
+				<control type="grouplist" id="9001">
+					<left>-30</left>
+					<width>62</width>
+					<height>310</height>
+					<ondown condition="Control.IsVisible(3)">3</ondown>
+					<ondown condition="Control.IsVisible(6)">6</ondown>
+					<onup condition="Control.IsVisible(3)">3</onup>
+					<onup condition="Control.IsVisible(6)">6</onup>
+					<align>top</align>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<control type="button" id="115">
+						<description>Manual button</description>
+						<width>62</width>
+						<height>62</height>
+						<label></label>
+						<align>center</align>
+						<font>IconButton</font>
+						<onclick>SendClick(5)</onclick>
+						<onleft>back</onleft>
+						<onright>3</onright>
+					</control>
+					<control type="button" id="117">
+						<description>Cancel button</description>
+						<width>62</width>
+						<height>62</height>
+						<label></label>
+						<align>center</align>
+						<font>IconButton</font>
+						<onclick>SendClick(7)</onclick>
+						<onleft>back</onleft>
+						<onright>3</onright>
+					</control>
 				</control>
 			</control>
 		</control>

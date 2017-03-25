@@ -72,6 +72,11 @@
 		<height>60</height>
 		<include>Objects_KeyOffVars</include>
 	</include>
+	<include name="Objects_NumericSingleKeyOff">
+		<width>158.66</width>
+		<height>60</height>
+		<include>Objects_KeyOffVars</include>
+	</include>
 	<include name="ShowCaseInfoPanelButtonsValues">
 		<height>90</height>
 		<width>501</width>
