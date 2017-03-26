@@ -1452,7 +1452,6 @@
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
 					<label>$VAR[WidgetNameLabelVar]</label>
 					<visible>!Control.IsVisible(12346)</visible>
-					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>

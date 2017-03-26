@@ -40,7 +40,7 @@
 				<control type="grouplist" id="2">
 					<description>control area</description>
 					<left>410</left>
-					<width>1380</width>
+					<width>1320</width>
 					<height>310</height>
 					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
@@ -52,7 +52,7 @@
 					<align>left</align>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1790</left>
+					<left>1730</left>
 					<width>10</width>
 					<height>310</height>
 					<onleft>2</onleft>
@@ -136,7 +136,7 @@
 			</control>
 			<control type="button" id="3">
 				<description>Default Button</description>
-				<width>1380</width>
+				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
@@ -144,7 +144,7 @@
 			</control>
 			<control type="radiobutton" id="4">
 				<description>Default RadioButton</description>
-				<width>1380</width>
+				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
@@ -153,7 +153,7 @@
 			</control>
 			<control type="spincontrolex" id="5">
 				<description>Default spincontrolex</description>
-				<width>1380</width>
+				<width>1320</width>
 				<height>62</height>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
@@ -163,12 +163,12 @@
 			</control>
 			<control type="image" id="6">
 				<description>Default Separator</description>
-				<width>1380</width>
+				<width>1320</width>
 				<height>1</height>
 				<visible>false</visible>
 			</control>
 			<control type="label" id="7">
-				<width>1380</width>
+				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
 				<label>-</label>
@@ -177,7 +177,7 @@
 			</control>
 			<control type="sliderex" id="8">
 				<description>Default Slider</description>
-				<width>1380</width>
+				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
 				<textcolor>$VAR[ColorTextVar]</textcolor>

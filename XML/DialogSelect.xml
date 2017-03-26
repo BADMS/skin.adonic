@@ -131,7 +131,6 @@
 							<align>center</align>
 							<textcolor>$VAR[ColorMenuVar]</textcolor>
 							<label>$VAR[DialogSelectItemLabel1]</label>
-							<bordersize>6</bordersize>
 						</control>
 						<control type="label">
 							<visible>!Window.IsVisible(MyWeather.xml)</visible>
@@ -141,7 +140,6 @@
 							<align>center</align>
 							<textcolor>$VAR[MenuListColorHighlightVar]</textcolor>
 							<label>$VAR[DialogSelectItemLabel2]</label>
-							<bordersize>6</bordersize>
 						</control>
 					</focusedlayout>
 				</control>
@@ -156,6 +154,7 @@
 					<showonepage>true</showonepage>
 				</control>
 				<control type="grouplist" id="9001">
+					<visible>!Control.IsVisible(6)</visible>
 					<left>-30</left>
 					<width>62</width>
 					<height>310</height>
