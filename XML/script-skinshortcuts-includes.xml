@@ -84,7 +84,7 @@
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultVideo.png</icon>
-			<thumb />
+			<thumb>special://skin/extras/icons/videocamera.png</thumb>
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
@@ -129,8 +129,8 @@
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
-			<property name="background">$INFO[Window(Home).Property(SkinHelper.TopRatedShows)]</property>
-			<property name="backgroundName">Top Rated tvshows (extendedinfo)</property>
+			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</property>
+			<property name="backgroundName">Random Tv Shows background</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetName">Top rated</property>
 			<property name="widgetType">tvshows</property>
@@ -712,7 +712,7 @@
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[744]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
@@ -728,7 +728,7 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15100]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
 			<thumb />
 			<property name="labelID">15100</property>
@@ -743,8 +743,25 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>item</label2>
+			<icon>DefaultMusicPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<property name="translatedPath">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<onclick>ActivateWindow(music,special://musicplaylists/,return)</onclick>
+			<property name="path">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<property name="list">special://musicplaylists/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1038]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
@@ -1472,7 +1489,7 @@
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultVideo.png</icon>
-			<thumb />
+			<thumb>special://skin/extras/icons/videocamera.png</thumb>
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
@@ -1708,8 +1725,8 @@
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
-			<property name="background">$INFO[Window(Home).Property(SkinHelper.TopRatedShows)]</property>
-			<property name="backgroundName">Top Rated tvshows (extendedinfo)</property>
+			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</property>
+			<property name="backgroundName">Random Tv Shows background</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetName">Top rated</property>
 			<property name="widgetType">tvshows</property>
@@ -1862,7 +1879,7 @@
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[744]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
@@ -1879,7 +1896,7 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15100]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
 			<thumb />
 			<property name="labelID">15100</property>
@@ -1895,8 +1912,26 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>item</label2>
+			<icon>DefaultMusicPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<property name="translatedPath">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<onclick>ActivateWindow(music,special://musicplaylists/,return)</onclick>
+			<property name="path">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<property name="list">special://musicplaylists/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
+			<property name="isSubmenu">True</property>
+			<property name="submenuVisibility">music</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1038]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
@@ -3959,7 +3994,7 @@
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[744]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
@@ -3975,7 +4010,7 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15100]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
 			<thumb />
 			<property name="labelID">15100</property>
@@ -3990,8 +4025,25 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>item</label2>
+			<icon>DefaultMusicPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<property name="translatedPath">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<onclick>ActivateWindow(music,special://musicplaylists/,return)</onclick>
+			<property name="path">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<property name="list">special://musicplaylists/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">music</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1038]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
@@ -4057,7 +4109,7 @@
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[744]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
@@ -4073,7 +4125,7 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15100]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
 			<thumb />
 			<property name="labelID">15100</property>
@@ -4088,8 +4140,25 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>item</label2>
+			<icon>DefaultMusicPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<property name="translatedPath">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<onclick>ActivateWindow(music,special://musicplaylists/,return)</onclick>
+			<property name="path">ActivateWindow(music,special://musicplaylists/,return)</property>
+			<property name="list">special://musicplaylists/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1038]</label>
-			<label2>$ADDON[script.skinshortcuts 32019]</label2>
+			<label2>Music</label2>
 			<icon>special://skin/extras/icons/addon.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
@@ -5555,9 +5624,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -5730,9 +5799,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -5905,9 +5974,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6080,9 +6149,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6255,9 +6324,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6430,9 +6499,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6605,9 +6674,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6780,9 +6849,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -6955,9 +7024,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7130,9 +7199,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7305,9 +7374,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7482,9 +7551,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7657,9 +7726,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -7832,9 +7901,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8007,9 +8076,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8182,9 +8251,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8357,9 +8426,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8532,9 +8601,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8707,9 +8776,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -8882,9 +8951,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -9057,9 +9126,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>
@@ -9232,9 +9301,9 @@
 			<top>420</top>
 			<width>1864</width>
 			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(MyWeather.xml)">8880</onup>
 			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
 			<onup condition="!Window.IsVisible(home)">50</onup>
 			<onup>9000</onup>

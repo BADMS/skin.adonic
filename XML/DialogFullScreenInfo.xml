@@ -145,7 +145,7 @@
 				<top>604</top>
 				<visible>![VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos)]</visible>
 				<visible>!Window.IsActive(videoosd)</visible>
-				<control type="image">
+				<control type="image" id="12347">
 					<left>60</left>
 					<width>207</width>
 					<height>310</height>
@@ -153,6 +153,7 @@
 					<texture background="true">$VAR[PlayerArtworkVar]</texture>
 				</control>
 				<control type="textbox">
+					<animation effect="slide" end="-237" delay="0" time="0" easing="out" condition="String.IsEmpty(Control.GetLabel(12347))" reversible="false">Conditional</animation>
 					<left>297</left>
 					<width>1503</width>
 					<height>220</height>
@@ -162,6 +163,7 @@
 					<label>$VAR[PlayerPlotVar]</label>
 				</control>
 				<control type="grouplist">
+					<animation effect="slide" end="-237" delay="0" time="0" easing="out" condition="String.IsEmpty(Control.GetLabel(12347))" reversible="false">Conditional</animation>
 					<left>297</left>
 					<top>220</top>
 					<width>1503</width>

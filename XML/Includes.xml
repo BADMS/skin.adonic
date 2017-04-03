@@ -54,7 +54,7 @@
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[ColorMenuVar]</textcolor>
 						<font>topbar</font>
-						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
 					</control>
 					<control type="label">
 						<width>100%</width>
@@ -71,7 +71,7 @@
 					<control type="image">
 						<texture>background.png</texture>
 						<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
-						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
 						<visible>Control.HasFocus(6002)</visible>
 					</control>
 					<control type="label">
@@ -81,13 +81,13 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[MenuListColorHighlightVar]</textcolor>
-						<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
 						<font>topbar</font>
 					</control>
 					<control type="button">
 						<visible>false</visible>
-						<onfocus condition="!IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnNext">Control.Move(6002,1)</onfocus>
-						<onfocus condition="!IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnPrevious">Control.Move(6002,-1)</onfocus>
+						<onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnNext">Control.Move(6002,1)</onfocus>
+						<onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnPrevious">Control.Move(6002,-1)</onfocus>
 					</control>
 				</focusedlayout>
 				<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
@@ -545,8 +545,7 @@
 		<onleft>ClearProperty(MediaMenu,Home)</onleft>
 		<onleft>SetFocus(9000)</onleft>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
-		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
-		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="!Window.IsActive(SettingsCategory.xml)">50</onright>
 		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
 		<onup>9050</onup>
 		<ondown>9050</ondown>
@@ -990,7 +989,7 @@
 					<include>ButtonCommonValues</include>
 					<label>19138</label>
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 				</control>
 				<control type="button" id="103">
 					<description>Timers</description>
@@ -1247,7 +1246,6 @@
 	<!-- Navigation Bar -->
 	<include name="Topbar">
 		<control type="group">
-			<visible>!Control.IsVisible(509)</visible>
 			<control type="group">
 				<control type="image">
 					<animation type="Visible">
@@ -1262,32 +1260,32 @@
 					<height>58</height>
 					<fadetime>400</fadetime>
 					<texture diffuse="upmask.png" colordiffuse="$VAR[MenuPanelBackgroundColorHighlightVar]">$VAR[MenuPanelBackground]</texture>
-					<visible>!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]</visible>
+					<visible>!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml) | Window.IsActive(MyMusicPlaylistEditor.xml)]]</visible>
 				</control>
 				<control type="image">
-					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
+					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml) | Window.IsActive(MyMusicPlaylistEditor.xml)]]" reversible="true">
 						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
 					</animation>
 					<top>20</top>
 					<left>20</left>
 					<width>80</width>
 					<height>80</height>
-					<fadetime>400</fadetime>
-					<colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse>
+					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
 					<texture>$VAR[HeaderIcon]</texture>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
-					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)]</visible>
-					<visible>String.Contains(ListItem.Path,plugin://) | [![Window.IsActive(movieinformation) + [[Skin.HasSetting(Overlay.Resumable) + ListItem.IsResumable] | [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(Overlay.Unwatched)] | [String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(Overlay.Watched)]]]]</visible>
+					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)] | String.IsEqual(ListItem.Label, ..)</visible>
+					<visible>String.Contains(ListItem.Path,plugin://) | [![Window.IsActive(movieinformation) + [[Skin.HasSetting(Overlay.Resumable) + ListItem.IsResumable] | [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(Overlay.Unwatched)] | [String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(Overlay.Watched)]]]] | String.IsEqual(ListItem.Label, ..)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) | [![Container.Scrolling + [String.IsEqual(Container.SortMethod,$LOCALIZE[369]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | [Container.Content(artists) + String.IsEqual(Container.SortMethod,$LOCALIZE[557])]]]]</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Window.IsVisible(DialogBusy.xml) + [!Control.IsVisible(12345)]]</visible>
 					<visible>!Window.IsVisible(DialogBusy.xml)</visible>
 					<visible>!Window.IsVisible(DialogFullScreenInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSD.xml)</visible>
+					<visible>!Window.IsVisible(MusicOSD.xml)</visible>
 					<visible>!Window.IsVisible(DialogSeekBar.xml)</visible>
 				</control>
 				<control type="group">
-					<visible>Control.IsVisible(12346)</visible>
+					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml)</visible>
 					<control type="label">
 						<top>59</top>
 						<left>117</left>
@@ -1303,6 +1301,7 @@
 				</control>
 				<!--<control type="group"><visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible><control type="progress" id="32"><description>progress control</description><left>19</left><top>17</top><right>19</right><height>90</height></control><control type="label"><top>59</top><left>117</left><width min="1228" max="1678">auto</width><align>left</align><height>45</height><font>topbar</font><scroll>true</scroll><scrollspeed>150</scrollspeed><textcolor>$VAR[ColorMenuVar]</textcolor><label>$INFO[Skin.String(D_Helper),[B][UPPERCASE],[/UPPERCASE][/B] ]$INFO[Control.GetLabel(31),[UPPERCASE],[/UPPERCASE]]</label></control></control>-->
 				<control type="group">
+					<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Window.IsActive(movieinformation) + [Skin.HasSetting(Overlay.Resumable) | [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(Overlay.Unwatched)] | [String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Skin.HasSetting(Overlay.Watched)]]]</visible>
@@ -1330,6 +1329,7 @@
 					</control>
 				</control>
 				<control type="group">
+					<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))</visible>
@@ -1355,6 +1355,9 @@
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image" id="12346">
+					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
+						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
+					</animation>
 					<visible>Window.IsVisible(DialogBusy.xml) | Control.IsVisible(12345) | Container.IsUpdating</visible>
 					<description>Busy animation</description>
 					<top>32</top>
@@ -1374,12 +1377,13 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
-					<label>$VAR[BreadcrumbsVar,[B],[/B] ]$VAR[HeaderSubLabel,[UPPERCASE],[/UPPERCASE]]</label>
-					<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1,,]</label2>
+					<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
+					<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Window.IsVisible(DialogFullScreenInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSD.xml)</visible>
+					<visible>!Window.IsVisible(MusicOSD.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 				</control>
 				<control type="button">
@@ -1391,11 +1395,11 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
-					<label>$VAR[BreadcrumbsVar,[B],[/B]]</label>
+					<label>$VAR[BreadcrumbsVar]</label>
 					<label2>$VAR[TopbarFadeLabel2]</label2>
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
-					<visible>Window.IsVisible(VideoOSD.xml)</visible>
+					<visible>Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 				</control>
 				<control type="label" id="7357">
@@ -1418,8 +1422,9 @@
 					<visible>![Window.IsActive(AddOnBrowser.xml) + !ControlGroup(97631).HasFocus]</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 999)</visible>
-					<visible>[[Window.IsActive(home) | Window.IsActive(MyWeather.xml) | Window.IsActive(AddOnBrowser.xml)] + !Window.IsActive(movieinformation)] | String.StartsWith(System.CurrentControlID, 8011) | String.StartsWith(System.CurrentControlID, 909) | String.StartsWith(System.CurrentControlID, 9010) | [String.IsEqual(System.CurrentControlID, 6) + !String.Contains(Window.Property(xmlfile), etting)] | [String.IsEqual(System.CurrentControlID, 3) + !String.Contains(Window.Property(xmlfile), etting)] | Window.IsVisible(DialogButtonMenu.xml) | [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting)]]</visible>
+					<visible>[[Window.IsActive(home) | Window.IsActive(MyWeather.xml) | Window.IsActive(MyMusicPlaylistEditor.xml) | Window.IsActive(AddOnBrowser.xml)] + !Window.IsActive(movieinformation)] | String.StartsWith(System.CurrentControlID, 8011) | String.StartsWith(System.CurrentControlID, 909) | String.StartsWith(System.CurrentControlID, 9010) | [String.IsEqual(System.CurrentControlID, 6) + !String.Contains(Window.Property(xmlfile), etting)] | [String.IsEqual(System.CurrentControlID, 3) + !String.Contains(Window.Property(xmlfile), etting)] | Window.IsVisible(DialogButtonMenu.xml) | [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting)]]</visible>
 					<visible>![Window.IsVisible(MyWeather.xml) + ControlGroup(9050).HasFocus + !String.IsEqual(System.CurrentControlID, 6)]</visible>
+					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>
 				<control type="button">
 					<left>102</left>
@@ -1434,11 +1439,11 @@
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
 					<label>$VAR[WidgetNameLabelVar]</label>
-					<label2>$VAR[TopbarOSDLabel,]</label2>
+					<label2>$VAR[TopbarOSDLabel]</label2>
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Control.IsVisible(12346)</visible>
-					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml)</visible>
+					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml)</visible>
 				</control>
 				<control type="label">
 					<top>59</top>
@@ -1455,13 +1460,17 @@
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml)</visible>
 				</control>
 				<control type="grouplist">
+					<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+					<visible>!Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 					<visible>!Window.IsVisible(DialogSettings.xml)</visible>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!String.IsEqual(System.CurrentControlID, 3)</visible>
 					<visible>!String.IsEqual(System.CurrentControlID, 6)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 9010)</visible>
@@ -1485,13 +1494,13 @@
 						<align>center</align>
 						<texturefocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturenofocus>
-						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a)</visible>
 					</control>
 					<control type="label">
 						<width>6</width>
 						<label> </label>
-						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + !IsEmpty(ListItem.Rating)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1501,7 +1510,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$VAR[IMDBIcon]</label>
-						<visible>!IsEmpty(ListItem.Rating)</visible>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1511,12 +1520,12 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$INFO[ListItem.Rating,, ]</label>
-						<visible>!IsEmpty(ListItem.Rating)</visible>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<width>6</width>
 						<label> </label>
-						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + IsEmpty(ListItem.Rating)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1526,7 +1535,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$VAR[RottenTomatoesIcon]</label>
-						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
 					</control>
 					<control type="label">
@@ -1537,7 +1546,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),,% ]</label>
-						<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
 					</control>
 					<control type="label">
@@ -1548,7 +1557,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label></label>
-						<visible>!IsEmpty(ListItem.Top250)</visible>
+						<visible>!String.IsEmpty(ListItem.Top250)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1558,7 +1567,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$INFO[ListItem.Top250,#, ]</label>
-						<visible>!IsEmpty(ListItem.Top250)</visible>
+						<visible>!String.IsEmpty(ListItem.Top250)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1568,7 +1577,7 @@
 						<textcolor>$VAR[ColorUserRating]</textcolor>
 						<height>45</height>
 						<width>auto</width>
-						<visible>!IsEmpty(ListItem.Userrating)</visible>
+						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>
@@ -1578,7 +1587,7 @@
 						<height>45</height>
 						<width>auto</width>
 						<label>$INFO[ListItem.Userrating,, ]</label>
-						<visible>!IsEmpty(ListItem.Userrating)</visible>
+						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
 						<width min="1228" max="1678">auto</width>
@@ -1981,13 +1990,13 @@
 				<height>80</height>
 				<include>MusicFlagVars</include>
 				<label>resource://resource.labels.studios.white/$INFO[ListItem.Studio,,.png]</label>
-				<visible>!Window.IsVisible(musicinformation)</visible>
+				<visible>!Window.IsVisible(musicinformation) + !Window.IsVisible(songinformation)</visible>
 			</control>
 			<control type="label">
 				<height>80</height>
 				<include>MusicFlagVars</include>
 				<label>$VAR[RatingFlagVar]</label>
-				<visible>!Window.IsVisible(musicinformation)</visible>
+				<visible>!Window.IsVisible(musicinformation) + !Window.IsVisible(songinformation)</visible>
 			</control>
 		</control>
 	</include>

@@ -39,7 +39,7 @@
 			<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 		</control>
 		<control type="group" id="97631">
-			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
@@ -56,7 +56,7 @@
 			</control>
 		</control>
 		<control type="group" id="97632">
-			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>

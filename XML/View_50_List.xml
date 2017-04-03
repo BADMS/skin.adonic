@@ -5,7 +5,7 @@
 		<control type="group">
 			<animation effect="slide" end="-1800" time="400" condition="[ControlGroup(51).HasFocus] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
-			<visible>String.IsEqual(ListItem.Label, ..) | [Control.IsVisible(50) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None)] | [Window.IsActive(MyPics.xml) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(addonbrowser) | Container.Content(files)]</visible>
+			<visible>[Container.Content() | Container.Content(genres) | Window.IsActive(MyPics.xml) | Window.IsActive(MyPrograms.xml) | Window.IsActive(musicplaylist) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(addonbrowser) | Container.Content(files) | String.StartsWith(Container.FolderPath, sources:)] | [String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..)] | [!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] | [Control.IsVisible(50) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None)]</visible>
 			<include>Animation.Common</include>
 			<control type="image">
 				<fadetime>400</fadetime>
@@ -17,7 +17,7 @@
 			</control>
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="400" tween="quadratic" easing="out" condition="Window.IsActive(filebrowser)">Conditional</animation>
-				<visible>Control.IsVisible(50) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation)</visible>
+				<visible>Control.IsVisible(50) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
 				<left>0</left>
 				<top>0</top>
 				<control type="panel" id="50">
@@ -37,87 +37,89 @@
 					<preloaditems>2</preloaditems>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
 					<itemlayout height="120" width="1150" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
-						<include>ListTextBG</include><include>ParentItem</include>
-						
-							<control type="label">
-								<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
-								<left>10</left>
-								<top>10</top>
-								<width>100</width>
-								<height>120</height>
-								<font>font35_title</font>
-								<align>center</align>
-								<label>$INFO[ListItem.Top250]</label>
-							</control>
-							<control type="label">
-								<visible>ListItem.IsPlaying</visible>
-								<left>120</left>
-								<top>5</top>
-								<width>35</width>
-								<height>70</height>
-								<font>IconTiny</font>
-								<label></label>
-							</control>
-							<control type="label">
-								<left>120</left>
-								<top>3</top>
-								<width>790</width>
-								<height>70</height>
-								<font>font30</font>
-								<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
-								<visible>!ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<left>170</left>
-								<top>3</top>
-								<width>755</width>
-								<height>70</height>
-								<font>font30</font>
-								<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
-								<visible>ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<left>120</left>
-								<top>52</top>
-								<width>790</width>
-								<height>60</height>
-								<label>$VAR[ListSubLabelVar]</label>
-							</control>
-							<control type="label">
-								<left>60</left>
-								<width>1060</width>
-								<height>116</height>
-								<font>font15</font>
-								<align>right</align>
-								<label>$INFO[ListItem.Label2]</label>
-								<visible>Container.Content(addons) | Container.Content(songs)</visible>
-							</control>
-							<control type="label">
-								<width>1050</width>
-								<height>116</height>
-								<font>font15</font>
-								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-							</control>
-							<control type="image">
-								<left>1079</left>
-								<top>26</top>
-								<width>68</width>
-								<height>68</height>
-								<texture colordiffuse="$VAR[ColorHighlightVar]">$VAR[OverlayBGVar]</texture>
-								<aspectratio align="center" aligny="top">keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Overlay)</visible>
-							</control>
-							<control type="image">
-								<left>1081</left>
-								<top>28</top>
-								<width>64</width>
-								<height>64</height>
-								<aspectratio>keep</aspectratio>
-								<texture>$VAR[OverlayVar]</texture>
-								<visible>!String.IsEmpty(ListItem.Overlay)</visible>
-							</control>
+						<include>ListTextBG</include>
+						<include>ParentItem</include>
+						<control type="label">
+							<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
+							<left>10</left>
+							<top>10</top>
+							<width>100</width>
+							<height>120</height>
+							<font>font35_title</font>
+							<align>center</align>
+							<label>$INFO[ListItem.Top250]</label>
+						</control>
+						<control type="label">
+							<visible>ListItem.IsPlaying</visible>
+							<left>120</left>
+							<top>5</top>
+							<width>35</width>
+							<height>70</height>
+							<font>IconTiny</font>
+							<label></label>
+						</control>
+						<control type="label">
+							<left>120</left>
+							<top>3</top>
+							<width>790</width>
+							<height>70</height>
+							<font>font30</font>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<visible>!ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<left>170</left>
+							<top>3</top>
+							<width>755</width>
+							<height>70</height>
+							<font>font30</font>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<visible>ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<left>120</left>
+							<top>52</top>
+							<width>790</width>
+							<height>60</height>
+							<label>$VAR[ListSubLabelVar]</label>
+						</control>
+						<control type="label">
+							<left>60</left>
+							<width>1060</width>
+							<height>116</height>
+							<font>font15</font>
+							<align>right</align>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Container.Content(addons) | Container.Content(songs)</visible>
+						</control>
+						<control type="label">
+							<width>1050</width>
+							<height>116</height>
+							<font>font15</font>
+							<align>right</align>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+						</control>
+						<control type="image">
+							<left>1079</left>
+							<top>26</top>
+							<width>68</width>
+							<height>68</height>
+							<texture colordiffuse="$VAR[ColorHighlightVar]">$VAR[OverlayBGVar]</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<visible>!String.IsEmpty(ListItem.Overlay)</visible>
+						</control>
+						<control type="image">
+							<left>1081</left>
+							<top>28</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[OverlayVar]</texture>
+							<visible>!String.IsEmpty(ListItem.Overlay)</visible>
+						</control>
 					</itemlayout>
 					<focusedlayout height="120" width="1150" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
@@ -125,92 +127,95 @@
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
-							<control type="label">
-								<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
-								<left>10</left>
-								<top>10</top>
-								<width>100</width>
-								<height>120</height>
-								<font>font35_title</font>
-								<align>center</align>
-								<label>$INFO[ListItem.Top250]</label>
-							</control>
-							<control type="label">
-								<visible>ListItem.IsPlaying</visible>
-								<left>90</left>
-								<top>5</top>
-								<width>35</width>
-								<height>70</height>
-								<font>IconTiny</font>
-								<label></label>
-							</control>
-							<control type="label">
-								<top>3</top>
-								<left>90</left>
-								<width>790</width>
-								<height>70</height>
-								<font>font30</font>
-								<scroll>true</scroll>
-								<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
-								<visible>!ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<top>3</top>
-								<left>170</left>
-								<width>755</width>
-								<height>70</height>
-								<font>font30</font>
-								<scroll>true</scroll>
-								<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
-								<visible>ListItem.IsPlaying</visible>
-							</control>
-							<control type="label">
-								<left>90</left>
-								<top>52</top>
-								<width>790</width>
-								<height>60</height>
-								<scroll>true</scroll>
-								<label>$VAR[ListSubLabelVar]</label>
-							</control>
-							<control type="label">
-								<left>60</left>
-								<width>1060</width>
-								<height>116</height>
-								<font>font15</font>
-								<align>right</align>
-								<scroll>true</scroll>
-								<label>$INFO[ListItem.Label2]</label>
-								<visible>Container.Content(addons) | Container.Content(songs)</visible>
-							</control>
-							<control type="label">
-								<width>1050</width>
-								<height>116</height>
-								<font>font15</font>
-								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
-							</control>
-							<control type="image">
-								<left>1079</left>
-								<top>26</top>
-								<width>68</width>
-								<height>68</height>
-								<texture colordiffuse="$VAR[ColorHighlightVar]">$VAR[OverlayBGVar]</texture>
-								<aspectratio align="center" aligny="top">keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Overlay)</visible>
-							</control>
-							<control type="image">
-								<left>1081</left>
-								<top>28</top>
-								<width>64</width>
-								<height>64</height>
-								<aspectratio>keep</aspectratio>
-								<texture>$VAR[OverlayVar]</texture>
-								<visible>!String.IsEmpty(ListItem.Overlay)</visible>
-							</control>
+						<control type="label">
+							<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
+							<left>10</left>
+							<top>10</top>
+							<width>100</width>
+							<height>120</height>
+							<font>font35_title</font>
+							<align>center</align>
+							<label>$INFO[ListItem.Top250]</label>
+						</control>
+						<control type="label">
+							<visible>ListItem.IsPlaying</visible>
+							<left>90</left>
+							<top>5</top>
+							<width>35</width>
+							<height>70</height>
+							<font>IconTiny</font>
+							<label></label>
+						</control>
+						<control type="label">
+							<top>3</top>
+							<left>90</left>
+							<width>790</width>
+							<height>70</height>
+							<font>font30</font>
+							<scroll>true</scroll>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<visible>!ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<top>3</top>
+							<left>170</left>
+							<width>755</width>
+							<height>70</height>
+							<font>font30</font>
+							<scroll>true</scroll>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<visible>ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<left>90</left>
+							<top>52</top>
+							<width>790</width>
+							<height>60</height>
+							<scroll>true</scroll>
+							<label>$VAR[ListSubLabelVar]</label>
+						</control>
+						<control type="label">
+							<left>60</left>
+							<width>1060</width>
+							<height>116</height>
+							<font>font15</font>
+							<align>right</align>
+							<scroll>true</scroll>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Container.Content(addons) | Container.Content(songs)</visible>
+						</control>
+						<control type="label">
+							<width>1050</width>
+							<height>116</height>
+							<font>font15</font>
+							<align>right</align>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+						</control>
+						<control type="image">
+							<left>1079</left>
+							<top>26</top>
+							<width>68</width>
+							<height>68</height>
+							<texture colordiffuse="$VAR[ColorHighlightVar]">$VAR[OverlayBGVar]</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<visible>!String.IsEmpty(ListItem.Overlay)</visible>
+						</control>
+						<control type="image">
+							<left>1081</left>
+							<top>28</top>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[OverlayVar]</texture>
+							<visible>!String.IsEmpty(ListItem.Overlay)</visible>
+						</control>
 					</focusedlayout>
 					<itemlayout height="120" width="1790" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
-						<include>ListTextBG</include><include>ParentItem</include>
+						<include>ListTextBG</include>
+						<include>ParentItem</include>
 						<control type="label">
 							<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
 							<left>10</left>
@@ -236,7 +241,8 @@
 							<width>1380</width>
 							<height>70</height>
 							<font>font30</font>
-							<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -245,7 +251,8 @@
 							<width>1345</width>
 							<height>70</height>
 							<font>font30</font>
-							<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -322,7 +329,8 @@
 							<height>70</height>
 							<font>font30</font>
 							<scroll>true</scroll>
-							<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -332,7 +340,8 @@
 							<height>70</height>
 							<font>font30</font>
 							<scroll>true</scroll>
-							<label>$VAR[ListMainLabelVar]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+							<label>$VAR[ListMainLabelVar]</label>
+							<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -380,7 +389,8 @@
 						</control>
 					</focusedlayout>
 					<itemlayout height="60" width="1150" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
-						<include>ListTextBG</include><include>ParentItem</include>
+						<include>ListTextBG</include>
+						<include>ParentItem</include>
 						<control type="group">
 							<left>100</left>
 							<control type="label">
@@ -396,7 +406,8 @@
 								<width>895</width>
 								<height>60</height>
 								<font>font15</font>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -404,7 +415,8 @@
 								<width>860</width>
 								<height>60</height>
 								<font>font15</font>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -447,7 +459,8 @@
 						<include>ListTextBG</include>
 						<control type="image">
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
-						</control><include>ParentItem</include>
+						</control>
+						<include>ParentItem</include>
 						<control type="group">
 							<left>100</left>
 							<control type="label">
@@ -465,7 +478,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<scroll>true</scroll>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -474,7 +488,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<scroll>true</scroll>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -515,7 +530,8 @@
 						</control>
 					</focusedlayout>
 					<itemlayout height="60" width="1790" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
-						<include>ListTextBG</include><include>ParentItem</include>
+						<include>ListTextBG</include>
+						<include>ParentItem</include>
 						<control type="group">
 							<left>100</left>
 							<control type="label">
@@ -531,7 +547,8 @@
 								<width>1485</width>
 								<height>60</height>
 								<font>font15</font>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -539,7 +556,8 @@
 								<width>1450</width>
 								<height>60</height>
 								<font>font15</font>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -580,12 +598,7 @@
 					</itemlayout>
 					<focusedlayout height="60" width="1790" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
-						<!--
-						<control type="button">
-							<onfocus>SetProperty(NINE_manual_set,"info=pixelrandom,id=$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)],prefix=filter_logo",home)</onfocus>
-							<texturefocus></texturefocus>
-						</control>
-						-->
+						<!--<control type="button"><onfocus>SetProperty(NINE_manual_set,"info=pixelrandom,id=$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)],prefix=filter_logo",home)</onfocus><texturefocus></texturefocus></control>-->
 						<control type="image">
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
@@ -607,7 +620,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<scroll>true</scroll>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -616,7 +630,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<scroll>true</scroll>
-								<label>$INFO[ListItem.Label]</label><visible>!String.IsEqual(ListItem.Label, ..)</visible>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!String.IsEqual(ListItem.Label, ..)</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -657,7 +672,7 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<animation effect="slide" end="0,0" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,15) + Container.HasParent">Conditional</animation>
+				<animation effect="slide" end="0,-60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,15) + Integer.IsGreater(Container(50).NumItems,0) + Container.HasParent">Conditional</animation>
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,1)">Conditional</animation>
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,2)">Conditional</animation>
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,3)">Conditional</animation>
@@ -673,8 +688,7 @@
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,13)">Conditional</animation>
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,14)">Conditional</animation>
 				<animation effect="slide" end="0,60" time="300" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,15)">Conditional</animation>
-
-				<animation effect="slide" end="0,0" time="300" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,7) + Container.HasParent">Conditional</animation>
+				<animation effect="slide" end="0,-120" time="300" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,7) + Integer.IsGreater(Container(50).NumItems,0) + Container.HasParent">Conditional</animation>
 				<animation effect="slide" end="0,120" time="300" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,1)">Conditional</animation>
 				<animation effect="slide" end="0,120" time="300" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,2)">Conditional</animation>
 				<animation effect="slide" end="0,120" time="300" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + !Integer.IsGreater(Container(50).NumItems,3)">Conditional</animation>
@@ -728,7 +742,7 @@
 				<control type="group">
 					<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 					<visible>!Container.Content(episodes)</visible>
-					<visible>![Container.Content(movies) | Container.Content(movie)] + [Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
+					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
 					<top>200</top>
 					<left>1260</left>
 					<control type="image">
@@ -743,7 +757,7 @@
 					<control type="image">
 						<width>560</width>
 						<height>560</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$VAR[ListIcon]</texture>
 						<fadetime>400</fadetime>
 					</control>
@@ -752,7 +766,7 @@
 					<top>760</top>
 					<left>1160</left>
 					<itemgap>0</itemgap>
-					<visible>![Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] + [Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !String.StartsWith(ListItem.Icon,Default)</visible>
+					<visible>![Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] + [Window.IsActive(musicplaylist) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !String.StartsWith(ListItem.Icon,Default)</visible>
 					<control type="label">
 						<visible>Container.Content(songs)</visible>
 						<width>760</width>
@@ -823,7 +837,6 @@
 						<orientation>horizontal</orientation>
 						<showonepage>true</showonepage>
 					</control>
-
 				</control>
 			</control>
 			<control type="group">
@@ -851,7 +864,7 @@
 				<top>384</top>
 				<width>120</width>
 				<height>192</height>
-				<texturefocus></texturefocus>
+				<texturefocus/>
 				<onclick>SetFocus(50)</onclick>
 				<onclick>AlarmClock(50info,Action(info),00:01,silent)</onclick>
 			</control>
@@ -877,36 +890,7 @@
 				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
-			<!--
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>120</width>
-				<height>192</height>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[Container(50).ListItem(-2).Art(poster)]</texture>
-				<fadetime>400</fadetime>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>192</top>
-				<width>120</width>
-				<height>192</height>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[Container(50).ListItem(-1).Art(poster)]</texture>
-				<fadetime>400</fadetime>
-			</control>
-			<control type="image">
-				<left>328</left>
-				<top>384</top>
-				<width>495</width>
-				<height>192</height>
-				<align>right</align>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<texture background="true">$INFO[Window(Home).Property(filter_logo.ImageFilterNINE)]</texture>
-				<fadetime>400</fadetime>
-			</control>
-			-->
+			<!--<control type="image"><left>0</left><top>0</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(-2).Art(poster)]</texture><fadetime>400</fadetime></control><control type="image"><left>0</left><top>192</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(-1).Art(poster)]</texture><fadetime>400</fadetime></control><control type="image"><left>328</left><top>384</top><width>495</width><height>192</height><align>right</align><aspectratio align="center" aligny="center">stretch</aspectratio><texture background="true">$INFO[Window(Home).Property(filter_logo.ImageFilterNINE)]</texture><fadetime>400</fadetime></control>-->
 			<control type="image">
 				<visible>Skin.HasSetting(Text.Shadow.Enable)</visible>
 				<left>166</left>
@@ -927,46 +911,26 @@
 				<texture background="true">$VAR[LogosArt]</texture>
 				<fadetime>400</fadetime>
 			</control>
-			<!--
-			<control type="image">
-				<left>0</left>
-				<top>576</top>
-				<width>120</width>
-				<height>192</height>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[Container(50).ListItem(1).Art(poster)]</texture>
-				<fadetime>400</fadetime>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>768</top>
-				<width>120</width>
-				<height>192</height>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[Container(50).ListItem(2).Art(poster)]</texture>
-				<fadetime>400</fadetime>
-			</control>
-			-->
+			<!--<control type="image"><left>0</left><top>576</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(1).Art(poster)]</texture><fadetime>400</fadetime></control><control type="image"><left>0</left><top>768</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(2).Art(poster)]</texture><fadetime>400</fadetime></control>-->
 		</control>
 	</include>
 	<!-- Song -->
 	<include name="View_508_SongList">
 		<control type="group">
-			<visible>Control.IsVisible(508)</visible>
+			<visible>Control.IsVisible(508) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
 			<include>Animation.Common</include>
-			<animation effect="slide" end="0,15" start="0,0" time="0" condition="Window.IsActive(musicplaylist)">Conditional</animation>
 			<control type="group">
+				<left>0</left>
+				<top>0</top>
 				<control type="fixedlist" id="508">
-					<left>310</left>
-					<top>145</top>
-					<width>1300</width>
-					<height>880</height>
+					<width>1790</width>
+					<height>960</height>
 					<orientation>vertical</orientation>
 					<movement>2</movement>
 					<focusposition>3</focusposition>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
-									<onright condition="Control.IsVisible(60)">60</onright>
+					<onright condition="Control.IsVisible(60)">60</onright>
 					<onup>508</onup>
 					<ondown>508</ondown>
 					<pagecontrol>60</pagecontrol>
@@ -1049,9 +1013,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<animation effect="slide" end="0,15" start="0,0" time="0" condition="Window.IsActive(musicplaylist)">Conditional</animation>
 			<visible>Control.IsVisible(508) + !Window.IsActive(addoninformation)</visible>
-			<top>-15</top>
 			<include>Scrollbar_Vertical</include>
 		</control>
 	</include>

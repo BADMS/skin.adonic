@@ -14,8 +14,9 @@
 			<left>-2160</left>
 			<imagepath background="true">$VAR[ThumbVarInfo]</imagepath>
 		</control>
+		<include condition="System.HasAddon(script.extendedinfo)">HiddenYTList</include>
 		<control type="group">
-			<visible>Window.IsActive(musicinformation)</visible>
+			<visible>Window.IsActive(musicinformation) | Window.IsActive(songinformation)</visible>
 			<control type="image">
 				<fadetime>400</fadetime>
 				<left>-580</left>
@@ -241,22 +242,22 @@
 							<visible>!String.IsEmpty(ListItem.Filename)</visible>
 						</item>
 						<item>
-							<label>$INFO[ListItem.PlayCount]</label>
-							<label2>$LOCALIZE[567]:</label2>
-							<onclick>noop</onclick>
-							<visible>!String.IsEmpty(ListItem.PlayCount)</visible>
-						</item>
-						<item>
 							<label>$INFO[ListItem.PercentPlayed,,%]</label>
-							<label2 fallback="-">$LOCALIZE[575]:</label2>
+							<label2 fallback="-">$LOCALIZE[31997]:</label2>
 							<onclick>noop</onclick>
 							<visible>ListItem.IsResumable</visible>
 						</item>
 						<item>
 							<label>$INFO[ListItem.LastPlayed]</label>
-							<label2 fallback="-">$LOCALIZE[568]:</label2>
+							<label2 fallback="-">$LOCALIZE[31995]:</label2>
 							<onclick>noop</onclick>
 							<visible>!String.IsEmpty(ListItem.LastPlayed)</visible>
+						</item>
+						<item>
+							<label>$INFO[ListItem.PlayCount]</label>
+							<label2>$LOCALIZE[31996]:</label2>
+							<onclick>noop</onclick>
+							<visible>!String.IsEmpty(ListItem.PlayCount)</visible>
 						</item>
 					</content>
 				</control>
@@ -265,7 +266,7 @@
 					<top>430</top>
 					<width>1030</width>
 					<height>10</height>
-					<onup>9000</onup>
+					<onup>back</onup>
 					<ondown>9000</ondown>
 					<onleft condition="Control.IsVisible(60)">60</onleft>
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
@@ -382,7 +383,7 @@
 			<include>Scrollbar_Vertical</include>
 		</control>
 		<control type="group" id="97631">
-			<visible>Window.IsActive(musicinformation)</visible>
+			<visible>Window.IsActive(musicinformation) | Window.IsActive(songinformation)</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>

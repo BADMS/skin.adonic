@@ -140,7 +140,7 @@
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<texturefocus></texturefocus>
-						<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="414">
 						<description>Cancel button</description>
@@ -154,7 +154,7 @@
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<texturefocus></texturefocus>
-						<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="415">
 						<description>Create folder button</description>
@@ -168,7 +168,7 @@
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<texturefocus></texturefocus>
-						<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="radiobutton" id="416">
 						<description>Flip Image button</description>
@@ -184,7 +184,7 @@
 						<onup>9000</onup>
 						<ondown>9000</ondown>
 						<texturefocus></texturefocus>
-						<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 				</control>
 				<control type="label" id="416">

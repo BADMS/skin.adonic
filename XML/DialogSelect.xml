@@ -4,7 +4,6 @@
 	<onload>Action(enter)</onload>
 	<onload>Dialog.Close(100,true)</onload>
 	<onunload>Dialog.Close(100,true)</onunload>
-	<onunload>ClearProperty(RefreshItem,Home)</onunload>
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
@@ -15,7 +14,7 @@
 	</animation>
 	<controls>
 		<control type="group">
-            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogButtonMenu.xml)" reversible="false">Conditional</animation>
 			<include content="DialogBackgroundCommonsFake">
 				<param name="DialogBackgroundWidth" value="1090" />
 				<param name="DialogBackgroundHeight" value="960" />
@@ -64,7 +63,7 @@
 					<width>2540</width>
 					<height>384</height>
 					<onup condition="Window.IsVisible(script-skinshortcuts.xml)">back</onup>
-					<onup condition="!Window.IsVisible(script-skinshortcuts.xml)">SendClick(9001,5)</onup>
+					<onup condition="!Window.IsVisible(script-skinshortcuts.xml)">SendClick(5)</onup>
 					<ondown>back</ondown>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
@@ -131,6 +130,7 @@
 							<align>center</align>
 							<textcolor>$VAR[ColorMenuVar]</textcolor>
 							<label>$VAR[DialogSelectItemLabel1]</label>
+							<bordersize>6</bordersize>
 						</control>
 						<control type="label">
 							<visible>!Window.IsVisible(MyWeather.xml)</visible>
@@ -140,6 +140,7 @@
 							<align>center</align>
 							<textcolor>$VAR[MenuListColorHighlightVar]</textcolor>
 							<label>$VAR[DialogSelectItemLabel2]</label>
+							<bordersize>6</bordersize>
 						</control>
 					</focusedlayout>
 				</control>
@@ -153,40 +154,49 @@
 					<orientation>vertical</orientation>
 					<showonepage>true</showonepage>
 				</control>
-				<control type="grouplist" id="9001">
-					<visible>!Control.IsVisible(6)</visible>
-					<left>-30</left>
+			</control>
+			<control type="button" id="5">
+				<top>2120</top>
+				<visible>false</visible>
+			</control>
+			<control type="button" id="7">
+				<top>2120</top>
+				<visible>false</visible>
+			</control>
+			<control type="grouplist" id="9001">
+				<visible>!Control.IsVisible(6)</visible>
+				<left>-30</left>
+				<top>604</top>
+				<width>62</width>
+				<height>310</height>
+				<ondown condition="Control.IsVisible(3)">3</ondown>
+				<ondown condition="Control.IsVisible(6)">6</ondown>
+				<onup condition="Control.IsVisible(3)">3</onup>
+				<onup condition="Control.IsVisible(6)">6</onup>
+				<align>top</align>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+				<control type="button" id="115">
+					<description>Manual button</description>
 					<width>62</width>
-					<height>310</height>
-					<ondown condition="Control.IsVisible(3)">3</ondown>
-					<ondown condition="Control.IsVisible(6)">6</ondown>
-					<onup condition="Control.IsVisible(3)">3</onup>
-					<onup condition="Control.IsVisible(6)">6</onup>
-					<align>top</align>
-					<itemgap>0</itemgap>
-					<orientation>vertical</orientation>
-					<control type="button" id="115">
-						<description>Manual button</description>
-						<width>62</width>
-						<height>62</height>
-						<label></label>
-						<align>center</align>
-						<font>IconButton</font>
-						<onclick>SendClick(5)</onclick>
-						<onleft>back</onleft>
-						<onright>3</onright>
-					</control>
-					<control type="button" id="117">
-						<description>Cancel button</description>
-						<width>62</width>
-						<height>62</height>
-						<label></label>
-						<align>center</align>
-						<font>IconButton</font>
-						<onclick>SendClick(7)</onclick>
-						<onleft>back</onleft>
-						<onright>3</onright>
-					</control>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(5)</onclick>
+					<onleft>back</onleft>
+					<onright>3</onright>
+				</control>
+				<control type="button" id="117">
+					<description>Cancel button</description>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(7)</onclick>
+					<onleft>back</onleft>
+					<onright>3</onright>
 				</control>
 			</control>
 		</control>

@@ -219,6 +219,7 @@
 			<top>$PARAM[WeatherPositionTop]</top>
 			<width>$PARAM[WeatherPanelWidth]</width>
 			<height>$PARAM[WeatherPanelHeight]</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 			<onup condition="Control.IsVisible(9990)">9990</onup>
 			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
 			<onup condition="Window.IsVisible(MyWeather.xml)">9990</onup>
@@ -277,7 +278,7 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>Skin.SetString(WidgetLine,$INFO[Window(weather).Property(FanArt)]$INFO[Window(weather).Property(Day0.Outlook),[B], [/B]]$INFO[Container(8011).ListItem.Property(HighTemp),[COLOR invalid],[/COLOR] ]$INFO[Container(8011).ListItem.Property(LowTemp),| [COLOR ff8de0ff],[/COLOR]])</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$INFO[Window(weather).Property(FanArt)]$INFO[Window(weather).Property(Day0.Outlook),, ][LIGHT]$INFO[Container(8011).ListItem.Property(HighTemp),[COLOR invalid],[/COLOR] ]$INFO[Container(8011).ListItem.Property(LowTemp),| [COLOR ff8de0ff],[/COLOR]][/LIGHT])</onfocus>
 					</control>
 					<control type="image">
 						<description>current weather art</description>
