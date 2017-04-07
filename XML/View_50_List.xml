@@ -5,7 +5,6 @@
 		<control type="group">
 			<animation effect="slide" end="-1800" time="400" condition="[ControlGroup(51).HasFocus] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
-			<visible>[Container.Content() | Container.Content(genres) | Window.IsActive(MyPics.xml) | Window.IsActive(MyPrograms.xml) | Window.IsActive(musicplaylist) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(addonbrowser) | Container.Content(files) | String.StartsWith(Container.FolderPath, sources:)] | [String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..)] | [!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] | [Control.IsVisible(50) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None)]</visible>
 			<include>Animation.Common</include>
 			<control type="image">
 				<fadetime>400</fadetime>
