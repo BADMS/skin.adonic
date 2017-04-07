@@ -120,7 +120,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(18)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>9000</onright>
 				</control>
 				<control type="button" id="119">
@@ -131,7 +131,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(19)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>9000</onright>
 				</control>
 			</control>
@@ -163,6 +163,7 @@
 				<onleft>12</onleft>
 				<onright>19</onright>
 				<ondown>9001</ondown>
+				<hinttext>1029</hinttext>
 			</control>
 			<control type="scrollbar" id="59">
 						<top>604</top>

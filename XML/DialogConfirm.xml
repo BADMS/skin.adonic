@@ -71,8 +71,8 @@
 				<top>604</top>
 				<width>2540</width>
 				<height>384</height>
-				<onup>back</onup>
-				<ondown>back</ondown>
+				<onup>Action(back)</onup>
+				<ondown>Action(back)</ondown>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<focusposition>3</focusposition>

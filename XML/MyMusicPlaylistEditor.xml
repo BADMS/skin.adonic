@@ -227,7 +227,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(6)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>59</onright>
 				</control>
 				<control type="button" id="117">
@@ -238,7 +238,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(7)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>59</onright>
 				</control>
 				<control type="button" id="118">
@@ -249,7 +249,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(8)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>59</onright>
 				</control>
 			</control>

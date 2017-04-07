@@ -1,146 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9001</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	<coordinates>
-		<system>1</system>
-		<left>199</left>
-		<top>210</top>
+		<left>0</left>
+		<top>0</top>
+		<origin x="60" y="0">true</origin>
 	</coordinates>
-	<include>dialogeffect</include>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" delay="300" end="100" time="300" />
+	</animation>
 	<controls>
-		<include content="DialogBackgroundCommons">
-			<param name="DialogBackgroundWidth" value="1522" />
-			<param name="DialogBackgroundHeight" value="660" />
-			<param name="DialogHeaderLabel" value="$LOCALIZE[21421]" />
-			<param name="DialogHeaderId" value="2" />
-		</include>
-		<control type="button">
-			<description>rules label</description>
-			<left>31</left>
-			<top>88</top>
-			<width>1138</width>
-			<height>60</height>
-			<align>left</align>
-			<label>21422</label>
-			<font>font13_title</font>
-			<textoffsetx>15</textoffsetx>
-			<disabledcolor>$VAR[ColorHighlightVar]</disabledcolor>
-			<enable>no</enable>
-			<texturefocus border="1">-</texturefocus>
-		</control>
-		<!-- left group -->
-		<control type="group" id="9001">
-			<control type="spincontrolex" id="15">
-				<description>Rule Field</description>
-				<left>31</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>-</font>
-				<onright>16</onright>
-				<onleft>9000</onleft>
-				<onup>17</onup>
-				<ondown>17</ondown>
-			</control>
-			<control type="label">
-				<description>Rule Field label</description>
-				<left>31</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>font14</font>
-				<textoffsetx>15</textoffsetx>
-				<label>$INFO[Control.GetLabel(15)]</label>
-				<visible>!Control.HasFocus(15)</visible>
-			</control>
-			<control type="label">
-				<description>Rule Field label</description>
-				<left>31</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>font14</font>
-				<textoffsetx>15</textoffsetx>
-				<label>$INFO[Control.GetLabel(15)]</label>
-				<visible>Control.HasFocus(15)</visible>
-			</control>
-			<control type="spincontrolex" id="16">
-				<description>Rule operator</description>
-				<left>600</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>-</font>
-				<onright>9000</onright>
-				<onleft>15</onleft>
-				<onup>17</onup>
-				<ondown>17</ondown>
-			</control>
-			<control type="label">
-				<description>Rule Field label</description>
-				<left>600</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>font14</font>
-				<textoffsetx>15</textoffsetx>
-				<label>$INFO[Control.GetLabel(16)]</label>
-				<visible>!Control.HasFocus(16)</visible>
-			</control>
-			<control type="label">
-				<description>Rule Field label</description>
-				<left>600</left>
-				<top>148</top>
-				<width>569</width>
-				<height>60</height>
-				<font>font14</font>
-				<textoffsetx>15</textoffsetx>
-				<label>$INFO[Control.GetLabel(16)]</label>
-				<visible>Control.HasFocus(16)</visible>
-			</control>
-			<control type="edit" id="17">
-				<description>Value Button</description>
-				<left>31</left>
-				<top>208</top>
-				<width>828</width>
-				<label>-</label>
-				<onup>15</onup>
-				<onleft>9000</onleft>
-				<onright>20</onright>
-				<ondown>15</ondown>
-			</control>
-			<control type="button" id="20">
-				<description>Browse Button</description>
-				<left>859</left>
-				<top>208</top>
-				<width>310</width>
-				<label>1024</label>
-				<onup>16</onup>
-				<onleft>17</onleft>
-				<onright>9000</onright>
-				<ondown>15</ondown>
-			</control>
-		</control>
-		<!-- right group -->
 		<control type="group">
-			<left>1182</left>
-			<top>88</top>
-			<control type="grouplist" id="9000">
-				<onup>9000</onup>
-				<onleft>9001</onleft>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogAddonSettings.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogButtonMenu.xml)" reversible="false">Conditional</animation>
+			<left>0</left>
+			<top>604</top>
+			<include content="DialogBackgroundCommonsFake">
+				<param name="DialogBackgroundWidth" value="1346" />
+				<param name="DialogBackgroundHeight" value="680" />
+				<param name="DialogHeaderLabel" value="-" />
+				<param name="DialogHeaderId" value="2" />
+			</include>
+			<!-- left group-->
+			<control type="grouplist" id="9001">
+				<left>60</left>
+				<width>1670</width>
+				<height>310</height>
+				<onup>9001</onup>
+				<onleft>9002</onleft>
+				<onright>60</onright>
+				<ondown>9001</ondown>
+				<align>left</align>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+				<pagecontrol>60</pagecontrol>
+				<control type="button" id="15">
+					<description>Rule field</description>
+					<width>1670</width>
+					<height>62</height>
+				</control>
+				<control type="button" id="16">
+					<description>Rule operator</description>
+					<width>1670</width>
+					<height>62</height>
+				</control>
+				<control type="edit" id="17">
+					<description>Value Button</description>
+					<width>1670</width>
+					<height>62</height>
+					<textcolor>$VAR[ColorTextVar]</textcolor>
+					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
+					<font>font30</font>
+					<aligny>center</aligny>
+					<hinttext>$LOCALIZE[19133]</hinttext>
+				</control>
+				<control type="button" id="20">
+					<description>Browse Button</description>
+					<width>1670</width>
+					<height>62</height>
+					<label>$LOCALIZE[1024]</label>
+				</control>
+			</control>
+			<!-- right group -->
+			<control type="grouplist" id="9002">
+				<left>-30</left>
+				<width>62</width>
+				<height>310</height>
+				<onup>9002</onup>
+				<onleft>Action(back)</onleft>
 				<onright>9001</onright>
-				<ondown>9000</ondown>
+				<ondown>9002</ondown>
+				<align>top</align>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
 				<control type="button" id="18">
 					<description>Ok Button</description>
-					<width>310</width>
-					<label>186</label>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
 				</control>
 				<control type="button" id="19">
 					<description>Cancel Button</description>
-					<width>310</width>
-					<label>222</label>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
 				</control>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1730</left>
+				<width>10</width>
+				<height>310</height>
+				<onleft>9001</onleft>
+				<onright>9001</onright>
+				<ondown>60</ondown>
+				<onup>60</onup>
+				<showonepage>true</showonepage>
 			</control>
 		</control>
 	</controls>

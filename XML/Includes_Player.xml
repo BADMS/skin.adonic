@@ -13,7 +13,7 @@
 				<itemgap>0</itemgap>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
-				<onup>back</onup>
+				<onup>Action(back)</onup>
 				<ondown>703</ondown>
 				<onleft>202</onleft>
 				<onright>202</onright>
@@ -72,7 +72,7 @@
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
 							<onclick>Skin.SetString(_kill_feking_seekbar,1)</onclick>
-							<onclick>back</onclick>
+							<onclick>Action(back)</onclick>
 							<onclick>Dialog.Close(all,true)</onclick>
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>
@@ -150,7 +150,7 @@
 				<itemgap>0</itemgap>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
-				<onup>back</onup>
+				<onup>Action(back)</onup>
 				<ondown>703</ondown>
 				<onleft>202</onleft>
 				<onright>202</onright>
@@ -163,7 +163,7 @@
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</icon>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</thumb>
 							<onclick>SetProperty(RefreshItem,$LOCALIZE[13396],home)</onclick>
-							<onclick>back</onclick>
+							<onclick>Action(back)</onclick>
 							<onclick>ActivateWindow(musicplaylist)</onclick>
 						</item>
 						<item>
@@ -233,7 +233,7 @@
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
 							<onclick>Skin.SetString(_kill_feking_seekbar,1)</onclick>
-							<onclick>back</onclick>
+							<onclick>Action(back)</onclick>
 							<onclick>Dialog.Close(all,true)</onclick>
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>

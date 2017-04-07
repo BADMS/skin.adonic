@@ -10,7 +10,6 @@
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
 	<onload>SetProperty(Window.HasSettings,True,home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
-	<onload condition="System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(Disable.NextAired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>

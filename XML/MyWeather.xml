@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">8880</defaultcontrol>
+	<defaultcontrol always="true">9990</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<onload>Dialog.Close(all,true)</onload>
 	<onload>Skin.Reset(SS_Helper)</onload>
@@ -10,7 +10,7 @@
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<allowoverlay>no</allowoverlay>
 	<controls>
-		<control type="multiimage" id="7975">
+		<control type="multiimage" id="7977">
 			<fadetime>300</fadetime>
 			<animation effect="fade" time="200" tween="cubic">Visible</animation>
 			<include>FullscreenDimensions</include>
@@ -42,7 +42,7 @@
 			<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 		</control>
 		<control type="group" id="97631">
-			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml)</visible>
+			<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
@@ -67,13 +67,13 @@
 			<animation effect="fade" start="100" end="0" time="200" reversible="true" condition="Window.IsVisible(custom_1121_Dependencies.xml) | Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsActive(DialogConfirm.xml) | Window.IsActive(DialogSelect.xml) | Window.IsActive(FileBrowser.xml) | [ControlGroup(97631).HasFocus + Window.IsActive(MyWeather.xml)]">conditional</animation>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
 			<top>0</top>
-			<control type="list" id="8880">
+			<control type="list" id="9990">
 				<left>70</left>
 				<top>604</top>
 				<width>340</width>
 				<height>310</height>
-				<onup>8880</onup>
-				<ondown>8880</ondown>
+				<onup>9990</onup>
+				<ondown>9990</ondown>
 				<onleft>59</onleft>
 				<onright>9991</onright>
 				<focusposition>0</focusposition>
@@ -90,7 +90,7 @@
 				</itemlayout>
 				<focusedlayout height="62" width="340">
 					<control type="image">
-						<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(8880)">Conditional</animation>
+						<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(9990)">Conditional</animation>
 						<texture>listselect_fo.png</texture>
 						<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 						<include>VisibleFadeEffect</include>
@@ -162,7 +162,7 @@
 				<aspectratio align="center">keep</aspectratio>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
 				<imagepath background="true">$VAR[WeatherIconVar]</imagepath>
-				<visible>Container(8880).HasFocus(6)</visible>
+				<visible>Container(9990).HasFocus(6)</visible>
 			</control>
 			<control type="multiimage">
 				<left>410</left>
@@ -173,7 +173,7 @@
 				<timeperimage>1000</timeperimage>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
 				<imagepath background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-				<visible>Container(8880).HasFocus(7)</visible>
+				<visible>Container(9990).HasFocus(7)</visible>
 			</control>
 			<control type="multiimage">
 				<left>410</left>
@@ -184,11 +184,11 @@
 				<timeperimage>1000</timeperimage>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
 				<imagepath background="true">$INFO[Skin.String(weatherfanart.path)]/</imagepath>
-				<visible>Container(8880).HasFocus(8)</visible>
+				<visible>Container(9990).HasFocus(8)</visible>
 			</control>
 			<control type="group" id="9991">
 				<control type="group">
-					<visible>Container(8880).HasFocus(1)</visible>
+					<visible>Container(9990).HasFocus(1)</visible>
 					<include>SettingsFadeEffect</include>
 					<left>410</left>
 					<top>604</top>
@@ -200,7 +200,7 @@
 							<height>310</height>
 							<itemgap>0</itemgap>
 							<pagecontrol>60</pagecontrol>
-							<onleft>8880</onleft>
+							<onleft>9990</onleft>
 							<onright>60</onright>
 							<onup>9007</onup>
 							<ondown>9007</ondown>
@@ -214,7 +214,7 @@
 								<label>$INFO[Window(weather).Property(Current.Condition)], $LOCALIZE[402] $INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
 							</control>
 							<control type="button" id="102">
-								<label>[COLOR $VAR[ColorHighlightVar]]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+								<label>$LOCALIZE[406]: $INFO[Window(weather).Property(Current.Humidity)]</label>
 								<width>1380</width>
 								<height>62</height>
 								<font>font30</font>
@@ -222,7 +222,7 @@
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 							</control>
 							<control type="button" id="103">
-								<label>[COLOR $VAR[ColorHighlightVar]]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+								<label>$LOCALIZE[404]: $INFO[Window(weather).Property(Current.Wind)]</label>
 								<width>1380</width>
 								<height>62</height>
 								<font>font30</font>
@@ -230,7 +230,7 @@
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 							</control>
 							<control type="button" id="104">
-								<label>[COLOR $VAR[ColorHighlightVar]]$LOCALIZE[33027]:[/COLOR] $INFO[Window(weather).Property(Today.Sunrise)]</label>
+								<label>$LOCALIZE[33027]: $INFO[Window(weather).Property(Today.Sunrise)]</label>
 								<width>1380</width>
 								<height>62</height>
 								<font>font30</font>
@@ -238,7 +238,7 @@
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 							</control>
 							<control type="button" id="105">
-								<label>[COLOR $VAR[ColorHighlightVar]]$LOCALIZE[33028]:[/COLOR] $INFO[Window(weather).Property(Today.Sunset)]</label>
+								<label>$LOCALIZE[33028]: $INFO[Window(weather).Property(Today.Sunset)]</label>
 								<width>1380</width>
 								<height>62</height>
 								<font>font30</font>
@@ -249,7 +249,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>Container(8880).HasFocus(2)</visible>
+					<visible>Container(9990).HasFocus(2)</visible>
 					<include>SettingsFadeEffect</include>
 					<left>410</left>
 					<top>604</top>
@@ -262,7 +262,7 @@
 						<height>310</height>
 						<onup>301</onup>
 						<ondown>301</ondown>
-						<onleft>8880</onleft>
+						<onleft>9990</onleft>
 						<onright>60</onright>
 						<pagecontrol>60</pagecontrol>
 						<orientation>vertical</orientation>
@@ -309,7 +309,9 @@
 						</itemlayout>
 						<focusedlayout height="310" width="1380">
 							<control type="image">
+								<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(301)">Conditional</animation>
 								<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
@@ -478,7 +480,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>Container(8880).HasFocus(3)</visible>
+					<visible>Container(9990).HasFocus(3)</visible>
 					<include>SettingsFadeEffect</include>
 					<left>410</left>
 					<top>604</top>
@@ -491,7 +493,7 @@
 						<height>310</height>
 						<onup>302</onup>
 						<ondown>302</ondown>
-						<onleft>8880</onleft>
+						<onleft>9990</onleft>
 						<onright>60</onright>
 						<pagecontrol>60</pagecontrol>
 						<orientation>vertical</orientation>
@@ -538,7 +540,9 @@
 						</itemlayout>
 						<focusedlayout height="310" width="1380">
 							<control type="image">
+								<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(302)">Conditional</animation>
 								<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
@@ -626,7 +630,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>Container(8880).HasFocus(4)</visible>
+					<visible>Container(9990).HasFocus(4)</visible>
 					<include>SettingsFadeEffect</include>
 					<left>410</left>
 					<top>604</top>
@@ -639,7 +643,7 @@
 						<height>310</height>
 						<onup>303</onup>
 						<ondown>303</ondown>
-						<onleft>8880</onleft>
+						<onleft>9990</onleft>
 						<onright>60</onright>
 						<pagecontrol>60</pagecontrol>
 						<orientation>vertical</orientation>
@@ -686,7 +690,9 @@
 						</itemlayout>
 						<focusedlayout height="310" width="1380">
 							<control type="image">
+								<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(303)">Conditional</animation>
 								<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
@@ -763,7 +769,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>Container(8880).HasFocus(5)</visible>
+					<visible>Container(9990).HasFocus(5)</visible>
 					<include>SettingsFadeEffect</include>
 					<left>410</left>
 					<top>604</top>
@@ -776,7 +782,7 @@
 						<height>310</height>
 						<onup>304</onup>
 						<ondown>304</ondown>
-						<onleft>8880</onleft>
+						<onleft>9990</onleft>
 						<onright>60</onright>
 						<pagecontrol>60</pagecontrol>
 						<orientation>vertical</orientation>
@@ -823,7 +829,9 @@
 						</itemlayout>
 						<focusedlayout height="310" width="1380">
 							<control type="image">
+								<animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(304)">Conditional</animation>
 								<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+								<include>VisibleFadeEffect</include>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>
@@ -1303,7 +1311,7 @@
 						</content>
 					</control>
 				</control>
-				<!--<control type="group"><visible>Container(8880).HasFocus(6)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.1.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.1.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.1.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(8880).HasFocus(7)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.2.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.2.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.2.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(8880).HasFocus(8)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.3.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.3.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.3.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(8880).HasFocus(9)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.4.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.4.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.4.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(8880).HasFocus(10)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.5.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.5.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.5.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control>-->
+				<!--<control type="group"><visible>Container(9990).HasFocus(6)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.1.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.1.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.1.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(9990).HasFocus(7)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.2.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.2.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.2.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(9990).HasFocus(8)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.3.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.3.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.3.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(9990).HasFocus(9)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.4.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.4.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.4.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control><control type="group"><visible>Container(9990).HasFocus(10)</visible><include>SettingsFadeEffect</include><left>480</left><top>10</top><width>1380</width><height>760</height><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.5.Area)]</texture><aspectratio>scale</aspectratio></control><control type="image"><width>1380</width><height>760</height><texture>$INFO[Window.Property(Map.5.Layer)]</texture><aspectratio>scale</aspectratio><colordiffuse>70FFFFFF</colordiffuse></control><control type="image"><top>700</top><width>1380</width><height>60</height><texture>$INFO[Window.Property(Map.5.Legend)]</texture><aspectratio align="right" aligny="bottom">keep</aspectratio></control></control>-->
 			</control>
 			<control type="image">
 				<left>1300</left>
@@ -1319,7 +1327,7 @@
 				<width>10</width>
 				<height>310</height>
 				<onleft>9000</onleft>
-				<onright>8880</onright>
+				<onright>9990</onright>
 				<ondown>59</ondown>
 				<onup>59</onup>
 				<showonepage>true</showonepage>

@@ -201,7 +201,7 @@
 					<left>310</left>
 					<width>10</width>
 					<height>310</height>
-				<onleft>back</onleft>
+				<onleft>Action(back)</onleft>
 				<onleft>SetFocus(97631)</onleft>
 				<onright>9990</onright>
 				<ondown>60</ondown>
@@ -213,7 +213,7 @@
 					<width>10</width>
 					<height>310</height>
 				<onleft>9990</onleft>
-				<onright>back</onright>
+				<onright>Action(back)</onright>
 				<onright>9000</onright>
 				<ondown>500</ondown>
 				<onup>500</onup>

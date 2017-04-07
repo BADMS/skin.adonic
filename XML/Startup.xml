@@ -2,6 +2,8 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>Skin.SetString(Dummy.String,  )</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(Overlay.Unwatched)</onload>
 	<onload>Skin.SetBool(Overlay.Watched)</onload>
@@ -18,7 +20,6 @@
 	<onload condition="!Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,-)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onload>
 	<onload condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onload>
-	<onload condition="!System.HasAddon(script.tv.show.next.aired)">Skin.SetBool(Disable.NextAired)</onload>
 	<onload condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onload>
 	<onload condition="String.IsEmpty(Skin.String(focus_fx))">Skin.SetString(focus_fx,blur)</onload>
 	<onload>SetProperty(cfa_daemon_set,$INFO[Skin.String(background_fx)],home)</onload>

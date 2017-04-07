@@ -18,7 +18,7 @@
 				<height>310</height>
 				<onup>9010</onup>
 				<ondown>9010</ondown>
-				<onleft>back</onleft>
+				<onleft>Action(back)</onleft>
 				<onright>60</onright>
 				<focusposition>2</focusposition>
 				<pagecontrol>60</pagecontrol>
@@ -65,7 +65,7 @@
 				<width>10</width>
 				<height>310</height>
 				<onleft>9010</onleft>
-				<onright>back</onright>
+				<onright>Action(back)</onright>
 				<orientation>vertical</orientation>
 				<showonepage>true</showonepage>
 			</control>

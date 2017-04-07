@@ -142,7 +142,7 @@
 						<left>60</left>
 						<width>10</width>
 						<height>310</height>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>2</onright>
 					<ondown>59</ondown>
 					<onup>59</onup>
@@ -155,7 +155,7 @@
 						<height>310</height>
 					<onleft condition="Container(9990).HasFocus(9)">9990</onleft>
 					<onleft condition="!Container(9990).HasFocus(9)">9991</onleft>
-					<onright>back</onright>
+					<onright>Action(back)</onright>
 					<ondown>60</ondown>
 					<onup>60</onup>
 					<showonepage>true</showonepage>

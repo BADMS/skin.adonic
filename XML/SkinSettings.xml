@@ -448,16 +448,6 @@
 						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
 						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
 					</control>
-					<control type="radiobutton" id="305">
-						<width>1380</width>
-						<height>62</height>
-						
-						<font>font30</font><focusedcolor>$VAR[ColorMenuVar]</focusedcolor><textcolor>$VAR[ColorMenuVar]</textcolor>
-						<label>31083</label>
-						<onclick>Skin.ToggleSetting(Disable.NextAired)</onclick>
-						<selected>!Skin.HasSetting(Disable.NextAired)</selected>
-						<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
-					</control>
 					<control type="radiobutton" id="312">
 						<width>1380</width>
 						<height>62</height>

@@ -252,7 +252,7 @@
 						<left>60</left>
 						<width>10</width>
 						<height>310</height>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>9990</onright>
 					<ondown>59</ondown>
 					<onup>59</onup>
@@ -264,7 +264,7 @@
 						<width>10</width>
 						<height>310</height>
 					<onleft>9901</onleft>
-					<onright>back</onright>
+					<onright>Action(back)</onright>
 					<ondown>60</ondown>
 					<onup>60</onup>
 					<showonepage>true</showonepage>

@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<menucontrol>9000</menucontrol>
+	<onload>ClearProperty(RefreshItem,Home)</onload>
 	<onload condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">Skin.SetString(SkinHelper_ExtraFanArtPath,$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)])</onload>
 	<onunload condition="Window.IsActive(home)">ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>AlarmClock(exfa1,SetProperty(SkinHelper.ListItem.Art.ExtraFanArt,$INFO[Skin.String(SkinHelper_ExtraFanArtPath)],home),00:01,silent)</onunload>
@@ -169,8 +170,8 @@
 							<label>$VAR[DurationVar] [LOWERCASE]$LOCALIZE[12391][/LOWERCASE]</label>
 							<label2>$LOCALIZE[180]:</label2>
 							<onclick>noop</onclick>
-							<visible>![$EXP[isTvshow] + Skin.HasSetting(Disable.NextAired)]</visible>
-							<visible>Integer.IsGreater(ListItem.Duration,0) | Integer.IsGreater(Window(Home).Property(NextAired.Runtime),0)</visible>
+							<visible>![$EXP[isTvshow]]</visible>
+							<visible>Integer.IsGreater(ListItem.Duration,0)</visible>
 						</item>
 						<item>
 							<label>$INFO[ListItem.Top250,#]</label>
@@ -313,7 +314,7 @@
 					<top>430</top>
 					<width>1030</width>
 					<height>10</height>
-					<onup>back</onup>
+					<onup>Action(back)</onup>
 					<ondown>9000</ondown>
 					<onleft condition="Control.IsVisible(60)">60</onleft>
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
@@ -618,10 +619,10 @@
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]tvroot.png</thumb>
 							<property name="labelID">$LOCALIZE[31003]</property>
 							<property name="defaultID">$LOCALIZE[31003]</property>
-							<onclick>Back</onclick>
-							<onclick>Back</onclick>
-							<onclick>Back</onclick>
-							<onclick condition="Container.Content(episodes)">Back</onclick>
+							<onclick>Action(back)</onclick>
+							<onclick>Action(back)</onclick>
+							<onclick>Action(back)</onclick>
+							<onclick condition="Container.Content(episodes)">Action(back)</onclick>
 							<visible>Container.Content(episodes)</visible>
 						</item>
 						-->
@@ -644,15 +645,15 @@
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
 							<property name="labelID">$LOCALIZE[10000]</property>
 							<property name="defaultID">$LOCALIZE[10000]</property>
-							<onclick>Back</onclick>
+							<onclick>Action(back)</onclick>
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>
 						<item>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
 							<property name="labelID">$LOCALIZE[210]</property>
 							<property name="defaultID">$LOCALIZE[210]</property>
-							<onclick>Back</onclick>
-							<onclick>Back</onclick>
+							<onclick>Action(back)</onclick>
+							<onclick>Action(back)</onclick>
 						</item>
 					</content>
 				</control>

@@ -12,7 +12,7 @@
 			<animation effect="fade" start="0" end="100" delay="200" time="300" easing="out" condition="Control.HasFocus(9010)" reversible="false">Conditional</animation>
 			<animation effect="fade" end="0" start="100" time="0" condition="[!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(FileBrowser.xml)" reversible="false">Conditional</animation>
 			<control type="wraplist" id="9010">
-				<animation effect="fade" start="100" end="0" delay="0" time="300" easing="out" condition="Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
+				<animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogButtonMenu.xml)" reversible="false">Conditional</animation>
 				<include content="SubMenuListDefault">
 					<param name="SubmenuLeft" value="-124" />
 					<param name="SubmenuTop" value="-193" />
@@ -48,7 +48,7 @@
 				<label2>$LOCALIZE[31980]</label2>
 				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
 				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
-				<onclick>Back</onclick>
+				<onclick>Action(back)</onclick>
 				<onclick>Info</onclick>
 				<visible>!String.Contains(Window.Property(xmlfile),settings)</visible>
 				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
@@ -104,7 +104,7 @@
 				<label2>$LOCALIZE[12005]</label2>
 				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]fullscreen.png</icon>
 				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]fullscreen.png</thumb>
-				<onclick condition="Control.IsVisible(50)">Back</onclick>
+				<onclick condition="Control.IsVisible(50)">Action(back)</onclick>
 				<onclick>Fullscreen</onclick>
 				<visible>Player.HasMedia</visible>
 			</item>
@@ -113,9 +113,9 @@
 				<label2>$LOCALIZE[31003]</label2>
 				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]tvroot.png</icon>
 				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]tvroot.png</thumb>
-				<onclick>Back</onclick>
-				<onclick>Back</onclick>
-				<onclick condition="Container.Content(episodes)">Back</onclick>
+				<onclick>Action(back)</onclick>
+				<onclick>Action(back)</onclick>
+				<onclick condition="Container.Content(episodes)">Action(back)</onclick>
 				<visible>Container.Content(episodes) | Container.Content(seasons)</visible>
 			</item>
 			<item id="90007">
@@ -123,7 +123,7 @@
 				<label2>$LOCALIZE[24025]</label2>
 				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]context.png</icon>
 				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]context.png</thumb>
-				<onclick>Back</onclick>
+				<onclick>Action(back)</onclick>
 				<onclick>ContextMenu</onclick>
 				<visible>!String.Contains(Window.Property(xmlfile),settings)</visible>
 				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
@@ -133,7 +133,7 @@
 				<visible>!Window.IsActive(movieinformation)</visible>
 				<visible>!Window.IsActive(MyWeather.xml)</visible>
 			</item>
-			<!--<item id="90002"><label>10000</label><label2>$LOCALIZE[10000]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb><onclick>Back</onclick><onclick>ActivateWindow(Home)</onclick><visible>!Window.IsActive(home)</visible></item><item id="90003"><label>210</label><label2>$LOCALIZE[210]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb><onclick>Back</onclick><onclick>Back</onclick><visible>!Window.IsActive(home)</visible></item>-->
+			<!--<item id="90002"><label>10000</label><label2>$LOCALIZE[10000]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb><onclick>Action(back)</onclick><onclick>ActivateWindow(Home)</onclick><visible>!Window.IsActive(home)</visible></item><item id="90003"><label>210</label><label2>$LOCALIZE[210]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb><onclick>Action(back)</onclick><onclick>Action(back)</onclick><visible>!Window.IsActive(home)</visible></item>-->
 			<include>skinshortcuts-mainmenu</include>
 		</content>
 	</include>
@@ -149,11 +149,11 @@
 		<onup condition="String.Contains(Window.Property(xmlfile),settings)">9990</onup>
 		<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
 		<onup condition="Window.IsVisible(DialogButtonMenu.xml) + Window.IsActive(VideoFullScreen.xml)">SetFocus(9000)</onup>
-		<onup condition="Window.IsVisible(DialogButtonMenu.xml)">back</onup>
-		<onup condition="Window.IsVisible(DialogConfirm.xml)">back</onup>
+		<onup condition="Window.IsVisible(DialogButtonMenu.xml)">Action(back)</onup>
+		<onup condition="Window.IsVisible(DialogConfirm.xml)">Action(back)</onup>
 		<onup condition="!Window.IsVisible(home)">50</onup>
-		<ondown condition="Window.IsVisible(DialogButtonMenu.xml)">back</ondown>
-		<ondown condition="Window.IsVisible(DialogConfirm.xml)">back</ondown>
+		<ondown condition="Window.IsVisible(DialogButtonMenu.xml)">Action(back)</ondown>
+		<ondown condition="Window.IsVisible(DialogConfirm.xml)">Action(back)</ondown>
 		<ondown condition="Window.IsVisible(DialogButtonMenu.xml) + Window.IsActive(VideoFullScreen.xml)">SetFocus(9000)</ondown>
 		<onup>9000</onup>
 		<ondown>9000</ondown>

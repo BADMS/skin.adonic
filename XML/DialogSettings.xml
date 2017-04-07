@@ -39,7 +39,7 @@
 				<width>10</width>
 				<height>310</height>
 				<onleft>5</onleft>
-				<onright>back</onright>
+				<onright>Action(back)</onright>
 				<orientation>vertical</orientation>
 			</control>
 			<control type="button" id="7">
@@ -118,7 +118,7 @@
 					<onclick>SendClick(28)</onclick>
 					<onup>113</onup>
 					<ondown>112</ondown>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>5</onright>
 					<texturefocus/>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
@@ -135,7 +135,7 @@
 					<onclick>SendClick(29)</onclick>
 					<onup>111</onup>
 					<ondown>113</ondown>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>5</onright>
 					<texturefocus/>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
@@ -152,7 +152,7 @@
 					<onclick>SendClick(30)</onclick>
 					<onup>112</onup>
 					<ondown>111</ondown>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>5</onright>
 					<texturefocus/>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>

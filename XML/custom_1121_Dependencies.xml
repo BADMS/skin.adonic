@@ -25,8 +25,8 @@
 					<left>-184</left>
 					<width>2540</width>
 					<height>384</height>
-					<onup>back</onup>
-					<ondown>back</ondown>
+					<onup>Action(back)</onup>
+					<ondown>Action(back)</ondown>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
 					<focusposition>3</focusposition>

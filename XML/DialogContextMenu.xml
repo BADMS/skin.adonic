@@ -27,7 +27,7 @@
 				<height>310</height>
 				<onup>996</onup>
 				<ondown>996</ondown>
-				<onleft>back</onleft>
+				<onleft>Action(back)</onleft>
 				<onright>60</onright>
 				<focusposition>2</focusposition>
 				<pagecontrol>60</pagecontrol>
@@ -40,7 +40,7 @@
 					<height>62</height>
 					<align>center</align>
 					<onclick>PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>60</onright>
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 				</control>
@@ -50,7 +50,7 @@
 				<width>1730</width>
 				<height>62</height>
 				<align>center</align>
-				<onleft>back</onleft>
+				<onleft>Action(back)</onleft>
 				<onright>60</onright>
 			</control>
 			<control type="scrollbar" id="60">
@@ -58,7 +58,7 @@
 				<width>10</width>
 				<height>310</height>
 				<onleft>996</onleft>
-				<onright>back</onright>
+				<onright>Action(back)</onright>
 				<orientation>vertical</orientation>
 				<showonepage>true</showonepage>
 			</control>

@@ -266,7 +266,7 @@
 					<top>430</top>
 					<width>1030</width>
 					<height>10</height>
-					<onup>back</onup>
+					<onup>Action(back)</onup>
 					<ondown>9000</ondown>
 					<onleft condition="Control.IsVisible(60)">60</onleft>
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
@@ -364,15 +364,15 @@
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
 							<property name="labelID">$LOCALIZE[10000]</property>
 							<property name="defaultID">$LOCALIZE[10000]</property>
-							<onclick>Back</onclick>
+							<onclick>Action(back)</onclick>
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>
 						<item>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
 							<property name="labelID">$LOCALIZE[210]</property>
 							<property name="defaultID">$LOCALIZE[210]</property>
-							<onclick>Back</onclick>
-							<onclick>Back</onclick>
+							<onclick>Action(back)</onclick>
+							<onclick>Action(back)</onclick>
 						</item>
 					</content>
 				</control>

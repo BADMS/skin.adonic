@@ -1285,7 +1285,7 @@
 					<visible>!Window.IsVisible(DialogSeekBar.xml)</visible>
 				</control>
 				<control type="group">
-					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml)</visible>
+					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogSelect.xml)</visible>
 					<control type="label">
 						<top>59</top>
 						<left>117</left>
@@ -1417,6 +1417,7 @@
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
 					<label>$VAR[WidgetNameLabelVar,, ]$VAR[HomeHeaderSubline]</label>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!String.IsEmpty(Control.GetLabel(7357))</visible>
 					<visible>![Window.IsActive(AddOnBrowser.xml) + !ControlGroup(97631).HasFocus]</visible>
@@ -1443,7 +1444,10 @@
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Control.IsVisible(12346)</visible>
-					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml)</visible>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
+					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
+					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(SmartPlaylistRule.xml)</visible>
 				</control>
 				<control type="label">
 					<top>59</top>
@@ -1458,6 +1462,7 @@
 					<label>$VAR[WidgetNameLabelVar]</label>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml)</visible>
@@ -1548,6 +1553,46 @@
 						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),,% ]</label>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>IconMedium</font>
+						<textcolor>orange</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>topbar</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.SongCount),, ]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>IconMedium</font>
+						<textcolor>blue</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>topbar</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),, ]</label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
 					</control>
 					<control type="label">
 						<aligny>center</aligny>

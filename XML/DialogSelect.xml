@@ -21,6 +21,16 @@
 				<param name="DialogHeaderLabel" value="" />
 				<param name="DialogHeaderId" value="1" />
 			</include>
+			<control type="label">
+				<left>57</left>
+				<top>536</top>
+				<width>1715</width>
+				<height>45</height>
+				<font>topbar</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[Control.GetLabel(1),[B],[/B] ]$INFO[Container(6).ListItem.Label]$INFO[Container(3).ListItem.Label]</label>
+			</control>
 			<control type="group" id="9010">
 				<left>0</left>
 				<top>604</top>
@@ -62,9 +72,8 @@
 					<left>-184</left>
 					<width>2540</width>
 					<height>384</height>
-					<onup condition="Window.IsVisible(script-skinshortcuts.xml)">back</onup>
-					<onup condition="!Window.IsVisible(script-skinshortcuts.xml)">SendClick(5)</onup>
-					<ondown>back</ondown>
+					<onup>Action(back)</onup>
+					<ondown>Action(back)</ondown>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
 					<focusposition>3</focusposition>
@@ -122,6 +131,7 @@
 							<texture fallback="DefaultAddonSource.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
+						<!--
 						<control type="label">
 							<visible>!Window.IsVisible(MyWeather.xml)</visible>
 							<visible>!Window.IsVisible(script-skinshortcuts.xml)</visible>
@@ -142,6 +152,7 @@
 							<label>$VAR[DialogSelectItemLabel2]</label>
 							<bordersize>6</bordersize>
 						</control>
+						-->
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
@@ -150,7 +161,7 @@
 					<width>10</width>
 					<height>310</height>
 					<onleft>3</onleft>
-					<onright>back</onright>
+					<onright>Action(back)</onright>
 					<orientation>vertical</orientation>
 					<showonepage>true</showonepage>
 				</control>
@@ -184,7 +195,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(5)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>3</onright>
 				</control>
 				<control type="button" id="117">
@@ -195,7 +206,7 @@
 					<align>center</align>
 					<font>IconButton</font>
 					<onclick>SendClick(7)</onclick>
-					<onleft>back</onleft>
+					<onleft>Action(back)</onleft>
 					<onright>3</onright>
 				</control>
 			</control>

@@ -11,7 +11,7 @@
 		<value condition="Player.Forwarding">[B]$LOCALIZE[31991][/B] $VAR[VideoPlayerForwardRewindVar]</value>
 		<value condition="Player.Rewinding">[B]$LOCALIZE[31990][/B] $VAR[VideoPlayerForwardRewindVar]</value>
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">$INFO[Player.CacheLevel,[B],[/B]$LOCALIZE[15107] ,%]</value>
-		<value condition="Player.IsTempo">$LOCALIZE[31142,[B],:[/B] ]$INFO[Player.PlaySpeed]</value>
+		<value condition="Player.IsTempo">[B]$LOCALIZE[31142]:[/B] ]$INFO[Player.PlaySpeed]</value>
 	</variable>
 	<variable name="SeekTimeLabelVar">
 		<value condition="!String.IsEmpty(Player.SeekNumeric)">[B]$INFO[Player.SeekNumeric(hh:mm:ss)][/B]</value>
@@ -21,12 +21,17 @@
 		<value condition="String.Contains(Control.GetLabel(416),*)"></value>
 		<value></value>
 	</variable>
+	<variable name="StupidAscDescLabel">
+		<value condition="String.IsEqual(Control.GetLabel(19), ascending)">$LOCALIZE[21430]</value>
+		<value>$LOCALIZE[21431]</value>
+	</variable>
 	<variable name="WidgetMultiPath">
 		<value condition="!String.IsEmpty(Window(Home).Property(FIVE_daemon_fallback))">$INFO[Window(Home).Property(FIVE_daemon_fallback)]</value>
 		<value>fb.jpg</value>
 	</variable>
 	<variable name="MenuPanelBackground">
 		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
 		<value condition="!String.IsEmpty(Skin.String(View.Panel.Image))">$INFO[Skin.String(View.Panel.Image)]</value>
 		<value condition="!Container(9990).HasFocus(8)">background.png</value>
 		<value condition="Container(9990).HasFocus(8)">adonic.jpg</value>
@@ -674,26 +679,26 @@
 
 
 	<variable name="MenuPanelBackgroundColorHighlightVar">
-		<value condition="[[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + !Window.IsActive(movieinformation) + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN))]] + Skin.HasSetting(Colorbox.header)">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
+		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN))]] + Skin.HasSetting(Colorbox.header)">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
 		<value condition="[!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] + Skin.HasSetting(Colorbox.header)">$INFO[Window(home).Property(ImageColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name)) + Skin.HasSetting(Colorbox.header)">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>FFFFFFFF</value>
 	</variable>
 	<variable name="MenuListColorHighlightVar">
-		<value condition="[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + !Window.IsActive(movieinformation) + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN))]">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
+		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN))]]">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))">$INFO[Window(home).Property(ImageColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>highlight</value>
 	</variable>
 	<variable name="ColorMenuVar">
 		<value condition="Window.IsVisible(DialogAddonSettings.xml)">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + !Window.IsActive(movieinformation) + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
 		<value>maintext</value>
 	</variable>
 	<variable name="IconColorVar">
-		<value condition="Skin.HasSetting(ColorBox.Icons) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + !Window.IsActive(movieinformation) + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+		<value condition="Skin.HasSetting(ColorBox.Icons) + !Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!Skin.HasSetting(ColorBox.Icons)">FFFFFFFF</value>
 		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
@@ -756,6 +761,7 @@
     </variable>
     <variable name="HeaderIcon">
 		<value condition="Control.HasFocus(501) + !String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+        <value condition="Control.HasFocus(501) + Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</value>
 		<value condition="String.IsEqual(ListItem.Label, ..)">$INFO[Skin.String(MenuDefaultIconsPath)]back.png</value>
 		<value condition="Window.IsVisible(movieinformation)">$INFO[Skin.String(MenuDefaultIconsPath)]info.png</value>
 		<value condition="Window.IsVisible(musicinformation)">$INFO[Skin.String(MenuDefaultIconsPath)]info.png</value>
@@ -821,18 +827,18 @@
         <value>$INFO[Skin.String(MenuDefaultIconsPath)]artist.png</value>
     </variable>
 	<variable name="BreadcrumbsVar">
-    	<value condition="Window.IsVisible(DialogSubtitles.xml)">$LOCALIZE[24012,[B],[/B]]</value>
+    	<value condition="Window.IsVisible(DialogSubtitles.xml)">[B]$LOCALIZE[24012][/B]</value>
     	<value condition="Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml)">$VAR[TopbarFadeLabel1]</value>
     	<value condition="[Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml)] + [String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[31973]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[31972]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[31999]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[32000]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[32002]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[32001]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[742]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[353]) | String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[31974])]">$INFO[Window(Home).Property(RefreshItem),[B],[/B]]</value>
     	<value condition="String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[184])">$INFO[ListItem.Label,[B],[/B]]$INFO[Window(Home).Property(RefreshItem), [LIGHT],[/LIGHT]]</value>
-    	<value condition="Window.IsVisible(shutdownmenu)">$LOCALIZE[13005,[B],[/B]]</value>
+    	<value condition="Window.IsVisible(shutdownmenu)">[B]$LOCALIZE[13005][/B]</value>
 		<value condition="Window.IsActive(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(label),[B],[/B]]</value>
  		<value condition="Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(title),[B],[/B]]</value>
 		<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Season,[B],[/B]x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title,[LIGHT],[/LIGHT]]</value>
 		<value condition="Window.IsActive(movieinformation)">$INFO[ListItem.Label,[B],[/B]]</value>
 		<value condition="Window.IsActive(DialogMusicInfo.xml)">$VAR[MusicInfoHeading]</value>
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation)">$VAR[MusicInfoHeading]</value>
-		<value condition="Window.IsActive(favourites)">$LOCALIZE[1036,[B],[/B]]</value>
+		<value condition="Window.IsActive(favourites)">[B]$LOCALIZE[1036][/B]</value>
 		<value condition="String.Contains(Container.FolderPath,plugin://plugin.program.advanced.launcher/)">$INFO[System.AddonTitle(plugin.program.advanced.launcher),[B],[/B]]</value>
 		<value condition="Window.IsActive(script-The Big Picture-main.xml)">$INFO[Container(100).ListItem.Property(album_title),[B],[/B]]</value>
 		<value condition="Window.IsActive(addoninformation) + !Window.IsActive(textviewer)">$INFO[ListItem.AddonName,[B],[/B]]</value>
@@ -840,16 +846,16 @@
 		<value condition="Window.IsActive(script-Rom_Collection_Browser-main.xml)">$INFO[System.AddonTitle(service.rom.collection.browser),[B],[/B]]</value>
 		<value condition="Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(script-NextAired-TVGuide2.xml)">$INFO[System.AddonTitle(script.tv.show.next.aired),[B],[/B]]</value>
 		<value condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">$INFO[System.AddonTitle(script.extendedinfo),[B],[/B]]</value>
-		<value condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">$LOCALIZE[31132,[B],[/B]]</value>
+		<value condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">[B]$LOCALIZE[31132][/B]</value>
 		<value condition="Window.IsActive(script-globalsearch-main.xml)">$INFO[System.AddonTitle(script.globalsearch),[B],[/B]]</value>
-		<value condition="Window.IsActive(settings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(profiles) | Window.IsActive(skinsettings)">$LOCALIZE[5,[B],[/B]]</value>
-		<value condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">$LOCALIZE[19069,[B],[/B]]</value>
-		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$LOCALIZE[19163,[B],[/B]]</value>
-		<value condition="Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)">$LOCALIZE[19040,[B],[/B]]</value>
-		<value condition="Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)">$LOCALIZE[137,[B],[/B]]</value>
-		<value condition="Window.IsActive(eventlog)">$LOCALIZE[14111]$INFO[Control.GetLabel(21),[B] - ,[/B]]</value>
-		<value condition="Window.IsActive(home)">$LOCALIZE[10000,[B],[/B]]</value>
-		<value condition="Window.IsActive(MyWeather.xml)">$LOCALIZE[8,[B],[/B]]</value>
+		<value condition="Window.IsActive(settings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(profiles) | Window.IsActive(skinsettings)">[B]$LOCALIZE[5][/B]</value>
+		<value condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">[B]$LOCALIZE[19069][/B]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">[B]$LOCALIZE[19163][/B]</value>
+		<value condition="Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)">[B]$LOCALIZE[19040][/B]</value>
+		<value condition="Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)">[B]$LOCALIZE[137][/B]</value>
+		<value condition="Window.IsActive(eventlog)">[B]$LOCALIZE[14111][/B]$INFO[Control.GetLabel(21),[B] - ,[/B]]</value>
+		<value condition="Window.IsActive(home)">[B]$LOCALIZE[10000][/B]</value>
+		<value condition="Window.IsActive(MyWeather.xml)">[B]$LOCALIZE[8][/B]</value>
 		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 8011) + Control.IsVisible(50) + !String.IsEmpty(Container.Content)">$INFO[Container.Content,[B],[/B]]</value>
 		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 9010) + Control.IsVisible(50) + !String.IsEmpty(Container.Content)">$INFO[Container.Content,[B],[/B]]</value>
 		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 8011) + !Window.IsActive(addonbrowser)">$INFO[Container(9000).ListItem.Label,[B],[/B]]</value>
@@ -915,13 +921,13 @@
     	<value condition="Window.IsActive(home) + Window.IsVisible(virtualkeyboard)">$LOCALIZE[137]</value>
     	<value condition="Window.IsActive(home) + Window.IsVisible(busydialog)">$LOCALIZE[503]</value>
     	<value condition="Window.IsActive(home) | ControlGroup(97631).HasFocus">$VAR[LibraryStatsVar]</value>
-    	<value condition="String.StartsWith(ListItem.Path, plugin:) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
+    	<value condition="!Window.IsActive(movieinformation) + String.StartsWith(ListItem.Path, plugin:) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
     	<!-- 
 		<value condition="!Window.IsActive(movieinformation) + String.IsEmpty(Window(Home).Property(RefreshItem)">$INFO[Container.NumItems,, $LOCALIZE[31025]]</value>
 		-->
 	</variable>
     <variable name="TopbarFadeLabel1">
-    	<value condition="Window.IsVisible(shutdownmenu) + Window.IsVisible(VideoOSD.xml)">$LOCALIZE[13005,[B],[/B]]</value>
+    	<value condition="Window.IsVisible(shutdownmenu) + Window.IsVisible(VideoOSD.xml)">[B]$LOCALIZE[13005][/B]</value>
     	<value condition="[![[Player.Playing | Player.HasAudio | Player.HasVideo] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] | Window.IsActive(tvchannels)] + !String.IsEmpty(Weather.Plugin)">$INFO[Weather.Temperature,[B],[/B]]</value>
     	<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,[B],[/B]]$INFO[VideoPlayer.Episode,X,. ]$INFO[Player.Title,[LIGHT],[/LIGHT]]</value>
     	<value>$INFO[Player.Title,[B],[/B]]</value>
@@ -953,7 +959,7 @@
     	<value condition="Window.IsVisible(shutdownmenu)">$INFO[System.CurrentControl,[B],[/B]]</value>
     	<value condition="Window.IsVisible(script-skinshortcuts.xml) + !ControlGroup(97631).HasFocus">$VAR[SkinShortcutsDescriptionVar]</value>
     	<value condition="Window.IsVisible(Settings.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(9990).ListItem.Label,[B],[/B]]</value>
-    	<value condition="Window.IsVisible(SettingsSystemInfo.xml) + !ControlGroup(97631).HasFocus">$LOCALIZE[13271,[B],:[/B] ]$INFO[System.CPUUsage] $LOCALIZE[31309,[B],:[/B] ]$INFO[system.memory(used)]</value>
+    	<value condition="Window.IsVisible(SettingsSystemInfo.xml) + !ControlGroup(97631).HasFocus">[B]$LOCALIZE[13271][/B]$INFO[System.CPUUsage,, [B]$LOCALIZE[31309][/B] ]$INFO[system.memory(used)]</value>
     	<value condition="Window.IsVisible(SkinSettings.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(9990).ListItem.Label,[B],[/B] ]$VAR[SkinSettingsDescriptionVar]</value>
     	<value condition="Window.IsVisible(SettingsProfile.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(2).ListItem.Label,[B],[/B] ]$VAR[SkinSettingsDescriptionVar]</value>
     	<value condition="Window.IsVisible(SettingsCategory.xml) + !ControlGroup(97631).HasFocus">$INFO[Control.GetLabel(6),[B],[/B]]</value>
@@ -963,9 +969,10 @@
 		<value condition="Control.HasFocus(9010)">$INFO[Container(9010).ListItem.Label,[B],[/B]]</value>
 		<value condition="!String.IsEqual(Container(9000).ListItem.Property(widgetName),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + ControlGroup(97631).HasFocus">$INFO[Container(9000).ListItem.Property(widgetName),[B],[/B]]</value>
     	<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetName),weather) + Weather.IsFetched">$INFO[Window(weather).Property(Location),[B],[/B]]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetName),weather) + !Weather.IsFetched">$LOCALIZE[31909,[B],[/B]]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetName),weather) + !Weather.IsFetched">[B]$LOCALIZE[31909][/B]</value>
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation)"></value>
-		<value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[559,[B],[/B]]$INFO[Playlist.Length, , $LOCALIZE[31025]]</value>
+		<value condition="Window.IsVisible(SmartPlaylistRule.xml)">[B]$LOCALIZE[21422][/B] $INFO[System.CurrentControl]</value>
+		<value condition="Window.IsVisible(MyPlaylist.xml)">[B]$LOCALIZE[559][/B] $INFO[Playlist.Length,, $LOCALIZE[31025]]</value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$INFO[Control.GetLabel(12),[B],[/B]]</value>
 		<!--<value>WNVL-fail-report-bug</value>-->
 	</variable>
@@ -991,8 +998,8 @@
     	<value>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus),[I]","[/I]  ]$VAR[LabelNextAiredDetails]</value>
     </variable>
 	<variable name="LabelNextAiredDetails">
-		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextTitle),[B],[/B] ]$INFO[Window(Home).Property(NextAired.AirTime),, ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
-		<value condition="IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.LatestTitle),[B],[/B] ]$INFO[Window(Home).Property(NextAired.LatestDate),, ]$INFO[Window(Home).Property(NextAired.Status),[I],[/I]]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate))">$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label.short),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[LIGHT],[/LIGHT]]</value>
+		<value condition="IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title))">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),- $LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
 	</variable>
     <variable name="MovieInfoIconThumbImage">
     	<value condition="Window.IsVisible(home) + String.StartsWith(ListItem.Path, plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]info.png</value>
