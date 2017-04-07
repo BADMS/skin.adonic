@@ -297,6 +297,7 @@
 					<ondown>9000</ondown>
 					<orientation>vertical</orientation>
 				</control>
+				<!--
 				<control type="group">
 					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
 					<include content="MusicFlags">
@@ -307,6 +308,7 @@
 						<param name="orientation" value="horizontal" />
 					</include>
 				</control>
+				-->
 			</control>
 			<control type="group">
 				<left>20</left>
