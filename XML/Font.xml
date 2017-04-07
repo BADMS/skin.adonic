@@ -110,7 +110,6 @@
 		<font>
 			<name>font30</name>
 			<filename>MavenPro-Bold.ttf</filename>
-			<style>capitalize</style>
 			<size>45</size>
 		</font>
 		<font>
