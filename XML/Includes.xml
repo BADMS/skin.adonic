@@ -24,8 +24,6 @@
 	<expression name="isArtist">String.IsEqual(ListItem.DBTYPE,artist)</expression>
 	<expression name="isAlbum">String.IsEqual(ListItem.DBTYPE,album)</expression>
 	<expression name="isSong">String.IsEqual(ListItem.DBTYPE,song)</expression>
-	<expression name="isExInfo">String.Contains(ListItem.Path,plugin://script.extended)</expression>
-	<expression name="DVisExInfo">String.Contains(ListItem.Property(MovieInfoIconThumbImage),plugin://script.extended)</expression>
 	<include name="Furniture_AlphabetVertical">
 		<control type="group" id="6000">
 			<control type="image">

@@ -26,14 +26,19 @@
 				<height>6</height>
 				<info>System.Progressbar</info>
 			</control>
-			<control type="label">
-				<left>57</left>
+			<control type="button">
+				<left>42</left>
 				<top>494</top>
-				<width>1680</width>
+				<width>1715</width>
 				<height>45</height>
 				<font>font28_title</font>
 				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>15</textoffsetx>
 				<label>$INFO[Control.GetLabel(1),[B],[/B]]</label>
+				<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
+				<onclick>noop</onclick>
+				<texturefocus>blank.png</texturefocus>
 			</control>
 			<control type="textbox" id="9">
 				<left>57</left>

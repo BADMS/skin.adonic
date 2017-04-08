@@ -53,6 +53,12 @@
 			<property name="defaultID">pictures</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</property>
 			<property name="backgroundName">Global media fanart background</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetName">Similar Media</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetIcon">31313</property>
 			<onclick>ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<property name="list">Pictures</property>
@@ -71,6 +77,11 @@
 			<property name="defaultID">videos</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
 			<property name="backgroundName">Global videos background</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetName">On-the-air TV shows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
 			<onclick>ActivateWindow(Videos)</onclick>
 			<property name="path">ActivateWindow(Videos)</property>
 			<property name="list">Videos</property>
@@ -90,10 +101,10 @@
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</property>
 			<property name="backgroundName">Recent movies background</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="widgetType">movies</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<visible>Library.HasContent(Movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
@@ -399,6 +410,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Similar Media</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -416,6 +432,11 @@
 			<property name="list">videodb://musicvideos/titles/</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -432,6 +453,11 @@
 			<property name="list">Files</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -448,6 +474,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -466,9 +497,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -488,9 +519,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -510,9 +541,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
@@ -532,9 +563,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -554,9 +585,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -576,9 +607,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -1422,6 +1453,12 @@
 			<property name="defaultID">pictures</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</property>
 			<property name="backgroundName">Global media fanart background</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetName">Similar Media</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetIcon">31313</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),pictures)">ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<property name="list">Pictures</property>
@@ -1445,6 +1482,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Similar Media</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">pictures</property>
 		</item>
@@ -1458,6 +1500,11 @@
 			<property name="defaultID">videos</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
 			<property name="backgroundName">Global videos background</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetName">On-the-air TV shows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),videos)">ActivateWindow(Videos)</onclick>
 			<property name="path">ActivateWindow(Videos)</property>
 			<property name="list">Videos</property>
@@ -1482,6 +1529,11 @@
 			<property name="list">videodb://musicvideos/titles/</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
@@ -1499,6 +1551,11 @@
 			<property name="list">Files</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
@@ -1516,6 +1573,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
@@ -1530,10 +1592,10 @@
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</property>
 			<property name="backgroundName">Recent movies background</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="widgetType">movies</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<visible>Library.HasContent(Movies)</visible>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
@@ -1560,9 +1622,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -1583,9 +1645,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -1606,9 +1668,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -1629,9 +1691,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -1652,9 +1714,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -1675,9 +1737,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
@@ -2836,6 +2898,11 @@
 			<property name="list">Addons</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">pictures</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Similar Media</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -2870,6 +2937,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
+			<property name="widget">plugin://script.skin.helper.widgets/?action=medialisting</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Similar Media</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -2905,6 +2977,11 @@
 			<property name="list">videodb://musicvideos/titles/</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -2921,6 +2998,11 @@
 			<property name="list">Files</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -2937,6 +3019,11 @@
 			<property name="list">Addons</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -3005,6 +3092,11 @@
 			<property name="list">videodb://musicvideos/titles/</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -3021,6 +3113,11 @@
 			<property name="list">Files</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -3037,6 +3134,11 @@
 			<property name="list">Addons</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
+			<property name="widget">plugin://script.extendedinfo/tmdb</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=onairtvshows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetName">On-the-air TV shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -3106,9 +3208,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -3128,9 +3230,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -3150,9 +3252,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
@@ -3172,9 +3274,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -3194,9 +3296,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -3216,9 +3318,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -3340,9 +3442,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -3362,9 +3464,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -3384,9 +3486,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
@@ -3406,9 +3508,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -3428,9 +3530,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -3450,9 +3552,9 @@
 			<property name="group">movies</property>
 			<property name="widget">plugin://script.extendedinfo/tmdb</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=incinemamovies</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetName">In-cinemas</property>
+			<property name="widgetName">Upcoming</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -4874,7 +4976,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80113</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80113</param>
@@ -4889,7 +4991,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80114</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=onairtvshows</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80114</param>
@@ -4904,7 +5006,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80115</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=incinemamovies</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80115</param>
@@ -5019,36 +5121,6 @@
 			<param name="widgetLine2">widgetLine22</param>
 		</include>
 		<include content="WidgetBusyAnimation">
-			<param name="id">80113</param>
-		</include>
-		<control id="80113" type="fixedlist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
-			<include content="FixedWrapWidgetContent">
-				<param name="id">80113</param>
-			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="FixedWrapWidgetLabels">
-			<param name="id">80113</param>
-			<param name="widgetLine1">widgetLine13</param>
-			<param name="widgetLine2">widgetLine23</param>
-		</include>
-		<include content="WidgetBusyAnimation">
-			<param name="id">80114</param>
-		</include>
-		<control id="80114" type="fixedlist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
-			<include content="FixedWrapWidgetContent">
-				<param name="id">80114</param>
-			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="FixedWrapWidgetLabels">
-			<param name="id">80114</param>
-			<param name="widgetLine1">widgetLine14</param>
-			<param name="widgetLine2">widgetLine24</param>
-		</include>
-		<include content="WidgetBusyAnimation">
 			<param name="id">80117</param>
 		</include>
 		<control id="80117" type="fixedlist">
@@ -5107,6 +5179,36 @@
 			<param name="id">801110</param>
 			<param name="widgetLine1">widgetLine110</param>
 			<param name="widgetLine2">widgetLine210</param>
+		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80113</param>
+		</include>
+		<control id="80113" type="fixedlist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">80113</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">80113</param>
+			<param name="widgetLine1">widgetLine13</param>
+			<param name="widgetLine2">widgetLine23</param>
+		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80114</param>
+		</include>
+		<control id="80114" type="fixedlist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">80114</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">80114</param>
+			<param name="widgetLine1">widgetLine14</param>
+			<param name="widgetLine2">widgetLine24</param>
 		</include>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80115</param>
@@ -5197,7 +5299,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80113</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80113</param>
@@ -5212,7 +5314,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80114</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=onairtvshows</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80114</param>
@@ -5227,7 +5329,7 @@
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80115</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=incinemamovies</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80115</param>
@@ -5342,36 +5444,6 @@
 			<param name="widgetLine2">widgetLine22</param>
 		</include>
 		<include content="WidgetBusyAnimation">
-			<param name="id">80113</param>
-		</include>
-		<control id="80113" type="wraplist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
-			<include content="FixedWrapWidgetContent">
-				<param name="id">80113</param>
-			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="FixedWrapWidgetLabels">
-			<param name="id">80113</param>
-			<param name="widgetLine1">widgetLine13</param>
-			<param name="widgetLine2">widgetLine23</param>
-		</include>
-		<include content="WidgetBusyAnimation">
-			<param name="id">80114</param>
-		</include>
-		<control id="80114" type="wraplist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
-			<include content="FixedWrapWidgetContent">
-				<param name="id">80114</param>
-			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="FixedWrapWidgetLabels">
-			<param name="id">80114</param>
-			<param name="widgetLine1">widgetLine14</param>
-			<param name="widgetLine2">widgetLine24</param>
-		</include>
-		<include content="WidgetBusyAnimation">
 			<param name="id">80117</param>
 		</include>
 		<control id="80117" type="wraplist">
@@ -5430,6 +5502,36 @@
 			<param name="id">801110</param>
 			<param name="widgetLine1">widgetLine110</param>
 			<param name="widgetLine2">widgetLine210</param>
+		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80113</param>
+		</include>
+		<control id="80113" type="wraplist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">80113</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">80113</param>
+			<param name="widgetLine1">widgetLine13</param>
+			<param name="widgetLine2">widgetLine23</param>
+		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80114</param>
+		</include>
+		<control id="80114" type="wraplist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">80114</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">80114</param>
+			<param name="widgetLine1">widgetLine14</param>
+			<param name="widgetLine2">widgetLine24</param>
 		</include>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80115</param>
@@ -6005,7 +6107,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</content>
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80114</param>
@@ -6180,7 +6282,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=onairtvshows</content>
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80115</param>
@@ -6355,7 +6457,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=incinemamovies</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80116</param>
@@ -7585,356 +7687,6 @@
 			<content limit="$VAR[WidgetLimit]" target="" />
 		</control>
 		<include content="WidgetBusyAnimation">
-			<param name="id">80113</param>
-		</include>
-		<control id="7975" type="multiimage">
-			<left>-1920</left>
-			<width>219</width>
-			<height>316</height>
-			<imagepath background="true">$VAR[WidgetMultiPath]</imagepath>
-		</control>
-		<control type="image">
-			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>219</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80113).Column,8)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,7)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,6)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,5)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,4)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,3)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>322</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80113).Column,4)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,3)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>478</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control id="80113" type="panel">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
-			<animation condition="Container(80113).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>29</left>
-			<top>420</top>
-			<width>1864</width>
-			<height>310</height>
-			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
-			<onup condition="Control.IsVisible(9990)">9990</onup>
-			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
-			<onup condition="!Window.IsVisible(home)">50</onup>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
-			<onback>9000</onback>
-			<viewtype label="535">list</viewtype>
-			<focusposition>0</focusposition>
-			<pagecontrol>-</pagecontrol>
-			<preloaditems>2</preloaditems>
-			<scrolltime tween="quadratic">400</scrolltime>
-			<orientation>Horizontal</orientation>
-			<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath))</visible>
-			<autoscroll delay="10000" repeat="10000" time="10000">[Control.IsVisible(9003) + !Control.HasFocus(80113)] + !Skin.HasSetting(Disable.WidgetAutoScroll)</autoscroll>
-			<itemlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
-				<control type="group">
-					<control type="image">
-						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
-					</control>
-					<control type="image">
-						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
-				<control type="group">
-					<control type="button">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onfocus condition="!String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(tvshow.poster)],home)</onfocus>
-						<onfocus condition="String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(poster)],home)</onfocus>
-						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
-					</control>
-					<include>PanelFocusedItemZoom</include>
-					<control type="image">
-						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
-					</control>
-					<control type="image">
-						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
-					</control>
-				</control>
-			</focusedlayout>
-			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
-				<control type="group">
-					<control type="image">
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
-				<control type="group">
-					<include>PanelFocusedItemZoom</include>
-					<control type="button">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Icon],home)</onfocus>
-						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
-					</control>
-					<control type="image">
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-					</control>
-				</control>
-			</focusedlayout>
-			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
-				<control type="image">
-					<bordersize>6</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
-				<include>PanelFocusedItemZoom</include>
-				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<onfocus condition="!String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(tvshow.poster)],home)</onfocus>
-					<onfocus condition="String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(poster)],home)</onfocus>
-					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
-				</control>
-				<control type="image">
-					<bordersize>6</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
-				</control>
-			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="WidgetBusyAnimation">
-			<param name="id">80114</param>
-		</include>
-		<control id="7975" type="multiimage">
-			<left>-1920</left>
-			<width>219</width>
-			<height>316</height>
-			<imagepath background="true">$VAR[WidgetMultiPath]</imagepath>
-		</control>
-		<control type="image">
-			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>219</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80114).Column,8)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,7)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,6)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,5)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,4)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,3)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>322</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80114).Column,4)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,3)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>23</left>
-			<top>414</top>
-			<width>478</width>
-			<height>316</height>
-			<animation delay="200" effect="fade" time="320">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<fadetime>2000</fadetime>
-			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
-			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
-		</control>
-		<control id="80114" type="panel">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
-			<animation condition="Container(80114).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
-			<left>29</left>
-			<top>420</top>
-			<width>1864</width>
-			<height>310</height>
-			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
-			<onup condition="Control.IsVisible(9990)">9990</onup>
-			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
-			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
-			<onup condition="!Window.IsVisible(home)">50</onup>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
-			<onback>9000</onback>
-			<viewtype label="535">list</viewtype>
-			<focusposition>0</focusposition>
-			<pagecontrol>-</pagecontrol>
-			<preloaditems>2</preloaditems>
-			<scrolltime tween="quadratic">400</scrolltime>
-			<orientation>Horizontal</orientation>
-			<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath))</visible>
-			<autoscroll delay="10000" repeat="10000" time="10000">[Control.IsVisible(9003) + !Control.HasFocus(80114)] + !Skin.HasSetting(Disable.WidgetAutoScroll)</autoscroll>
-			<itemlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
-				<control type="group">
-					<control type="image">
-						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
-					</control>
-					<control type="image">
-						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
-				<control type="group">
-					<control type="button">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onfocus condition="!String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(tvshow.poster)],home)</onfocus>
-						<onfocus condition="String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(poster)],home)</onfocus>
-						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
-					</control>
-					<include>PanelFocusedItemZoom</include>
-					<control type="image">
-						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
-					</control>
-					<control type="image">
-						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
-					</control>
-				</control>
-			</focusedlayout>
-			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
-				<control type="group">
-					<control type="image">
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
-				<control type="group">
-					<include>PanelFocusedItemZoom</include>
-					<control type="button">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Icon],home)</onfocus>
-						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
-					</control>
-					<control type="image">
-						<bordersize>6</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-					</control>
-				</control>
-			</focusedlayout>
-			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
-				<control type="image">
-					<bordersize>6</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
-				<include>PanelFocusedItemZoom</include>
-				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<onfocus condition="!String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(tvshow.poster)],home)</onfocus>
-					<onfocus condition="String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(poster)],home)</onfocus>
-					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
-				</control>
-				<control type="image">
-					<bordersize>6</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
-				</control>
-			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="" />
-		</control>
-		<include content="WidgetBusyAnimation">
 			<param name="id">80117</param>
 		</include>
 		<control id="7975" type="multiimage">
@@ -8625,6 +8377,356 @@
 					<onfocus condition="!String.IsEmpty(Container(801110).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801110).ListItem.Art(tvshow.poster)],home)</onfocus>
 					<onfocus condition="String.IsEmpty(Container(801110).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801110).ListItem.Art(poster)],home)</onfocus>
 					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine110,, ]$VAR[widgetLine210,[LIGHT],[/LIGHT]])</onfocus>
+				</control>
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</focusedlayout>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80113</param>
+		</include>
+		<control id="7975" type="multiimage">
+			<left>-1920</left>
+			<width>219</width>
+			<height>316</height>
+			<imagepath background="true">$VAR[WidgetMultiPath]</imagepath>
+		</control>
+		<control type="image">
+			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>219</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80113).Column,8)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,7)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,6)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,5)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,4)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,3)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>322</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80113).Column,4)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,3)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>478</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80113).Column,2)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,1)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control id="80113" type="panel">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
+			<animation condition="Container(80113).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>29</left>
+			<top>420</top>
+			<width>1864</width>
+			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
+			<onup condition="Control.IsVisible(9990)">9990</onup>
+			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
+			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
+			<onup condition="!Window.IsVisible(home)">50</onup>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<onback>9000</onback>
+			<viewtype label="535">list</viewtype>
+			<focusposition>0</focusposition>
+			<pagecontrol>-</pagecontrol>
+			<preloaditems>2</preloaditems>
+			<scrolltime tween="quadratic">400</scrolltime>
+			<orientation>Horizontal</orientation>
+			<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath))</visible>
+			<autoscroll delay="10000" repeat="10000" time="10000">[Control.IsVisible(9003) + !Control.HasFocus(80113)] + !Skin.HasSetting(Disable.WidgetAutoScroll)</autoscroll>
+			<itemlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="!String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(tvshow.poster)],home)</onfocus>
+						<onfocus condition="String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(poster)],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<include>PanelFocusedItemZoom</include>
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<include>PanelFocusedItemZoom</include>
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Icon],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<include>PanelFocusedItemZoom</include>
+				<control type="button">
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onfocus condition="!String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(tvshow.poster)],home)</onfocus>
+					<onfocus condition="String.IsEmpty(Container(80113).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80113).ListItem.Art(poster)],home)</onfocus>
+					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine13,, ]$VAR[widgetLine23,[LIGHT],[/LIGHT]])</onfocus>
+				</control>
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</focusedlayout>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="WidgetBusyAnimation">
+			<param name="id">80114</param>
+		</include>
+		<control id="7975" type="multiimage">
+			<left>-1920</left>
+			<width>219</width>
+			<height>316</height>
+			<imagepath background="true">$VAR[WidgetMultiPath]</imagepath>
+		</control>
+		<control type="image">
+			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>219</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80114).Column,8)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,7)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,6)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,5)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,4)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,3)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>322</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80114).Column,4)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,3)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>478</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(80114).Column,2)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,1)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control id="80114" type="panel">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
+			<animation condition="Container(80114).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>29</left>
+			<top>420</top>
+			<width>1864</width>
+			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
+			<onup condition="Control.IsVisible(9990)">9990</onup>
+			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
+			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
+			<onup condition="!Window.IsVisible(home)">50</onup>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<onback>9000</onback>
+			<viewtype label="535">list</viewtype>
+			<focusposition>0</focusposition>
+			<pagecontrol>-</pagecontrol>
+			<preloaditems>2</preloaditems>
+			<scrolltime tween="quadratic">400</scrolltime>
+			<orientation>Horizontal</orientation>
+			<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath))</visible>
+			<autoscroll delay="10000" repeat="10000" time="10000">[Control.IsVisible(9003) + !Control.HasFocus(80114)] + !Skin.HasSetting(Disable.WidgetAutoScroll)</autoscroll>
+			<itemlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="!String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(tvshow.poster)],home)</onfocus>
+						<onfocus condition="String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(poster)],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<include>PanelFocusedItemZoom</include>
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<include>PanelFocusedItemZoom</include>
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Icon],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<include>PanelFocusedItemZoom</include>
+				<control type="button">
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onfocus condition="!String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(tvshow.poster)],home)</onfocus>
+					<onfocus condition="String.IsEmpty(Container(80114).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(80114).ListItem.Art(poster)],home)</onfocus>
+					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine14,, ]$VAR[widgetLine24,[LIGHT],[/LIGHT]])</onfocus>
 				</control>
 				<control type="image">
 					<bordersize>6</bordersize>

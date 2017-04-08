@@ -628,13 +628,12 @@
 		<value>$INFO[ListItem.Year,[B],[/B] ]$INFO[ListItem.RatingAndVotes,, ]$INFO[ListItem.Duration,[LIGHT][LOWERCASE], $LOCALIZE[12391][/LOWERCASE][/LIGHT]]</value>
 	</variable>
 	<variable name="HomeNowPlayingThumbVar">
-		<value condition="[![[Player.Playing | Player.HasAudio | Player.HasVideo] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] | Window.IsActive(tvchannels)] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
+		<value condition="![[Player.Playing | Player.HasAudio | Player.HasVideo] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
 		<value condition="[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="VideoPlayer.Content(livetv) + !String.IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
-		<value condition="[Player.Playing | Player.HasVideo | Player.HasAudio] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Art(thumb)]</value>
+		<value condition="[Player.Playing | Player.HasVideo | Player.HasAudio] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + !String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(Weather.Plugin) + !Weather.IsFetched">$INFO[Skin.String(MenuDefaultIconsPath)]none.png</value>
+		<value condition="[Player.Playing | Player.HasAudio | Player.HasVideo] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
 		<value>$INFO[Skin.String(MenuDefaultIconsPath)]clock.png</value>
 	</variable>
 	<variable name="LibColorHighlightVar">
@@ -675,6 +674,10 @@
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(textcolor.name))">$INFO[Skin.String(textcolor.name)]</value>
 		<value>maintext</value>
+	</variable>
+	<variable name="ColorBWVar">
+		<value condition="Integer.IsGreater(Window(home).Property(BWImageColorFIVE),186)">white</value>
+		<value>black</value>
 	</variable>
 
 

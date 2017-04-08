@@ -800,7 +800,6 @@
 						<align>center</align>
 						<font>font15_textbox</font>
 						<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
-						<include>ShowCaseInfoPanelButtonsValues</include>
 					</control>
 					<control type="textbox">
 						<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>

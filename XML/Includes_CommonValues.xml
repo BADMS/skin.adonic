@@ -44,15 +44,6 @@
 		<focusedlayout height="100" width="100" />
 	</include>
 	<!-- Buttons -->
-	<include name="ButtonTopbarCommonvalues">
-		<width>60</width>
-		<align>center</align>
-		<aligny>top</aligny>
-		<textoffsety>3</textoffsety>
-		<font>IconSmall</font>
-		<texturenofocus>-</texturenofocus>
-		<alttexturenofocus>-</alttexturenofocus>
-	</include>
 	<include name="ButtonCommonValues">
 		<width>400</width>
 		<textwidth>300</textwidth>
@@ -72,7 +63,7 @@
 	<include name="Objects_KeyOffVars">
 		<textoffsety>32</textoffsety>
 		<align>center</align>
-		<font>font15</font>
+		<font>font15_keyboard</font>
 		<selectedcolor>$VAR[ListColorHighlightVar]</selectedcolor>
 		<texturenofocus colordiffuse="white11">white.png</texturenofocus>
 		<alttexturenofocus colordiffuse="$VAR[ColorMenuVar]">white.png</alttexturenofocus>
@@ -92,25 +83,6 @@
 		<width>158.66</width>
 		<height>60</height>
 		<include>Objects_KeyOffVars</include>
-	</include>
-	<include name="ShowCaseInfoPanelButtonsValues">
-		<height>90</height>
-		<width>501</width>
-		<textoffsetx>15</textoffsetx>
-		<aligny>top</aligny>
-		<font>font14</font>
-		<texturefocus>blank.png</texturefocus>
-		<texturenofocus>blank.png</texturenofocus>
-		<onclick>noop</onclick>
-	</include>
-	<include name="SettingsPanelButtonsValues">
-		<height>90</height>
-		<width>1256</width>
-		<textoffsetx>15</textoffsetx>
-		<textoffsety>-4</textoffsety>
-		<aligny>top</aligny>
-		<font>font15</font>
-		<onclick>noop</onclick>
 	</include>
 	<!-- Media Flags -->
 	<include name="MediaFlagVars">
