@@ -11,7 +11,7 @@
 	</animation>
 	<controls>
 		<control type="group">
-            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
 			<left>0</left>
 			<top>604</top>
 			<control type="image" id="999">

@@ -1383,6 +1383,36 @@
 					<visible>!Window.IsVisible(VideoOSD.xml)</visible>
 					<visible>!Window.IsVisible(MusicOSD.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
+					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+				</control>
+				<control type="group">
+					<visible>Window.IsVisible(DialogButtonMenu.xml)</visible>
+					<control type="button">
+						<left>102</left>
+						<top>17</top>
+						<width>1715</width>
+						<height>45</height>
+						<font>font28_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>15</textoffsetx>
+						<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
+						<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
+						<onclick>noop</onclick>
+						<texturefocus>blank.png</texturefocus>
+					</control>
+					<control type="label">
+						<top>59</top>
+						<left>117</left>
+						<width min="1228" max="1678">auto</width>
+						<align>left</align>
+						<height>45</height>
+						<font>topbar</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorMenuVar]</textcolor>
+						<label>$VAR[WidgetNameLabelVar,, ]$VAR[HomeHeaderSubline]</label>
+					</control>
 				</control>
 				<control type="button">
 					<left>102</left>
@@ -1442,6 +1472,7 @@
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Control.IsVisible(12346)</visible>
+					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
@@ -1460,6 +1491,7 @@
 					<label>$VAR[WidgetNameLabelVar]</label>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
+					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
