@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol>9010</defaultcontrol>
+	<onunload>ClearProperty(RefreshItem,Home)</onunload>
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
@@ -47,7 +48,7 @@
 				<height>45</height>
 				<font>topbar</font>
 				<align>left</align>
-				<label>-</label>
+				<label />
 				<autoscroll time="3000" delay="40000000" repeat="5000">false</autoscroll>
 			</control>
 			<control type="grouplist" id="9001">

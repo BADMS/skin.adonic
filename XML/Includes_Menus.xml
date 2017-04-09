@@ -133,7 +133,26 @@
 				<visible>!Window.IsActive(movieinformation)</visible>
 				<visible>!Window.IsActive(MyWeather.xml)</visible>
 			</item>
-			<!--<item id="90002"><label>10000</label><label2>$LOCALIZE[10000]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb><onclick>Action(back)</onclick><onclick>ActivateWindow(Home)</onclick><visible>!Window.IsActive(home)</visible></item><item id="90003"><label>210</label><label2>$LOCALIZE[210]</label2><icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon><thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb><onclick>Action(back)</onclick><onclick>Action(back)</onclick><visible>!Window.IsActive(home)</visible></item>-->
+			<!--
+			<item id="90002">
+				<label>10000</label>
+				<label2>$LOCALIZE[10000]</label2>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
+				<onclick>Action(back)</onclick>
+				<onclick>ActivateWindow(Home)</onclick>
+				<visible>!Window.IsActive(home)</visible>
+			</item>
+			<item id="90003">
+				<label>210</label>
+				<label2>$LOCALIZE[210]</label2>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
+				<onclick>Action(back)</onclick>
+				<onclick>Action(back)</onclick>
+				<visible>!Window.IsActive(home)</visible>
+			</item>
+			-->
 			<include>skinshortcuts-mainmenu</include>
 		</content>
 	</include>

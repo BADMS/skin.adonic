@@ -103,6 +103,7 @@
 						<control type="label">
 							<width>190</width>
 							<height>62</height>
+							<align>right</align>
 							<font>font30</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
@@ -111,6 +112,7 @@
 							<left>190</left>
 							<width>970</width>
 							<height>62</height>
+							<align>left</align>
 							<font>font30</font>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -119,6 +121,7 @@
 						<control type="label">
 							<width>190</width>
 							<height>62</height>
+							<align>right</align>
 							<font>font30</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
@@ -127,6 +130,7 @@
 							<left>190</left>
 							<width>970</width>
 							<height>62</height>
+							<align>left</align>
 							<font>font30</font>
 							<label>$INFO[ListItem.Label]</label>
 						</control>

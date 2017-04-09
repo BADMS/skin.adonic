@@ -180,12 +180,11 @@
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<textoffsetx>0</textoffsetx>
-		<texturefocus colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[MenuListColorHighlightVar]">listselect_fo.png</texturefocus>
 		<sliderwidth>150</sliderwidth>
 		<sliderheight>20</sliderheight>
-		<texturesliderbar colordiffuse="$VAR[ColorHighlightVar]">osd_slider_bg.png</texturesliderbar>
-		<textureslidernib colordiffuse="$VAR[ColorHighlightVar]">osd_slider_nibNF.png</textureslidernib>
+		<texturesliderbar colordiffuse="$VAR[MenuListColorHighlightVar]">osd_slider_bg.png</texturesliderbar>
+		<textureslidernib colordiffuse="$VAR[MenuListColorHighlightVar]">osd_slider_nibNF.png</textureslidernib>
 		<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
 		<font>font14</font>
 		<textcolor>$VAR[ColorMenuVar]</textcolor>

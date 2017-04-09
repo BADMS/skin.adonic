@@ -139,6 +139,8 @@
 				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 			</control>
@@ -171,16 +173,17 @@
 				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
-				<label>-</label>
-				<textcolor>$VAR[ColorHighlightVar]</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label />
 			</control>
 			<control type="sliderex" id="8">
 				<description>Default Slider</description>
 				<width>1320</width>
 				<height>62</height>
+				<align>left</align>
+				<aligny>center</aligny>
 				<font>font30</font>
-				<textcolor>$VAR[ColorTextVar]</textcolor>
-				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 			</control>
 		</control>
 	</controls>

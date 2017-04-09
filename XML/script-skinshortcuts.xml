@@ -155,7 +155,7 @@
 				<pagecontrol>60</pagecontrol>
 				<onleft>211</onleft>
 				<onright>60</onright>
-				<onup>2111</onup>
+				<onup>90001</onup>
 				<align>left</align>
 				<ondown>90001</ondown>
 				<control type="button" id="2111">

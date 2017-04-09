@@ -90,7 +90,7 @@
 				<width>1380</width>
 				<height>62</height>
 				<font>font30</font>
-				<label>-</label>
+				<label />
 				<textcolor>$VAR[ColorHighlightVar]</textcolor>
 				<textoffsetx>15</textoffsetx>
 			</control>

@@ -5,6 +5,7 @@
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="300" delay="0" start="100" end="0" tween="cubic" reversible="true" condition="Control.HasFocus(9010)">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsActive(DialogConfirm.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogMediaSource.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogContextMenu.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogAddonInfo.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogAddonSettings.xml)" reversible="false">Conditional</animation>

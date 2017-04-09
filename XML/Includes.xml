@@ -1633,6 +1633,69 @@
 						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>IconMedium</font>
+						<textcolor>orange</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.ArtistsCount))</visible>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<align>left</align>
+						<height>45</height>
+						<font>topbar</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<label>$INFO[Window(Home).Property(Music.ArtistsCount)]</label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.ArtistsCount))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>IconMedium</font>
+						<textcolor>orange</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.AlbumsCount))</visible>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<align>left</align>
+						<height>45</height>
+						<font>topbar</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<label>$INFO[Window(Home).Property(Music.AlbumsCount)]</label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.AlbumsCount))</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>IconMedium</font>
+						<textcolor>orange</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.SongsCount))</visible>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<align>left</align>
+						<height>45</height>
+						<font>topbar</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<label>$INFO[Window(Home).Property(Music.SongsCount)]</label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + Container.Content() + !String.IsEmpty(Window(Home).Property(Music.SongsCount))</visible>
+					</control>
+					<control type="label">
 						<width min="1228" max="1678">auto</width>
 						<align>left</align>
 						<height>45</height>

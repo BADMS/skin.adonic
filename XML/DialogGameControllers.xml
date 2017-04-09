@@ -1,153 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol>3</defaultcontrol>
-    <coordinates>
-        <left>148</left>
-        <top>100</top>
-    </coordinates>
-    <include>dialogeffect</include>
-    <controls>
-        <include content="DialogBackgroundCommons">
-            <param name="DialogBackgroundWidth" value="1624" />
-            <param name="DialogBackgroundHeight" value="880" />
-            <param name="DialogHeaderLabel" value="35058" />
-            <param name="DialogHeaderId" value="2" />
-        </include>
-        <control type="group" id="9000">
-            <left>0</left>
-            <top>90</top>
-            <control type="label">
-                <description>Controller types heading</description>
-                <top>8</top>
-                <left>30</left>
-                <width>330</width>
-                <height>40</height>
-                <font>font14</font>
-                <label>35050</label>
-                <align>center</align>
-                <textcolor>$VAR[ColorHighlightVar]</textcolor>
-            </control>
-            <control type="scrollbar" id="30">
-                <left>18</left>
-                <top>60</top>
-                <width>10</width>
-                <height>600</height>
-                <onleft>9001</onleft>
-                <onright>3</onright>
-                <ondown>3</ondown>
-                <onup>3</onup>
-                <orientation>vertical</orientation>
-            </control>
-            <control type="grouplist" id="3">
-                <description>Controller types grouplist</description>
-                <left>30</left>
-                <top>60</top>
-                <width>330</width>
-                <height>600</height>
-                <onleft>30</onleft>
-                <onright>5</onright>
-                <onup>3</onup>
-                <ondown>3</ondown>
-                <pagecontrol>30</pagecontrol>
-            </control>
-            <control type="button" id="10">
-                <description>Default controller types button</description>
-                <height>60</height>
-                <width>330</width>
-                <align>center</align>
-                <aligny>center</aligny>
-                <font>font12_title</font>
-                <pulseonselect>false</pulseonselect>
-            </control>
-            <control type="gamecontroller" id="31">
-                <left>452</left>
-                <top>125</top>
-                <width>720</width>
-                <height>429</height>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="label">
-                <description>Feature types heading</description>
-                <top>8</top>
-                <left>1264</left>
-                <width>330</width>
-                <height>40</height>
-                <font>font14</font>
-                <label>35059</label>
-                <align>center</align>
-                <textcolor>$VAR[ColorHighlightVar]</textcolor>
-            </control>
-            <control type="scrollbar" id="50">
-                <left>1596</left>
-                <top>60</top>
-                <width>10</width>
-                <height>600</height>
-                <onleft>5</onleft>
-                <onright>9001</onright>
-                <ondown>5</ondown>
-                <onup>5</onup>
-                <orientation>vertical</orientation>
-            </control>
-            <control type="grouplist" id="5">
-                <description>Feature types grouplist</description>
-                <left>1264</left>
-                <top>60</top>
-                <width>330</width>
-                <height>600</height>
-                <onleft>3</onleft>
-                <onright>50</onright>
-                <onup>5</onup>
-                <ondown>5</ondown>
-                <pagecontrol>50</pagecontrol>
-            </control>
-            <control type="button" id="7">
-                <description>Default feature types button</description>
-                <height>60</height>
-                <width>330</width>
-                <align>center</align>
-                <aligny>center</aligny>
-                <font>font12_title</font>
-                <pulseonselect>false</pulseonselect>
-            </control>
-        </control>
-        <control type="grouplist" id="9001">
-            <left>30</left>
- 			<top>790</top>
- 			<width>1564</width>
- 			<height>60</height>
- 			<align>center</align>
- 			<itemgap>0</itemgap>
- 			<onup>5</onup>
- 			<ondown>5</ondown>
- 			<orientation>horizontal</orientation>
-            <control type="button" id="18">
-                <description>Ok Button</description>
-                <width>391</width>
-                <label>186</label>
-                <font>font15_title</font>
-				<align>center</align>
-            </control>
-            <control type="button" id="19">
-                <description>Reset Button</description>
-                <width>391</width>
-                <label>10035</label>
-                <font>font15_title</font>
-				<align>center</align>
-            </control>
-            <control type="button" id="20">
-                <description>Link to install more controllers</description>
-                <width>391</width>
-                <label>$LOCALIZE[21452]</label>
-                <font>font15_title</font>
-				<align>center</align>
-            </control>
-            <control type="button" id="17">
-                <description>Help button</description>
-                <width>391</width>
-                <label>$LOCALIZE[10043]</label>
-                <font>font15_title</font>
-				<align>center</align>
-            </control>
-        </control>
-    </controls>
+	<defaultcontrol>3</defaultcontrol>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+		<origin x="60" y="0">true</origin>
+	</coordinates>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" delay="300" end="100" time="300" />
+	</animation>
+	<controls>
+		<control type="group">
+			<animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
+			<left>0</left>
+			<top>604</top>
+			<include content="DialogBackgroundCommonsFake">
+				<param name="DialogBackgroundWidth" value="1346" />
+				<param name="DialogBackgroundHeight" value="680" />
+				<param name="DialogHeaderLabel" value="-" />
+				<param name="DialogHeaderId" value="2" />
+			</include>
+			<control type="group" id="9000">
+				<control type="scrollbar" id="30">
+					<left>60</left>
+					<width>10</width>
+					<height>310</height>
+					<onleft>SetFocus(9005)</onleft>
+					<onright>3</onright>
+					<showonepage>true</showonepage>
+				</control>
+				<control type="grouplist" id="3">
+					<description>Controller types grouplist</description>
+					<left>70</left>
+					<width>340</width>
+					<height>310</height>
+					<itemgap>0</itemgap>
+					<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="Window.IsActive(textviewer)">Conditional</animation>
+					<onleft>30</onleft>
+					<onright>5</onright>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<pagecontrol>30</pagecontrol>
+				</control>
+				<control type="button" id="10">
+					<description>Default controller types button</description>
+					<width>340</width>
+					<height>62</height>
+					<align>left</align>
+					<font>font30</font>
+				<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
+				<textcolor>$VAR[ColorMenuVar]</textcolor>
+					<pulseonselect>false</pulseonselect>
+				</control>
+				<control type="gamecontroller" id="31">
+					<left>640</left>
+					<width>520</width>
+					<height>310</height>
+					<aspectratio>keep</aspectratio>
+					<align>center</align>
+				</control>
+				<control type="scrollbar" id="50">
+					<left>1730</left>
+					<width>10</width>
+					<height>310</height>
+					<onleft>5</onleft>
+					<onright>Action(back)</onright>
+					<orientation>vertical</orientation>
+					<showonepage>true</showonepage>
+				</control>
+				<control type="grouplist" id="5">
+					<description>Feature types grouplist</description>
+					<left>1390</left>
+					<width>340</width>
+					<height>310</height>
+					<onleft>3</onleft>
+					<onright>50</onright>
+					<onup>5</onup>
+					<ondown>5</ondown>
+					<pagecontrol>50</pagecontrol>
+				</control>
+				<control type="button" id="7">
+					<description>Default feature types button</description>
+					<height>62</height>
+					<width>340</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font30</font>
+				<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
+				<textcolor>$VAR[ColorMenuVar]</textcolor>
+					<pulseonselect>false</pulseonselect>
+				</control>
+			</control>
+			<control type="grouplist" id="9005">
+				<left>-30</left>
+				<width>62</width>
+				<height>310</height>
+				<onup>9005</onup>
+				<onleft>9001</onleft>
+				<onright>3</onright>
+				<ondown>9005</ondown>
+				<align>top</align>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+				<control type="button" id="111">
+					<description>OK Button</description>
+					<left>-30</left>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(18)</onclick>
+					<onleft>Action(back)</onleft>
+					<onright>3</onright>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
+				</control>
+				<control type="button" id="112">
+					<description>Defaults Button</description>
+					<left>-30</left>
+					<top>62</top>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(19)</onclick>
+					<onleft>Action(back)</onleft>
+					<onright>3</onright>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
+				</control>
+				<control type="button" id="113">
+					<description>More Button</description>
+					<left>-30</left>
+					<top>124</top>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(20)</onclick>
+					<onleft>Action(back)</onleft>
+					<onright>3</onright>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
+				</control>
+				<control type="button" id="114">
+					<description>Help Button</description>
+					<left>-30</left>
+					<top>124</top>
+					<width>62</width>
+					<height>62</height>
+					<label></label>
+					<align>center</align>
+					<font>IconButton</font>
+					<onclick>SendClick(17)</onclick>
+					<onleft>Action(back)</onleft>
+					<onright>3</onright>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
+				</control>
+			</control>
+		</control>
+	</controls>
 </window>
