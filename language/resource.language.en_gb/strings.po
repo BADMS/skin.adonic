@@ -1139,6 +1139,10 @@ msgctxt "#31417"
 msgid "Pro"
 msgstr ""
 
+msgctxt "#31418"
+msgid "Pro"
+msgstr ""
+
 #empty strings from id 31417 to 31501
 
 msgctxt "#31502"
@@ -1357,11 +1361,11 @@ msgid "Setup section backgrounds"
 msgstr ""
 
 msgctxt "#31948"
-msgid "Arial"
+msgid "Horseferry"
 msgstr ""
 
 msgctxt "#31949"
-msgid "Roboto 2014"
+msgid "Roboto"
 msgstr ""
 
 #empty strings from id 31950 to 31957

@@ -861,10 +861,11 @@
 		<value condition="Window.IsActive(MyWeather.xml)">[B]$LOCALIZE[8][/B]</value>
 		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 8011) + Control.IsVisible(50) + !String.IsEmpty(Container.Content)">$INFO[Container.Content,[B],[/B]]</value>
 		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 9010) + Control.IsVisible(50) + !String.IsEmpty(Container.Content)">$INFO[Container.Content,[B],[/B]]</value>
-		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 8011) + !Window.IsActive(addonbrowser)">$INFO[Container(9000).ListItem.Label,[B],[/B]]</value>
-		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 9010) + !Window.IsActive(addonbrowser)">$INFO[Container(9000).ListItem.Label,[B],[/B]]</value>
+		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 8011) + !Window.IsActive(addonbrowser) + !String.IsEmpty(Container(9000).ListItem.Label)">$INFO[Container(9000).ListItem.Label,[B],[/B]]</value>
+		<value condition="!Window.IsActive(home) + String.StartsWith(System.CurrentControlID, 9010) + !Window.IsActive(addonbrowser) + !String.IsEmpty(Container(9000).ListItem.Label)">$INFO[Container(9000).ListItem.Label,[B],[/B]]</value>
 		<value condition="!String.IsEmpty(Container.Content)">$INFO[Container.Content,[B],[/B]]</value>
-		<value>$INFO[System.CurrentWindow,[B],[/B]]</value>
+		<value condition="!String.IsEmpty(System.CurrentWindow)">$INFO[System.CurrentWindow,[B],[/B]]</value>
+		<value>$LOCALIZE[31004,[B],[/B]]</value>
 	</variable>
     <variable name="HeaderSubLabel">
     	<!-- 
