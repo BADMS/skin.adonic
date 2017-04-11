@@ -694,7 +694,7 @@
 		<value>highlight</value>
 	</variable>
 	<variable name="ColorMenuVar">
-		<value condition="Window.IsVisible(DialogAddonSettings.xml)">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
+		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + Window.IsVisible(DialogAddonSettings.xml)">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
@@ -946,7 +946,7 @@
     	<value condition="!String.IsEmpty(Player.Title) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Time,[B],[/B]] / $INFO[Player.Duration]</value>
     </variable>
     <variable name="TopbarOSDLabel">
-    	<value condition="!String.IsEmpty(Player.Title) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Time,[B],[/B]] $INFO[Player.TimeRemaining,[,]] $INFO[Player.Duration,[LIGHT],[/LIGHT]]</value>
+    	<value condition="!String.IsEmpty(Player.Title) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Time,[LIGHT],[/LIGHT]] $INFO[Player.TimeRemaining,[,]] $INFO[Player.Duration,[B],[/B]]</value>
     </variable>
 	<variable name="WidgetNameLabelVar">
     	<value condition="!ControlGroup(97631).HasFocus + Window.IsVisible(shutdownmenu)">$INFO[System.CurrentControl,[B],[/B]]</value>

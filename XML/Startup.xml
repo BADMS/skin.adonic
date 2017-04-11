@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(adonic_loaded,1,home)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload>Skin.SetBool(Overlay.Unwatched)</onload>

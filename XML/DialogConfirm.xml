@@ -104,6 +104,7 @@
 						<icon>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}yes.png</icon>
 						<thumb>http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}yes.png</thumb>
 						<onclick>SendClick(11)</onclick>
+						<onclick condition="String.IsEmpty(Window(home).Property(adonic_loaded))">ReplaceWindow(StartUp.xml)</onclick>
 						<visible>Control.IsVisible(11)</visible>
 					</item>
 					<item id="2">

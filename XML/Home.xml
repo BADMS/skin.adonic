@@ -13,6 +13,9 @@
 	<onunload>ClearProperty(ImageFIVE,Home)</onunload>
 	<onunload>ClearProperty(ImageFilterFIVE,Home)</onunload>
 	<!--
+	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">ReplaceWindow(StartUp.xml)</onload>
+	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">AlarmClock(adonic_loaded,Action(back),00:02,silent)</onload>
+	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">SetProperty(adonic_loaded,1,home)</onload>
 	<onload>SetProperty(NINE_manual_set,"info=pixelrandom,id=special://skin/extras/misc/empty.jpg,prefix=cbx",home)</onload>
 	<onload condition="Window.Previous(startup)">XBMC.PlayMedia(special://skin/extras/adonic-intro-kodi.mp4)</onload>
 	<onload condition="System.HasAddon(script.randomart)">RunScript(script.randomart,info=randomart_color,prefix=$INFO[System.Time(hh:mm:ss)])</onload>
