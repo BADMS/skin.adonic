@@ -16,17 +16,36 @@
 			<property name="widgetType" />
 			<property name="widgetTarget" />
 			<property name="widgetPath" />
-			<visible>!IsEmpty(Weather.Plugin)</visible>
+			<visible>!String.IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<property name="list">Weather</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">weather</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common menu item</label2>
+			<icon>special://skin/extras/icons/favourite.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">1036</property>
+			<property name="translatedPath">ActivateWindow(Favourites)</property>
+			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
+			<property name="backgroundName">Global videos background</property>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-1036</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<label>$LOCALIZE[13009]</label>
 			<label2>Kodi Command</label2>
 			<icon>special://skin/extras/icons/power.png</icon>
@@ -40,13 +59,13 @@
 			<onclick>Quit</onclick>
 			<property name="path">Quit</property>
 			<property name="list">Quit</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-13009</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<label>Home</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/wand.png</icon>
@@ -59,13 +78,13 @@
 			<onclick>ActivateWindow(Home)</onclick>
 			<property name="path">ActivateWindow(Home)</property>
 			<property name="list">Home</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">home</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<label>$LOCALIZE[10002]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultPicture.png</icon>
@@ -77,13 +96,13 @@
 			<onclick>ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<property name="list">Pictures</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultVideo.png</icon>
@@ -95,13 +114,13 @@
 			<onclick>ActivateWindow(Videos)</onclick>
 			<property name="path">ActivateWindow(Videos)</property>
 			<property name="list">Videos</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultMovies.png</icon>
@@ -119,13 +138,13 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -135,21 +154,21 @@
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.TopRatedShows)]</property>
 			<property name="backgroundName">Top Rated tvshows (extendedinfo)</property>
 			<property name="widget">Addon</property>
-			<property name="widgetName">airing today</property>
-			<property name="widgetType">videos</property>
+			<property name="widgetName">Popular Shows</property>
+			<property name="widgetType">movies</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
 			<visible>Library.HasContent(TVShows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<label>$LOCALIZE[10005]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultMusicAlbums.png</icon>
@@ -161,13 +180,13 @@
 			<onclick>ActivateWindow(Music)</onclick>
 			<property name="path">ActivateWindow(Music)</property>
 			<property name="list">Music</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<label>$LOCALIZE[10001]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/program.png</icon>
@@ -179,13 +198,13 @@
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">programs</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
 			<label>$ADDON[script.skinshortcuts 32032]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -196,13 +215,13 @@
 			<onclick>XBMC.PlayDVD()</onclick>
 			<property name="path">XBMC.PlayDVD()</property>
 			<property name="list">XBMC.PlayDVD()</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">dvd</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
 			<label>$LOCALIZE[10004]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/settings.png</icon>
@@ -214,7 +233,7 @@
 			<onclick>ActivateWindow(Settings)</onclick>
 			<property name="path">ActivateWindow(Settings)</property>
 			<property name="list">Settings</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -224,7 +243,7 @@
 	<include name="skinshortcuts-submenu">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[1039]</label>
 			<label2>$ADDON[script.skinshortcuts 32020]</label2>
 			<icon>DefaultAddonPicture.png</icon>
@@ -234,62 +253,62 @@
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Pictures,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultMusicVideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<property name="defaultID">musicvideos</property>
-			<visible>[Library.HasContent(MusicVideos)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://musicvideos/titles/,return)</property>
 			<property name="list">videodb://musicvideos/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[1037]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonVideo.png</icon>
 			<thumb />
 			<property name="labelID">1037</property>
 			<property name="defaultID">1037</property>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20386]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
@@ -299,7 +318,7 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
 			<property name="list">videodb://recentlyaddedmovies/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -310,18 +329,18 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20434]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>special://skin/extras/icons/set.png</icon>
 			<thumb />
 			<property name="labelID">20434</property>
 			<property name="defaultID">20434</property>
-			<visible>[Library.HasContent(MovieSets)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
 			<property name="list">videodb://movies/sets/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -332,18 +351,18 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultMovieTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -354,18 +373,18 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
 			<property name="list">videodb://movies/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -376,18 +395,18 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
 			<property name="list">videodb://movies/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -398,18 +417,18 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/actors/,return)</property>
 			<property name="list">videodb://movies/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -420,7 +439,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20387]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedEpisodes.png</icon>
@@ -430,122 +449,122 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
 			<property name="list">videodb://recentlyaddedepisodes/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultTVShowTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
 			<property name="list">videodb://tvshows/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
 			<property name="list">videodb://tvshows/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/actors/,return)</property>
 			<property name="list">videodb://tvshows/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[15100]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
@@ -555,29 +574,29 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[1038]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonMusic.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">11</property>
 			<label>$ADDON[script.skinshortcuts 32033]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -587,13 +606,13 @@
 			<onclick>EjectTray()</onclick>
 			<property name="path">EjectTray()</property>
 			<property name="list">EjectTray()</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[7]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/file.png</icon>
@@ -603,13 +622,13 @@
 			<onclick>ActivateWindow(FileManager)</onclick>
 			<property name="path">ActivateWindow(FileManager)</property>
 			<property name="list">FileManager</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/actor.png</icon>
@@ -619,13 +638,13 @@
 			<onclick>ActivateWindow(Profiles)</onclick>
 			<property name="path">ActivateWindow(Profiles)</property>
 			<property name="list">Profiles</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[10007]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/harddisk.png</icon>
@@ -635,24 +654,24 @@
 			<onclick>ActivateWindow(SystemInfo)</onclick>
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[14111]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/info.png</icon>
 			<thumb />
 			<property name="labelID">14111</property>
 			<property name="defaultID">14111</property>
-			<visible>[system.getbool(eventlog.enabled)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>[system.getbool(eventlog.enabled)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
 			<property name="path">ActivateWindow(EventLog,events://,return)</property>
 			<property name="list">events://</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -673,17 +692,36 @@
 			<property name="widgetType" />
 			<property name="widgetTarget" />
 			<property name="widgetPath" />
-			<visible>!IsEmpty(Weather.Plugin)</visible>
+			<visible>!String.IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<property name="list">Weather</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">weather</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common menu item</label2>
+			<icon>special://skin/extras/icons/favourite.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">1036</property>
+			<property name="translatedPath">ActivateWindow(Favourites)</property>
+			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
+			<property name="backgroundName">Global videos background</property>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-1036</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<label>$LOCALIZE[13009]</label>
 			<label2>Kodi Command</label2>
 			<icon>special://skin/extras/icons/power.png</icon>
@@ -697,13 +735,13 @@
 			<onclick>Quit</onclick>
 			<property name="path">Quit</property>
 			<property name="list">Quit</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-13009</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<label>Home</label>
 			<label2>Custom item</label2>
 			<icon>special://skin/extras/icons/wand.png</icon>
@@ -716,13 +754,13 @@
 			<onclick>ActivateWindow(Home)</onclick>
 			<property name="path">ActivateWindow(Home)</property>
 			<property name="list">Home</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">home</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<label>$LOCALIZE[10002]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultPicture.png</icon>
@@ -731,10 +769,10 @@
 			<property name="defaultID">pictures</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</property>
 			<property name="backgroundName">Global media fanart background</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),pictures)">ActivateWindow(Pictures)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),pictures)">ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<property name="list">Pictures</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -742,7 +780,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[1039]</label>
 			<label2>$ADDON[script.skinshortcuts 32020]</label2>
 			<icon>DefaultAddonPicture.png</icon>
@@ -752,13 +790,13 @@
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Pictures,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),pictures)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">pictures</property>
 		</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultVideo.png</icon>
@@ -767,10 +805,10 @@
 			<property name="defaultID">videos</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground2)]</property>
 			<property name="backgroundName">Global Movies &amp; TvShows background</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),videos)">ActivateWindow(Videos)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),videos)">ActivateWindow(Videos)</onclick>
 			<property name="path">ActivateWindow(Videos)</property>
 			<property name="list">Videos</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -778,58 +816,58 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultMusicVideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<property name="defaultID">musicvideos</property>
-			<visible>[Library.HasContent(MusicVideos)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://musicvideos/titles/,return)</property>
 			<property name="list">videodb://musicvideos/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[1037]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonVideo.png</icon>
 			<thumb />
 			<property name="labelID">1037</property>
 			<property name="defaultID">1037</property>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">videos</property>
 		</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultMovies.png</icon>
@@ -844,10 +882,10 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://script.extendedinfo?info=upcomingmovies</property>
 			<visible>Library.HasContent(Movies)</visible>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -855,7 +893,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20386]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
@@ -865,7 +903,7 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
 			<property name="list">videodb://recentlyaddedmovies/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -877,18 +915,18 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20434]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>special://skin/extras/icons/set.png</icon>
 			<thumb />
 			<property name="labelID">20434</property>
 			<property name="defaultID">20434</property>
-			<visible>[Library.HasContent(MovieSets)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
 			<property name="list">videodb://movies/sets/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -900,18 +938,18 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultMovieTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -923,18 +961,18 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
 			<property name="list">videodb://movies/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -946,18 +984,18 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
 			<property name="list">videodb://movies/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -969,18 +1007,18 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/actors/,return)</property>
 			<property name="list">videodb://movies/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -990,8 +1028,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">movies</property>
 		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -1001,15 +1039,15 @@
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.TopRatedShows)]</property>
 			<property name="backgroundName">Top Rated tvshows (extendedinfo)</property>
 			<property name="widget">Addon</property>
-			<property name="widgetName">airing today</property>
-			<property name="widgetType">videos</property>
+			<property name="widgetName">Popular Shows</property>
+			<property name="widgetType">movies</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
 			<visible>Library.HasContent(TVShows)</visible>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),tvshows)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -1017,7 +1055,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20387]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedEpisodes.png</icon>
@@ -1027,110 +1065,110 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
 			<property name="list">videodb://recentlyaddedepisodes/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">tvshows</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultTVShowTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">tvshows</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
 			<property name="list">videodb://tvshows/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">tvshows</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
 			<property name="list">videodb://tvshows/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">tvshows</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/actors/,return)</property>
 			<property name="list">videodb://tvshows/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">tvshows</property>
 		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<label>$LOCALIZE[10005]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultMusicAlbums.png</icon>
@@ -1139,10 +1177,10 @@
 			<property name="defaultID">music</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</property>
 			<property name="backgroundName">Random music artists background</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),music)">ActivateWindow(Music)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),music)">ActivateWindow(Music)</onclick>
 			<property name="path">ActivateWindow(Music)</property>
 			<property name="list">Music</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -1150,24 +1188,24 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">music</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[15100]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
@@ -1177,30 +1215,30 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">music</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[1038]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonMusic.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">music</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<label>$LOCALIZE[10001]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/program.png</icon>
@@ -1212,13 +1250,13 @@
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">programs</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
 			<label>$ADDON[script.skinshortcuts 32032]</label>
 			<label2>Common menu item</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -1226,10 +1264,10 @@
 			<property name="labelID">dvd</property>
 			<property name="defaultID">dvd</property>
 			<visible>System.HasMediaDVD</visible>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),dvd)">XBMC.PlayDVD()</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),dvd)">XBMC.PlayDVD()</onclick>
 			<property name="path">XBMC.PlayDVD()</property>
 			<property name="list">XBMC.PlayDVD()</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">dvd</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -1237,7 +1275,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">11</property>
 			<label>$ADDON[script.skinshortcuts 32033]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -1247,13 +1285,13 @@
 			<onclick>EjectTray()</onclick>
 			<property name="path">EjectTray()</property>
 			<property name="list">EjectTray()</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),dvd)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),dvd)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">dvd</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
 			<label>$LOCALIZE[10004]</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/settings.png</icon>
@@ -1262,10 +1300,10 @@
 			<property name="defaultID">settings</property>
 			<property name="background">weatherBackground</property>
 			<property name="backgroundName">Conditional weather</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),settings)">ActivateWindow(Settings)</onclick>
 			<property name="path">ActivateWindow(Settings)</property>
 			<property name="list">Settings</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
@@ -1273,7 +1311,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[7]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/file.png</icon>
@@ -1283,14 +1321,14 @@
 			<onclick>ActivateWindow(FileManager)</onclick>
 			<property name="path">ActivateWindow(FileManager)</property>
 			<property name="list">FileManager</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">settings</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/actor.png</icon>
@@ -1300,14 +1338,14 @@
 			<onclick>ActivateWindow(Profiles)</onclick>
 			<property name="path">ActivateWindow(Profiles)</property>
 			<property name="list">Profiles</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">settings</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[10007]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/harddisk.png</icon>
@@ -1317,25 +1355,25 @@
 			<onclick>ActivateWindow(SystemInfo)</onclick>
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">settings</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[14111]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/info.png</icon>
 			<thumb />
 			<property name="labelID">14111</property>
 			<property name="defaultID">14111</property>
-			<visible>[system.getbool(eventlog.enabled)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[system.getbool(eventlog.enabled)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
 			<property name="path">ActivateWindow(EventLog,events://,return)</property>
 			<property name="list">events://</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">settings</property>
@@ -1345,6 +1383,12 @@
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-alt-weather">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-num-1036">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-num-1036">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-13009">
@@ -1362,7 +1406,7 @@
 	<include name="skinshortcuts-group-pictures">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[1039]</label>
 			<label2>$ADDON[script.skinshortcuts 32020]</label2>
 			<icon>DefaultAddonPicture.png</icon>
@@ -1372,7 +1416,7 @@
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Pictures,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1380,7 +1424,7 @@
 	<include name="skinshortcuts-group-alt-pictures">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">4</property>
+			<property name="mainmenuid">5</property>
 			<label>$LOCALIZE[1039]</label>
 			<label2>$ADDON[script.skinshortcuts 32020]</label2>
 			<icon>DefaultAddonPicture.png</icon>
@@ -1390,7 +1434,7 @@
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Pictures,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),pictures)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1398,7 +1442,7 @@
 	<include name="skinshortcuts-group-videos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultMusicVideos.png</icon>
@@ -1409,39 +1453,39 @@
 			<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://musicvideos/titles/,return)</property>
 			<property name="list">videodb://musicvideos/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<property name="list">Files</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[1037]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonVideo.png</icon>
 			<thumb />
 			<property name="labelID">1037</property>
 			<property name="defaultID">1037</property>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1449,50 +1493,50 @@
 	<include name="skinshortcuts-group-alt-videos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultMusicVideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<property name="defaultID">musicvideos</property>
-			<visible>[Library.HasContent(MusicVideos)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://musicvideos/titles/,return)</property>
 			<property name="list">videodb://musicvideos/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">5</property>
+			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[1037]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonVideo.png</icon>
 			<thumb />
 			<property name="labelID">1037</property>
 			<property name="defaultID">1037</property>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),videos)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1500,7 +1544,7 @@
 	<include name="skinshortcuts-group-movies">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20386]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
@@ -1510,7 +1554,7 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
 			<property name="list">videodb://recentlyaddedmovies/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1521,7 +1565,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20434]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>special://skin/extras/icons/set.png</icon>
@@ -1532,7 +1576,7 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
 			<property name="list">videodb://movies/sets/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1543,7 +1587,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultMovieTitle.png</icon>
@@ -1554,7 +1598,7 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1565,7 +1609,7 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultGenre.png</icon>
@@ -1576,7 +1620,7 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
 			<property name="list">videodb://movies/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1587,7 +1631,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultYear.png</icon>
@@ -1598,7 +1642,7 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
 			<property name="list">videodb://movies/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1609,7 +1653,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultActor.png</icon>
@@ -1620,7 +1664,7 @@
 			<onclick>ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/actors/,return)</property>
 			<property name="list">videodb://movies/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1633,7 +1677,7 @@
 	<include name="skinshortcuts-group-alt-movies">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20386]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
@@ -1643,7 +1687,7 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</property>
 			<property name="list">videodb://recentlyaddedmovies/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1654,18 +1698,18 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[20434]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>special://skin/extras/icons/set.png</icon>
 			<thumb />
 			<property name="labelID">20434</property>
 			<property name="defaultID">20434</property>
-			<visible>[Library.HasContent(MovieSets)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(MovieSets)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/sets/,return)</property>
 			<property name="list">videodb://movies/sets/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1676,18 +1720,18 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultMovieTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/titles/,return)</property>
 			<property name="list">videodb://movies/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1698,18 +1742,18 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/genres/,return)</property>
 			<property name="list">videodb://movies/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1720,18 +1764,18 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/years/,return)</property>
 			<property name="list">videodb://movies/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1742,18 +1786,18 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">7</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[342]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(Movies)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<onclick>ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://movies/actors/,return)</property>
 			<property name="list">videodb://movies/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
@@ -1766,7 +1810,7 @@
 	<include name="skinshortcuts-group-tvshows">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20387]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedEpisodes.png</icon>
@@ -1776,18 +1820,18 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
 			<property name="list">videodb://recentlyaddedepisodes/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultTVShowTitle.png</icon>
@@ -1798,18 +1842,18 @@
 			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultGenre.png</icon>
@@ -1820,18 +1864,18 @@
 			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
 			<property name="list">videodb://tvshows/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultYear.png</icon>
@@ -1842,18 +1886,18 @@
 			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
 			<property name="list">videodb://tvshows/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultActor.png</icon>
@@ -1864,20 +1908,20 @@
 			<onclick>ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/actors/,return)</property>
 			<property name="list">videodb://tvshows/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-tvshows">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20387]</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedEpisodes.png</icon>
@@ -1887,124 +1931,124 @@
 			<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</property>
 			<property name="list">videodb://recentlyaddedepisodes/</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[369]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultTVShowTitle.png</icon>
 			<thumb />
 			<property name="labelID">369</property>
 			<property name="defaultID">369</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/titles/,return)</property>
 			<property name="list">videodb://tvshows/titles/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[135]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultGenre.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
 			<property name="defaultID">135</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/genres/,return)</property>
 			<property name="list">videodb://tvshows/genres/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[562]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultYear.png</icon>
 			<thumb />
 			<property name="labelID">562</property>
 			<property name="defaultID">562</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/years/,return)</property>
 			<property name="list">videodb://tvshows/years/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[344]</label>
 			<label2>$LOCALIZE[20343]</label2>
 			<icon>DefaultActor.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
 			<property name="defaultID">344</property>
-			<visible>[Library.HasContent(TVShows)] + StringCompare(Window(10000).Property(submenuVisibility),tvshows)</visible>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<onclick>ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
 			<property name="path">ActivateWindow(Videos,videodb://tvshows/actors/,return)</property>
 			<property name="list">videodb://tvshows/actors/</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="widget">Addon</property>
 			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://script.extendedinfo?info=airingtodaytvshows</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetName">airing today</property>
+			<property name="widgetPath">plugin://script.extendedinfo?info=populartvshows</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetName">Popular Shows</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[15100]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
@@ -2014,23 +2058,23 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[1038]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonMusic.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2038,23 +2082,23 @@
 	<include name="skinshortcuts-group-alt-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[744]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultFolder.png</icon>
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[15100]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
 			<icon>special://skin/extras/icons/folder.png</icon>
@@ -2064,23 +2108,23 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">8</property>
+			<property name="mainmenuid">9</property>
 			<label>$LOCALIZE[1038]</label>
 			<label2>$ADDON[script.skinshortcuts 32019]</label2>
-			<icon>special://skin/extras/icons/addon.png</icon>
+			<icon>DefaultAddonMusic.png</icon>
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2094,7 +2138,7 @@
 	<include name="skinshortcuts-group-dvd">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">11</property>
 			<label>$ADDON[script.skinshortcuts 32033]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -2104,7 +2148,7 @@
 			<onclick>EjectTray()</onclick>
 			<property name="path">EjectTray()</property>
 			<property name="list">EjectTray()</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2112,7 +2156,7 @@
 	<include name="skinshortcuts-group-alt-dvd">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">10</property>
+			<property name="mainmenuid">11</property>
 			<label>$ADDON[script.skinshortcuts 32033]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>DefaultDVDFull.png</icon>
@@ -2122,7 +2166,7 @@
 			<onclick>EjectTray()</onclick>
 			<property name="path">EjectTray()</property>
 			<property name="list">EjectTray()</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),dvd)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),dvd)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2130,7 +2174,7 @@
 	<include name="skinshortcuts-group-settings">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[7]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/file.png</icon>
@@ -2140,13 +2184,13 @@
 			<onclick>ActivateWindow(FileManager)</onclick>
 			<property name="path">ActivateWindow(FileManager)</property>
 			<property name="list">FileManager</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/actor.png</icon>
@@ -2156,13 +2200,13 @@
 			<onclick>ActivateWindow(Profiles)</onclick>
 			<property name="path">ActivateWindow(Profiles)</property>
 			<property name="list">Profiles</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[10007]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/harddisk.png</icon>
@@ -2172,13 +2216,13 @@
 			<onclick>ActivateWindow(SystemInfo)</onclick>
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[14111]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/info.png</icon>
@@ -2189,7 +2233,7 @@
 			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
 			<property name="path">ActivateWindow(EventLog,events://,return)</property>
 			<property name="list">events://</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -2197,7 +2241,7 @@
 	<include name="skinshortcuts-group-alt-settings">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[7]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/file.png</icon>
@@ -2207,13 +2251,13 @@
 			<onclick>ActivateWindow(FileManager)</onclick>
 			<property name="path">ActivateWindow(FileManager)</property>
 			<property name="list">FileManager</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[13200]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/actor.png</icon>
@@ -2223,13 +2267,13 @@
 			<onclick>ActivateWindow(Profiles)</onclick>
 			<property name="path">ActivateWindow(Profiles)</property>
 			<property name="list">Profiles</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[10007]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/harddisk.png</icon>
@@ -2239,37 +2283,37 @@
 			<onclick>ActivateWindow(SystemInfo)</onclick>
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">11</property>
+			<property name="mainmenuid">12</property>
 			<label>$LOCALIZE[14111]</label>
 			<label2>$ADDON[script.skinshortcuts 32034]</label2>
 			<icon>special://skin/extras/icons/info.png</icon>
 			<thumb />
 			<property name="labelID">14111</property>
 			<property name="defaultID">14111</property>
-			<visible>[system.getbool(eventlog.enabled)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<visible>[system.getbool(eventlog.enabled)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
 			<property name="path">ActivateWindow(EventLog,events://,return)</property>
 			<property name="list">events://</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-template-widget-fixed">
-		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-widget-fixed-Master user</include>
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-fixed-Master user</include>
 	</include>
 	<include name="skinshortcuts-template-widget-fixed-Master user">
 		<include content="WidgetBusyAnimation">
 			<param name="id">80111</param>
 		</include>
 		<control id="80111" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80111</param>
 			</include>
@@ -2284,7 +2328,7 @@
 			<param name="id">80112</param>
 		</include>
 		<control id="80112" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80112</param>
 			</include>
@@ -2299,7 +2343,7 @@
 			<param name="id">80113</param>
 		</include>
 		<control id="80113" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80113</param>
 			</include>
@@ -2314,7 +2358,7 @@
 			<param name="id">80114</param>
 		</include>
 		<control id="80114" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80114</param>
 			</include>
@@ -2329,7 +2373,7 @@
 			<param name="id">80115</param>
 		</include>
 		<control id="80115" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80115</param>
 			</include>
@@ -2344,11 +2388,11 @@
 			<param name="id">80116</param>
 		</include>
 		<control id="80116" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80116</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
+			<content limit="$VAR[WidgetLimit]" target="" />
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80116</param>
@@ -2359,11 +2403,11 @@
 			<param name="id">80117</param>
 		</include>
 		<control id="80117" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80117</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=airingtodaytvshows</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80117</param>
@@ -2374,11 +2418,11 @@
 			<param name="id">80118</param>
 		</include>
 		<control id="80118" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80118</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=populartvshows</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80118</param>
@@ -2389,7 +2433,7 @@
 			<param name="id">80119</param>
 		</include>
 		<control id="80119" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80119</param>
 			</include>
@@ -2404,7 +2448,7 @@
 			<param name="id">801110</param>
 		</include>
 		<control id="801110" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">801110</param>
 			</include>
@@ -2419,7 +2463,7 @@
 			<param name="id">801111</param>
 		</include>
 		<control id="801111" type="fixedlist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">801111</param>
 			</include>
@@ -2430,16 +2474,31 @@
 			<param name="widgetLine1">widgetLine111</param>
 			<param name="widgetLine2">widgetLine211</param>
 		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">801112</param>
+		</include>
+		<control id="801112" type="fixedlist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">801112</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">801112</param>
+			<param name="widgetLine1">widgetLine112</param>
+			<param name="widgetLine2">widgetLine212</param>
+		</include>
 	</include>
 	<include name="skinshortcuts-template-widget-wrapped">
-		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-widget-wrapped-Master user</include>
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-wrapped-Master user</include>
 	</include>
 	<include name="skinshortcuts-template-widget-wrapped-Master user">
 		<include content="WidgetBusyAnimation">
 			<param name="id">80111</param>
 		</include>
 		<control id="80111" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80111</param>
 			</include>
@@ -2454,7 +2513,7 @@
 			<param name="id">80112</param>
 		</include>
 		<control id="80112" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80112</param>
 			</include>
@@ -2469,7 +2528,7 @@
 			<param name="id">80113</param>
 		</include>
 		<control id="80113" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80113</param>
 			</include>
@@ -2484,7 +2543,7 @@
 			<param name="id">80114</param>
 		</include>
 		<control id="80114" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80114</param>
 			</include>
@@ -2499,7 +2558,7 @@
 			<param name="id">80115</param>
 		</include>
 		<control id="80115" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80115</param>
 			</include>
@@ -2514,11 +2573,11 @@
 			<param name="id">80116</param>
 		</include>
 		<control id="80116" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80116</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
+			<content limit="$VAR[WidgetLimit]" target="" />
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80116</param>
@@ -2529,11 +2588,11 @@
 			<param name="id">80117</param>
 		</include>
 		<control id="80117" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80117</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=airingtodaytvshows</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80117</param>
@@ -2544,11 +2603,11 @@
 			<param name="id">80118</param>
 		</include>
 		<control id="80118" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80118</param>
 			</include>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=populartvshows</content>
 		</control>
 		<include content="FixedWrapWidgetLabels">
 			<param name="id">80118</param>
@@ -2559,7 +2618,7 @@
 			<param name="id">80119</param>
 		</include>
 		<control id="80119" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80119</param>
 			</include>
@@ -2574,7 +2633,7 @@
 			<param name="id">801110</param>
 		</include>
 		<control id="801110" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">801110</param>
 			</include>
@@ -2589,7 +2648,7 @@
 			<param name="id">801111</param>
 		</include>
 		<control id="801111" type="wraplist">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">801111</param>
 			</include>
@@ -2600,9 +2659,24 @@
 			<param name="widgetLine1">widgetLine111</param>
 			<param name="widgetLine2">widgetLine211</param>
 		</include>
+		<include content="WidgetBusyAnimation">
+			<param name="id">801112</param>
+		</include>
+		<control id="801112" type="wraplist">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<include content="FixedWrapWidgetContent">
+				<param name="id">801112</param>
+			</include>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
+		<include content="FixedWrapWidgetLabels">
+			<param name="id">801112</param>
+			<param name="widgetLine1">widgetLine112</param>
+			<param name="widgetLine2">widgetLine212</param>
+		</include>
 	</include>
 	<include name="skinshortcuts-template-widget-defaultpanel">
-		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-widget-defaultpanel-Master user</include>
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-defaultpanel-Master user</include>
 	</include>
 	<include name="skinshortcuts-template-widget-defaultpanel-Master user">
 		<include content="WidgetBusyAnimation">
@@ -2668,7 +2742,7 @@
 			<animation condition="Integer.IsGreater(Container(80111).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80111" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
 			<animation condition="Container(80111).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -2843,7 +2917,7 @@
 			<animation condition="Integer.IsGreater(Container(80112).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80112" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
 			<animation condition="Container(80112).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3018,7 +3092,7 @@
 			<animation condition="Integer.IsGreater(Container(80113).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80113" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
 			<animation condition="Container(80113).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3193,7 +3267,7 @@
 			<animation condition="Integer.IsGreater(Container(80114).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80114" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
 			<animation condition="Container(80114).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3368,7 +3442,7 @@
 			<animation condition="Integer.IsGreater(Container(80115).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80115" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<animation condition="Container(80115).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3543,7 +3617,7 @@
 			<animation condition="Integer.IsGreater(Container(80116).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80116" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<animation condition="Container(80116).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3653,7 +3727,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
+			<content limit="$VAR[WidgetLimit]" target="" />
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80117</param>
@@ -3718,7 +3792,7 @@
 			<animation condition="Integer.IsGreater(Container(80117).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80117" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<animation condition="Container(80117).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -3828,7 +3902,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=airingtodaytvshows</content>
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=upcomingmovies</content>
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80118</param>
@@ -3893,7 +3967,7 @@
 			<animation condition="Integer.IsGreater(Container(80118).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80118" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<animation condition="Container(80118).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -4003,7 +4077,7 @@
 					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
 				</control>
 			</focusedlayout>
-			<content limit="$VAR[WidgetLimit]" target="" />
+			<content limit="$VAR[WidgetLimit]" target="videos">plugin://script.extendedinfo?info=populartvshows</content>
 		</control>
 		<include content="WidgetBusyAnimation">
 			<param name="id">80119</param>
@@ -4068,7 +4142,7 @@
 			<animation condition="Integer.IsGreater(Container(80119).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80119" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<animation condition="Container(80119).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -4243,7 +4317,7 @@
 			<animation condition="Integer.IsGreater(Container(801110).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="801110" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<animation condition="Container(801110).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -4418,7 +4492,7 @@
 			<animation condition="Integer.IsGreater(Container(801111).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="801111" type="panel">
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<animation condition="Container(801111).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
 			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
@@ -4530,9 +4604,184 @@
 			</focusedlayout>
 			<content limit="$VAR[WidgetLimit]" target="" />
 		</control>
+		<include content="WidgetBusyAnimation">
+			<param name="id">801112</param>
+		</include>
+		<control id="7975" type="multiimage">
+			<left>-1920</left>
+			<width>219</width>
+			<height>316</height>
+			<imagepath background="true">$VAR[WidgetMultiPath]</imagepath>
+		</control>
+		<control type="image">
+			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>219</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(801112).Column,8)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,7)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,6)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,5)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,4)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,3)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,2)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,1)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,0)" easing="inout" effect="slide" end="207,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>322</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(801112).Column,4)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,3)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,2)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,1)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,0)" easing="inout" effect="slide" end="310,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>23</left>
+			<top>414</top>
+			<width>478</width>
+			<height>316</height>
+			<animation delay="200" effect="fade" time="320">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<fadetime>2000</fadetime>
+			<texture colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+			<animation condition="Integer.IsGreater(Container(801112).Column,2)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,1)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container(801112).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
+		</control>
+		<control id="801112" type="panel">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<animation condition="Container(801112).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
+			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
+			<left>29</left>
+			<top>420</top>
+			<width>1864</width>
+			<height>310</height>
+			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
+			<onup condition="Control.IsVisible(9990)">9990</onup>
+			<onup condition="Window.IsVisible(SettingsCategory.xml)">3</onup>
+			<onup condition="Window.IsVisible(script-skinshortcuts.xml)">211</onup>
+			<onup condition="!Window.IsVisible(home)">50</onup>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<onback>9000</onback>
+			<viewtype label="535">list</viewtype>
+			<focusposition>0</focusposition>
+			<pagecontrol>-</pagecontrol>
+			<preloaditems>2</preloaditems>
+			<scrolltime tween="quadratic">400</scrolltime>
+			<orientation>Horizontal</orientation>
+			<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath))</visible>
+			<autoscroll delay="10000" repeat="10000" time="10000">[Control.IsVisible(9003) + !Control.HasFocus(801112)] + !Skin.HasSetting(Disable.WidgetAutoScroll)</autoscroll>
+			<itemlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="207">
+				<control type="group">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus condition="!String.IsEmpty(Container(801112).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801112).ListItem.Art(tvshow.poster)],home)</onfocus>
+						<onfocus condition="String.IsEmpty(Container(801112).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801112).ListItem.Art(poster)],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine112,, ]$VAR[widgetLine212,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<include>PanelFocusedItemZoom</include>
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFallback.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313])" height="304" width="310">
+				<control type="group">
+					<include>PanelFocusedItemZoom</include>
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(801112).ListItem.Icon],home)</onfocus>
+						<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine112,, ]$VAR[widgetLine212,[LIGHT],[/LIGHT]])</onfocus>
+					</control>
+					<control type="image">
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+				</control>
+			</focusedlayout>
+			<itemlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100])" height="304" width="466">
+				<include>PanelFocusedItemZoom</include>
+				<control type="button">
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onfocus condition="!String.IsEmpty(Container(801112).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801112).ListItem.Art(tvshow.poster)],home)</onfocus>
+					<onfocus condition="String.IsEmpty(Container(801112).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(801112).ListItem.Art(poster)],home)</onfocus>
+					<onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine112,, ]$VAR[widgetLine212,[LIGHT],[/LIGHT]])</onfocus>
+				</control>
+				<control type="image">
+					<bordersize>6</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$VAR[LandscapeWidgetArt]</texture>
+				</control>
+			</focusedlayout>
+			<content limit="$VAR[WidgetLimit]" target="" />
+		</control>
 	</include>
 	<include name="skinshortcuts-template-WidgetFanart">
-		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-WidgetFanart-Master user</include>
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-WidgetFanart-Master user</include>
 	</include>
 	<include name="skinshortcuts-template-WidgetFanart-Master user">
 		<control type="multiimage">
@@ -4644,6 +4893,16 @@
 			<include>VisibleFadeEffect</include>
 			<include>FullscreenDimensions</include>
 			<imagepath background="true">$INFO[Container(801111).ListItem.Art(fanart)]</imagepath>
+		</control>
+		<control type="multiimage">
+			<animation delay="300" effect="fade" end="100" start="0" time="300">Visible</animation>
+			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+			<visible>Control.HasFocus(801112) + !String.IsEmpty(Container(801112).ListItem.Art(fanart))</visible>
+			<description>Widget Background Image</description>
+			<fadetime>300</fadetime>
+			<include>VisibleFadeEffect</include>
+			<include>FullscreenDimensions</include>
+			<imagepath background="true">$INFO[Container(801112).ListItem.Art(fanart)]</imagepath>
 		</control>
 	</include>
 	<variable name="widgetLine11">
@@ -4766,5 +5025,16 @@
 		<value condition="!String.IsEmpty(Container(801111).ListItem.Artist)">$INFO[Container(801111).ListItem.Artist,, ]$INFO[Container(801111).ListItem.Year]</value>
 		<value condition="!String.IsEmpty(Container(801111).ListItem.Year)">$INFO[Container(801111).ListItem.Year]</value>
 		<value condition="!String.IsEmpty(Container(801111).ListItem.Label2)">$INFO[Container(801111).ListItem.Label2]</value>
+	</variable>
+	<variable name="widgetLine112">
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Episode)">$INFO[Container(801112).ListItem.Season,,x]$INFO[Container(801112).ListItem.Episode,,. ]$INFO[Container(801112).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Title)">$INFO[Container(801112).ListItem.Title]</value>
+		<value>$INFO[Container(801112).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetLine212">
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Episode)">$INFO[Container(801112).ListItem.TvShowTitle,, ]$INFO[Container(801112).ListItem.Premiered]</value>
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Artist)">$INFO[Container(801112).ListItem.Artist,, ]$INFO[Container(801112).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Year)">$INFO[Container(801112).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(801112).ListItem.Label2)">$INFO[Container(801112).ListItem.Label2]</value>
 	</variable>
 </includes>

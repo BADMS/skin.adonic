@@ -31,8 +31,8 @@
 						<item>
 							<label></label>
 							<label2>$LOCALIZE[478] $LOCALIZE[13280] $LOCALIZE[1390]</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</thumb>
 					<onclick>SetProperty(RefreshItem,$LOCALIZE[13395],home)</onclick>
 							<onclick>ActivateWindow(osdvideosettings)</onclick>
 						</item>
@@ -56,6 +56,7 @@
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]play.png</icon>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]play.png</thumb>
 							<onclick>PlayerControl(Play)</onclick>
+							<onclick>AlarmClock(foc1,Action(back),00:02,silent)</onclick>
 							<visible>Player.Paused | Player.Forwarding | Player.Rewinding</visible>
 						</item>
 						<item>
@@ -68,9 +69,16 @@
 						</item>
 						<item>
 							<label></label>
+							<label2>298</label2>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTags.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTags.png</thumb>
+							<onclick>ActivateWindow(videobookmarks)</onclick>
+						</item>
+						<item>
+							<label></label>
 							<label2>244</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</thumb>
 							<onclick>Skin.SetString(_kill_feking_seekbar,1)</onclick>
 							<onclick>Action(back)</onclick>
 							<onclick>Dialog.Close(all,true)</onclick>
@@ -109,8 +117,8 @@
 						<item>
 							<label></label>
 							<label2>$LOCALIZE[13280] $LOCALIZE[29915]</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 							<onclick>PlayerControl(ShowVideoMenu)</onclick>
 							<visible>VideoPlayer.HasMenu</visible>
 						</item>
@@ -125,8 +133,8 @@
 						<item>
 							<label></label>
 							<label2>29915</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 							<onclick>Close</onclick>
 							<onclick>ActivateWindow(fullscreeninfo)</onclick>
 							<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
@@ -160,8 +168,8 @@
 						<item>
 							<label></label>
 							<label2>559</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPlaylist.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPlaylist.png</thumb>
 							<onclick>SetProperty(RefreshItem,$LOCALIZE[13396],home)</onclick>
 							<onclick>Action(back)</onclick>
 							<onclick>ActivateWindow(musicplaylist)</onclick>
@@ -169,8 +177,8 @@
 						<item>
 							<label></label>
 							<label2>24010</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</thumb>
 							<onclick>SetProperty(RefreshItem,$LOCALIZE[13395],home)</onclick>
 							<onclick>SendClick(500)</onclick>
 						</item>
@@ -185,8 +193,8 @@
 						<item>
 							<label></label>
 							<label2>$LOCALIZE[22080] $LOCALIZE[24010] $LOCALIZE[13388]</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]tvinfo.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]tvinfo.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]tvDefaultIconInfo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]tvDefaultIconInfo.png</thumb>
 							<onclick>ActivateWindow(visualisationpresetlist)</onclick>
 							<visible>Visualisation.Enabled + Visualisation.HasPresets</visible>
 						</item>
@@ -230,8 +238,8 @@
 						<item>
 							<label></label>
 							<label2>10000</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</thumb>
 							<onclick>Skin.SetString(_kill_feking_seekbar,1)</onclick>
 							<onclick>Action(back)</onclick>
 							<onclick>Dialog.Close(all,true)</onclick>
@@ -294,8 +302,8 @@
 						<item>
 							<label></label>
 							<label2>29915</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 							<onclick>Dialog.Close(musicosd)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 							<visible>false</visible>

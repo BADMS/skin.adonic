@@ -350,7 +350,7 @@
 						<item>
 							<property name="widgetName">$LOCALIZE[31185]</property>
 							<label2>similar</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPlaylist.png</thumb>
 							<onclick>SendClick(203)</onclick>
 							<visible>!$EXP[isEpisode]</visible>
 							<visible>Integer.IsGreater(Container(88820).NumItems,0)</visible>
@@ -370,7 +370,7 @@
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>
 						<item>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</thumb>
 							<property name="labelID">$LOCALIZE[210]</property>
 							<property name="defaultID">$LOCALIZE[210]</property>
 							<onclick>Action(back)</onclick>

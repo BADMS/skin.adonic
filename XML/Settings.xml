@@ -115,7 +115,7 @@
 					<item id="2">
 						<label>$LOCALIZE[166]</label>
 						<label2>$LOCALIZE[10000] - $LOCALIZE[31311] - $LOCALIZE[19190]</label2>
-						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]skin.png</icon>
+						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSkin.png</icon>
 						<onclick>ActivateWindow(skinsettings)</onclick>
 					</item>
 					<item id="3">
@@ -134,14 +134,14 @@
 					<item id="5">
 						<label>$LOCALIZE[19020]</label>
 						<label2>$LOCALIZE[19019] - $LOCALIZE[19069] - $LOCALIZE[14086] - $LOCALIZE[19043]</label2>
-						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]tv.png</icon>
+						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTVShows.png</icon>
 						<onclick>ActivateWindow(pvrsettings)</onclick>
 					</item>
 					-->
 					<item id="6">
 						<label>$LOCALIZE[13000]</label>
 						<label2>$LOCALIZE[15088] - $LOCALIZE[14094] - $LOCALIZE[14095]</label2>
-						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]program.png</icon>
+						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultProgram.png</icon>
 						<onclick>ActivateWindow(SystemSettings)</onclick>
 					</item>
 					<item id="7">
@@ -159,7 +159,7 @@
 					<item id="9">
 						<label>$LOCALIZE[24001]</label>
 						<label2>$LOCALIZE[24038] - $LOCALIZE[24020] - $LOCALIZE[24069]</label2>
-						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]addon.png</icon>
+						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddon.png</icon>
 						<onclick>ActivateWindow(AddonBrowser)</onclick>
 					</item>
 					<item id="10">
@@ -172,7 +172,7 @@
 						<label>LibreELEC</label>
 						<label2>$LOCALIZE[31015] - $LOCALIZE[31019] - $LOCALIZE[24020]</label2>
 						<onclick>RunAddon(service.libreelec.settings)</onclick>
-						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]program.png</icon>
+						<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultProgram.png</icon>
 						<visible>System.HasAddon(service.libreelec.settings)</visible>
 					</item>
 				</content>

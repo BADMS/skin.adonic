@@ -552,7 +552,7 @@
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]set.png</thumb>
 							<onclick>SendClick(206)</onclick>
 							<visible>$EXP[isMovie] + !String.IsEmpty(ListItem.SetID)</visible>
-							<visible>Integer.IsGreater(Container(88821).NumItems,0)</visible>
+							<visible>Integer.IsGreater(Container(88821).NumItems,1)</visible>
 						</item>
 						<!--
 						<item>
@@ -562,7 +562,7 @@
 								<label>20410</label>
 								<visible>$EXP[isMovie]</visible>
 							</control>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</thumb>
 							<onclick>SendClick(11)</onclick>
 						</item>
 						<item>
@@ -581,7 +581,7 @@
 								<include>ButtonInfoDialogsCommonValues</include>
 								<label>38023</label>
 							</control>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]add.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSource.png</thumb>
 							<onclick>SendClick(7)</onclick>
 						</item>
 						<item>
@@ -591,7 +591,7 @@
 								<label>13511</label>
 								<enable>!Skin.HasSetting(KioskMode.Enabled)</enable>
 							</control>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]images.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPicture.png</thumb>
 							<onclick>SendClick(10)</onclick>
 						</item>
 						<item>
@@ -629,7 +629,7 @@
 						<item>
 							<property name="widgetName">$LOCALIZE[31185]</property>
 							<label2>similar</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]playlist.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPlaylist.png</thumb>
 							<onclick>SendClick(203)</onclick>
 							<visible>!$EXP[isEpisode]</visible>
 							<visible>Integer.IsGreater(Container(88820).NumItems,0)</visible>
@@ -642,14 +642,14 @@
 							<visible>Integer.IsGreater(Container(88822).NumItems,0)</visible>
 						</item>
 						<item>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</thumb>
 							<property name="labelID">$LOCALIZE[10000]</property>
 							<property name="defaultID">$LOCALIZE[10000]</property>
 							<onclick>Action(back)</onclick>
 							<onclick>ActivateWindow(Home)</onclick>
 						</item>
 						<item>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</thumb>
 							<property name="labelID">$LOCALIZE[210]</property>
 							<property name="defaultID">$LOCALIZE[210]</property>
 							<onclick>Action(back)</onclick>

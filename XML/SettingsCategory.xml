@@ -111,7 +111,7 @@
 				<width>340</width>
 				<onclick>SettingsLevelChange</onclick>
 				<onclick>Skin.SetString(NotifyLevelChange,1)</onclick>
-				<onclick>AlarmClock(notify,Skin.SetString(NotifyLevelChange,0),00:3,true)</onclick>
+				<onclick>AlarmClock(notify,Skin.SetString(NotifyLevelChange,0),00:01,true)</onclick>
 				<onclick>SetFocus(3)</onclick>
 				<font>font30</font>
 				<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>

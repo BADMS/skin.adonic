@@ -98,8 +98,8 @@
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
-							<label>$INFO[ListItem.Rating]</label>
-							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+							<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 						</control>
 						<control type="image">
 							<left>1079</left>
@@ -190,8 +190,8 @@
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
-							<label>$INFO[ListItem.Rating]</label>
-							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+							<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 						</control>
 						<control type="image">
 							<left>1079</left>
@@ -274,8 +274,8 @@
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
-							<label>$INFO[ListItem.Rating]</label>
-							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+							<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 						</control>
 						<control type="image">
 							<left>1719</left>
@@ -365,8 +365,8 @@
 							<height>116</height>
 							<font>font15</font>
 							<align>right</align>
-							<label>$INFO[ListItem.Rating]</label>
-							<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+							<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 						</control>
 						<control type="image">
 							<left>1719</left>
@@ -431,8 +431,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+								<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 							</control>
 						</control>
 						<control type="image">
@@ -505,8 +505,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+								<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 							</control>
 						</control>
 						<control type="image">
@@ -572,8 +572,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+								<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 							</control>
 						</control>
 						<control type="image">
@@ -647,8 +647,8 @@
 								<height>60</height>
 								<font>font15</font>
 								<align>right</align>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+								<label>$VAR[ContentStats]</label>
+							<visible>![Container.Content(addons) | Container.Content(songs)]</visible>
 							</control>
 						</control>
 						<control type="image">

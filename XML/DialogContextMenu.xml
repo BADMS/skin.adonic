@@ -22,6 +22,11 @@
 				<texture border="0"></texture>
 			</control>
 			<control type="grouplist" id="996">
+				<animation effect="slide" start="0" end="0,31" time="0" tween="cubic" easing="inout" reversible="true" condition="Integer.IsEqual(Container(996).NumItems,4)">Conditional</animation>
+				<animation effect="slide" start="0" end="0,62" time="0" tween="cubic" easing="inout" reversible="true" condition="Integer.IsEqual(Container(996).NumItems,3)">Conditional</animation>
+				<animation effect="slide" start="0" end="0,93" time="0" tween="cubic" easing="inout" reversible="true" condition="Integer.IsEqual(Container(996).NumItems,2)">Conditional</animation>
+				<animation effect="slide" start="0" end="0,124" time="0" tween="cubic" easing="inout" reversible="true" condition="Integer.IsEqual(Container(996).NumItems,1)">Conditional</animation>
+
 				<description>grouplist for context buttons</description>
 				<width>1730</width>
 				<height>310</height>
@@ -34,7 +39,7 @@
 				<movement>0</movement>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<orientation>vertical</orientation>
-				<control type="button" id="994">
+				<control type="button" id="94">
 					<label>$LOCALIZE[14098] $LOCALIZE[20410]</label>
 					<width>1730</width>
 					<height>62</height>

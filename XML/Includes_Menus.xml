@@ -12,7 +12,7 @@
 			<animation effect="fade" start="0" end="100" delay="200" time="300" easing="out" condition="Control.HasFocus(9010)" reversible="false">Conditional</animation>
 			<animation effect="fade" end="0" start="100" time="0" condition="[!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(FileBrowser.xml)" reversible="false">Conditional</animation>
 			<control type="wraplist" id="9010">
-				<animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogButtonMenu.xml)" reversible="false">Conditional</animation>
+				<animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogButtonMenu.xml)" reversible="false">Conditional</animation>
 				<include content="SubMenuListDefault">
 					<param name="SubmenuLeft" value="-124" />
 					<param name="SubmenuTop" value="-193" />
@@ -46,8 +46,8 @@
 			<item id="90001">
 				<label>31980</label>
 				<label2>$LOCALIZE[31980]</label2>
-				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 				<onclick>Action(back)</onclick>
 				<onclick>Info</onclick>
 				<visible>!String.Contains(Window.Property(xmlfile),settings)</visible>
@@ -137,8 +137,8 @@
 			<item id="90002">
 				<label>10000</label>
 				<label2>$LOCALIZE[10000]</label2>
-				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</icon>
-				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]home.png</thumb>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</thumb>
 				<onclick>Action(back)</onclick>
 				<onclick>ActivateWindow(Home)</onclick>
 				<visible>!Window.IsActive(home)</visible>
@@ -146,8 +146,8 @@
 			<item id="90003">
 				<label>210</label>
 				<label2>$LOCALIZE[210]</label2>
-				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</icon>
-				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
+				<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</icon>
+				<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</thumb>
 				<onclick>Action(back)</onclick>
 				<onclick>Action(back)</onclick>
 				<visible>!Window.IsActive(home)</visible>
@@ -256,7 +256,7 @@
 		<item id="1">
 			<label>20410</label>
 			<label2>$LOCALIZE[20410]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</icon>
 			<thumb />
 			<onclick>SendClick(11)</onclick>
 			<visible>$EXP[isMovie]</visible>
@@ -275,7 +275,7 @@
 		<item id="3">
 			<label>$LOCALIZE[31081]</label>
 			<label2>$LOCALIZE[31081]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
@@ -284,7 +284,7 @@
 		<item id="4">
 			<label>$LOCALIZE[31081]</label>
 			<label2>$LOCALIZE[31081]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
@@ -293,7 +293,7 @@
 		<item id="5">
 			<label>$LOCALIZE[31225]</label>
 			<label2>$LOCALIZE[31225]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]skin.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSkin.png</icon>
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
@@ -302,7 +302,7 @@
 		<item id="6">
 			<label>$LOCALIZE[31225]</label>
 			<label2>$LOCALIZE[31225]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]skin.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSkin.png</icon>
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=tvshow,dbid=$INFO[ListItem.DBID])</onclick>
@@ -320,7 +320,7 @@
 		<item id="6">
 			<label>$LOCALIZE[13511]</label>
 			<label2>$LOCALIZE[13511]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]images.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPicture.png</icon>
 			<thumb />
 			<onclick>SendClick(10)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -339,7 +339,7 @@
 		<item id="1">
 			<label>20410</label>
 			<label2>$LOCALIZE[20410]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]video.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</icon>
 			<thumb />
 			<onclick>SendClick(11)</onclick>
 			<visible>$EXP[isMovie]</visible>
@@ -358,7 +358,7 @@
 		<item id="3">
 			<label>$LOCALIZE[31081]</label>
 			<label2>$LOCALIZE[31081]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
@@ -367,7 +367,7 @@
 		<item id="4">
 			<label>$LOCALIZE[31081]</label>
 			<label2>$LOCALIZE[31081]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
@@ -376,7 +376,7 @@
 		<item id="5">
 			<label>$LOCALIZE[31225]</label>
 			<label2>$LOCALIZE[31225]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]skin.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSkin.png</icon>
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
@@ -385,7 +385,7 @@
 		<item id="6">
 			<label>$LOCALIZE[31225]</label>
 			<label2>$LOCALIZE[31225]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]skin.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonSkin.png</icon>
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=tvshow,dbid=$INFO[ListItem.DBID])</onclick>
@@ -403,7 +403,7 @@
 		<item id="6">
 			<label>$LOCALIZE[13511]</label>
 			<label2>$LOCALIZE[13511]</label2>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]images.png</icon>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPicture.png</icon>
 			<thumb />
 			<onclick>SendClick(10)</onclick>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -465,7 +465,7 @@
 		<item id="8">
 			<description>Reboot button</description>
 			<onclick>Reset()</onclick>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]back.png</thumb>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</thumb>
 			<visible>System.CanReboot</visible>
 			<label>13013</label>
 		</item>
@@ -502,7 +502,7 @@
 		<item id="14">
 			<description>Settings</description>
 			<onclick>Dialog.Close(all,true)</onclick>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]settings.png</thumb>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconSettings.png</thumb>
 			<onclick>ActivateWindow(settings)</onclick>
 			<label>$LOCALIZE[5]</label>
 		</item>
@@ -518,15 +518,15 @@
 		<item id="90012">
 			<description>Add art</description>
 			<label>$INFO[Container(9001).ListItem(0).Label]</label>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 			<onclick>SendClick(9001,5)</onclick>
 		</item>
 		<item id="90013">
 			<description>Cancel</description>
 			<label>$INFO[Container(9001).ListItem(1).Label]</label>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 			<onclick>SendClick(9001,7)</onclick>
 		</item>
 	</include>
@@ -541,15 +541,15 @@
 		<item id="10">
 			<description>Cancel</description>
 			<label>Cancel</label>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]no.png</icon>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]no.png</thumb>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonNone.png</icon>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddonNone.png</thumb>
 			<onclick>SendClick(10)</onclick>
 		</item>
 		<item id="12">
 			<description>Custom</description>
 			<label>Custom</label>
-			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</icon>
-			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]info.png</thumb>
+			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</icon>
+			<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</thumb>
 			<onclick>SendClick(12)</onclick>
 			<visible>Control.IsVisible(12)</visible>
 		</item>

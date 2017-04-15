@@ -62,10 +62,6 @@
     <icon labelID="32119">special://skin/extras/icons/wand.png</icon>
     <icon labelID="32024">special://skin/extras/icons/add.png</icon>
     <icon labelID="32118">special://skin/extras/icons/add.png</icon>
-    <icon image="DefaultAddon.png">special://skin/extras/icons/addon.png</icon>
-    <icon image="DefaultAddonVideo.png">special://skin/extras/icons/addon.png</icon>
-    <icon image="DefaultAddonMusic.png">special://skin/extras/icons/addon.png</icon>
-    <icon image="DefaultFolder.png">special://skin/extras/icons/addon.png</icon>
 
 	<!-- Backgrounds
 	<backgroundBrowse>True</backgroundBrowse>

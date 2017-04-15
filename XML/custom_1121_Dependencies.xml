@@ -46,7 +46,7 @@
 							<width>310</width>
 							<height>310</height>
 							<bordersize>6</bordersize>
-							<texture fallback="DefaultFolderBack.png">$INFO[Skin.String(MenuDefaultIconsPath)]back.png</texture>
+							<texture fallback="DefaultFolderBack.png">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</texture>
 							<colordiffuse>$VAR[IconColorVar]</colordiffuse>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
@@ -73,7 +73,7 @@
 							<width>310</width>
 							<height>310</height>
 							<bordersize>6</bordersize>
-							<texture fallback="DefaultFolderBack.png">$INFO[Skin.String(MenuDefaultIconsPath)]back.png</texture>
+							<texture fallback="DefaultFolderBack.png">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="image">

@@ -5,6 +5,8 @@
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="300" delay="0" start="100" end="0" tween="cubic" reversible="true" condition="Control.HasFocus(9010)">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsActive(DialogConfirm.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogFavourites.xml)" reversible="false">Conditional</animation>
+            <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogTextViewer.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogMediaSource.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogContextMenu.xml)" reversible="false">Conditional</animation>
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogAddonInfo.xml)" reversible="false">Conditional</animation>
@@ -106,7 +108,7 @@
 						<visible>String.IsEmpty(ListItem.Icon)</visible>
 						<bordersize>6</bordersize>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}add.png</texture>
+						<texture background="true">special://skin/extras/icons/DefaultAddonSource.png</texture>
 					</control>
 					<control type="image">
 						<top>199</top>
@@ -145,7 +147,7 @@
 						<visible>String.IsEmpty(ListItem.Icon)</visible>
 						<bordersize>6</bordersize>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">http://localhost:52307/getvarimage&title=$INFO{Skin.String(MenuDefaultIconsPath)}add.png</texture>
+						<texture background="true">special://skin/extras/icons/add.png</texture>
 					</control>
 					<control type="image">
 						<top>199</top>
@@ -713,7 +715,7 @@
 			<include>dialogeffect</include>
 
 			<!-- homemenu3d -->
-			<animation effect="slide" time="300" delay="1" start="0" end="0,-320" tween="cubic" reversible="true" condition="[[!ControlGroup(97631).HasFocus + Window.IsActive(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), MyWeather)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), MyMusicPlaylistEditor)] | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogFullScreenInfo.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSubtitles.xml)  | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogAddonSettings.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogMediaSource.xml) | Window.IsVisible(SmartPlaylistEditor.xml) | [[Window.IsVisible(DialogButtonMenu.xml) | Control.Hasfocus(9010)] + [Control.IsVisible(12345) | String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]] | [!Window.IsVisible(FileBrowser.xml) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogAddonSettings.xml) + [!Window.IsVisible(musicinformation) + !Window.IsVisible(songinformation) + !Window.IsVisible(movieinformation) + [String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Weather.IsFetched] | [!Control.IsVisible(12345) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]]">Conditional</animation>
+			<animation effect="slide" time="300" delay="1" start="0" end="0,-320" tween="cubic" reversible="true" condition="[[!ControlGroup(97631).HasFocus + Window.IsActive(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), MyWeather)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), MyMusicPlaylistEditor)] | Window.IsVisible(VideoOSDBookmarks.xml) | Window.IsVisible(DialogFavourites.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogTextViewer.xml) | Window.IsVisible(DialogFullScreenInfo.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSubtitles.xml)  | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogAddonSettings.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogMediaSource.xml) | Window.IsVisible(SmartPlaylistEditor.xml) | [[Window.IsVisible(DialogButtonMenu.xml) | Control.Hasfocus(9010)] + [Control.IsVisible(12345) | String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]] | [!Window.IsVisible(FileBrowser.xml) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogAddonSettings.xml) + [!Window.IsVisible(musicinformation) + !Window.IsVisible(songinformation) + !Window.IsVisible(movieinformation) + [String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Weather.IsFetched] | [!Control.IsVisible(12345) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]]">Conditional</animation>
 
 
 
