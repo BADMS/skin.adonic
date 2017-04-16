@@ -1520,3 +1520,6 @@ msgctxt "#32002"
 msgid "Bit size"
 msgstr ""
 
+msgctxt "#32003"
+msgid "Started"
+msgstr ""

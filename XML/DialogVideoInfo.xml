@@ -156,7 +156,7 @@
 						</item>
 						<item>
 							<label>$INFO[ListItem.Premiered]</label>
-							<label2>$LOCALIZE[20416]:</label2>
+							<label2>$LOCALIZE[32003]:</label2>
 							<onclick>noop</onclick>
 							<visible>!String.IsEmpty(ListItem.Premiered) + [$EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode]]</visible>
 						</item>

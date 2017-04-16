@@ -986,7 +986,7 @@
 					<textwidth>352</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>19138</label>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 				</control>
 				<control type="button" id="103">
