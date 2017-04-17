@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="false">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
@@ -10,9 +10,9 @@
 	<onload>SetProperty(cfa_daemon_set,$INFO[Skin.String(background_fx)],home)</onload>
 	<onload>SetProperty(FIVE_daemon_set,$INFO[Skin.String(focus_fx)],home)</onload>
 	<onunload>Dialog.Close(all,true)</onunload>
+	<!--
 	<onunload>ClearProperty(ImageFIVE,Home)</onunload>
 	<onunload>ClearProperty(ImageFilterFIVE,Home)</onunload>
-	<!--
 	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">ReplaceWindow(StartUp.xml)</onload>
 	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">AlarmClock(adonic_loaded,Action(back),00:02,silent)</onload>
 	<onload condition="String.IsEmpty(Window(home).Property(adonic_loaded))">SetProperty(adonic_loaded,1,home)</onload>

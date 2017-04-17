@@ -2097,16 +2097,17 @@
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture>resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
-				<visible>[$EXP[isTvshow] | $EXP[isSeason]] + !Window.IsVisible(movieinformation)</visible>
+				<visible>![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
-				<visible>[$EXP[isTvshow] | $EXP[isSeason]] + !Window.IsVisible(movieinformation)</visible>
+				<visible>![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 		</control>
 	</include>
+	<!--
 	<include name="MusicFlags">
 		<control type="grouplist">
 			<left>$PARAM[left]</left>
@@ -2121,19 +2122,19 @@
 				<height>80</height>
 				<include>MusicFlagVars</include>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.AlbumCount)]</label>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AlbumCount)</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AlbumCount))</visible>
 			</control>
 			<control type="label">
 				<height>80</height>
 				<include>MusicFlagVars</include>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.SongCount)]</label>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount)</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
 			</control>
 			<control type="label">
 				<height>80</height>
 				<include>MusicFlagVars</include>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration)]</label>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration)</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
 			</control>
 			<control type="label">
 				<height>80</height>
@@ -2169,6 +2170,7 @@
 			</control>
 		</control>
 	</include>
+	-->
 	<include name="GlobalSearchScrollbar">
 		<control type="scrollbar" id="$PARAM[id]">
 			<visible allowhiddenfocus="true">Control.HasFocus($PARAM[id]) | Container($PARAM[container]).Scrolling</visible>

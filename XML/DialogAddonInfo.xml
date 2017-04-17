@@ -10,7 +10,7 @@
 		<effect type="fade" delay="300" end="100" time="300" />
 	</animation>
 	<controls>
-		<control type="group">
+		<control type="group" id="97633">
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogConfirm.xml)" reversible="false">Conditional</animation>
 			<left>0</left>
 			<top>604</top>
@@ -103,7 +103,7 @@
 						<control type="label">
 							<width>190</width>
 							<height>62</height>
-							<align>right</align>
+							<align>left</align>
 							<font>font30</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
@@ -121,7 +121,7 @@
 						<control type="label">
 							<width>190</width>
 							<height>62</height>
-							<align>right</align>
+							<align>left</align>
 							<font>font30</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>

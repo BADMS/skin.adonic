@@ -123,6 +123,7 @@
 					<focusedlayout height="120" width="1150" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<left>60</left>
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
@@ -299,6 +300,7 @@
 					<focusedlayout height="120" width="1790" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<left>60</left>
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
@@ -457,6 +459,7 @@
 					<focusedlayout height="60" width="1150" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<left>60</left>
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
@@ -599,6 +602,7 @@
 						<include>ListTextBG</include>
 						<!--<control type="button"><onfocus>SetProperty(NINE_manual_set,"info=pixelrandom,id=$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)],prefix=filter_logo",home)</onfocus><texturefocus></texturefocus></control>-->
 						<control type="image">
+							<left>60</left>
 							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
@@ -707,7 +711,7 @@
 				<control type="group">
 					<control type="image">
 						<visible>!Control.HasFocus(501)</visible>
-						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
+						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 						<left>1800</left>
 						<width>120</width>
 						<height>960</height>
@@ -717,7 +721,7 @@
 					</control>
 					<control type="image">
 						<visible>Control.HasFocus(501)</visible>
-						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
+						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 						<left>1800</left>
 						<width>120</width>
 						<height>960</height>
@@ -729,7 +733,7 @@
 						<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 						<visible>!Container.Content(files)</visible>
 						<visible>!Container.Content(episodes) | Control.HasFocus(501)</visible>
-						<visible>![Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
+						<visible>![Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 						<left>1160</left>
 						<width>640</width>
 						<height>960</height>
@@ -741,7 +745,7 @@
 				<control type="group">
 					<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 					<visible>!Container.Content(episodes)</visible>
-					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)]</visible>
+					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 					<top>200</top>
 					<left>1260</left>
 					<control type="image">
@@ -760,28 +764,29 @@
 						<texture background="true">$VAR[ListIcon]</texture>
 						<fadetime>400</fadetime>
 					</control>
+					<control type="image">
+						<top>560</top>
+						<width>560</width>
+						<height>200</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+					</control>
 				</control>
 				<control type="grouplist">
 					<top>760</top>
 					<left>1160</left>
 					<itemgap>0</itemgap>
 					<visible>![Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] + [Window.IsActive(musicplaylist) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !String.StartsWith(ListItem.Icon,Default)</visible>
+					<!--
 					<control type="label">
 						<visible>Container.Content(songs)</visible>
 						<width>760</width>
-						<height>30</height>
-						<font>font14</font>
-						<label>$INFO[ListItem.Album]</label>
+						<height>200</height>
 						<align>center</align>
+						<font>font15_textbox</font>
+						<label>$INFO[ListItem.Album,[B],[/B]]$INFO[ListItem.Year,[CR]]</label>
 					</control>
-					<control type="label">
-						<visible>Container.Content(songs)</visible>
-						<width>760</width>
-						<height>30</height>
-						<font>font14</font>
-						<label>$INFO[ListItem.Year]</label>
-						<align>center</align>
-					</control>
+					-->
 					<control type="textbox">
 						<visible>Container.Content(musicvideos)</visible>
 						<description>Description</description>
@@ -792,6 +797,7 @@
 						<label>$INFO[ListItem.Plot,[B],[/B]]</label>
 						<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 					</control>
+					<!--
 					<control type="textbox">
 						<visible>Container.Content(artists) | Container.Content(albums)</visible>
 						<label>$VAR[MusicPlotVar,[B],[/B]]</label>
@@ -801,6 +807,7 @@
 						<font>font15_textbox</font>
 						<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 					</control>
+					-->
 					<control type="textbox">
 						<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
 						<description>Description</description>

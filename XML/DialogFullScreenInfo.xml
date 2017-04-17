@@ -10,7 +10,7 @@
 		<origin x="0" y="0">true</origin>
 	</coordinates>
 	<controls>
-		<control type="group">
+		<control type="group" id="97633">
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
@@ -77,8 +77,8 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textoffsetx>15</textoffsetx>
-							<label>$VAR[PlayerTitleLabelVar,[UPPERCASE],[/UPPERCASE]]</label>
-							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[LIGHT],[/LIGHT]]</label2>
+							<label>$VAR[PlayerTitleLabelVar]</label>
+							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
 							<onclick>noop</onclick>
 							<texturefocus>blank.png</texturefocus>
 							<visible>!VideoPlayer.Content(episodes)</visible>
@@ -92,8 +92,8 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textoffsetx>15</textoffsetx>
-							<label>$INFO[VideoPlayer.Season,,X]$INFO[VideoPlayer.Episode,,. ]$VAR[PlayerTitleLabelVar,[UPPERCASE],[/UPPERCASE]]</label>
-							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[LIGHT],[/LIGHT]]</label2>
+							<label>$INFO[VideoPlayer.Season,,X]$INFO[VideoPlayer.Episode,,. ]$VAR[PlayerTitleLabelVar]</label>
+							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
 							<onclick>noop</onclick>
 							<texturefocus>blank.png</texturefocus>
 							<visible>VideoPlayer.Content(episodes)</visible>
@@ -113,7 +113,7 @@
 								<scrollspeed>150</scrollspeed>
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 								<label>$INFO[VideoPlayer.Year,[B],[/B] ]$INFO[VideoPlayer.Genre]</label>
-								<label2>$VAR[TopbarOSDLabel,[UPPERCASE],[/UPPERCASE]]</label2>
+								<label2>$VAR[TopbarOSDLabel]</label2>
 								<onclick>noop</onclick>
 								<texturefocus>blank.png</texturefocus>
 								<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)</visible>
@@ -131,7 +131,7 @@
 								<scrollspeed>150</scrollspeed>
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 								<label>$INFO[VideoPlayer.TVShowTitle]</label>
-								<label2>$VAR[TopbarOSDLabel,[UPPERCASE],[/UPPERCASE]]</label2>
+								<label2>$VAR[TopbarOSDLabel]</label2>
 								<onclick>noop</onclick>
 								<texturefocus>blank.png</texturefocus>
 								<visible>VideoPlayer.Content(episodes)</visible>
@@ -163,10 +163,10 @@
 					<label>$VAR[PlayerPlotVar]</label>
 				</control>
 				<control type="grouplist">
-					<animation effect="slide" end="-237" delay="0" time="0" easing="out" condition="String.IsEmpty(Control.GetLabel(12347))" reversible="false">Conditional</animation>
-					<left>297</left>
+					<animation effect="slide" end="103" delay="0" time="0" easing="out" condition="!String.IsEmpty(Control.GetLabel(12347))" reversible="false">Conditional</animation>
+					<left>60</left>
 					<top>220</top>
-					<width>1503</width>
+					<width>1740</width>
 					<height>90</height>
 					<font>topbar</font>
 					<align>center</align>

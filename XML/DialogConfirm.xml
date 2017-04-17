@@ -11,7 +11,7 @@
 		<effect type="fade" delay="300" end="100" time="300" />
 	</animation>
 	<controls>
-		<control type="group">
+		<control type="group" id="97633">
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(FileBrowser.xml)" reversible="false">Conditional</animation>
 			<include content="DialogBackgroundCommonsFake">
 				<param name="DialogBackgroundWidth" value="916" />

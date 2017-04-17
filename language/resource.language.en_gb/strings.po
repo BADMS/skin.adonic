@@ -1521,5 +1521,5 @@ msgid "Bit size"
 msgstr ""
 
 msgctxt "#32003"
-msgid "Started"
+msgid "Premiere"
 msgstr ""
