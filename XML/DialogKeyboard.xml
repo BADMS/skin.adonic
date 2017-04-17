@@ -10,7 +10,7 @@
 		<effect type="fade" delay="300" end="100" time="300" />
 	</animation>
 	<controls>
-		<control type="group" id="97633">
+		<control type="group">
 			<include content="DialogBackgroundCommonsFake">
 				<param name="DialogBackgroundWidth" value="1320" />
 				<param name="DialogBackgroundHeight" value="552" />

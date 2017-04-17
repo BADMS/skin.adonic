@@ -11,7 +11,7 @@
 		<effect type="fade" delay="300" end="100" time="300" />
 	</animation>
 	<controls>
-		<control type="group" id="97633">
+		<control type="group">
 			<left>0</left>
 			<top>604</top>
 			<include content="DialogBackgroundCommonsFake">

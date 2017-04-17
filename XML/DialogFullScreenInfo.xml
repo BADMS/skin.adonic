@@ -10,7 +10,7 @@
 		<origin x="0" y="0">true</origin>
 	</coordinates>
 	<controls>
-		<control type="group" id="97633">
+		<control type="group">
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
