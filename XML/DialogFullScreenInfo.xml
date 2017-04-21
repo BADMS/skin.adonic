@@ -2,7 +2,7 @@
 <window type="dialog" id="142">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload>Action(enter)</onload>
-	<onload>SetFocus(9000,10)</onload>
+	<onload>SetFocus(9000,11)</onload>
 	<onunload>ClearProperty(RefreshItem,Home)</onunload>
 	<coordinates>
 		<left>0</left>
@@ -74,8 +74,8 @@
 							<width>1715</width>
 							<height>45</height>
 							<font>font28_title</font>
-							<align>left</align>
-							<aligny>center</aligny>
+							
+							
 							<textoffsetx>15</textoffsetx>
 							<label>$VAR[PlayerTitleLabelVar]</label>
 							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
@@ -89,10 +89,10 @@
 							<width>1715</width>
 							<height>45</height>
 							<font>font28_title</font>
-							<align>left</align>
-							<aligny>center</aligny>
+							
+							
 							<textoffsetx>15</textoffsetx>
-							<label>$INFO[VideoPlayer.Season,,X]$INFO[VideoPlayer.Episode,,. ]$VAR[PlayerTitleLabelVar]</label>
+							<label>$INFO[VideoPlayer.Season,[B],[/B]X]$INFO[VideoPlayer.Episode,,. ]$VAR[PlayerTitleLabelVar]</label>
 							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
 							<onclick>noop</onclick>
 							<texturefocus>blank.png</texturefocus>
@@ -106,8 +106,8 @@
 								<width>1715</width>
 								<height>45</height>
 								<font>topbar</font>
-								<align>left</align>
-								<aligny>center</aligny>
+								
+								
 								<textoffsetx>15</textoffsetx>
 								<scroll>true</scroll>
 								<scrollspeed>150</scrollspeed>
@@ -124,8 +124,8 @@
 								<width>1715</width>
 								<height>45</height>
 								<font>topbar</font>
-								<align>left</align>
-								<aligny>center</aligny>
+								
+								
 								<textoffsetx>15</textoffsetx>
 								<scroll>true</scroll>
 								<scrollspeed>150</scrollspeed>
@@ -170,7 +170,7 @@
 					<height>90</height>
 					<font>topbar</font>
 					<align>center</align>
-					<aligny>center</aligny>
+					
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<control type="image" id="800011">

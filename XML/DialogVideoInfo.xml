@@ -73,7 +73,6 @@
 					<fadetime>400</fadetime>
 					<texture background="true" diffuse="thumbs/colorbox_poster_mask.png" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
 				</control>
-
 			</control>
 		</control>
 		<control type="group">
@@ -437,57 +436,57 @@
 					</control>
 				</control>
 			</control>
-            <control type="label">
-                <left>-10</left>
-                <top>1017</top>
-                <width>800</width>
-                <height>40</height>
-                <font>font13_title</font>
-                <textoffsetx>15</textoffsetx>
-                <aligny>top</aligny>
-                <label>$INFO[ListItem.Set]</label>
-                <visible>Integer.IsGreater(Container(250).NumItems,0) + [ControlGroup(9000).HasFocus(206) | Control.HasFocus(250)]</visible>
-                <animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
-            </control>
-            <control type="label">
-                <left>862</left>
-                <top>1025</top>
-                <width>300</width>
-                <height>40</height>
-                <font>font13_title</font>
-                <textoffsetx>15</textoffsetx>
-                <textcolor>disabled</textcolor>
-                <align>right</align>
-                <label>$INFO[Container(250).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(250).CurrentPage]$INFO[Container(250).NumPages,/]</label>
-                <visible>Integer.IsGreater(Container(250).NumItems,0) + [ControlGroup(9000).HasFocus(206) | Control.HasFocus(250)]</visible>
-                <animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
-            </control>
-            <control type="label">
-                <left>862</left>
-                <top>1025</top>
-                <width>300</width>
-                <height>40</height>
-                <font>font13_title</font>
-                <textoffsetx>15</textoffsetx>
-                <textcolor>disabled</textcolor>
-                <align>right</align>
-                <label>$INFO[Container(50).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(50).CurrentPage]$INFO[Container(50).NumPages,/]</label>
-                <visible>Integer.IsGreater(Container(50).NumItems,0) + [ControlGroup(9000).HasFocus(555) | Control.HasFocus(50)] + !System.HasAddon(script.extendedinfo)</visible>
-                <animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
-            </control>
-            <control type="label">
-                <left>862</left>
-                <top>1025</top>
-                <width>300</width>
-                <height>40</height>
-                <font>font13_title</font>
-                <textoffsetx>15</textoffsetx>
-                <textcolor>disabled</textcolor>
-                <align>right</align>
-                <label>$INFO[Container(90019).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(90019).CurrentPage]$INFO[Container(90019).NumPages,/]</label>
-                <visible>Integer.IsGreater(Container(90019).NumItems,0) + [ControlGroup(9000).HasFocus(555) | Control.HasFocus(90019)] + System.HasAddon(script.extendedinfo)</visible>
-                <animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
-            </control>
+			<control type="label">
+				<left>-10</left>
+				<top>1017</top>
+				<width>800</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<textoffsetx>15</textoffsetx>
+				<aligny>top</aligny>
+				<label>$INFO[ListItem.Set]</label>
+				<visible>Integer.IsGreater(Container(250).NumItems,0) + [ControlGroup(9000).HasFocus(206) | Control.HasFocus(250)]</visible>
+				<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
+			</control>
+			<control type="label">
+				<left>862</left>
+				<top>1025</top>
+				<width>300</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<textoffsetx>15</textoffsetx>
+				<textcolor>disabled</textcolor>
+				<align>right</align>
+				<label>$INFO[Container(250).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(250).CurrentPage]$INFO[Container(250).NumPages,/]</label>
+				<visible>Integer.IsGreater(Container(250).NumItems,0) + [ControlGroup(9000).HasFocus(206) | Control.HasFocus(250)]</visible>
+				<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
+			</control>
+			<control type="label">
+				<left>862</left>
+				<top>1025</top>
+				<width>300</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<textoffsetx>15</textoffsetx>
+				<textcolor>disabled</textcolor>
+				<align>right</align>
+				<label>$INFO[Container(50).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(50).CurrentPage]$INFO[Container(50).NumPages,/]</label>
+				<visible>Integer.IsGreater(Container(50).NumItems,0) + [ControlGroup(9000).HasFocus(555) | Control.HasFocus(50)] + !System.HasAddon(script.extendedinfo)</visible>
+				<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
+			</control>
+			<control type="label">
+				<left>862</left>
+				<top>1025</top>
+				<width>300</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<textoffsetx>15</textoffsetx>
+				<textcolor>disabled</textcolor>
+				<align>right</align>
+				<label>$INFO[Container(90019).NumItems,[B], $LOCALIZE[31025][/B] ]$INFO[Container(90019).CurrentPage]$INFO[Container(90019).NumPages,/]</label>
+				<visible>Integer.IsGreater(Container(90019).NumItems,0) + [ControlGroup(9000).HasFocus(555) | Control.HasFocus(90019)] + System.HasAddon(script.extendedinfo)</visible>
+				<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">Visible</animation>
+			</control>
 			<control type="group">
 				<left>20</left>
 				<top>510</top>
@@ -508,7 +507,6 @@
 					<onup condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName))">61</onup>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
-					<align>left</align>
 					<ondown>9010</ondown>
 					<orientation>horizontal</orientation>
 					<itemlayout height="525" width="260" />
@@ -531,7 +529,7 @@
 						<item>
 							<property name="widgetName">$LOCALIZE[206]</property>
 							<label2>cast</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]actor.png</thumb>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultActor.png</thumb>
 							<onclick>SendClick(555)</onclick>
 							<visible>Integer.IsGreater(Container(90019).NumItems,0) | Integer.IsGreater(Container(50).NumItems,0)</visible>
 						</item>
@@ -557,6 +555,14 @@
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]youtube.png</thumb>
 							<onclick>SendClick(204)</onclick>
 							<visible>Integer.IsGreater(Container(88822).NumItems,0)</visible>
+						</item>
+						<item>
+							<label>12005</label>
+							<label2>$LOCALIZE[12005]</label2>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]fullscreen.png</thumb>
+							<onclick condition="Control.IsVisible(50)">Action(back)</onclick>
+							<onclick>Fullscreen</onclick>
+							<visible>Player.HasMedia</visible>
 						</item>
 						<item>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconHome.png</thumb>
@@ -586,14 +592,8 @@
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">Hidden</animation>
-
-
-
 			<animation effect="slide" time="300" delay="0" start="0" end="0,483" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Window.IsVisible(1130) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(FileBrowser.xml) + [Integer.IsLess(System.CurrentControlID, 6000) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [[String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Weather.IsFetched] | [!Control.IsVisible(12345) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]">Conditional</animation>
-			
 			<animation effect="slide" time="300" delay="0" start="0" end="0,163" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Control.HasFocus(9010) + [Integer.IsLess(System.CurrentControlID, 6000) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [String.IsEmpty(Container(9000).ListItem.Property(widgetName))]">Conditional</animation>
-
-
 			<control type="group">
 				<include>HomeDefault</include>
 			</control>
@@ -602,6 +602,6 @@
 				<top>195</top>
 				<include>MenuHome3D</include>
 			</control>
-        </control>
+		</control>
 	</controls>
 </window>

@@ -127,7 +127,7 @@
                 <height>69</height>
                 <control type="radiobutton" id="22">
                     <description>Default RadioButton</description>
-                    <align>left</align>
+                    
                     <width>566</width>
                     <onup>200</onup>
                     <ondown>9000</ondown>

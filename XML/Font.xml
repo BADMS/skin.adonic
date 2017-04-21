@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fonts>
-	<fontset id="Default" idloc="31417">
+	<fontset id="Pro" idloc="31417">
 		<!-- Normal Fonts -->
 		<font>
 			<name>font10</name>
@@ -61,8 +61,8 @@
 			<!--Actor Info-->
 			<name>font_Actor</name>
 			<filename>MavenPro-Medium.ttf</filename>
-			<size>22</size>
-			<linespacing>1.1</linespacing>
+			<size>26</size>
+			<linespacing>0.92</linespacing>
 		</font>
 		<font>
 			<name>font15_textbox</name>
@@ -235,7 +235,7 @@
 			<size>114</size>
 		</font>
 	</fontset>
-	<fontset id="Roboto" idloc="31949">
+	<fontset id="Default" idloc="31949">
 		<!-- Normal Fonts -->
 		<font>
 			<name>font10</name>
@@ -296,8 +296,8 @@
 			<!--Actor Info-->
 			<name>font_Actor</name>
 			<filename>Roboto-Regular.ttf</filename>
-			<size>22</size>
-			<linespacing>1.1</linespacing>
+			<size>26</size>
+			<linespacing>0.92</linespacing>
 		</font>
 		<font>
 			<name>font15_textbox</name>
@@ -532,8 +532,8 @@
 			<!--Actor Info-->
 			<name>font_Actor</name>
 			<filename>Horseferry-Medium.ttf</filename>
-			<size>22</size>
-			<linespacing>1.1</linespacing>
+			<size>26</size>
+			<linespacing>0.92</linespacing>
 		</font>
 		<font>
 			<name>font15_textbox</name>

@@ -46,7 +46,7 @@
 					<description>Default controller types button</description>
 					<width>340</width>
 					<height>62</height>
-					<align>left</align>
+					
 					<font>font30</font>
 				<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
 				<textcolor>$VAR[ColorMenuVar]</textcolor>
@@ -84,7 +84,7 @@
 					<height>62</height>
 					<width>340</width>
 					<align>center</align>
-					<aligny>center</aligny>
+					
 					<font>font30</font>
 				<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
 				<textcolor>$VAR[ColorMenuVar]</textcolor>

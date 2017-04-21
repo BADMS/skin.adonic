@@ -34,7 +34,7 @@
 					<textcolor>$VAR[ColorTextVar]</textcolor>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 					<font>font30</font>
-					<aligny>center</aligny>
+					
 					<label>467</label>
 					<onright>9003</onright>
 					<onleft>9001</onleft>
@@ -49,7 +49,7 @@
 					<textcolor>$VAR[ColorTextVar]</textcolor>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 					<font>font30</font>
-					<aligny>center</aligny>
+					
 					<label>-</label>
 					<onup>22</onup>
 					<onleft>9001</onleft>
@@ -65,7 +65,7 @@
 					<textcolor>$VAR[ColorTextVar]</textcolor>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 					<font>font30</font>
-					<aligny>center</aligny>
+					
 					<label>21434</label>
 					<disabledcolor>$VAR[ColorHighlightVar]</disabledcolor>
 					<enable>no</enable>
@@ -130,6 +130,8 @@
 						<label></label>
 						<align>center</align>
 						<font>IconButton</font>
+						<texturefocus/>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="21">
 						<description>Cancel Button</description>
@@ -138,6 +140,8 @@
 						<label></label>
 						<align>center</align>
 						<font>IconButton</font>
+						<texturefocus/>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="13">
 						<description>Add Rule Button</description>
@@ -146,6 +150,8 @@
 						<label></label>
 						<align>center</align>
 						<font>IconButton</font>
+						<texturefocus/>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="14">
 						<description>Remove Rule Button</description>
@@ -154,6 +160,8 @@
 						<label></label>
 						<align>center</align>
 						<font>IconButton</font>
+						<texturefocus/>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 					<control type="button" id="15">
 						<description>Edit Rule Button</description>
@@ -162,6 +170,8 @@
 						<label></label>
 						<align>center</align>
 						<font>IconButton</font>
+						<texturefocus/>
+						<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 					</control>
 				</control>
 				<control type="group" id="9003">
@@ -191,7 +201,7 @@
 					<control type="button" id="19">
 						<top>124</top>
 						<width>835</width>
-						<align>left</align>
+						
 						<font>font30</font>
 						<label>580</label>
 						<onright>9002</onright>

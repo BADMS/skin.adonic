@@ -2,7 +2,7 @@
 <includes>
 	<include name="HomeDefault">
 		<control type="group">
-			<animation effect="slide" time="0" start="0,0" end="0,-70" condition="system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
+			<animation effect="slide" time="0" start="0,0" end="0,-70" condition="Window.IsActive(home) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
 			<top>797</top>
 			<!-- Main Menu (Includes_Home.xml) -->
 			<control type="image">
@@ -37,7 +37,7 @@
 			</control>
 			<include>MainMenuList</include>	
 		</control>
-		<include condition="system.getbool(lookandfeel.enablerssfeeds)">RSSFeedWidget</include>
+		<include condition="Window.IsActive(home) + system.getbool(lookandfeel.enablerssfeeds)">RSSFeedWidget</include>
 		<include>BottomBarWidget</include>
 		<include>HomeDefaultWidgets</include>
 	</include>

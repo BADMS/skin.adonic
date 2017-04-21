@@ -24,8 +24,8 @@
 				<width>1715</width>
 				<height>45</height>
 				<font>topbar</font>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 				<textcolor>$VAR[ColorMenuVar]</textcolor>
 				<label>$INFO[Control.GetLabel(1),[B],[/B] ]$INFO[Container(6).ListItem.Label]$INFO[Container(3).ListItem.Label]</label>
 			</control>

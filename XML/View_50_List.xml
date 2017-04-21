@@ -159,7 +159,7 @@
 						</control>
 						<control type="label">
 							<top>3</top>
-							<left>170</left>
+							<left>140</left>
 							<width>755</width>
 							<height>70</height>
 							<font>font30</font>
@@ -336,7 +336,7 @@
 						</control>
 						<control type="label">
 							<top>3</top>
-							<left>170</left>
+							<left>140</left>
 							<width>1345</width>
 							<height>70</height>
 							<font>font30</font>
@@ -807,7 +807,6 @@
 						<font>font15_textbox</font>
 						<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 					</control>
-					-->
 					<control type="textbox">
 						<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
 						<description>Description</description>
@@ -818,6 +817,7 @@
 						<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
 						<autoscroll time="2000" delay="2000" repeat="1000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 					</control>
+					-->
 				</control>
 				<control type="group">
 					<left>1160</left>

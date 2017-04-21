@@ -5,6 +5,7 @@
 	<onload>Skin.SetString(background_fx,$INFO[Window(home).Property(cfa_daemon_set)])</onload>
 	<onload>Skin.SetString(focus_fx,$INFO[Window(home).Property(FIVE_daemon_set)])</onload>
 	<defaultcontrol>9001</defaultcontrol>
+	<onunload condition="Window.IsActive(VideoFullScreen.xml)">SetFocus(97631)</onunload>
 	<animation type="WindowOpen" reversible="false">
 		<effect type="fade" delay="300" end="100" time="300" />
 	</animation>

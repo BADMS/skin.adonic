@@ -68,7 +68,7 @@
 				<left>110</left>
 				<height>144</height>
 				<width>FullScreenWidth</width>
-				<align>left</align>
+				
 				<itemgap>0</itemgap>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>

@@ -27,11 +27,11 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<label>$LOCALIZE[1036]</label>
+			<label>Favourites</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/favourite.png</icon>
 			<thumb />
-			<property name="labelID">1036</property>
+			<property name="labelID">favourites</property>
 			<property name="defaultID">1036</property>
 			<property name="translatedPath">ActivateWindow(Favourites)</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
@@ -40,7 +40,7 @@
 			<property name="path">ActivateWindow(Favourites)</property>
 			<property name="list">Favourites</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-1036</property>
+			<property name="submenuVisibility">favourites</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
@@ -703,11 +703,11 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<label>$LOCALIZE[1036]</label>
+			<label>Favourites</label>
 			<label2>Common menu item</label2>
 			<icon>special://skin/extras/icons/favourite.png</icon>
 			<thumb />
-			<property name="labelID">1036</property>
+			<property name="labelID">favourites</property>
 			<property name="defaultID">1036</property>
 			<property name="translatedPath">ActivateWindow(Favourites)</property>
 			<property name="background">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</property>
@@ -716,7 +716,7 @@
 			<property name="path">ActivateWindow(Favourites)</property>
 			<property name="list">Favourites</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-1036</property>
+			<property name="submenuVisibility">favourites</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
@@ -1385,10 +1385,10 @@
 	<include name="skinshortcuts-group-alt-weather">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-num-1036">
+	<include name="skinshortcuts-group-favourites">
 		<description>No items</description>
 	</include>
-	<include name="skinshortcuts-group-alt-num-1036">
+	<include name="skinshortcuts-group-alt-favourites">
 		<description>No items</description>
 	</include>
 	<include name="skinshortcuts-group-num-13009">
@@ -2328,7 +2328,7 @@
 			<param name="id">80112</param>
 		</include>
 		<control id="80112" type="fixedlist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),favourites)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80112</param>
 			</include>
@@ -2513,7 +2513,7 @@
 			<param name="id">80112</param>
 		</include>
 		<control id="80112" type="wraplist">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),favourites)</visible>
 			<include content="FixedWrapWidgetContent">
 				<param name="id">80112</param>
 			</include>
@@ -2690,9 +2690,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80111) + !Container(80111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2711,9 +2710,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80111) + !Container(80111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2728,9 +2726,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80111) + !Container(80111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2744,9 +2741,8 @@
 		<control id="80111" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
 			<animation condition="Container(80111).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -2865,9 +2861,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80112) + !Container(80112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2886,9 +2881,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80112) + !Container(80112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2903,9 +2897,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80112) + !Container(80112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -2917,11 +2910,10 @@
 			<animation condition="Integer.IsGreater(Container(80112).Column,0)" easing="inout" effect="slide" end="466,0" time="300" tween="cubic">Conditional</animation>
 		</control>
 		<control id="80112" type="panel">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),favourites)</visible>
 			<animation condition="Container(80112).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3040,9 +3032,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3061,9 +3052,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3078,9 +3068,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80113) + !Container(80113).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3094,9 +3083,8 @@
 		<control id="80113" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13009)</visible>
 			<animation condition="Container(80113).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3215,9 +3203,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3236,9 +3223,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3253,9 +3239,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80114) + !Container(80114).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3269,9 +3254,8 @@
 		<control id="80114" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),home)</visible>
 			<animation condition="Container(80114).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3390,9 +3374,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80115) + !Container(80115).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3411,9 +3394,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80115) + !Container(80115).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3428,9 +3410,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80115) + !Container(80115).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3444,9 +3425,8 @@
 		<control id="80115" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<animation condition="Container(80115).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3565,9 +3545,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80116) + !Container(80116).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3586,9 +3565,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80116) + !Container(80116).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3603,9 +3581,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80116) + !Container(80116).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3619,9 +3596,8 @@
 		<control id="80116" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<animation condition="Container(80116).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3740,9 +3716,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80117) + !Container(80117).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3761,9 +3736,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80117) + !Container(80117).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3778,9 +3752,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80117) + !Container(80117).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3794,9 +3767,8 @@
 		<control id="80117" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<animation condition="Container(80117).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -3915,9 +3887,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80118) + !Container(80118).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3936,9 +3907,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80118) + !Container(80118).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3953,9 +3923,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80118) + !Container(80118).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -3969,9 +3938,8 @@
 		<control id="80118" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<animation condition="Container(80118).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -4090,9 +4058,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(80119) + !Container(80119).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4111,9 +4078,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(80119) + !Container(80119).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4128,9 +4094,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(80119) + !Container(80119).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4144,9 +4109,8 @@
 		<control id="80119" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<animation condition="Container(80119).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -4265,9 +4229,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(801110) + !Container(801110).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4286,9 +4249,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(801110) + !Container(801110).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4303,9 +4265,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(801110) + !Container(801110).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4319,9 +4280,8 @@
 		<control id="801110" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<animation condition="Container(801110).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -4440,9 +4400,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(801111) + !Container(801111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4461,9 +4420,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(801111) + !Container(801111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4478,9 +4436,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(801111) + !Container(801111).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4494,9 +4451,8 @@
 		<control id="801111" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<animation condition="Container(801111).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -4615,9 +4571,8 @@
 		</control>
 		<control type="image">
 			<visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>219</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4636,9 +4591,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>322</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4653,9 +4607,8 @@
 		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(801112) + !Container(801112).IsUpdating</visible>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>23</left>
-			<top>414</top>
+			<top>604</top>
 			<width>478</width>
 			<height>316</height>
 			<animation delay="200" effect="fade" time="320">Visible</animation>
@@ -4669,9 +4622,8 @@
 		<control id="801112" type="panel">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<animation condition="Container(801112).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)" effect="fade" end="0" reversible="false" start="100" time="0">Conditional</animation>
-			<animation condition="true" effect="slide" end="0,190" start="0,0" time="0">Conditional</animation>
 			<left>29</left>
-			<top>420</top>
+			<top>610</top>
 			<width>1864</width>
 			<height>310</height>
 			<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>

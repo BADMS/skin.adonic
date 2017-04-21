@@ -24,8 +24,8 @@
 				<width>1715</width>
 				<height>45</height>
 				<font>topbar</font>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 			</control>
 			<control type="group">
 				<animation effect="slide" start="0" end="660" time="0" tween="cubic" easing="inout" reversible="true" condition="!Window.IsActive(virtualkeyboard)">Conditional</animation>

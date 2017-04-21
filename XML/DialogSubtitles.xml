@@ -66,7 +66,7 @@
 					<top>248</top>
 					<width>340</width>
 					<height>62</height>
-					<align>left</align>
+					
 					<font>font30</font>
 					<label>$INFO[Container(120).NumItems,[B], $LOCALIZE[31025][/B] ][COLOR $VAR[ColorHighlightVar]]$INFO[Container(120).CurrentPage]$INFO[Container(120).NumPages,/][/COLOR]</label>
 					<visible>!String.IsEmpty(Container(120).ListItem.Label)</visible>
@@ -76,7 +76,7 @@
 						<left>-340</left>
 						<width>1</width>
 						<height>62</height>
-						<align>left</align>
+						
 						<orientation>horizontal</orientation>
 						<itemgap>0</itemgap>
 						<control type="label" id="1401">

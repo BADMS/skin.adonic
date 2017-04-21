@@ -108,7 +108,7 @@
 			<aspectratio>scale</aspectratio>
 			<timeperimage>3000</timeperimage>
 			<fadetime>400</fadetime>
-			<aligny>center</aligny>
+			
 			<imagepath background="true" diffuse="special://skin/extras/misc/rollmask.png">$VAR[GlobalBackgroundVar]</imagepath>
 		</control>
 	</include>

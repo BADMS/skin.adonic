@@ -233,6 +233,7 @@
 	<default type="grouplist">
 		<left>0</left>
 		<top>0</top>
+		<align>left</align>
 		<itemgap>0</itemgap>
 	</default>
 	<default type="scrollbar">

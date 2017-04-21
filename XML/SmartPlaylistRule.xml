@@ -29,7 +29,7 @@
 				<onleft>9002</onleft>
 				<onright>60</onright>
 				<ondown>9001</ondown>
-				<align>left</align>
+				
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				<pagecontrol>60</pagecontrol>
@@ -50,7 +50,7 @@
 					<textcolor>$VAR[ColorTextVar]</textcolor>
 					<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 					<font>font30</font>
-					<aligny>center</aligny>
+					
 					<hinttext>$LOCALIZE[19133]</hinttext>
 				</control>
 				<control type="button" id="20">
@@ -79,6 +79,8 @@
 					<label></label>
 					<align>center</align>
 					<font>IconButton</font>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 				</control>
 				<control type="button" id="19">
 					<description>Cancel Button</description>
@@ -87,6 +89,8 @@
 					<label></label>
 					<align>center</align>
 					<font>IconButton</font>
+					<texturefocus/>
+					<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 				</control>
 			</control>
 			<control type="scrollbar" id="60">

@@ -31,7 +31,7 @@
 				<onleft>59</onleft>
 				<onright>2</onright>
 				<orientation>Vertical</orientation>
-				<align>left</align>
+				
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<pagecontrol>59</pagecontrol>
 			</control>
@@ -49,7 +49,7 @@
 					<onup>2</onup>
 					<ondown>2</ondown>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<align>left</align>
+					
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1730</left>
@@ -128,8 +128,8 @@
 				<description>Default Category Button</description>
 				<height>62</height>
 				<width>340</width>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 				<font>font30</font>
 				<textoffsetx>0</textoffsetx>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
@@ -139,8 +139,8 @@
 				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 			</control>
@@ -160,7 +160,7 @@
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 				<font>font30</font>
-				<aligny>center</aligny>
+				
 				<reverse>yes</reverse>
 			</control>
 			<control type="image" id="6">
@@ -173,16 +173,16 @@
 				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 				<label />
 			</control>
 			<control type="sliderex" id="8">
 				<description>Default Slider</description>
 				<width>1320</width>
 				<height>62</height>
-				<align>left</align>
-				<aligny>center</aligny>
+				
+				
 				<font>font30</font>
 			</control>
 		</control>

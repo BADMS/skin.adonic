@@ -116,7 +116,7 @@
 				<onclick>Action(back)</onclick>
 				<onclick>Action(back)</onclick>
 				<onclick condition="Container.Content(episodes)">Action(back)</onclick>
-				<visible>Container.Content(episodes) | Container.Content(seasons)</visible>
+				<visible>String.StartsWith(Container.FolderPath,videodb://tvshows/) + [Container.Content(episodes) | Container.Content(seasons)]</visible>
 			</item>
 			<item id="90007">
 				<label>24025</label>

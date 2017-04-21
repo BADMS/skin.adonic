@@ -810,7 +810,7 @@ msgid "adonic"
 msgstr ""
 
 msgctxt "#31197"
-msgid "Thanks to mimi:c and numerous others.."
+msgid "Thanks to braz and numerous others.."
 msgstr ""
 
 msgctxt "#31198"
@@ -1522,4 +1522,8 @@ msgstr ""
 
 msgctxt "#32003"
 msgid "Premiere"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Library stats"
 msgstr ""

@@ -13,14 +13,14 @@
 		<control type="label">
 			<visible>String.IsEqual(ListItem.Label, ..) + [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]</visible>
 			<align>center</align>
-			<aligny>center</aligny>
+			
 			<font>IconMedium</font>
 			<label></label>
 		</control>
 		<control type="label">
 			<visible>String.IsEqual(ListItem.Label, ..) + ![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]</visible>
 			<align>center</align>
-			<aligny>center</aligny>
+			
 			<font>IconButton</font>
 			<label></label>
 		</control>

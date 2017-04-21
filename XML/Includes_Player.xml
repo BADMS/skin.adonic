@@ -9,12 +9,12 @@
 				<left>110</left>
 				<height>144</height>
 				<width>FullScreenWidth</width>
-				<align>left</align>
+				
 				<itemgap>0</itemgap>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
 				<onup>Action(back)</onup>
-				<ondown>703</ondown>
+				<ondown>9010</ondown>
 				<onleft>202</onleft>
 				<onright>202</onright>
 					<itemlayout height="120" width="1150"></itemlayout>
@@ -124,6 +124,16 @@
 						</item>
 						<item>
 							<label></label>
+							<label2>$LOCALIZE[14022] $LOCALIZE[29915]</label2>
+							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultActor.png</icon>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultActor.png</thumb>
+							<onclick>Dialog.Close(videoosd)</onclick>
+							<onclick>activateWindow(videoplaylist)</onclick>
+							<onclick>Action(info)</onclick>
+							<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
+						</item>
+						<item>
+							<label></label>
 							<label2>13320</label2>
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]stereo.png</icon>
 							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]stereo.png</thumb>
@@ -154,7 +164,7 @@
 				<left>110</left>
 				<height>144</height>
 				<width>FullScreenWidth</width>
-				<align>left</align>
+				
 				<itemgap>0</itemgap>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
