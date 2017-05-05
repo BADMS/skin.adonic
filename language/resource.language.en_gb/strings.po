@@ -810,15 +810,15 @@ msgid "adonic"
 msgstr ""
 
 msgctxt "#31197"
-msgid "Thanks to braz and numerous others.."
+msgid "[CR]     Thanks to braz and numerous others..[CR]                          A to C, without going through B"
 msgstr ""
 
 msgctxt "#31198"
-msgid "A to C, without going through B"
+msgid ""
 msgstr ""
 
 msgctxt "#31199"
-msgid "...#[...:',,%$malfun..nyth#%inking ..<> ???!#"
+msgid "...#[...:',,%$malfun..nyth#%inking ..<> ???!#[CR][CR]https://github.com/BADMS"
 msgstr ""
 
 msgctxt "#31200"

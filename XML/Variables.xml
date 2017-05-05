@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="AboutTypeout">
+		<value>$LOCALIZE[31199]</value>
+	</variable>
 	<variable name="LogosArt">
 		<value condition="!String.IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(characterart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(clearart)]</value>
@@ -914,7 +917,6 @@
     	<value condition="Window.IsActive(profiles) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$LOCALIZE[13200]</value>
     	<value condition="Window.IsActive(systeminfo) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$INFO[Control.GetLabel(52)]</value>
     	<value condition="Window.IsActive(favourites) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$INFO[Container(450).NumItems,, $LOCALIZE[31025]]</value>
-    	<value condition="Window.IsActive(programsettings) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$LOCALIZE[0]</value>
     	<value condition="Window.IsActive(systemsettings) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$LOCALIZE[13000]</value>
     	<value condition="Window.IsActive(servicesettings) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$LOCALIZE[13279]</value>
     	<value condition="Window.IsActive(pvrsettings) + !ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)">$LOCALIZE[19020]</value>
@@ -973,7 +975,7 @@
     	<value condition="Window.IsVisible(shutdownmenu)">$INFO[System.CurrentControl,[B],[/B]]</value>
     	<value condition="Window.IsVisible(script-skinshortcuts.xml) + !ControlGroup(97631).HasFocus">$VAR[SkinShortcutsDescriptionVar]</value>
     	<value condition="Window.IsVisible(Settings.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(9990).ListItem.Label,[B],[/B]]</value>
-    	<value condition="Window.IsVisible(SettingsSystemInfo.xml) + !ControlGroup(97631).HasFocus">[B]$LOCALIZE[13271][/B]$INFO[System.CPUUsage,, [B]$LOCALIZE[31309][/B] ]$INFO[system.memory(used)]</value>
+    	<value condition="Window.IsVisible(SettingsSystemInfo.xml) + !ControlGroup(97631).HasFocus">[B]$LOCALIZE[13271][/B] $INFO[System.CPUUsage,, [B]$LOCALIZE[31309][/B] ]$INFO[system.memory(used)]</value>
     	<value condition="Window.IsVisible(SkinSettings.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(9990).ListItem.Label,[B],[/B] ]$VAR[SkinSettingsDescriptionVar]</value>
     	<value condition="Window.IsVisible(SettingsProfile.xml) + !ControlGroup(97631).HasFocus">$INFO[Container(2).ListItem.Label,[B],[/B] ]$VAR[SkinSettingsDescriptionVar]</value>
     	<value condition="Window.IsVisible(SettingsCategory.xml) + !ControlGroup(97631).HasFocus">$INFO[Control.GetLabel(6),[B],[/B]]</value>
