@@ -164,7 +164,7 @@
 				</control>
 				<control type="grouplist">
 					<animation effect="slide" end="103" delay="0" time="0" easing="out" condition="!String.IsEmpty(Control.GetLabel(12347))" reversible="false">Conditional</animation>
-					<left>60</left>
+					<left>70</left>
 					<top>220</top>
 					<width>1740</width>
 					<height>90</height>

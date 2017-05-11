@@ -183,7 +183,7 @@
 				<fadetime>300</fadetime>
 				<timeperimage>1000</timeperimage>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
-				<imagepath background="true">$INFO[Skin.String(weatherfanart.path)]/</imagepath>
+				<imagepath>$INFO[Skin.String(weatherfanart.path)]$INFO[Window.Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</imagepath>
 				<visible>Container(6661).HasFocus(8)</visible>
 			</control>
 			<control type="group" id="9991">

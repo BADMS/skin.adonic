@@ -4,6 +4,7 @@
 	<allowoverlay>true</allowoverlay>
 	<views>50</views>
 	<menucontrol>9000</menucontrol>
+	<onload>SetProperty(FIVE_daemon_fire,True,home)</onload>
 	<onload>Dialog.Close(all,true)</onload>
 	<onload>ClearProperty(ImageFilterFIVE,Home)</onload>
 	<onload>ClearProperty(ImageFIVE,Home)</onload>

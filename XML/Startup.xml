@@ -37,6 +37,15 @@
 	<onload>AlarmClock(nms4,SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home),00:11,true)</onload>
 	<onload>AlarmClock(nms5,SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home),00:13,true)</onload>
 	<onload>AlarmClock(nms6,SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:15,true)</onload>
+	<!--
+	<onload>RunScript(script.colorbox,var=quality,set=$INFO[Skin.String(colorbox_quality)])</onload>
+	<onload>RunScript(script.colorbox,var=blursize,set=$INFO[Skin.String(colorbox_blursize)])</onload>
+	<onload>RunScript(script.colorbox,var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)])</onload>
+	<onload>RunScript(script.colorbox,var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)])</onload>
+	<onload>RunScript(script.colorbox,var=black,set=$INFO[Skin.String(colorbox_black)])</onload>
+	<onload>RunScript(script.colorbox,var=white,set=$INFO[Skin.String(colorbox_white)])</onload>
+	-->
+	<onunload>Skin.SetString(OSDCast,0)</onunload>
 	<controls>
 		<control type="button" id="10">
 			<description>trigger</description>

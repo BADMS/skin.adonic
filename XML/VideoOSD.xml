@@ -8,6 +8,7 @@
 	<onload condition="Window.IsVisible(shutdownmenu)">AlarmClock(foc2,ActivateWindow(shutdownmenu),00:00,silent)</onload>
 	<onload condition="Window.IsVisible(shutdownmenu)">Dialog.Close(shutdownmenu,true)</onload>
 	<onload condition="!Window.IsVisible(shutdownmenu)">SetFocus(9000,4)</onload>
+	<onload>Skin.SetString(OSDCast,0)</onload>
 	<controls>
 		<include>VideoButtonsGroup</include>
 		<control type="group" id="97631">

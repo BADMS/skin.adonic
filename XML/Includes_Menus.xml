@@ -116,6 +116,7 @@
 				<onclick>Action(back)</onclick>
 				<onclick>Action(back)</onclick>
 				<onclick condition="Container.Content(episodes)">Action(back)</onclick>
+				<onclick>ReplaceWindow(videos, videodb://tvshows/titles/)</onclick>
 				<visible>String.StartsWith(Container.FolderPath,videodb://tvshows/) + [Container.Content(episodes) | Container.Content(seasons)]</visible>
 			</item>
 			<item id="90007">
@@ -157,7 +158,7 @@
 		</content>
 	</include>
 	<include name="SubMenuListDefault">
-		<animation effect="fade" start="100" end="0" time="200" reversible="false" condition="!ControlGroup(9001).HasFocus()">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="0" reversible="false" condition="!ControlGroup(9001).HasFocus()">conditional</animation>
 		<include>VisibleFadeEffect</include>
 		<left>$PARAM[SubmenuLeft]</left>
 		<top>$PARAM[SubmenuTop]</top>

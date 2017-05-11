@@ -124,7 +124,7 @@
 						<include>ListTextBG</include>
 						<control type="image">
 							<left>60</left>
-							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
+							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
 						<control type="label">
@@ -301,7 +301,7 @@
 						<include>ListTextBG</include>
 						<control type="image">
 							<left>60</left>
-							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
+							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
 						<control type="label">
@@ -460,7 +460,7 @@
 						<include>ListTextBG</include>
 						<control type="image">
 							<left>60</left>
-							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
+							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
 						<control type="group">
@@ -603,7 +603,7 @@
 						<!--<control type="button"><onfocus>SetProperty(NINE_manual_set,"info=pixelrandom,id=$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)],prefix=filter_logo",home)</onfocus><texturefocus></texturefocus></control>-->
 						<control type="image">
 							<left>60</left>
-							<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
+							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
 						<include>ParentItem</include>
 						<control type="group">
@@ -702,16 +702,17 @@
 			</control>
 			<control type="group">
 				<visible>!Window.IsActive(movieinformation)</visible>
+				<visible>String.IsEqual(Container.SortMethod, title)</visible>
 				<top>0</top>
 				<left>0</left>
-				<include condition="String.IsEqual(Container.SortMethod, title)">Furniture_AlphabetVertical</include>
+				<include>Furniture_AlphabetVertical</include>
 			</control>
 			<control type="group">
 				<top>0</top>
 				<control type="group">
 					<control type="image">
 						<visible>!Control.HasFocus(501)</visible>
-						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
+						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<left>1800</left>
 						<width>120</width>
 						<height>960</height>
@@ -721,7 +722,7 @@
 					</control>
 					<control type="image">
 						<visible>Control.HasFocus(501)</visible>
-						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
+						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<left>1800</left>
 						<width>120</width>
 						<height>960</height>
@@ -731,6 +732,7 @@
 					</control>
 					<control type="image">
 						<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
+						<visible>!String.IsEqual(ListItem.DBTYPE, episode)</visible>
 						<visible>!Container.Content(files)</visible>
 						<visible>!Container.Content(episodes) | Control.HasFocus(501)</visible>
 						<visible>![Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
@@ -744,6 +746,7 @@
 				</control>
 				<control type="group">
 					<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
+					<visible>!String.IsEqual(ListItem.DBTYPE, episode)</visible>
 					<visible>!Container.Content(episodes)</visible>
 					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 					<top>200</top>
@@ -822,7 +825,7 @@
 				<control type="group">
 					<left>1160</left>
 					<width>760</width>
-					<visible>[!Skin.HasSetting(Enable.WideList.Misc) + Container.Content(episodes)] | [Window.IsActive(movieinformation) + Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
+					<visible>[!Skin.HasSetting(Enable.WideList.Misc) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]] | [Window.IsActive(movieinformation) + Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					<control type="image">
 						<height>428</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
@@ -846,7 +849,7 @@
 			</control>
 			<control type="group">
 				<animation effect="slide" time="0" delay="0" start="0" end="640" tween="cubic" reversible="true" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
-				<visible>![Window.IsActive(movieinformation) + Container.Content(episodes)]</visible>
+				<visible>![Window.IsActive(movieinformation) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]]</visible>
 				<visible>Control.IsVisible(50)</visible>
 				<include>Scrollbar_Vertical_50</include>
 			</control>

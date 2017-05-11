@@ -32,6 +32,10 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(FIVE_daemon_fallback))">$INFO[Window(Home).Property(FIVE_daemon_fallback)]</value>
 		<value>fb.jpg</value>
 	</variable>
+	<variable name="50FocusBackground">
+		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value>listselect_fo.png</value>
+	</variable>
 	<variable name="MenuPanelBackground">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
 		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
@@ -655,6 +659,12 @@
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>highlight</value>
 	</variable>
+	<variable name="50ListColorHighlightVar">
+		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + !ListItem.IsPlaying">$INFO[Window(home).Property(ImageColorFIVE)]</value>
+		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + ListItem.IsPlaying">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
+		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
+		<value>highlight</value>
+	</variable>
 	<variable name="ColorHighlightVar">
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorFIVE))">$VAR[ColorTextVar]</value>
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
@@ -953,11 +963,17 @@
     	<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Premiered,, ]$INFO[VideoPlayer.TvShowTitle,[B],[/B]]</value>
     	<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Genre,[B],[/B]]</value>
     	<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Artist,[B],[/B]]</value>
-    	<value condition="Player.HasAudio + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + !String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist,, ]$INFO[MusicPlayer.Album,[B],[/B]]</value>
+    	<value condition="Player.HasAudio + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + !String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
     	<value condition="!String.IsEmpty(Player.Title) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Time,, / ]$INFO[Player.Duration,[B],[/B]]</value>
     </variable>
     <variable name="TopbarOSDLabel">
     	<value condition="!String.IsEmpty(Player.Title) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$INFO[Player.Time,[LIGHT],[/LIGHT]] $INFO[Player.TimeRemaining,[,]] $INFO[Player.Duration,[B],[/B]]</value>
+    </variable>
+	<variable name="SystemCurrentControl">
+    	<value condition="ControlGroup(9001).HasFocus(111)">$LOCALIZE[186]</value>
+    	<value condition="ControlGroup(9001).HasFocus(112)">$LOCALIZE[222]</value>
+    	<value condition="ControlGroup(9001).HasFocus(113)">$LOCALIZE[409]</value>
+    	<value>$INFO[System.CurrentControl]</value>
     </variable>
 	<variable name="WidgetNameLabelVar">
     	<value condition="!ControlGroup(97631).HasFocus + Window.IsVisible(shutdownmenu)">$INFO[System.CurrentControl,[B],[/B]]</value>
@@ -967,7 +983,7 @@
 		<value condition="!ControlGroup(97631).HasFocus + Window.IsActive(MyWeather.xml)">$INFO[Window.Property(Updated),[B]$LOCALIZE[31301][/B] ,]</value>
     	<value condition="Window.IsVisible(DialogSubtitles.xml) + !ControlGroup(97632).HasFocus">$INFO[Player.Filename,[B]$LOCALIZE[561]:[/B] , ]$INFO[Control.GetLabel(1401),[LIGHT],[/LIGHT]]</value>
     	<value condition="Window.IsActive(DialogSettings.xml) + ControlGroup(9001).HasFocus">$INFO[Window(Home).Property(RefreshItem),[B],[/B]]</value>
-    	<value condition="Window.IsActive(DialogSettings.xml) + !ControlGroup(9001).HasFocus">$INFO[Window(Home).Property(RefreshItem),[B],[/B] ]$INFO[System.CurrentControl]</value>
+    	<value condition="Window.IsActive(DialogSettings.xml) + !ControlGroup(9001).HasFocus">$INFO[Window(Home).Property(RefreshItem),[B],[/B] ]$VAR[SystemCurrentControl]</value>
     	<value condition="[!Window.IsVisible(shutdownmenu) + [Window.IsActive(VideoOSD.xml) | Window.IsActive(MusicOSD.xml)] + !Player.Forwarding + !Player.Rewinding] | [Window.IsVisible(DialogSubtitles.xml) + ControlGroup(97632).HasFocus]">$INFO[Container(9000).ListItem.Label2,[B],[/B]]</value>
     	<value condition="[Control.HasFocus(2110) | Control.HasFocus(2111)] + Window.IsVisible(script-skinshortcuts.xml)">[B]$LOCALIZE[31983][/B] $LOCALIZE[31984]</value>
     	<value condition="!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)">$INFO[Container(211).ListItem.Label,[B],[/B] ]$INFO[Skin.String(SS_Helper)]</value>

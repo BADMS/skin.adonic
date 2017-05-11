@@ -39,8 +39,8 @@
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>50</onright>
-				<onup>6000</onup>
-				<ondown>6000</ondown>
+				<onup>6002</onup>
+				<ondown>6002</ondown>
 				<onback>50</onback>
 				<orientation>vertical</orientation>
 				<itemlayout height="35.55" width="60">
@@ -1290,7 +1290,7 @@
 					<visible>!Window.IsVisible(DialogSeekBar.xml)</visible>
 				</control>
 				<control type="group">
-					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogButtonMenu.xml)</visible>
+					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml)</visible>
 					<control type="label">
 						<top>59</top>
 						<left>117</left>
@@ -1766,12 +1766,14 @@
 						<align>center</align>
 						<texturefocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturefocus>
 						<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturenofocus>
+						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a)</visible>
 					</control>
 					<control type="label">
 						<width>6</width>
 						<label> </label>
+						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
