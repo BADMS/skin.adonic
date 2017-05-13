@@ -13,9 +13,10 @@
 	<controls>
 		<control type="group">
             <animation effect="fade" end="0" start="100" time="0" condition="Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | Window.IsVisible(DialogKeyboard.xml) | Window.IsVisible(DialogNumeric.xml) | Window.IsVisible(FileBrowser.xml)" reversible="false">Conditional</animation>
-			<include content="DialogBackgroundCommonsFake">
-				<param name="DialogBackgroundWidth" value="916" />
-				<param name="DialogBackgroundHeight" value="494" />
+			<include content="DialogBackgroundCommons">
+				<param name="DialogBackgroundWidth" value="1920" />
+				<param name="DialogBackgroundHeight" value="1080" />
+				<param name="DialogBackgroundTop" value="797" />
 				<param name="DialogHeaderLabel" value="" />
 				<param name="DialogHeaderId" value="1" />
 			</include>

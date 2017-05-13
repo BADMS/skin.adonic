@@ -878,6 +878,7 @@
 			<label>- $LOCALIZE[10035]</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.Reset(View.Panel.Image)</onclick>
+			<onclick>SetFocus(11220)</onclick>
 			<visible>!String.IsEmpty(Skin.String(View.Panel.Image))</visible>
 		</control>
 		<control type="radiobutton" id="11222">
@@ -1946,11 +1947,11 @@
 		<control type="image">
 			<description>background image</description>
 			<left>0</left>
-			<top>0</top>
+			<top>$PARAM[DialogBackgroundTop]</top>
 			<width>$PARAM[DialogBackgroundWidth]</width>
 			<height>$PARAM[DialogBackgroundHeight]</height>
-			<texture border="12">dialog_context.png</texture>
-			<colordiffuse>$VAR[ListColorHighlightVar]</colordiffuse>
+			<texture background="true">$VAR[MenuPanelBackground]</texture>
+			<colordiffuse>$VAR[MenuPanelBackgroundColorHighlightVar]</colordiffuse>
 		</control>
 		<control type="label" id="$PARAM[DialogHeaderId]">
 			<description>header label</description>

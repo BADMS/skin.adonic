@@ -710,6 +710,7 @@
 			<control type="group">
 				<top>0</top>
 				<control type="group">
+					<visible>!String.IsEmpty(Container.Content)</visible>
 					<control type="image">
 						<visible>!Control.HasFocus(501)</visible>
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
@@ -748,7 +749,7 @@
 					<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 					<visible>!String.IsEqual(ListItem.DBTYPE, episode)</visible>
 					<visible>!Container.Content(episodes)</visible>
-					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
+					<visible>![Container.Content(movies) | Container.Content(movie)] + [Window.IsActive(musicplaylist) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEmpty(Container.Content)]</visible>
 					<top>200</top>
 					<left>1260</left>
 					<control type="image">
