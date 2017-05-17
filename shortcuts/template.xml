@@ -94,9 +94,8 @@
 			</control>
             <control type="image">
                 <visible>!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Control.HasFocus(8011$SKINSHORTCUTS[id]) + !Container(8011$SKINSHORTCUTS[id]).IsUpdating</visible>
-                <animation effect="slide" time="0" start="0,0" end="0,190" condition="true">Conditional</animation>
                 <left>23</left>
-                <top>414</top>
+                <top>604</top>
                 <width>219</width>
                 <height>316</height>
                 <animation effect="fade" time="320" delay="200">Visible</animation>
@@ -115,9 +114,8 @@
             </control>
             <control type="image">
                 <visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + Control.HasFocus(8011$SKINSHORTCUTS[id]) + !Container(8011$SKINSHORTCUTS[id]).IsUpdating</visible>
-                <animation effect="slide" time="0" start="0,0" end="0,190" condition="true">Conditional</animation>
                 <left>23</left>
-                <top>414</top>
+                <top>604</top>
                 <width>322</width>
                 <height>316</height>
                 <animation effect="fade" time="320" delay="200">Visible</animation>
@@ -132,9 +130,8 @@
             </control>
             <control type="image">
                 <visible>String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + Control.HasFocus(8011$SKINSHORTCUTS[id]) + !Container(8011$SKINSHORTCUTS[id]).IsUpdating</visible>
-                <animation effect="slide" time="0" start="0,0" end="0,190" condition="true">Conditional</animation>
                 <left>23</left>
-                <top>414</top>
+                <top>604</top>
                 <width>478</width>
                 <height>316</height>
                 <animation effect="fade" time="320" delay="200">Visible</animation>
@@ -148,9 +145,8 @@
             <control type="panel" id="8011$SKINSHORTCUTS[id]">
                 <skinshortcuts>visibility</skinshortcuts>
                 <animation effect="fade" start="100" end="0" time="0" reversible="false" condition="Container(8011$SKINSHORTCUTS[id]).IsUpdating | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)">Conditional</animation>
-                <animation effect="slide" time="0" start="0,0" end="0,190" condition="true">Conditional</animation>
                 <left>29</left>
-                <top>420</top>
+                <top>610</top>
                 <width>1864</width>
                 <height>310</height>
 				<onup condition="Window.IsVisible(MyWeather.xml)">97632</onup>
@@ -256,11 +252,12 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(tvshow.poster)],home)</onfocus>
-						<onfocus condition="String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(tvshow.poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(poster)],home)</onfocus><onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine1$SKINSHORTCUTS[id],, ]$VAR[widgetLine2$SKINSHORTCUTS[id],[LIGHT],[/LIGHT]])</onfocus>
+						<onfocus condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(thumb))">SetProperty(FIVE_daemon_fallback,$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(thumb)],home)</onfocus>
+						<onfocus condition="!String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Art(poster)],home)</onfocus><onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine1$SKINSHORTCUTS[id],, ]$VAR[widgetLine2$SKINSHORTCUTS[id],[LIGHT],[/LIGHT]])</onfocus>
+						<onfocus condition="String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(thumb)) + String.IsEmpty(Container(8011$SKINSHORTCUTS[id]).ListItem.Art(poster))">SetProperty(FIVE_daemon_fallback,$INFO[Container(8011$SKINSHORTCUTS[id]).ListItem.Icon],home)</onfocus><onfocus>Skin.SetString(WidgetLine,$VAR[widgetLine1$SKINSHORTCUTS[id],, ]$VAR[widgetLine2$SKINSHORTCUTS[id],[LIGHT],[/LIGHT]])</onfocus>
 					</control>
                     <control type="image">
-				<bordersize>6</bordersize>
+						<bordersize>6</bordersize>
                         <aspectratio aligny="center" align="center">scale</aspectratio>
                         <texture background="true">$VAR[LandscapeWidgetArt]</texture>
                     </control>
