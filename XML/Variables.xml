@@ -819,13 +819,13 @@
         <value condition="String.Contains(Container.FolderPath,library://video/tvshows/)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTVShows.png</value>
         <value condition="String.Contains(Container.FolderPath,videodb://movies/)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMovies.png</value>
         <value condition="String.Contains(Container.FolderPath,videodb://tvshows/)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTVShows.png</value>
-        <value condition="String.Contains(Container.FolderPath,plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMovies.png</value>
+        <value condition="String.Contains(Container.FolderPath,plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</value>
         <value condition="Container.Content(movies)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMovies.png</value>
         <value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsVisible(script-lazytv-BigScreenList.xml) | Window.IsVisible(script-lazytv-main.xml)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultTVShows.png</value>
         <value condition="Container.Content(songs)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMusicAlbums.png</value>
         <value condition="Container.Content(livetv)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultHardDisk.png</value>
         <value condition="Container.Content(files)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFile.png</value>
-        <value condition="Container.Content(plugins)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMovies.png</value>
+        <value condition="Container.Content(plugins)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultVideo.png</value>
         <value condition="Container.Content(addons)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultAddon.png</value>
         <value condition="String.Contains(Container.FolderPath,videodb://musicvideos/)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMovies.png</value>
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultMusicAlbums.png</value>
@@ -941,9 +941,9 @@
     	<!-- 
     	<value condition="[!ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)]">$VAR[LibraryStatsVar]</value>
 		-->
-    	<value condition="!Window.IsActive(movieinformation) + String.StartsWith(ListItem.Path, plugin:) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
     	<value condition="Container.Content(songs) + !Window.IsActive(DialogButtonMenu.xml)">$INFO[ListItem.Album,, ]$INFO[ListItem.Year,[LIGHT],[/LIGHT]]</value>
     	<value condition="!Window.IsActive(home) + ControlGroup(97631).HasFocus + !Window.IsActive(DialogButtonMenu.xml)">$INFO[Container(9000).ListItem.Label]</value>
+    	<value condition="!Window.IsActive(movieinformation) + String.StartsWith(ListItem.Path, plugin:) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
     	<value condition="Window.IsActive(home) | ControlGroup(97631).HasFocus + !Window.IsActive(DialogButtonMenu.xml)">$INFO[Container(9000).ListItem.Label]</value>
     	<value condition="[!ControlGroup(97631).HasFocus + Window.IsActive(DialogPictureInfo.xml)] + !Window.IsActive(DialogButtonMenu.xml)">$INFO[ListItem.Label,, ]$INFO[Container(50).ListItem.Date,[LIGHT],[/LIGHT]]</value>
     	<value condition="Skin.HasSetting(Enable.Library.Stats) + [!ControlGroup(97631).HasFocus + !Window.IsActive(movieinformation)] + !Window.IsActive(DialogButtonMenu.xml)">$INFO[ListItem.Genre,, ]$INFO[ListItem.Year,[LIGHT],[/LIGHT]]</value>
@@ -1062,28 +1062,28 @@
 		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Icon) + !String.StartsWith(Listitem.Icon, Default)">$INFO[ListItem.Icon]</value>
 		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Icon) + String.StartsWith(Listitem.Icon, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Icon]</value>
 
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(countries) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Label,special://skin/extras/countries/,.png]</value>
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.png]</value>
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Art(poster)) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).thumb) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Icon) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(countries) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Label,special://skin/extras/countries/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Art(poster)) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).thumb) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Icon) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
 
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(countries) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Label,special://skin/extras/countries/,.png]</value>
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.png]</value>
-    	<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.jpg]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Art(poster)) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Art(poster)]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).thumb) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).thumb]</value>
-		<value condition="Control.HasFocus(50) + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Icon) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(2).Icon]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(countries) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Label,special://skin/extras/countries/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.jpg]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Art(poster)) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Art(poster)]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).thumb) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Icon) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(2).Icon]</value>
 
 
-    	<value condition="Control.HasFocus(50) + Container.Content(countries) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Label,special://skin/extras/countries/,.png]</value>
-    	<value condition="Control.HasFocus(50) + Container.Content(genres) + String.IsEqual(ListItem.Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.png]</value>
-    	<value condition="Control.HasFocus(50) + Container.Content(genres) + String.IsEqual(ListItem.Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + Container.Content(countries) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Label,special://skin/extras/countries/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + Container.Content(genres) + String.IsEqual(ListItem.Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.png]</value>
+    	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + Container.Content(genres) + String.IsEqual(ListItem.Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
 
-		<value condition="Control.HasFocus(50) + !String.IsEmpty(Listitem(1).Art(poster)) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
-		<value condition="Control.HasFocus(50) + !String.IsEmpty(Listitem(1).thumb) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
-		<value condition="Control.HasFocus(50) + !String.IsEmpty(Listitem(1).Icon) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).Art(poster)) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).thumb) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).Icon) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
 
 
     	<value condition="Container.Content(genres) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem.Label,special://skin/extras/genres/,.png]</value>

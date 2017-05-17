@@ -76,7 +76,8 @@
 				<onup>6661</onup>
 				<ondown>6661</ondown>
 				<onleft>59</onleft>
-				<onright>9991</onright>
+				<onright condition="!Container(6661).HasFocus(6) + !Container(6661).HasFocus(7) + !Container(6661).HasFocus(8)">9991</onright>
+				<onright condition="Container(6661).HasFocus(6) | Container(6661).HasFocus(7) | Container(6661).HasFocus(8)">60</onright>
 				<focusposition>0</focusposition>
 				<movement>0</movement>
 				<pagecontrol>59</pagecontrol>
@@ -172,7 +173,7 @@
 				<fadetime>300</fadetime>
 				<timeperimage>1000</timeperimage>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
-				<imagepath background="true">$INFO[Skin.String(weatherfanart.path)]/</imagepath>
+				<imagepath>$INFO[Skin.String(weatherfanart.path)]$INFO[Window.Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</imagepath>
 				<visible>Container(6661).HasFocus(7)</visible>
 			</control>
 			<control type="multiimage">
@@ -183,7 +184,7 @@
 				<fadetime>300</fadetime>
 				<timeperimage>1000</timeperimage>
 				<animation effect="fade" time="200" tween="cubic">Visible</animation>
-				<imagepath>$INFO[Skin.String(weatherfanart.path)]$INFO[Window.Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</imagepath>
+				<imagepath background="true">$INFO[Skin.String(weatherfanart.path)]/</imagepath>
 				<visible>Container(6661).HasFocus(8)</visible>
 			</control>
 			<control type="group" id="9991">
@@ -1337,7 +1338,8 @@
 				<left>1790</left>
 				<width>10</width>
 				<height>310</height>
-				<onleft>9991</onleft>
+				<onleft condition="!Container(6661).HasFocus(6) + !Container(6661).HasFocus(7) + !Container(6661).HasFocus(8)">9991</onleft>
+				<onleft condition="Container(6661).HasFocus(6) | Container(6661).HasFocus(7) | Container(6661).HasFocus(8)">6661</onleft>
 				<onright>9000</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
