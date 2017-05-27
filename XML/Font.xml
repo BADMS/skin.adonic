@@ -185,8 +185,8 @@
 		</font>
 		<font>
 			<name>BigAssFont</name>
-			<filename>MavenPro-Regular.ttf</filename>
-			<size>600</size>
+			<filename>MavenPro-Bold.ttf</filename>
+			<size>50</size>
 		</font>
 		<font>
 			<name>WeatherTemp</name>
@@ -422,7 +422,7 @@
 		<font>
 			<name>BigAssFont</name>
 			<filename>Roboto-Light.ttf</filename>
-			<size>600</size>
+			<size>50</size>
 		</font>
 		<font>
 			<name>WeatherTemp</name>

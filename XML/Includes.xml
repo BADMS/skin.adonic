@@ -457,6 +457,11 @@
 			</control>
 		</control>
 	</include>
+	<include name="SquareIconBG">
+		<control type="image">
+			<texture colordiffuse="$VAR[ListColorHighlightVar]">listselect_fo.png</texture>
+		</control>
+	</include>
 	<include name="ListTextBG">
 		<control type="image">
 			<left>60</left>
@@ -1462,7 +1467,7 @@
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 999)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-					<visible>[[Window.IsActive(home) | Window.IsActive(MyWeather.xml) | Window.IsActive(MyMusicPlaylistEditor.xml) | Window.IsActive(AddOnBrowser.xml)] + !Window.IsActive(movieinformation)] | String.StartsWith(System.CurrentControlID, 8011) | String.StartsWith(System.CurrentControlID, 909) | String.StartsWith(System.CurrentControlID, 9010) | [String.IsEqual(System.CurrentControlID, 6) + !String.Contains(Window.Property(xmlfile), etting)] | [String.IsEqual(System.CurrentControlID, 3) + !String.Contains(Window.Property(xmlfile), etting)] | [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting)]]</visible>
+					<visible>[[Window.IsActive(home) | Window.IsActive(MyWeather.xml) | Window.IsActive(MyMusicPlaylistEditor.xml)] + !Window.IsActive(movieinformation)] | String.StartsWith(System.CurrentControlID, 8011) | String.StartsWith(System.CurrentControlID, 909) | String.StartsWith(System.CurrentControlID, 9010) | [String.IsEqual(System.CurrentControlID, 6) + !String.Contains(Window.Property(xmlfile), etting)] | [String.IsEqual(System.CurrentControlID, 3) + !String.Contains(Window.Property(xmlfile), etting)] | [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting)]]</visible>
 					<visible>![Window.IsVisible(MyWeather.xml) + ControlGroup(9050).HasFocus + !String.IsEqual(System.CurrentControlID, 6)]</visible>
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>

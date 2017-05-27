@@ -45,7 +45,7 @@
 			<visible>[!Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [!Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]</visible>
 			<include>CommonBackground</include>
 		</control>
-		<include>View_50_List</include>
+		<include>View_50_Square</include>
 		<control type="group">
 			<left>-400</left>
 			<include>SideBladeLeft</include>

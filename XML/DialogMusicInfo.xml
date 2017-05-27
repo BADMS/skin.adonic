@@ -36,10 +36,10 @@
 					<fadetime>400</fadetime>
 				</control>
 				<control type="image">
-					<top>200</top>
-					<left>1260</left>
-					<width>560</width>
-					<height>560</height>
+					<top>220</top>
+					<left>1280</left>
+					<width>520</width>
+					<height>520</height>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 					<texture background="true">$VAR[ListIcon]</texture>
 					<fadetime>400</fadetime>

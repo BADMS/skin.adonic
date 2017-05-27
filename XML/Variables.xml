@@ -195,13 +195,13 @@
 		<value condition="!String.IsEmpty(Container.Art(set.fanart))">$INFO[Container.Art(set.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),1)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),2)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),3)">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),4)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),5)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(thumb),6)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</value>
-		<value condition="!String.IsEmpty(Container(9033).ListItem.Art(thumb))">$INFO[Container(9033).ListItem.Art(thumb)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),1)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),2)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),3)">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),4)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),5)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
+		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),6)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</value>
+		<value condition="!String.IsEmpty(Container(9033).ListItem.Art(Thumb))">$INFO[Container(9033).ListItem.Art(Thumb)]</value>
 	</variable>
 	<variable name="HomeBackgroundVar">
 
@@ -278,7 +278,7 @@
 		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="ListItem.IsParentFolder">$INFO[Skin.String(MenuDefaultIconsPath)]folder.png</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(Thumb))">$INFO[ListItem.Art(Thumb)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="FanartViewThumb">
@@ -360,7 +360,7 @@
 	<variable name="PlayerPlotVar">
 		<value condition="[Skin.HasSetting(Hide.Spoilers.TV) + !String.IsEmpty(VideoPlayer.Episode) + String.IsEmpty(VideoPlayer.EpisodeName)]">$LOCALIZE[20370]</value>
 		<value condition="[Skin.HasSetting(Hide.Spoilers.Movies) + String.IsEmpty(VideoPlayer.Episode) + String.IsEmpty(VideoPlayer.EpisodeName)]">$LOCALIZE[20370]</value>
-		<value>[COLOR $VAR[ColorHighlightVar]]$INFO[VideoPlayer.Tagline,, ][/COLOR]$INFO[VideoPlayer.Plot]</value>
+		<value>[COLOR $VAR[ColorHighlightVar]]$INFO[VideoPlayer.Tagline,,[CR]][/COLOR]$INFO[VideoPlayer.Plot]</value>
 	</variable>
 	<variable name="VideoPlotVar">
 		<value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
@@ -482,7 +482,7 @@
 		<value condition="Player.Forwarding32x | Player.Rewinding32x">32x</value>
 	</variable>
 	<variable name="PlayerArtworkVar">
-		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.thumb))">$INFO[Player.Art(tvshow.Poster)]</value>
+		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.Thumb))">$INFO[Player.Art(tvshow.Poster)]</value>
 		<value>$INFO[Player.Art(Poster)]</value>
 	</variable>
 	<variable name="PlayerTitleLabelVar">
@@ -644,7 +644,7 @@
 		<value condition="![[Player.Playing | Player.HasAudio | Player.HasVideo] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
 		<value condition="[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="[Player.Playing | Player.HasVideo | Player.HasAudio] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + !String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+		<value condition="[Player.Playing | Player.HasVideo | Player.HasAudio] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + !String.IsEmpty(Player.Art(Thumb))">$INFO[Player.Art(Thumb)]</value>
 		<value condition="!String.IsEmpty(Weather.Plugin) + !Weather.IsFetched">$INFO[Skin.String(MenuDefaultIconsPath)]none.png</value>
 		<value condition="[Player.Playing | Player.HasAudio | Player.HasVideo] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
 		<value>$INFO[Skin.String(MenuDefaultIconsPath)]clock.png</value>
@@ -1039,6 +1039,11 @@
     	<value condition="String.StartsWith(ListItem.Path, plugin://script.extended)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
     	<value>$INFO[Skin.String(MenuDefaultIconsPath)]play.png</value>
     </variable>
+    <variable name="SquareLine">
+    	<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B] ]$INFO[ListItem.Title]</value>
+    	<value condition="Container.Content(albums)">$INFO[ListItem.Artist,[B],[/B] ]$INFO[ListItem.Title]</value>
+    	<value>$INFO[ListItem.Label,[B],[/B]]</value>
+    </variable>
     <variable name="ListIcon">
     	<value condition="Container.Content(episodes) + Control.HasFocus(501)">$INFO[ListItem.Art(tvshow.poster)]</value>
     	<value condition="!String.StartsWith(Container.FolderPath,plugin) + !String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
@@ -1057,8 +1062,8 @@
 	</variable>
 	<variable name="ThumbVar">
 		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Art(thumb)) + !String.StartsWith(Listitem.thumb, Default)">$INFO[ListItem.Art(thumb)]</value>
-		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Art(thumb)) + String.StartsWith(Listitem.thumb, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Art(thumb)]</value>
+		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Art(Thumb)) + !String.StartsWith(Listitem.Thumb, Default)">$INFO[ListItem.Art(Thumb)]</value>
+		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Art(Thumb)) + String.StartsWith(Listitem.Thumb, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Art(Thumb)]</value>
 		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Icon) + !String.StartsWith(Listitem.Icon, Default)">$INFO[ListItem.Icon]</value>
 		<value condition="Window.IsActive(MyPlaylist.xml) + String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !String.IsEmpty(Listitem.Icon) + String.StartsWith(Listitem.Icon, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Icon]</value>
 
@@ -1066,14 +1071,14 @@
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.png]</value>
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Art(poster)) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
-		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).thumb) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Thumb) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(1).Thumb]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(1).Icon) + !String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
 
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(countries) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Label,special://skin/extras/countries/,.png]</value>
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.png]</value>
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + Container.Content(genres) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(2).Label,special://skin/extras/genres/,.jpg]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Art(poster)) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Art(poster)]</value>
-		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).thumb) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Thumb) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem(2).Thumb]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + String.IsEqual(Listitem.Label, ..) + !String.IsEmpty(Listitem(2).Icon) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(2).Icon]</value>
 
 
@@ -1082,7 +1087,7 @@
     	<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + Container.Content(genres) + String.IsEqual(ListItem.Label, $LOCALIZE[20366]) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem(1).Label,special://skin/extras/genres/,.jpg]</value>
 
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).Art(poster)) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Art(poster)]</value>
-		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).thumb) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).thumb]</value>
+		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).Thumb) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[ListItem(1).Thumb]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(500) | ControlGroup(6000).HasFocus | ControlGroup(9050).HasFocus] + !String.IsEmpty(Listitem(1).Icon) + String.IsEqual(ListItem.Label, $LOCALIZE[20366])">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem(1).Icon]</value>
 
 
@@ -1090,7 +1095,7 @@
     	<value condition="Container.Content(genres) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem.Label,special://skin/extras/genres/,.jpg]</value>
 
     	<value condition="Container.Content(countries)">$INFO[ListItem.Label,special://skin/extras/countries/,.png]</value>
-		<value condition="Control.HasFocus(51)">$INFO[Container(51).ListItem.thumb]</value>
+		<value condition="Control.HasFocus(51)">$INFO[Container(51).ListItem.Thumb]</value>
 		<value condition="ControlGroup(9003).HasFocus + !String.IsEqual(Container(9000).ListItem.Property(widget),weather)">$INFO[Window(Home).Property(FIVE_daemon_fallback)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Listitem.Thumb) + !String.StartsWith(Listitem.Thumb, Default)">$INFO[ListItem.Thumb]</value>
@@ -1106,6 +1111,15 @@
 		<value condition="ControlGroup(9003).HasFocus + !String.IsEqual(Container(9000).ListItem.Property(widget),weather)">$INFO[Window(Home).Property(FIVE_daemon_fallback)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Listitem.Icon)">$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="ListThumbVar">
+    	<value condition="Container.Content(genres) + String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem.Label,special://skin/extras/genres/,.png]</value>
+    	<value condition="Container.Content(genres) + !String.StartsWith(Container.FolderPath,musicdb://)">$INFO[ListItem.Label,special://skin/extras/genres/,.jpg]</value>
+		<value condition="!String.IsEmpty(Listitem.Thumb) + String.StartsWith(Listitem.Thumb, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Thumb]</value>
+		<value condition="!String.IsEmpty(Listitem.Icon) + String.StartsWith(Listitem.Icon, Default)">$INFO[Skin.String(MenuDefaultIconsPath)]$INFO[ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(Listitem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value condition="!String.IsEmpty(Listitem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultNone.png</value>
 	</variable>
 	<variable name="HomeThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
@@ -1152,13 +1166,13 @@
 	</variable>
 	<variable name="LandscapeWidgetArt">
 		<value condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType),episodes) + [!String.IsEmpty(ListItem.Art(fanart)) | [Skin.HasSetting(Hide.Spoilers.TV) + String.IsEqual(Container(9000).ListItem.Property(widgetType),episodes) + [stringcompare(Container(9000).ListItem.Overlay,OverlayUnWatched.png) | Container(9000).ListItem.IsResumable]]]">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(Thumb))">$INFO[ListItem.Art(Thumb)]</value>
 		<value>$INFO[Skin.String(MenuDefaultIconsPath)]fallback.png</value>
 	</variable>
 	<variable name="VerticalWidgetArt">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + !String.IsEqual(Container(9000).ListItem.Property(widgetType),episodes) + !String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31313]) + !String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[31100]) + String.IsEqual(Container(9000).ListItem.Property(widgetType),episodes) + !String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-		<!--<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>-->
+		<!--<value condition="!String.IsEmpty(ListItem.Art(Thumb))">$INFO[ListItem.Art(Thumb)]</value>-->
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="WidgetArt">

@@ -24,7 +24,7 @@
 			<visible>String.IsEmpty(Control.GetLabel(7355))</visible>
 		</control>
 		<control type="group">
-			<include>View_50_List</include>
+			<include>View_50_Square</include>
 			<!-- view id = 50 -->
 		</control>
 		<control type="group">
