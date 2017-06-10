@@ -18,6 +18,7 @@
 				<colordiffuse>$VAR[ListColorHighlightVar]</colordiffuse>
 			</control>
 			<control type="image" id="400">
+				<animation effect="rotate" time="300" delay="0" end="90" center="auto" reversible="true" condition="True">Conditional</animation>		
 				<left>20</left>
 				<top>20</top>
 				<width>80</width>
@@ -25,6 +26,7 @@
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image" id="400">
+				<animation effect="rotate" time="300" delay="0" end="90" center="auto" reversible="true" condition="True">Conditional</animation>		
 				<left>20</left>
 				<top>20</top>
 				<width>80</width>
