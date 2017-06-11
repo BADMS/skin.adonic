@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<zorder>2</zorder>
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
@@ -12,7 +13,7 @@
 			<top>0</top>
 			<control type="image">
 				<description>background image</description>
-				<width>960</width>
+				<width>1080</width>
 				<height>120</height>
 				<texture>background.png</texture>
 				<colordiffuse>$VAR[ListColorHighlightVar]</colordiffuse>
