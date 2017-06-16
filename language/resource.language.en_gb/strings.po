@@ -1527,3 +1527,7 @@ msgstr ""
 msgctxt "#32004"
 msgid "Library stats"
 msgstr ""
+
+msgctxt "#32005"
+msgid "Pulse focus"
+msgstr ""

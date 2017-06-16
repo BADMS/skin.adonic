@@ -1040,9 +1040,8 @@
     	<value>$INFO[Skin.String(MenuDefaultIconsPath)]play.png</value>
     </variable>
     <variable name="SquareLine">
-    	<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B] ]$INFO[ListItem.Title]</value>
-    	<value condition="Container.Content(albums)">$INFO[ListItem.Artist,[B],[/B] ]$INFO[ListItem.Title]</value>
-    	<value>$INFO[ListItem.Label,[B],[/B]]</value>
+    	<value condition="![String.IsEmpty(ListItem.Artist) | String.IsEmpty(ListItem.Title)]">$INFO[ListItem.Artist,[B],[/B] ]$INFO[ListItem.Title]</value>
+    	<value>$INFO[ListItem.Label]</value>
     </variable>
     <variable name="ListIcon">
     	<value condition="Container.Content(episodes) + Control.HasFocus(501)">$INFO[ListItem.Art(tvshow.poster)]</value>

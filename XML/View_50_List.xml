@@ -44,6 +44,8 @@
 					<focusedlayout condition="[Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml)]" height="240" width="218">
 						<control type="group">
 							<include>SquareIconBG</include>
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
+
 						</control>
 						<control type="image">
 							<aspectratio>keep</aspectratio>
@@ -423,6 +425,7 @@
 					<focusedlayout height="120" width="1150" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
@@ -600,6 +603,7 @@
 					<focusedlayout height="120" width="1790" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
@@ -759,6 +763,7 @@
 					<focusedlayout height="60" width="1150" condition="[[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + ![[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">
 						<include>ListTextBG</include>
 						<control type="image">
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
@@ -902,6 +907,7 @@
 						<include>ListTextBG</include>
 						<!--<control type="button"><onfocus>SetProperty(NINE_manual_set,"info=pixelrandom,id=$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)],prefix=filter_logo",home)</onfocus><texturefocus></texturefocus></control>-->
 						<control type="image">
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
@@ -1271,6 +1277,7 @@
 					</itemlayout>
 					<focusedlayout height="275" width="1300">
 						<control type="image">
+							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<visible>Control.HasFocus(508)</visible>
 							<width>1300</width>
 							<height>275</height>

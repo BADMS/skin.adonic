@@ -606,6 +606,12 @@
 			<onclick>Skin.ToggleSetting(Artwork.Toggle)</onclick>
 		</control>
 		-->
+		<control type="radiobutton" id="1807">
+			<label>32005</label>
+			<include>ButtonCommonValues</include>
+			<onclick>Skin.ToggleSetting(Enable.Pulse.Focus)</onclick>
+			<selected>Skin.HasSetting(Enable.Pulse.Focus)</selected>
+		</control>
 		<control type="radiobutton" id="1808">
 			<label>32004</label>
 			<include>ButtonCommonValues</include>
@@ -1799,11 +1805,13 @@
 						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
 						<width>6</width>
 						<label> </label>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
 						<font>IconMedium</font>
 						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
 						<height>45</height>
@@ -1813,6 +1821,7 @@
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
