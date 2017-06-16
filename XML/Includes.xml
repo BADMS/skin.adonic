@@ -1769,6 +1769,8 @@
 						<visible>Container.Content(actors) + !String.IsEmpty(ListItem.Appearances)</visible>
 					</control>
 					<control type="button">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<width>45</width>
 						<height>45</height>
 						<textcolor>black</textcolor>
@@ -1783,6 +1785,8 @@
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<width>6</width>
 						<label> </label>
 						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
@@ -1806,12 +1810,14 @@
 					</control>
 					<control type="label">
 						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<width>6</width>
 						<label> </label>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
 						<height>45</height>
@@ -1822,6 +1828,7 @@
 					</control>
 					<control type="label">
 						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
