@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="VolumeIconVar">
+		<value condition="Player.Muted"></value>
+		<value condition="player.passthrough"></value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 1)">1</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 2)">2</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 3)">3</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 4)">4</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 5)">5</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 6)">6</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 7)">7</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 8)">8</value>
+		<value condition="Integer.IsEqual(Control.GetLabel(20), 9)">9</value>
+		<value>$INFO[Control.GetLabel(20)]</value>
+	</variable>
 	<variable name="AboutTypeout">
 		<value>$LOCALIZE[31199]</value>
 	</variable>
@@ -631,15 +645,6 @@
 		<value condition="String.Contains(VideoPlayer.mpaa,Brazil:18) | String.Contains(VideoPlayer.mpaa,18 anos)">flags/mpaa/MPAA_Brazil_18.png</value>
 		<value>$INFO[VideoPlayer.MPAA,flags/mpaa/,.png]</value>
 	</variable>
-	<variable name="VizArtistInfoVar">
-		<value condition="Skin.HasSetting(Enable.VizInfo)">$LOCALIZE[31106]</value>
-		<value condition="Skin.HasSetting(Enable.VizPersistent)">$LOCALIZE[31107]</value>
-		<value>$LOCALIZE[1223]</value>
-	</variable>
-	<variable name="VideoSubLabelVar">
-		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$LOCALIZE[20360]: $INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), (,[LOWERCASE] $LOCALIZE[16101][/LOWERCASE])]</value>
-		<value>$INFO[ListItem.Year,[B],[/B] ]$INFO[ListItem.RatingAndVotes,, ]$INFO[ListItem.Duration,[LIGHT][LOWERCASE], $LOCALIZE[12391][/LOWERCASE][/LIGHT]]</value>
-	</variable>
 	<variable name="HomeNowPlayingThumbVar">
 		<value condition="![[Player.Playing | Player.HasAudio | Player.HasVideo] + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode),,.png]</value>
 		<value condition="[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
@@ -680,29 +685,52 @@
 		<value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
 		<value>background</value>
 	</variable>
-	<variable name="ColorDialogVar">
-		<value condition="!String.IsEmpty(Skin.String(dialogcolor.name))">$INFO[Skin.String(dialogcolor.name)]</value>
-		<value>dialog</value>
-	</variable>
 	<variable name="ColorTopbarVar">
+		<value condition="Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>highlight</value>
 	</variable>
 	<variable name="ColorTextVar">
+		<value condition="Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="!String.IsEmpty(Skin.String(textcolor.name))">$INFO[Skin.String(textcolor.name)]</value>
+		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>maintext</value>
 	</variable>
+	<!--
+	<variable name="ColorBWVar">
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorFIVE),190)">white</value>
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorFIVE),172)">black</value>
+		<value>white</value>
+	</variable>
+	<variable name="ColorBWInvertFIVE">
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorFIVE),190)">white</value>
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorFIVE),172)">black</value>
+		<value>white</value>
+	</variable>
+	<variable name="ColorBWInvertSEVEN">
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorSEVEN),190)">white</value>
+		<value condition="Integer.IsGreater(Window(home).Property(LUMAImageColorSEVEN),172)">black</value>
+		<value>white</value>
+	</variable>
+	-->
 	<variable name="ColorBWVar">
 		<value condition="Integer.IsGreater(Window(home).Property(BWImageColorFIVE),186)">white</value>
 		<value>black</value>
 	</variable>
-
+	<variable name="ColorBWInvertFIVE">
+		<value condition="Integer.IsGreater(Window(home).Property(BWImageColorFIVE),186)">$INFO[Skin.String(highlightcolor.name)]</value>
+		<value>$INFO[Skin.String(backgroundcolor.name)]</value>
+	</variable>
+	<variable name="ColorBWInvertSEVEN">
+		<value condition="Integer.IsGreater(Window(home).Property(BWImageColorSEVEN),186)">$INFO[Skin.String(highlightcolor.name)]</value>
+		<value>$INFO[Skin.String(backgroundcolor.name)]</value>
+	</variable>
 
 	<variable name="MenuPanelBackgroundColorHighlightVar">
 		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN))]] + Skin.HasSetting(Colorbox.header)">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
-		<value condition="[!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] + Skin.HasSetting(Colorbox.header)">$INFO[Window(home).Property(ImageColorFIVE)]</value>
+		<value condition="[!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] + Skin.HasSetting(Colorbox.header) + Skin.HasSetting(Colorbox.contrast)">$INFO[Window(home).Property(ImageColorFIVE)]</value>
+		<value condition="[!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] + Skin.HasSetting(Colorbox.header) + !Skin.HasSetting(Colorbox.contrast)">$INFO[Window(home).Property(ImageColorFIVE)]</value>
 		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name)) + Skin.HasSetting(Colorbox.header)">$INFO[Skin.String(highlightcolor.name)]</value>
 		<value>FFFFFFFF</value>
 	</variable>
@@ -713,45 +741,32 @@
 		<value>highlight</value>
 	</variable>
 	<variable name="ColorMenuVar">
+		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + Window.IsVisible(DialogAddonSettings.xml) + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + Window.IsVisible(DialogAddonSettings.xml)">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
+		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]] + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertSEVEN]</value>
 		<value condition="!Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE)) + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
+		<value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
 		<value>maintext</value>
 	</variable>
 	<variable name="IconColorVar">
+		<value condition="Skin.HasSetting(ColorBox.Icons) + !Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]] + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertSEVEN]</value>
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE)) + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="!Skin.HasSetting(ColorBox.Icons)">FFFFFFFF</value>
-		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
+		<value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
 		<value>maintext</value>
 	</variable>
 	<variable name="HeaderIconColorVar">
 		<value condition="Skin.HasSetting(ColorBox.Icons)">FFFFFFFF</value>
 		<value condition="!Skin.HasSetting(ColorBox.Icons)">FFFFFFFF</value>
-		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
-		<value>maintext</value>
-	</variable>
-
-	<variable name="MenuListOldColorHighlightVar">
-		<value condition="[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001)] + Window.IsActive(home) + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(OldImageColorSEVEN))">$INFO[Window(home).Property(OldImageColorSEVEN)]</value>
-		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))">$INFO[Window(home).Property(ImageColorFIVE)]</value>
-		<value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value>
-		<value>highlight</value>
-	</variable>
-	<variable name="OldColorMenuVar">
-		<value condition="[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001)] + Window.IsActive(home) + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(OldImageCColorSEVEN))">$INFO[Window(home).Property(OldImageCColorSEVEN)]</value>
-		<value condition="!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
+		<value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
 		<value>maintext</value>
 	</variable>
 
 
-	<variable name="ColorRecordingVar">
-		<value condition="Player.Recording">ffff0000</value>
-		<value condition="!Player.Recording + !String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value>
-		<value>maintext</value>
-	</variable>
+
 	<variable name="ArtLabelVar">
 		<value condition="Skin.HasSetting(Artwork.Toggle)">$LOCALIZE[20445]</value>
 		<value>$LOCALIZE[20021]</value>

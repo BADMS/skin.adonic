@@ -95,9 +95,9 @@
 				</itemlayout>
 				<focusedlayout height="62" width="1420">
 					<control type="image">
-						<texture>background.png</texture>
+						<texture>listselect_fo.png</texture>
 						<textcolor>$VAR[MenuListColorHighlightVar]</textcolor>
-						<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+						<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 					</control>
 					<control type="label">
 						<font>font30</font>

@@ -711,7 +711,7 @@
 			<label>31973</label>
 			<label2>$INFO[Window(home).Property(FIVE_daemon_set),[UPPERCASE],[/UPPERCASE]]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[31973],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,15)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,14)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(FIVE_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
@@ -863,6 +863,13 @@
 			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
 			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+		</control>
+		<control type="radiobutton" id="11217">
+			<label>32006</label>
+			<include>ButtonCommonValues</include>
+			<onclick>Skin.ToggleSetting(Colorbox.contrast)</onclick>
+			<selected>Skin.HasSetting(Colorbox.contrast)</selected>
+			<visible>!String.IsEqual(Window(home).Property(FIVE_daemon_set),None)</visible>
 		</control>
 		<control type="radiobutton" id="11218">
 			<label>31977</label>
@@ -1429,7 +1436,7 @@
 						<scroll>true</scroll>
 						<scrollspeed>150</scrollspeed>
 						<textcolor>$VAR[ColorMenuVar]</textcolor>
-						<label>$VAR[WidgetNameLabelVar,, ]$VAR[HomeHeaderSubline]</label>
+						<label>$INFO[Window(Home).Property(WidgetNameLabelVar),, ]$INFO[Window(Home).Property(HomeHeaderSubline)]</label>
 					</control>
 				</control>
 				<control type="button">
@@ -1449,9 +1456,21 @@
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				</control>
-				<control type="label" id="7357">
+				<control type="label" id="7971">
 					<left>2117</left>
 					<label>$VAR[BreadcrumbsVar]</label>
+				</control>
+				<control type="label" id="7972">
+					<left>2117</left>
+					<label>$VAR[HeaderSubTagline]</label>
+				</control>
+				<control type="label" id="7973">
+					<left>2117</left>
+					<label>$VAR[WidgetNameLabelVar]</label>
+				</control>
+				<control type="label" id="7974">
+					<left>2117</left>
+					<label>$VAR[HomeHeaderSubline]</label>
 				</control>
 				<control type="label">
 					<top>59</top>
@@ -1463,12 +1482,12 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$VAR[WidgetNameLabelVar,, ]$VAR[HomeHeaderSubline]</label>
+					<label>$INFO[Window(Home).Property(WidgetNameLabelVar),, ]$INFO[Window(Home).Property(HomeHeaderSubline)]</label>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
-					<visible>!String.IsEmpty(Control.GetLabel(7357))</visible>
+					<visible>!String.IsEmpty(Control.GetLabel(7971))</visible>
 					<visible>![Window.IsActive(AddOnBrowser.xml) + !ControlGroup(97631).HasFocus]</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 999)</visible>
@@ -1489,7 +1508,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$VAR[WidgetNameLabelVar]</label>
+					<label>$INFO[Window(Home).Property(WidgetNameLabelVar)]</label>
 					<label2>$VAR[TopbarOSDLabel]</label2>
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
@@ -1513,7 +1532,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$VAR[WidgetNameLabelVar]</label>
+					<label>$INFO[Window(Home).Property(WidgetNameLabelVar)]</label>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
@@ -1908,7 +1927,7 @@
 						<scroll>true</scroll>
 						<scrollspeed>150</scrollspeed>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<label>$VAR[HeaderSubTagline]</label>
+						<label>$INFO[Window(Home).Property(HeaderSubTagline)]</label>
 					</control>
 				</control>
 			</control>

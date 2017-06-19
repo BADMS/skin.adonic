@@ -77,7 +77,7 @@
 				<top>604</top>
 				<width>1380</width>
 				<height>62</height>
-				<texture>background.png</texture>
+				<texture>listselect_fo.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
 				<visible>Control.HasFocus(2110)</visible>
 			</control>

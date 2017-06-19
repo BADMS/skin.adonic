@@ -326,6 +326,7 @@
 					<onup>9005</onup>
 					<ondown>9005</ondown>
 					<visible>Container(9990).HasFocus(5)</visible>
+					<!--
 					<control type="radiobutton" id="502">
 						<width>1380</width>
 						<height>62</height>
@@ -336,34 +337,34 @@
 						<onclick>Skin.ToggleSetting(ColorCustomizer.Enabled)</onclick>
 						<selected>Skin.HasSetting(ColorCustomizer.Enabled)</selected>
 					</control>
+					-->
 					<control type="button" id="503">
 						<width>1380</width>
 						<height>62</height>
-						<texturefocus colordiffuse="$INFO[Skin.String(highlightcolor.name)]">background.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Skin.String(highlightcolor.name)]">listselect_fo.png</texturefocus>
 						<texturenofocus colordiffuse="$INFO[Skin.String(highlightcolor.name)]">white.png</texturenofocus>
 						<font>font30</font>
 						<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
 						<textcolor>$VAR[ColorMenuVar]</textcolor>
 						<label>31212</label>
 						<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=highlightcolor.name,header=$LOCALIZE[31216])</onclick>
-						<enable>Skin.HasSetting(ColorCustomizer.Enabled)</enable>
 					</control>
 					<control type="button" id="504">
 						<width>1380</width>
 						<height>62</height>
-						<texturefocus colordiffuse="$INFO[Skin.String(backgroundcolor.name)]">background.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Skin.String(backgroundcolor.name)]">listselect_fo.png</texturefocus>
 						<texturenofocus colordiffuse="$INFO[Skin.String(backgroundcolor.name)]">white.png</texturenofocus>
 						<font>font30</font>
 						<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
 						<textcolor>$VAR[ColorMenuVar]</textcolor>
 						<label>31213</label>
 						<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=backgroundcolor.name,header=$LOCALIZE[31217])</onclick>
-						<enable>Skin.HasSetting(ColorCustomizer.Enabled)</enable>
 					</control>
+					<!--
 					<control type="button" id="505">
 						<width>1380</width>
 						<height>62</height>
-						<texturefocus colordiffuse="$INFO[Skin.String(dialogcolor.name)]">background.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Skin.String(dialogcolor.name)]">listselect_fo.png</texturefocus>
 						<texturenofocus colordiffuse="$INFO[Skin.String(dialogcolor.name)]">white.png</texturenofocus>
 						<font>font30</font>
 						<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
@@ -375,7 +376,7 @@
 					<control type="button" id="506">
 						<width>1380</width>
 						<height>62</height>
-						<texturefocus colordiffuse="$INFO[Skin.String(textcolor.name)]">background.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Skin.String(textcolor.name)]">listselect_fo.png</texturefocus>
 						<texturenofocus colordiffuse="$INFO[Skin.String(textcolor.name)]">white.png</texturenofocus>
 						<font>font30</font>
 						<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
@@ -387,7 +388,7 @@
 					<control type="button" id="507">
 						<width>1380</width>
 						<height>62</height>
-						<texturefocus colordiffuse="$INFO[Skin.String(menucolor.name)]">background.png</texturefocus>
+						<texturefocus colordiffuse="$INFO[Skin.String(menucolor.name)]">listselect_fo.png</texturefocus>
 						<texturenofocus colordiffuse="$INFO[Skin.String(menucolor.name)]">white.png</texturenofocus>
 						<font>font30</font>
 						<focusedcolor>$VAR[ColorMenuVar]</focusedcolor>
@@ -410,6 +411,7 @@
 						<onclick>Skin.SetString(menucolor.name,FFE8E8E8)</onclick>
 						<visible>Skin.HasSetting(ColorCustomizer.Enabled)</visible>
 					</control>
+					-->
 				</control>
 				<control type="grouplist" id="9003">
 					<description>Extras control area</description>
