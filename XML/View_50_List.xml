@@ -1189,6 +1189,45 @@
 			<control type="textbox">
 				<visible>!Window.IsVisible(MyMusicNav.xml) + String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
+				<left>36</left>
+				<top>26</top>
+				<width>1090</width>
+				<height>480</height>
+				<font>font_SubMenu</font>
+				<label>$VAR[VideoInfoPlotVar]</label>
+				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
+				<shadowcolor></shadowcolor>
+				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+			</control>
+			<control type="textbox">
+				<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
+				<description>Plot</description>
+				<left>156</left>
+				<top>26</top>
+				<width>970</width>
+				<height>920</height>
+				<font>font_SubMenu</font>
+				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
+				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
+				<shadowcolor></shadowcolor>
+				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+			</control>
+			<control type="textbox">
+				<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2))</visible>
+				<description>Plot</description>
+				<left>156</left>
+				<top>26</top>
+				<width>970</width>
+				<height>480</height>
+				<font>font_SubMenu</font>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2),[B],[/B]]</label>
+				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
+				<shadowcolor></shadowcolor>
+				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+			</control>
+			<control type="textbox">
+				<visible>!Window.IsVisible(MyMusicNav.xml) + String.IsEmpty(ListItem.AddonDescription)</visible>
+				<description>Plot</description>
 				<left>30</left>
 				<top>20</top>
 				<width>1090</width>

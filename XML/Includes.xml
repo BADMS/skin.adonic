@@ -1270,6 +1270,22 @@
 	<!-- Navigation Bar -->
 	<include name="Topbar">
 		<control type="group">
+			<control type="label" id="7971">
+				<left>2117</left>
+				<label>$VAR[BreadcrumbsVar]</label>
+			</control>
+			<control type="label" id="7972">
+				<left>2117</left>
+				<label>$VAR[HeaderSubTagline]</label>
+			</control>
+			<control type="label" id="7973">
+				<left>2117</left>
+				<label>$VAR[WidgetNameLabelVar]</label>
+			</control>
+			<control type="label" id="7974">
+				<left>2117</left>
+				<label>$VAR[HomeHeaderSubline]</label>
+			</control>
 			<control type="group">
 				<control type="image">
 					<animation type="Visible">
@@ -1421,7 +1437,10 @@
 						
 						
 						<textoffsetx>15</textoffsetx>
+						<!--
 						<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
+						-->
+						<label>$VAR[BreadcrumbsVar]</label>
 						<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
 						<onclick>noop</onclick>
 						<texturefocus>blank.png</texturefocus>
@@ -1436,7 +1455,7 @@
 						<scroll>true</scroll>
 						<scrollspeed>150</scrollspeed>
 						<textcolor>$VAR[ColorMenuVar]</textcolor>
-						<label>$INFO[Window(Home).Property(WidgetNameLabelVar),, ]$INFO[Window(Home).Property(HomeHeaderSubline)]</label>
+						<label>$INFO[System.CurrentControl,[B],[/B]]</label>
 					</control>
 				</control>
 				<control type="button">
@@ -1456,22 +1475,6 @@
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				</control>
-				<control type="label" id="7971">
-					<left>2117</left>
-					<label>$VAR[BreadcrumbsVar]</label>
-				</control>
-				<control type="label" id="7972">
-					<left>2117</left>
-					<label>$VAR[HeaderSubTagline]</label>
-				</control>
-				<control type="label" id="7973">
-					<left>2117</left>
-					<label>$VAR[WidgetNameLabelVar]</label>
-				</control>
-				<control type="label" id="7974">
-					<left>2117</left>
-					<label>$VAR[HomeHeaderSubline]</label>
-				</control>
 				<control type="label">
 					<top>59</top>
 					<left>117</left>
@@ -1482,7 +1485,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$INFO[Window(Home).Property(WidgetNameLabelVar),, ]$INFO[Window(Home).Property(HomeHeaderSubline)]</label>
+					<label>$INFO[Window(Home).Property(LabelFilterTHREE),, ]$INFO[Window(Home).Property(LabelFilterFOUR)]</label>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
@@ -1508,7 +1511,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$INFO[Window(Home).Property(WidgetNameLabelVar)]</label>
+					<label>$INFO[Window(Home).Property(LabelFilterTHREE)]</label>
 					<label2>$VAR[TopbarOSDLabel]</label2>
 					<onclick>noop</onclick>
 					<texturefocus>blank.png</texturefocus>
@@ -1532,7 +1535,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$INFO[Window(Home).Property(WidgetNameLabelVar)]</label>
+					<label>$INFO[Window(Home).Property(LabelFilterTHREE)]</label>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 					<visible>[!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)]</visible>
@@ -1927,7 +1930,7 @@
 						<scroll>true</scroll>
 						<scrollspeed>150</scrollspeed>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<label>$INFO[Window(Home).Property(HeaderSubTagline)]</label>
+						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
 					</control>
 				</control>
 			</control>
