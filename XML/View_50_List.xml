@@ -3,8 +3,9 @@
 	<!-- Square -->
 	<include name="View_50_Square">
 		<control type="group">
-			<animation effect="slide" end="-1800" time="400" condition="[ControlGroup(51).HasFocus] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
+			<animation effect="slide" end="-1860" time="400" condition="[!String.IsEmpty(Window(Home).Property(WideToggle))] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
+			
 			<include>Animation.Common</include>
 			<control type="image">
 				<fadetime>400</fadetime>
@@ -66,7 +67,7 @@
 				<control type="group">
 					<visible>!String.IsEmpty(Container.Content)</visible>
 					<control type="image">
-						<visible>!Control.HasFocus(501)</visible>
+						<visible>String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<left>1800</left>
 						<width>120</width>
@@ -76,7 +77,7 @@
 						<fadetime>400</fadetime>
 					</control>
 					<control type="image">
-						<visible>Control.HasFocus(501)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<left>1800</left>
 						<width>120</width>
@@ -89,7 +90,7 @@
 						<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 						<visible>!String.IsEqual(ListItem.DBTYPE, episode)</visible>
 						<visible>!Container.Content(files)</visible>
-						<visible>!Container.Content(episodes) | Control.HasFocus(501)</visible>
+						<visible>!Container.Content(episodes) | !String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>![Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 						<left>1160</left>
 						<width>640</width>
@@ -206,7 +207,7 @@
 						<bottom>120</bottom>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<fadetime>400</fadetime>
-						<texture background="true" diffuse="thumbs/colorbox_poster_mask.png" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+						<texture background="true" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
 					</control>
 					<control type="scrollbar" id="161">
 						<top>428</top>
@@ -218,34 +219,22 @@
 			</control>
 			<control type="group">
 				<animation effect="slide" time="0" delay="0" start="0" end="640" tween="cubic" reversible="true" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
+				<animation effect="slide" time="0" delay="0" start="0" end="770" tween="cubic" reversible="true" condition="!String.IsEmpty(Window(Home).Property(WideToggle))">Conditional</animation>
 				<visible>![Window.IsActive(movieinformation) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]]</visible>
 				<visible>Control.IsVisible(50)</visible>
 				<include>Scrollbar_Vertical_50</include>
 			</control>
 		</control>
 		<control type="group" id="51">
-			<visible>Control.HasFocus(501)</visible>
+			<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 			<animation effect="fade" start="0" end="100" time="400" delay="400" tween="quadratic" easing="out">Visible</animation>
 			<animation effect="fade" start="0" end="0" time="0" tween="quadratic" easing="out">Hidden</animation>
+			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
 			<include>Animation.Common</include>
 			<left>770</left>
 			<top>0</top>
 			<width>1920</width>
 			<height>960</height>
-			<control type="button" id="501">
-				<onleft>50</onleft>
-				<onright>9000</onright>
-				<onup>Control.Move(50,-1)</onup>
-				<ondown>Control.Move(50,1)</ondown>
-				<left>0</left>
-				<top>384</top>
-				<width>120</width>
-				<height>192</height>
-				<texturefocus/>
-				<onclick>SetFocus(50)</onclick>
-				<onclick condition="!Container.Content(songs)">AlarmClock(50info,Action(info),00:01,silent)</onclick>
-				<onclick condition="Container.Content(songs)">AlarmClock(50info,Action(play),00:01,silent)</onclick>
-			</control>
 			<control type="textbox">
 				<visible>!Window.IsVisible(MyMusicNav.xml) + String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
@@ -305,8 +294,9 @@
 	</include>
 	<include name="View_50_List">
 		<control type="group">
-			<animation effect="slide" end="-1800" time="400" condition="[ControlGroup(51).HasFocus] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
+			<animation effect="slide" end="-1860" time="400" condition="[!String.IsEmpty(Window(Home).Property(WideToggle))] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
+			
 			<include>Animation.Common</include>
 			<control type="image">
 				<fadetime>400</fadetime>
@@ -1018,7 +1008,7 @@
 				<control type="group">
 					<visible>!String.IsEmpty(Container.Content)</visible>
 					<control type="image">
-						<visible>!Control.HasFocus(501)</visible>
+						<visible>String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<left>1800</left>
 						<width>120</width>
@@ -1028,10 +1018,11 @@
 						<fadetime>400</fadetime>
 					</control>
 					<control type="image">
-						<visible>Control.HasFocus(501)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
-						<left>1800</left>
-						<width>120</width>
+						<animation effect="slide" start="-400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
+						<left>1860</left>
+						<width>640</width>
 						<height>960</height>
 						<aspectratio align="left" aligny="top">scale</aspectratio>
 						<texture background="true" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
@@ -1041,13 +1032,24 @@
 						<animation effect="slide" end="760" time="0" condition="[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]">Conditional</animation>
 						<visible>!String.IsEqual(ListItem.DBTYPE, episode)</visible>
 						<visible>!Container.Content(files)</visible>
-						<visible>!Container.Content(episodes) | Control.HasFocus(501)</visible>
+						<visible>!Container.Content(episodes) | !String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 						<visible>![Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos)]</visible>
 						<left>1160</left>
 						<width>640</width>
 						<height>960</height>
 						<aspectratio align="center" aligny="top">scale</aspectratio>
 						<texture background="true">$VAR[ListIcon]</texture>
+						<fadetime>400</fadetime>
+					</control>
+				</control>
+				<control type="group">
+					<visible>[Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
+					<control type="image">
+						<left>1920</left>
+						<width>640</width>
+						<height>960</height>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
+						<texture background="true">$INFO[Container.Art(season.poster)]</texture>
 						<fadetime>400</fadetime>
 					</control>
 				</control>
@@ -1137,6 +1139,18 @@
 					<visible>[!Skin.HasSetting(Enable.WideList.Misc) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]] | [Window.IsActive(movieinformation) + Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					<control type="image">
 						<height>428</height>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<texture background="true">$VAR[FocusImage]</texture>
+						<fadetime>400</fadetime>
+					</control>
+					<control type="image">
+						<height>428</height>
+						<aspectratio align="right" aligny="center">keep</aspectratio>
+						<texture background="true">$VAR[FocusImage]</texture>
+						<fadetime>400</fadetime>
+					</control>
+					<control type="image">
+						<height>428</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$VAR[LandscapeArtVar]</texture>
 						<fadetime>400</fadetime>
@@ -1146,7 +1160,19 @@
 						<bottom>120</bottom>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<fadetime>400</fadetime>
-						<texture background="true" diffuse="thumbs/colorbox_poster_mask.png" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
+						<texture background="true" colordiffuse="$VAR[ListColorHighlightVar]">$VAR[FocusImage]</texture>
+					</control>
+					<control type="textbox">
+						<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+						<visible>Skin.HasSetting(Show.Plot.TV)</visible>
+						<description>Plot</description>
+						<top>438</top>
+						<left>10</left>
+						<width>740</width>
+						<height>522</height>
+						<font>font1450</font>
+						<label>$VAR[VideoInfoPlotVar]</label>
+						<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 					</control>
 					<control type="scrollbar" id="161">
 						<top>428</top>
@@ -1158,38 +1184,26 @@
 			</control>
 			<control type="group">
 				<animation effect="slide" time="0" delay="0" start="0" end="640" tween="cubic" reversible="true" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
+				<animation effect="slide" time="0" delay="0" start="0" end="770" tween="cubic" reversible="true" condition="!String.IsEmpty(Window(Home).Property(WideToggle))">Conditional</animation>
 				<visible>![Window.IsActive(movieinformation) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]]</visible>
 				<visible>Control.IsVisible(50)</visible>
 				<include>Scrollbar_Vertical_50</include>
 			</control>
 		</control>
 		<control type="group" id="51">
-			<visible>Control.HasFocus(501)</visible>
+			<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 			<animation effect="fade" start="0" end="100" time="400" delay="400" tween="quadratic" easing="out">Visible</animation>
 			<animation effect="fade" start="0" end="0" time="0" tween="quadratic" easing="out">Hidden</animation>
+			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
 			<include>Animation.Common</include>
 			<left>770</left>
 			<top>0</top>
 			<width>1920</width>
 			<height>960</height>
-			<control type="button" id="501">
-				<onleft>50</onleft>
-				<onright>9000</onright>
-				<onup>Control.Move(50,-1)</onup>
-				<ondown>Control.Move(50,1)</ondown>
-				<left>0</left>
-				<top>384</top>
-				<width>120</width>
-				<height>192</height>
-				<texturefocus/>
-				<onclick>SetFocus(50)</onclick>
-				<onclick condition="!Container.Content(songs)">AlarmClock(50info,Action(info),00:01,silent)</onclick>
-				<onclick condition="Container.Content(songs)">AlarmClock(50info,Action(play),00:01,silent)</onclick>
-			</control>
 			<control type="textbox">
 				<visible>!Window.IsVisible(MyMusicNav.xml) + String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
-				<left>36</left>
+				<left>-24</left>
 				<top>26</top>
 				<width>1090</width>
 				<height>480</height>
@@ -1202,9 +1216,9 @@
 			<control type="textbox">
 				<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
-				<left>156</left>
+				<left>96</left>
 				<top>26</top>
-				<width>970</width>
+				<width>940</width>
 				<height>920</height>
 				<font>font_SubMenu</font>
 				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
@@ -1215,9 +1229,9 @@
 			<control type="textbox">
 				<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2))</visible>
 				<description>Plot</description>
-				<left>156</left>
+				<left>96</left>
 				<top>26</top>
-				<width>970</width>
+				<width>940</width>
 				<height>480</height>
 				<font>font_SubMenu</font>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2),[B],[/B]]</label>
@@ -1228,7 +1242,7 @@
 			<control type="textbox">
 				<visible>!Window.IsVisible(MyMusicNav.xml) + String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
-				<left>30</left>
+				<left>-30</left>
 				<top>20</top>
 				<width>1090</width>
 				<height>480</height>
@@ -1239,9 +1253,9 @@
 			<control type="textbox">
 				<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
 				<description>Plot</description>
-				<left>150</left>
+				<left>90</left>
 				<top>20</top>
-				<width>970</width>
+				<width>940</width>
 				<height>920</height>
 				<font>font_SubMenu</font>
 				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
@@ -1250,9 +1264,9 @@
 			<control type="textbox">
 				<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2))</visible>
 				<description>Plot</description>
-				<left>150</left>
+				<left>90</left>
 				<top>20</top>
-				<width>970</width>
+				<width>940</width>
 				<height>480</height>
 				<font>font_SubMenu</font>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2),[B],[/B]]</label>

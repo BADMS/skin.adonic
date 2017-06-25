@@ -7,11 +7,13 @@
 	<onload>Dialog.Close(all,true)</onload>
 	<onload>ClearProperty(ImageFilterFIVE,Home)</onload>
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
-	<onload>SetProperty(Window.HasSettings,True,home)</onload>
+	
 	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onload>ClearProperty(WideToggle,Home)</onload>
+	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
-	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
+	
 	<onunload>Skin.SetString(background_fx,$INFO[Window(home).Property(cfa_daemon_set)])</onunload>
 	<onunload>Skin.SetString(focus_fx,$INFO[Window(home).Property(FIVE_daemon_set)])</onunload>
 	<onunload>ClearProperty(RefreshItem,Home)</onunload>

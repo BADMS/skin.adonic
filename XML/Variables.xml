@@ -52,11 +52,14 @@
 	</variable>
 	<variable name="MenuPanelBackground">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
-		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
 		<value condition="!String.IsEmpty(Skin.String(View.Panel.Image))">$INFO[Skin.String(View.Panel.Image)]</value>
 		<value condition="!Container(9990).HasFocus(8)">background.png</value>
 		<value>background.png</value>
+	</variable>
+	<variable name="MenuPanelBackgroundWide">
+		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
 	</variable>
 	<variable name="DialogSelectItemIcon">
 		<value condition="String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[184])">$INFO[Skin.String(MenuDefaultIconsPath)]refresh.png</value>
@@ -303,11 +306,11 @@
 	</variable>
 	<variable name="LandscapeArtVar">
 		<value condition="ListItem.IsParentFolder + !String.IsEmpty(ListItem(1).Filename) + !String.IsEmpty(ListItem(1).Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem(1).Overlay,OverlayUnWatched.png) | ListItem(1).IsResumable]">$INFO[ListItem(1).Art(tvshow.landscape)]</value>
-		<value condition="ListItem.IsParentFolder + !String.IsEmpty(ListItem(1).Filename) + String.IsEmpty(ListItem(1).Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem(1).Overlay,OverlayUnWatched.png) | ListItem(1).IsResumable]">special://skin/extras/misc/empty.jpg</value>
+		<value condition="ListItem.IsParentFolder + !String.IsEmpty(ListItem(1).Filename) + String.IsEmpty(ListItem(1).Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem(1).Overlay,OverlayUnWatched.png) | ListItem(1).IsResumable]">$INFO[Skin.String(MenuDefaultIconsPath)]fallback.png</value>
 		<value condition="ListItem.IsParentFolder + !String.IsEmpty(ListItem(1).Filename)">$INFO[ListItem(1).Thumb]</value>
 
 		<value condition="!String.IsEmpty(ListItem.Filename) + !String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Filename) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">special://skin/extras/misc/empty.jpg</value>
+		<value condition="!String.IsEmpty(ListItem.Filename) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[Skin.String(MenuDefaultIconsPath)]fallback.png</value>
 		<!--
 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + Skin.HasSetting(Hide.Spoilers.Movies) + Container.Content(movies) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(landscape)) + Skin.HasSetting(Hide.Spoilers.Movies) + Container.Content(movies) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">special://skin/extras/misc/empty.jpg</value>
@@ -364,6 +367,8 @@
 		<value>$LOCALIZE[20360]</value>
 	</variable>
 	<variable name="VideoInfoPlotVar">
+		<value condition="String.IsEqual(ListItem.Label, ..)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="String.IsEqual(ListItem.Label, ..) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!String.StartsWith(Container.FolderPath,plugin) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$LOCALIZE[20370]</value>
 		<value condition="!String.StartsWith(Container.FolderPath,plugin) + Skin.HasSetting(Hide.Spoilers.Movies) + Container.Content(movies) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$LOCALIZE[20370]</value>
 		<value condition="Skin.HasSetting(VideoInfoPlotToggle) + !String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
@@ -561,7 +566,7 @@
 		<value condition="Control.HasFocus(310)">$LOCALIZE[31925]</value>
 		<value condition="Control.HasFocus(312)">$LOCALIZE[31149]</value>
 		<value condition="Control.HasFocus(500)">$LOCALIZE[31933]</value>
-		<value condition="Control.HasFocus(501)">$LOCALIZE[31162]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(WideToggle))">$LOCALIZE[31162]</value>
 	</variable>
 	
 	<variable name="RatingFlagVar">
@@ -798,8 +803,8 @@
     </variable>
     <variable name="HeaderIcon">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">BLOB.png</value>
-		<value condition="Control.HasFocus(501) + !String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
-        <value condition="Control.HasFocus(501) + Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.DiscArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.DiscArt)]</value>
 		<value condition="String.IsEqual(ListItem.Label, ..)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultFolderBack.png</value>
 		<value condition="Window.IsVisible(movieinformation)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
 		<value condition="Window.IsVisible(musicinformation)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
@@ -911,7 +916,7 @@
 		<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(Window(Home).Property(NextAired.Status))">$INFO[Window(Home).Property(NextAired.Status),[I],[/I]]</value>
     	<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		-->
-		<value condition="!Window.IsActive(movieinformation) + Control.HasFocus(501) + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
     	<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,musicvideo) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
     	<value condition="Window.IsActive(DialogMusicInfo.xml) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$VAR[MusicInfoSubheading]</value>
 		<value condition="Window.IsActive(songinformation) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$VAR[MusicInfoSubheading]</value>
@@ -1059,7 +1064,7 @@
     	<value>$INFO[ListItem.Label]</value>
     </variable>
     <variable name="ListIcon">
-    	<value condition="Container.Content(episodes) + Control.HasFocus(501)">$INFO[ListItem.Art(tvshow.poster)]</value>
+    	<value condition="Container.Content(episodes) + !String.IsEmpty(Window(Home).Property(WideToggle))">$INFO[ListItem.Art(tvshow.poster)]</value>
     	<value condition="!String.StartsWith(Container.FolderPath,plugin) + !String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
     	<value condition="!String.StartsWith(Container.FolderPath,plugin) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + Skin.HasSetting(Hide.Spoilers.TV) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">special://skin/extras/misc/empty.jpg</value>
     	<value condition="ControlGroup(9050).HasFocus">$INFO[Window(Home).Property(ImageFilterFIVE)]</value>

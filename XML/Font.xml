@@ -97,6 +97,12 @@
 			<size>33</size>
 		</font>
 		<font>
+			<name>font1450</name>
+			<filename>MavenPro-Medium.ttf</filename>
+			<size>33</size>
+			<linespacing>1.2</linespacing>
+		</font>
+		<font>
 			<name>font15</name>
 			<filename>MavenPro-Medium.ttf</filename>
 			<style>capitalize</style>
@@ -331,6 +337,12 @@
 			<filename>Roboto-Regular.ttf</filename>
 			<size>33</size>
 			<linespacing>1.01</linespacing>
+		</font>
+		<font>
+			<name>font1450</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>33</size>
+			<linespacing>1.2</linespacing>
 		</font>
 		<font>
 			<name>font15</name>

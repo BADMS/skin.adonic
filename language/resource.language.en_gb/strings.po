@@ -1535,3 +1535,7 @@ msgstr ""
 msgctxt "#32006"
 msgid "Contrast colors"
 msgstr ""
+
+msgctxt "#32007"
+msgid "Show episode plots"
+msgstr ""

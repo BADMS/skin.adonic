@@ -625,7 +625,7 @@
 			<selected>Skin.HasSetting(Enable.SlimList.Misc)</selected>
 			<visible>Control.IsVisible(50) + ![Window.IsActive(eventlog) | Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvtimerrules) | Window.IsActive(tvsearch) | Window.IsActive(radiochannels) | Window.IsActive(radiorecordings) | Window.IsActive(radiotimers) | Window.IsActive(radiosearch)] + ![Container.Content(movies) | Container.Content(movie)]</visible>
 		</control>
-		<control type="radiobutton" id="11109">
+		<control type="radiobutton" id="1898">
 			<label>31095</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Enable.SlimList.Movies)</onclick>
@@ -639,12 +639,19 @@
 			<selected>Skin.HasSetting(Enable.WideList.Misc)</selected>
 			<visible>Control.IsVisible(50) + ![Window.IsActive(eventlog) | Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvtimerrules) | Window.IsActive(tvsearch) | Window.IsActive(radiochannels) | Window.IsActive(radiorecordings) | Window.IsActive(radiotimers) | Window.IsActive(radiosearch)] + ![Container.Content(movies) | Container.Content(movie)]</visible>
 		</control>
-		<control type="radiobutton" id="11110">
+		<control type="radiobutton" id="11109">
 			<label>31237</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Enable.WideList.Movies)</onclick>
 			<selected>Skin.HasSetting(Enable.WideList.Movies)</selected>
 			<visible>Control.IsVisible(50) + ![Window.IsActive(eventlog) | Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvtimerrules) | Window.IsActive(tvsearch) | Window.IsActive(radiochannels) | Window.IsActive(radiorecordings) | Window.IsActive(radiotimers) | Window.IsActive(radiosearch)] + [Container.Content(movies) | Container.Content(movie)]</visible>
+		</control>
+		<control type="radiobutton" id="11110">
+			<label>32007</label>
+			<include>ButtonCommonValues</include>
+			<onclick>Skin.ToggleSetting(Show.Plot.TV)</onclick>
+			<selected>Skin.HasSetting(Show.Plot.TV)</selected>
+			<visible>![Window.IsActive(eventlog) | Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvtimerrules) | Window.IsActive(tvsearch) | Window.IsActive(radiochannels) | Window.IsActive(radiorecordings) | Window.IsActive(radiotimers) | Window.IsActive(radiosearch)] + [Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
 		</control>
 		<control type="radiobutton" id="11111">
 			<label>31969</label>
@@ -2027,7 +2034,9 @@
 			<height>960</height>
 			<onleft condition="![Window.IsActive(addoninformation) | Window.IsActive(settings)]">50</onleft>
 			<onleft condition="Window.IsActive(addoninformation) | Window.IsActive(settings)">9990</onleft>
-			<onright condition="[[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(501)</onright>
+			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetProperty(WideToggle,True,home)</onright>
+			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">ClearProperty(WideToggle,home)</onright>
+			<onright condition="[[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(50)</onright>
 			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
 			<ondown>500</ondown>
 			<onup>500</onup>
@@ -2160,7 +2169,7 @@
 			<top>$PARAM[top]</top>
 			<width>$PARAM[width]</width>
 			<height>80</height>
-			<itemgap>20</itemgap>
+			<itemgap>00</itemgap>
 			<align>$PARAM[align]</align>
 			<orientation>horizontal</orientation>
 			<include>VisibleFadeEffect</include>
@@ -2168,24 +2177,28 @@
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.VideoResolution) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$VAR[SourceFlagVar,flags/video/,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.VideoCodec) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.VideoAspect) + [![$EXP[isTvshow] | $EXP[isSeason]] | Window.IsActive(movieinformation)]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.AudioCodec) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
@@ -2193,6 +2206,7 @@
 				<width>100</width>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.AudioChannels) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
@@ -2200,18 +2214,21 @@
 				<width>100</width>
 				<include>MediaFlagVars</include>
 				<texture>flags/cc.png</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.SubtitleLanguage) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.Studio) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 			<control type="image">
 				<height>80</height>
 				<include>MediaFlagVars</include>
 				<texture fallback="flags/blank.png">$VAR[RatingFlagVar]</texture>
+				<align>center</align>
 				<visible>!String.IsEmpty(ListItem.mpaa) + ![$EXP[isTvshow] | $EXP[isSeason]]</visible>
 			</control>
 		</control>

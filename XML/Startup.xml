@@ -46,6 +46,7 @@
 	<onload>RunScript(script.colorbox,var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)])</onload>
 	<onload>RunScript(script.colorbox,var=black,set=$INFO[Skin.String(colorbox_black)])</onload>
 	<onload>RunScript(script.colorbox,var=white,set=$INFO[Skin.String(colorbox_white)])</onload>
+	<onload>RunScript(script.colorbox,info=blur,id=$VAR[PICTURE_LOCATION],prefix=mypic1,blursize=1,quality=8)</onload>
 	-->
 	<onunload>Skin.SetString(OSDCast,0)</onunload>
 	<controls>

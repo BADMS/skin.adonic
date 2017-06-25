@@ -4,10 +4,12 @@
 	<menucontrol>9000</menucontrol>
 	<onload>Dialog.Close(all,true)</onload>
 	<onload>Skin.Reset(SS_Helper)</onload>
-	<onload>SetProperty(Window.HasSettings,True,home)</onload>
+	
 	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onload>ClearProperty(WideToggle,Home)</onload>
+	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
-	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
+	
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<control type="multiimage" id="7977">
