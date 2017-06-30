@@ -40,6 +40,7 @@
 	<onload>AlarmClock(nms5,SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home),00:13,true)</onload>
 	<onload>AlarmClock(nms6,SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:15,true)</onload>
 	<!--
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,multis=$NUMBER[7988]|MYMULTI_ONE.|blur:$NUMBER[7989]|MYMULTI_TOO.|pixelate)</onload>
 	<onload>RunScript(script.colorbox,var=quality,set=$INFO[Skin.String(colorbox_quality)])</onload>
 	<onload>RunScript(script.colorbox,var=blursize,set=$INFO[Skin.String(colorbox_blursize)])</onload>
 	<onload>RunScript(script.colorbox,var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)])</onload>

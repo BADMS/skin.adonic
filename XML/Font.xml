@@ -185,8 +185,7 @@
 		</font>
 		<font>
 			<name>font_SubMenu</name>
-			<filename>MavenPro-Bold.ttf</filename>
-			
+			<filename>MavenPro-Regular.ttf</filename>
 			<size>40</size>
 		</font>
 		<font>
@@ -257,6 +256,11 @@
 			<name>font13</name>
 			<filename>Roboto-Regular.ttf</filename>
 			<size>30</size>
+		</font>
+		<font>
+			<name>font13_toggle</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>60</size>
 		</font>
 		<font>
 			<name>font13_textbox2</name>
@@ -390,6 +394,12 @@
 			<size>32</size>
 		</font>
 		<font>
+			<name>topbar_toggle</name>
+			<filename>Roboto-Medium.ttf</filename>
+			<style>uppercase</style>
+			<size>64</size>
+		</font>
+		<font>
 			<name>font15_title</name>
 			<filename>Roboto-Medium.ttf</filename>
 			<style>uppercase</style>
@@ -427,7 +437,7 @@
 		</font>
 		<font>
 			<name>font_SubMenu</name>
-			<filename>Roboto-Medium.ttf</filename>
+			<filename>Roboto-Regular.ttf</filename>
 			<linespacing>1.01</linespacing>
 			<size>40</size>
 		</font>
@@ -466,6 +476,11 @@
 			<name>IconMedium</name>
 			<filename>webhostinghub-glyphs.ttf</filename>
 			<size>36</size>
+		</font>
+		<font>
+			<name>IconMedium_toggle</name>
+			<filename>webhostinghub-glyphs.ttf</filename>
+			<size>72</size>
 		</font>
 		<font>
 			<name>IconButton</name>

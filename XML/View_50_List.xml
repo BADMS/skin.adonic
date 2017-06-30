@@ -314,9 +314,10 @@
 				<control type="panel" id="50">
 					<width>1790</width>
 					<height>960</height>
-					<onleft condition="Control.IsVisible(6002)">6002</onleft>
-					<onleft condition="!Control.IsVisible(6002)">SetProperty(MediaMenu,True,home)</onleft>
-					<onleft condition="!Control.IsVisible(6002)">SetFocus(9050)</onleft>
+					<onleft condition="String.IsEmpty(Window(Home).Property(WideToggle)) + Control.IsVisible(6002)">6002</onleft>
+					<onleft condition="String.IsEmpty(Window(Home).Property(WideToggle)) + !Control.IsVisible(6002)">SetProperty(MediaMenu,True,home)</onleft>
+					<onleft condition="String.IsEmpty(Window(Home).Property(WideToggle)) + !Control.IsVisible(6002)">SetFocus(9050)</onleft>
+					<onleft condition="!String.IsEmpty(Window(Home).Property(WideToggle))">ClearProperty(WideToggle,home)</onleft>
 					<onright condition="Container(50).HasNext | Container(50).HasPrevious">500</onright>
 					<onright condition="!Container(50).HasNext + !Container(50).HasPrevious + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">500</onright>
 					<onright condition="!Container(50).HasNext + !Container(50).HasPrevious">9000</onright>
@@ -1185,12 +1186,14 @@
 			<control type="group">
 				<animation effect="slide" time="0" delay="0" start="0" end="640" tween="cubic" reversible="true" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
 				<animation effect="slide" time="0" delay="0" start="0" end="770" tween="cubic" reversible="true" condition="!String.IsEmpty(Window(Home).Property(WideToggle))">Conditional</animation>
+				<animation effect="slide" time="0" delay="0" start="0" end="120" tween="cubic" reversible="true" condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [Container.Content(addons) | Container.Content(files) | Container.Content() | Container.Content(genres)]">Conditional</animation>
 				<visible>![Window.IsActive(movieinformation) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]]</visible>
 				<visible>Control.IsVisible(50)</visible>
 				<include>Scrollbar_Vertical_50</include>
 			</control>
 		</control>
 		<control type="group" id="51">
+			<visible>Control.IsVisible(50) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
 			<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 			<animation effect="fade" start="0" end="100" time="400" delay="400" tween="quadratic" easing="out">Visible</animation>
 			<animation effect="fade" start="0" end="0" time="0" tween="quadratic" easing="out">Hidden</animation>
@@ -1221,7 +1224,7 @@
 				<width>940</width>
 				<height>920</height>
 				<font>font_SubMenu</font>
-				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
+				<label>$INFO[ListItem.AddonDescription]</label>
 				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
 				<shadowcolor></shadowcolor>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
@@ -1234,7 +1237,7 @@
 				<width>940</width>
 				<height>480</height>
 				<font>font_SubMenu</font>
-				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2),[B],[/B]]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2)]</label>
 				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
 				<shadowcolor></shadowcolor>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
@@ -1258,7 +1261,7 @@
 				<width>940</width>
 				<height>920</height>
 				<font>font_SubMenu</font>
-				<label>$INFO[ListItem.AddonDescription,[B],[/B]]</label>
+				<label>$INFO[ListItem.AddonDescription]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
 			<control type="textbox">
@@ -1269,7 +1272,7 @@
 				<width>940</width>
 				<height>480</height>
 				<font>font_SubMenu</font>
-				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2),[B],[/B]]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2)]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
 			<!--<control type="image"><left>0</left><top>0</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(-2).Art(poster)]</texture><fadetime>400</fadetime></control><control type="image"><left>0</left><top>192</top><width>120</width><height>192</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true">$INFO[Container(50).ListItem(-1).Art(poster)]</texture><fadetime>400</fadetime></control><control type="image"><left>328</left><top>384</top><width>495</width><height>192</height><align>right</align><aspectratio align="center" aligny="center">stretch</aspectratio><texture background="true">$INFO[Window(Home).Property(filter_logo.ImageFilterNINE)]</texture><fadetime>400</fadetime></control>-->

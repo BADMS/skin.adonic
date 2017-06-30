@@ -1052,7 +1052,7 @@
     </variable>
 	<variable name="LabelNextAiredDetails">
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label.short),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[LIGHT],[/LIGHT]]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),- $LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] -  ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),$LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
 	</variable>
     <variable name="MovieInfoIconThumbImage">
     	<value condition="Window.IsVisible(home) + String.StartsWith(ListItem.Path, plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>

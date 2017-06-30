@@ -398,11 +398,11 @@
 					</include>
 				</control>
 				<control type="group">
-					<left>200</left>
+					<left>210</left>
 					<visible>$EXP[isTvshow] + !Control.IsVisible(150) + !Control.IsVisible(90019)</visible>
 					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
 					<animation effect="slide" time="0" start="0" end="100" condition="String.IsEmpty(ListItem.Property(TotalSeasons))">Conditional</animation>
-					<top>875</top>
+					<top>980</top>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Property(TotalSeasons))</visible>
 						<width>200</width>
@@ -539,7 +539,8 @@
 					<width>1000</width>
 					<height>60</height>
 					<itemgap>10</itemgap>
-					<onup condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetName))">9003</onup>
+					<onup condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + !Control.IsVisible(12345)">9003</onup>
+					<onup condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetName)) + Control.IsVisible(12345)">61</onup>
 					<onup condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName))">61</onup>
 					<onleft>9000</onleft>
 					<onright>9000</onright>

@@ -1318,6 +1318,7 @@
 					<width>80</width>
 					<height>80</height>
 					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
+					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>$VAR[HeaderIcon]</texture>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
@@ -1379,7 +1380,7 @@
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))</visible>
-					<top>13</top>
+					<top>14</top>
 					<left>13</left>
 					<control type="image">
 						<width>92</width>
@@ -1415,6 +1416,7 @@
 					<animation effect="rotate" start="360" end="0" center="auto" time="3000" loop="true" condition="true">conditional</animation>
 				</control>
 				<control type="button">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1466,6 +1468,7 @@
 					</control>
 				</control>
 				<control type="button">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1483,6 +1486,7 @@
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				</control>
 				<control type="label">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<top>59</top>
 					<left>117</left>
 					<width min="1228" max="1678">auto</width>
@@ -1507,6 +1511,7 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>
 				<control type="button">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<left>102</left>
 					<top>59</top>
 					<width>1715</width>
@@ -1533,6 +1538,7 @@
 					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(SmartPlaylistRule.xml)</visible>
 				</control>
 				<control type="label">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<top>59</top>
 					<left>117</left>
 					<width min="1228" max="1678">auto</width>
@@ -1555,6 +1561,7 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml)</visible>
 				</control>
 				<control type="grouplist">
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
 					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
@@ -1940,6 +1947,195 @@
 						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
 					</control>
 				</control>
+				<control type="grouplist">
+					<visible>!String.IsEmpty(Window(Home).Property(WideToggle)) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
+					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
+					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
+					<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+					<visible>!Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
+					<visible>!Window.IsVisible(DialogTextViewer.xml)</visible>
+					<visible>!Window.IsVisible(DialogMediaSource.xml)</visible>
+					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
+					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
+					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+					<visible>!Window.IsVisible(DialogSettings.xml)</visible>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
+					<visible>!String.IsEqual(System.CurrentControlID, 3)</visible>
+					<visible>!String.IsEqual(System.CurrentControlID, 6)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 9010)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 8011)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 909)</visible>
+					<visible>!Control.IsVisible(12346)</visible>
+					<left>120</left>
+					<top>20</top>
+					<width>1678</width>
+					<height>80</height>
+					<orientation>horizontal</orientation>
+					<itemgap>6</itemgap>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>orange</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Container.Content(actors) + !String.IsEmpty(ListItem.Appearances)</visible>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<height>80</height>
+						<font>topbar_toggle</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<label>$INFO[ListItem.Appearances,, ]</label>
+						<visible>Container.Content(actors) + !String.IsEmpty(ListItem.Appearances)</visible>
+					</control>
+					<control type="button">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<width>80</width>
+						<height>80</height>
+						<textcolor>black</textcolor>
+						<textoffsetx>0</textoffsetx>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)]</label>
+						<font>font13_toggle</font>
+						<align>center</align>
+						<texturefocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturenofocus>
+						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
+						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a)</visible>
+					</control>
+					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<width>6</width>
+						<label> </label>
+						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + !String.IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>yellow</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$VAR[IMDBIcon]</label>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Rating,, ]</label>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<width>6</width>
+						<label> </label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + String.IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<font>IconMedium_toggle</font>
+						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$VAR[RottenTomatoesIcon]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
+					</control>
+					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),,% ]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>orange</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.SongCount),, ]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>blue</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),, ]</label>
+						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>yellow</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>!String.IsEmpty(ListItem.Top250)</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Top250,#, ]</label>
+						<visible>!String.IsEmpty(ListItem.Top250)</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<label>$VAR[LabelUserRating]</label>
+						<textcolor>$VAR[ColorUserRating]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorUserRating]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Userrating,, ]</label>
+						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
+					</control>
+					<control type="label">
+						<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)]</visible>
+						<width min="1228" max="1678">auto</width>
+						<height>80</height>
+						<font>topbar_toggle</font>
+						<scroll>true</scroll>
+						<scrollspeed>150</scrollspeed>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
+					</control>
+				</control>
 			</control>
 			<control type="image">
 				<description>avatar</description>
@@ -2034,9 +2230,9 @@
 			<height>960</height>
 			<onleft condition="![Window.IsActive(addoninformation) | Window.IsActive(settings)]">50</onleft>
 			<onleft condition="Window.IsActive(addoninformation) | Window.IsActive(settings)">9990</onleft>
+			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(50)</onright>
 			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetProperty(WideToggle,True,home)</onright>
-			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">ClearProperty(WideToggle,home)</onright>
-			<onright condition="[[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(50)</onright>
+			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
 			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
 			<ondown>500</ondown>
 			<onup>500</onup>

@@ -24,27 +24,6 @@
 			<imagepath background="true">$VAR[ThumbVar]</imagepath>
 		</control>
 		<control type="group">
-			<visible>[[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]</visible>
-			<control type="group">
-				<animation effect="slide" loop="true" time="30000" delay="0" start="0" end="1320" tween="" reversible="false" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
-				<include>CommonBackgroundNav</include>
-				<left>-1320</left>
-				<width>1320</width>
-			</control>
-			<control type="group">
-				<animation effect="slide" loop="true" time="30000" delay="0" start="0" end="1320" tween="" reversible="false" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
-				<include>CommonBackgroundNav</include>
-				<width>1320</width>
-			</control>
-			<control type="group">
-				<animation effect="slide" loop="true" time="30000" delay="0" start="0" end="1320" tween="" reversible="false" condition="![[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] | [[Skin.HasSetting(Enable.SlimList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.SlimList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]] + [[Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]]">Conditional</animation>
-				<include>CommonBackgroundNav</include>
-				<left>1320</left>
-				<width>1320</width>
-			</control>
-        </control>
-		<control type="group">
-			<visible>[!Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)]] | [!Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]]</visible>
 			<include>CommonBackground</include>
 		</control>
 		<include>View_50_Square</include>
