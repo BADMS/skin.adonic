@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol always="true">9990</defaultcontrol>
 	<menucontrol>9000</menucontrol>
+	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
 	<onload>Dialog.Close(all,true)</onload>
 	
 	<onload>ClearProperty(MediaMenu,Home)</onload>
@@ -11,6 +12,7 @@
 		<control type="multiimage" id="7977">
 			<fadetime>300</fadetime>
 			<animation effect="fade" time="200" tween="cubic">Visible</animation>
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 			<include>FullscreenDimensions</include>
 			<imagepath background="true">$VAR[HomeBackgroundVar]</imagepath>
 		</control>
@@ -29,6 +31,7 @@
 			<visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo)</visible>
 		</control>
 		<control type="image">
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 			<animation type="Conditional" condition="!Control.HasFocus(9010) + !Control.HasFocus(9000) + !Control.HasFocus(9001) + Window.IsActive(home)" reversible="false">
 				<effect type="fade" delay="0" start="55" end="0" time="1000" />
 			</animation>
@@ -103,42 +106,42 @@
 				<content>
 					<item id="1">
 						<label>513</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="2">
 						<label>31311</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="3">
 						<label>33069</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="4">
 						<label>16000</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="5">
 						<label>31009</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="6">
 						<label>31014</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="7">
 						<label>10038</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 					<item id="8">
 						<label>31195</label>
-						<onclick>noop</onclick>
+						
 						<icon>-</icon>
 					</item>
 				</content>

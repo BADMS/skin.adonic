@@ -38,7 +38,7 @@
 				<textoffsetx>15</textoffsetx>
 				<label>$INFO[Control.GetLabel(1),[B],[/B]]</label>
 				<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
-				<onclick>noop</onclick>
+				
 				<texturefocus>blank.png</texturefocus>
 			</control>
 			<control type="textbox" id="9">

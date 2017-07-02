@@ -4,12 +4,15 @@
 	<allowoverlay>true</allowoverlay>
 	<views>50</views>
 	<menucontrol>9000</menucontrol>
+	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10])</onload>
 	<onload>Dialog.Close(all,true)</onload>
 	<onload>ClearProperty(ImageFilterFIVE,Home)</onload>
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
 	
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
+	<onunload>SetProperty(Colorbox_shuffle,1,home)</onunload>
 	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
@@ -34,8 +37,12 @@
 			<imagepath background="true">$VAR[ThumbVar]</imagepath>
 		</control>
 		<control type="group">
-			<include>CommonBackground</include>
-		</control>
+			<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
+			<control type="group">
+	            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
+	            <animation effect="fade" end="100" time="1000" tween="cubic" delay="1000">WindowOpen</animation>
+				<include>CommonBackground</include>
+			</control>
 		<include>View_50_List</include>
 		<control type="group">
 			<include condition="Window.IsActive(musicplaylist)">View_508_SongList</include>
@@ -129,5 +136,16 @@
 				<include>MenuHome3D</include>
 			</control>
         </control>
+        </control>
+		<!--
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
+			<include>Screen_Blockers_In</include>
+		</control>
+		-->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),2)</visible>
+			<include>Screen_Blockers_Out</include>
+		</control>
 	</controls>
 </window>

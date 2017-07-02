@@ -12,6 +12,7 @@
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
+	<onunload>SetProperty(Colorbox_shuffle,1,home)</onunload>
 	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>ClearProperty(MediaMenu,Home)</onunload>
@@ -47,6 +48,8 @@
 		<control type="group">
 			<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
 			<control type="group">
+	            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
+	            <animation effect="fade" end="100" time="1000" tween="cubic" delay="1000">WindowOpen</animation>
 				<include>CommonBackground</include>
 			</control>
 			<include>View_50_List</include>

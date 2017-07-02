@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1134">
 	<defaultcontrol always="true">90001</defaultcontrol>
+	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
 	<onload>Skin.Reset(SS_Helper)</onload>
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu)</onunload>
 	<menucontrol>9000</menucontrol>
@@ -9,6 +10,7 @@
 		<control type="multiimage" id="7977">
 			<fadetime>300</fadetime>
 			<animation effect="fade" time="200" tween="cubic">Visible</animation>
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 			<include>FullscreenDimensions</include>
 			<imagepath background="true">$VAR[HomeBackgroundVar]</imagepath>
 		</control>
@@ -27,6 +29,7 @@
 			<visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo)</visible>
 		</control>
 		<control type="image">
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 			<animation type="Conditional" condition="!Control.HasFocus(9010) + !Control.HasFocus(9000) + !Control.HasFocus(9001) + Window.IsActive(home)" reversible="false">
 				<effect type="fade" delay="0" start="55" end="0" time="1000" />
 			</animation>
@@ -349,7 +352,7 @@
 			<top>-1</top>
 			<width>1</width>
 			<height>1</height>
-			<onclick>noop</onclick>
+			
 		</control>
 	</controls>
 </window>
