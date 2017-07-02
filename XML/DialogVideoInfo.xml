@@ -544,7 +544,7 @@
 					<onup condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName))">61</onup>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
-					<ondown>9010</ondown>
+					<ondown>ActivateWindow(Home)</ondown>
 					<orientation>horizontal</orientation>
 					<itemlayout height="525" width="260" />
 					<focusedlayout height="525" width="375" />

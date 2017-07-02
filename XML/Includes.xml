@@ -12,7 +12,7 @@
 	<include file="View_50_List.xml" />
 	<include file="Variables.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
-	<constant name="FanartCrossfadeTime">500</constant>
+	<constant name="FanartCrossfadeTime">400</constant>
 	<constant name="FullScreenWidth">1920</constant>
 	<expression name="PluginAdvancedLauncher">String.Contains(Container.FolderPath,plugin://plugin.program.advanced.launcher/)</expression>
 	<expression name="PluginSuperFavourites">String.Contains(Container.FolderPath,plugin://plugin.program.super.favourites/)</expression>
@@ -24,6 +24,200 @@
 	<expression name="isArtist">String.IsEqual(ListItem.DBTYPE,artist)</expression>
 	<expression name="isAlbum">String.IsEqual(ListItem.DBTYPE,album)</expression>
 	<expression name="isSong">String.IsEqual(ListItem.DBTYPE,song)</expression>
+	<include name="Screen_Blockers_In">
+		<include>FullscreenDimensions</include>
+		<control type="group">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>470</width>
+				<height>250</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.zero),1)</visible>
+			</control>
+			<control type="image">
+				<left>470</left>
+				<top>0</top>
+				<width>830</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.one),1)</visible>
+			</control>
+			<control type="image">
+				<left>1300</left>
+				<top>0</top>
+				<width>280</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.two),1)</visible>
+			</control>
+			<control type="image">
+				<left>1580</left>
+				<top>0</top>
+				<width>340</width>
+				<height>955</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.three),1)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>250</top>
+				<width>470</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.four),1)</visible>
+			</control>
+			<control type="image">
+				<left>470</left>
+				<top>830</top>
+				<width>250</width>
+				<height>250</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.five),1)</visible>
+			</control>
+			<control type="image">
+				<left>720</left>
+				<top>830</top>
+				<width>860</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.six),1)</visible>
+			</control>
+			<control type="image">
+				<left>720</left>
+				<top>955</top>
+				<width>1075</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.seven),1)</visible>
+			</control>
+			<control type="image">
+				<left>1795</left>
+				<top>955</top>
+				<width>125</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.eight),1)</visible>
+			</control>
+			<!--
+			<control type="image">
+				<left>785</left>
+				<top>200</top>
+				<width>200</width>
+				<height>200</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle.nine),1)</visible>
+			</control>
+			-->
+		</control>
+	</include>
+	<include name="Screen_Blockers_Out">
+		<include>FullscreenDimensions</include>
+		<control type="group">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>470</width>
+				<height>250</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.zero))</visible>
+			</control>
+			<control type="image">
+				<left>470</left>
+				<top>0</top>
+				<width>830</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.one))</visible>
+			</control>
+			<control type="image">
+				<left>1300</left>
+				<top>0</top>
+				<width>280</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.two))</visible>
+			</control>
+			<control type="image">
+				<left>1580</left>
+				<top>0</top>
+				<width>340</width>
+				<height>955</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.three))</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>250</top>
+				<width>470</width>
+				<height>830</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.four))</visible>
+			</control>
+			<control type="image">
+				<left>470</left>
+				<top>830</top>
+				<width>250</width>
+				<height>250</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.five))</visible>
+			</control>
+			<control type="image">
+				<left>720</left>
+				<top>830</top>
+				<width>860</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.six))</visible>
+			</control>
+			<control type="image">
+				<left>720</left>
+				<top>955</top>
+				<width>1075</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.seven))</visible>
+			</control>
+			<control type="image">
+				<left>1795</left>
+				<top>955</top>
+				<width>125</width>
+				<height>125</height>
+				<texture>black.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.eight))</visible>
+			</control>
+			<!--
+			<control type="image">
+				<left>785</left>
+				<top>200</top>
+				<width>200</width>
+				<height>200</height>
+				<texture>background.png</texture>
+				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
+				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.nine))</visible>
+			</control>
+			-->
+		</control>
+	</include>
 	<include name="Furniture_AlphabetVertical">
 		<control type="group" id="6000">
 			<control type="image">
@@ -1320,6 +1514,7 @@
 					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>$VAR[HeaderIcon]</texture>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content() | ListItem.IsParentFolder</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)] | String.IsEqual(ListItem.Label, ..)</visible>
@@ -1336,7 +1531,7 @@
 					<visible>Control.IsVisible(12346) + !Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml)</visible>
 					<control type="label">
 						<top>59</top>
-						<left>117</left>
+						<left>120</left>
 						<width min="1228" max="1678">auto</width>
 						
 						<height>45</height>
@@ -1390,8 +1585,8 @@
 					</control>
 				</control>
 				<control type="label">
-					<top>17</top>
-					<left>17</left>
+					<top>20</top>
+					<left>20</left>
 					<width>80</width>
 					<height>80</height>
 					<font>font35_title</font>
@@ -1416,7 +1611,7 @@
 					<animation effect="rotate" start="360" end="0" center="auto" time="3000" loop="true" condition="true">conditional</animation>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1424,7 +1619,7 @@
 					<font>font28_title</font>
 					
 					
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>18</textoffsetx>
 					<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
 					<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
 					<onclick>noop</onclick>
@@ -1445,7 +1640,7 @@
 						<font>font28_title</font>
 						
 						
-						<textoffsetx>15</textoffsetx>
+						<textoffsetx>18</textoffsetx>
 						<!--
 						<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
 						-->
@@ -1456,7 +1651,7 @@
 					</control>
 					<control type="label">
 						<top>59</top>
-						<left>117</left>
+						<left>120</left>
 						<width min="1228" max="1678">auto</width>
 						
 						<height>45</height>
@@ -1468,7 +1663,7 @@
 					</control>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1476,7 +1671,7 @@
 					<font>font28_title</font>
 					
 					
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>18</textoffsetx>
 					<label>$VAR[BreadcrumbsVar]</label>
 					<label2>$VAR[TopbarFadeLabel2]</label2>
 					<onclick>noop</onclick>
@@ -1486,9 +1681,9 @@
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<top>59</top>
-					<left>117</left>
+					<left>120</left>
 					<width min="1228" max="1678">auto</width>
 					
 					<height>45</height>
@@ -1511,7 +1706,7 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>59</top>
 					<width>1715</width>
@@ -1519,7 +1714,7 @@
 					<font>topbar</font>
 					
 					
-					<textoffsetx>15</textoffsetx>
+					<textoffsetx>18</textoffsetx>
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
@@ -1538,9 +1733,9 @@
 					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(SmartPlaylistRule.xml)</visible>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<top>59</top>
-					<left>117</left>
+					<left>120</left>
 					<width min="1228" max="1678">auto</width>
 					
 					<height>45</height>
@@ -1561,7 +1756,7 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml)</visible>
 				</control>
 				<control type="grouplist">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)]</visible>
+					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
@@ -1891,6 +2086,22 @@
 					</control>
 					<control type="label">
 						<font>IconMedium</font>
+						<textcolor>orange</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label></label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
+					</control>
+					<control type="label">
+						<font>topbar</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),, ]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium</font>
 						<textcolor>blue</textcolor>
 						<height>45</height>
 						<width>auto</width>
@@ -1948,7 +2159,8 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<visible>!String.IsEmpty(Window(Home).Property(WideToggle)) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
+					<animation effect="slide" time="0" delay="0" start="0" end="100" reversible="true" condition="!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))">Conditional</animation>
+					<visible>Control.IsVisible(50) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
 					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
@@ -1968,12 +2180,22 @@
 					<visible>!String.StartsWith(System.CurrentControlID, 8011)</visible>
 					<visible>!String.StartsWith(System.CurrentControlID, 909)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
-					<left>120</left>
-					<top>20</top>
-					<width>1678</width>
+					<left>20</left>
+					<top>18</top>
+					<width>1800</width>
 					<height>80</height>
 					<orientation>horizontal</orientation>
 					<itemgap>6</itemgap>
+					<!--
+					<control type="label">
+						<font>IconMedium_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>ListItem.IsParentFolder + ![Container.Content(addons) | Container.Content(genres) | Container.Content(files)]</visible>
+					</control>
+					-->
 					<control type="label">
 						<font>IconMedium_toggle</font>
 						<textcolor>orange</textcolor>
@@ -2079,6 +2301,22 @@
 					</control>
 					<control type="label">
 						<font>IconMedium_toggle</font>
+						<textcolor>orange</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label></label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
+					</control>
+					<control type="label">
+						<font>topbar_toggle</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>80</height>
+						<width>auto</width>
+						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),, ]</label>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
+					</control>
+					<control type="label">
+						<font>IconMedium_toggle</font>
 						<textcolor>blue</textcolor>
 						<height>80</height>
 						<width>auto</width>
@@ -2126,8 +2364,8 @@
 						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
-						<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)]</visible>
-						<width min="1228" max="1678">auto</width>
+						<visible>!String.Contains(ListItem.Path,plugin://)</visible>
+						<width min="1228" max="1500">auto</width>
 						<height>80</height>
 						<font>topbar_toggle</font>
 						<scroll>true</scroll>
@@ -2138,6 +2376,7 @@
 				</control>
 			</control>
 			<control type="image">
+				<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 				<description>avatar</description>
 				<animation effect="fade" time="500">Visible</animation>
 				<left>1821</left>

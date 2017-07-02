@@ -58,8 +58,8 @@
 	</variable>
 	<variable name="MenuPanelBackgroundWide">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
-		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Art(banner)) + !ListItem.IsParentFolder">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner)) + !ListItem.IsParentFolder">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
 	</variable>
 	<variable name="DialogSelectItemIcon">
 		<value condition="String.IsEqual(Window(Home).Property(RefreshItem),$LOCALIZE[184])">$INFO[Skin.String(MenuDefaultIconsPath)]refresh.png</value>
@@ -916,7 +916,7 @@
 		<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEmpty(Window(Home).Property(NextAired.Status))">$INFO[Window(Home).Property(NextAired.Status),[I],[/I]]</value>
     	<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		-->
-		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(movieinformation) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Label) + !ListItem.IsParentFolder">$INFO[ListItem.Label]</value>
     	<value condition="Window.IsActive(movieinformation) + String.IsEqual(ListItem.DBTYPE,musicvideo) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
     	<value condition="Window.IsActive(DialogMusicInfo.xml) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$VAR[MusicInfoSubheading]</value>
 		<value condition="Window.IsActive(songinformation) + String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">$VAR[MusicInfoSubheading]</value>
@@ -1045,14 +1045,16 @@
     	<value>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus),[I]","[/I] ]$VAR[LabelNextAiredDetails,[LIGHT],[/LIGHT]]</value>
     </variable>
     <variable name="HeaderSubTagline">
-    	<value condition="Window.IsActive(movieinformation) + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+    	<value condition="ListItem.IsParentFolder"></value>
+    	<value condition="[!String.IsEmpty(Window(Home).Property(WideToggle)) | Window.IsActive(movieinformation)] + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+    	<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Plots))">$INFO[Window(Home).Property(SkinHelper.ListItem.Plots)]</value>
     	<value condition="!Window.IsActive(movieinformation) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus)) + !String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.DBTYPE,episodes) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBTYPE)">$INFO[Window(Home).Property(SkinHelper.ListItem.Plot),[I],[/I]]</value>
     	<value condition="!String.IsEmpty(ListItem.DBTYPE)">$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus),[I]","[/I]  ]$VAR[LabelNextAiredDetails]</value>
     	<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription,[B],[/B]]</value>
     </variable>
 	<variable name="LabelNextAiredDetails">
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label.short),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[LIGHT],[/LIGHT]]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] -  ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),$LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] - ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),$LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
 	</variable>
     <variable name="MovieInfoIconThumbImage">
     	<value condition="Window.IsVisible(home) + String.StartsWith(ListItem.Path, plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
@@ -1153,7 +1155,8 @@
     </variable>
     <variable name="ContentStats">
     	<value condition="Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)">$INFO[ListItem.Property(TotalEpisodes)]</value>
-		<value>$INFO[ListItem.Duration,,m]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,,m]</value>
+    	<value>$INFO[ListItem.DBTYPE]</value>
     </variable>
     <variable name="LibraryStatsVar">
 		<value condition="Skin.HasSetting(Enable.Library.Stats) + [Container.Content(movie) | Container.Content(movies)]">$INFO[Window(Home).Property(Movies.Count),, ]$INFO[Window(Home).Property(Movies.Watched),[I][LIGHT], $LOCALIZE[16102][/LIGHT][/I]]</value>

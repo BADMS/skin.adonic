@@ -1023,7 +1023,7 @@
 						<visible>Skin.HasSetting(Enable.WideList.Misc) | ![Container.Content(episodes) | Container.Content(files) | Container.Content(addons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(genres) | Container.Content(countries) | Container.Content(musicvideos) | String.IsEqual(ListItem.DBTYPE, episode)]</visible>
 						<animation effect="slide" start="-400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="String.IsEmpty(Window(home).Property(MediaMenu))">Conditional</animation>
 						<left>1860</left>
-						<width>640</width>
+						<width>60</width>
 						<height>960</height>
 						<aspectratio align="left" aligny="top">scale</aspectratio>
 						<texture background="true" colordiffuse="$VAR[LibColorHighlightVar]">$VAR[FocusImage]</texture>
@@ -1140,13 +1140,7 @@
 					<visible>[!Skin.HasSetting(Enable.WideList.Misc) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE, episode)]] | [Window.IsActive(movieinformation) + Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					<control type="image">
 						<height>428</height>
-						<aspectratio align="left" aligny="center">keep</aspectratio>
-						<texture background="true">$VAR[FocusImage]</texture>
-						<fadetime>400</fadetime>
-					</control>
-					<control type="image">
-						<height>428</height>
-						<aspectratio align="right" aligny="center">keep</aspectratio>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<texture background="true">$VAR[FocusImage]</texture>
 						<fadetime>400</fadetime>
 					</control>
@@ -1193,7 +1187,7 @@
 			</control>
 		</control>
 		<control type="group" id="51">
-			<visible>Control.IsVisible(50) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
+			<visible>Control.IsVisible(50) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation) + !ListItem.IsParentFolder</visible>
 			<visible>!String.IsEmpty(Window(Home).Property(WideToggle))</visible>
 			<animation effect="fade" start="0" end="100" time="400" delay="400" tween="quadratic" easing="out">Visible</animation>
 			<animation effect="fade" start="0" end="0" time="0" tween="quadratic" easing="out">Hidden</animation>
