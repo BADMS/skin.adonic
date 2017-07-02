@@ -554,7 +554,7 @@
 							<thumb>$VAR[MovieInfoIconThumbImage]</thumb>
 							<onclick>SendClick(8)</onclick>
 						</item>
-						<item id="90002">
+						<item>
 							<label>$LOCALIZE[208] $INFO[ListItem.Label,[LIGHT],[/LIGHT]]</label>
 							<label2>$LOCALIZE[208] $INFO[ListItem.Label]</label2>
 							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]stopplay.png</icon>
