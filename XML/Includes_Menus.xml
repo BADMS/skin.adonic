@@ -37,7 +37,6 @@
 		<onup condition="!Window.IsVisible(home)">50</onup>
 		<ondown>9010</ondown>
 		<onback>50</onback>
-		<pagecontrol>-</pagecontrol>
 		<scrolltime tween="quadratic" easing="out">300</scrolltime>
 		<orientation>Horizontal</orientation>
 		<itemlayout height="120" width="$PARAM[MainMenuItemWidth]"/>
@@ -260,7 +259,7 @@
 			<thumb />
 			<onclick>SendClick(11)</onclick>
 			<visible>$EXP[isMovie]</visible>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="2">
 			<label>$LOCALIZE[31979]</label>
@@ -270,7 +269,7 @@
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie) + String.IsEmpty(ListItem.Trailer)</visible>
 			<onclick>Action(close)</onclick>
 			<onclick>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Title] $INFO[ListItem.Year])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="3">
 			<label>$LOCALIZE[31081]</label>
@@ -279,7 +278,7 @@
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="4">
 			<label>$LOCALIZE[31081]</label>
@@ -288,7 +287,7 @@
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="5">
 			<label>$LOCALIZE[31225]</label>
@@ -297,7 +296,7 @@
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[31225]</label>
@@ -306,7 +305,7 @@
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=tvshow,dbid=$INFO[ListItem.DBID])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[38023]</label>
@@ -315,7 +314,7 @@
 			<thumb />
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[38023],home)</onclick>
 			<onclick>SendClick(7)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[13511]</label>
@@ -323,7 +322,7 @@
 			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPicture.png</icon>
 			<thumb />
 			<onclick>SendClick(10)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[184]</label>
@@ -332,7 +331,7 @@
 			<thumb />
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[184],home)</onclick>
 			<onclick>SendClick(6)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 	</include>
 	<include name="musicinformation-submenu">
@@ -343,7 +342,7 @@
 			<thumb />
 			<onclick>SendClick(11)</onclick>
 			<visible>$EXP[isMovie]</visible>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="2">
 			<label>$LOCALIZE[31979]</label>
@@ -353,7 +352,7 @@
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie) + String.IsEmpty(ListItem.Trailer)</visible>
 			<onclick>Action(close)</onclick>
 			<onclick>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Title] $INFO[ListItem.Year])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="3">
 			<label>$LOCALIZE[31081]</label>
@@ -362,7 +361,7 @@
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="4">
 			<label>$LOCALIZE[31081]</label>
@@ -371,7 +370,7 @@
 			<thumb />
 			<visible>System.hasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="5">
 			<label>$LOCALIZE[31225]</label>
@@ -380,7 +379,7 @@
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,movie)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[31225]</label>
@@ -389,7 +388,7 @@
 			<thumb />
 			<visible>System.HasAddon(script.artwork.downloader) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<onclick>RunScript(script.artwork.downloader,mediatype=tvshow,dbid=$INFO[ListItem.DBID])</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[38023]</label>
@@ -398,7 +397,7 @@
 			<thumb />
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[38023],home)</onclick>
 			<onclick>SendClick(7)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[13511]</label>
@@ -406,7 +405,7 @@
 			<icon>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPicture.png</icon>
 			<thumb />
 			<onclick>SendClick(10)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
 			<label>$LOCALIZE[184]</label>
@@ -415,7 +414,7 @@
 			<thumb />
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[184],home)</onclick>
 			<onclick>SendClick(6)</onclick>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>String.Contains(System.ProfileName,Master user)</visible>
 		</item>
 	</include>
 	<include name="dialogbutton-submenu">

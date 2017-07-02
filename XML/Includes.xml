@@ -256,7 +256,7 @@
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[MenuListColorHighlightVar]</textcolor>
 						<font>topbar</font>
-						<visible>StringCompare(ListItem.Label,Container.ListItem.SortLetter)</visible>
+						<visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="35.55" width="60">
@@ -1514,7 +1514,6 @@
 					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>$VAR[HeaderIcon]</texture>
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content() | ListItem.IsParentFolder</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)] | String.IsEqual(ListItem.Label, ..)</visible>
@@ -1611,7 +1610,6 @@
 					<animation effect="rotate" start="360" end="0" center="auto" time="3000" loop="true" condition="true">conditional</animation>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1663,7 +1661,6 @@
 					</control>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>17</top>
 					<width>1715</width>
@@ -1681,7 +1678,6 @@
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<top>59</top>
 					<left>120</left>
 					<width min="1228" max="1678">auto</width>
@@ -1706,7 +1702,6 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml)</visible>
 				</control>
 				<control type="button">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<left>102</left>
 					<top>59</top>
 					<width>1715</width>
@@ -1733,7 +1728,6 @@
 					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(SmartPlaylistRule.xml)</visible>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<top>59</top>
 					<left>120</left>
 					<width min="1228" max="1678">auto</width>
@@ -1756,7 +1750,6 @@
 					<visible>!Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(VideoOSD.xml) + !Window.IsVisible(MusicOSD.xml)</visible>
 				</control>
 				<control type="grouplist">
-					<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
@@ -2158,6 +2151,7 @@
 						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
 					</control>
 				</control>
+				<!--
 				<control type="grouplist">
 					<animation effect="slide" time="0" delay="0" start="0" end="100" reversible="true" condition="!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))">Conditional</animation>
 					<visible>Control.IsVisible(50) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
@@ -2186,16 +2180,6 @@
 					<height>80</height>
 					<orientation>horizontal</orientation>
 					<itemgap>6</itemgap>
-					<!--
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>ListItem.IsParentFolder + ![Container.Content(addons) | Container.Content(genres) | Container.Content(files)]</visible>
-					</control>
-					-->
 					<control type="label">
 						<font>IconMedium_toggle</font>
 						<textcolor>orange</textcolor>
@@ -2374,9 +2358,9 @@
 						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
 					</control>
 				</control>
+				-->
 			</control>
 			<control type="image">
-				<visible>String.IsEmpty(Window(Home).Property(WideToggle)) | [Window.IsActive(movieinformation) | Window.IsActive(musicinformation) | Window.IsVisible(songinformation)] | Container.Content(addons) | Container.Content(genres) | Container.Content(files) | Container.Content()</visible>
 				<description>avatar</description>
 				<animation effect="fade" time="500">Visible</animation>
 				<left>1821</left>
