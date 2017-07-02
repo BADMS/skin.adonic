@@ -30,6 +30,7 @@
  		<control type="multiimage" id="7977">
             <fadetime>300</fadetime>
             <animation effect="fade" time="200" tween="cubic">Visible</animation>
+            <animation effect="fade" end="0" time="2000" tween="cubic">WindowClose</animation>
             <include>FullscreenDimensions</include>
             <imagepath background="true">$VAR[HomeBackgroundVar]</imagepath>
         </control>
