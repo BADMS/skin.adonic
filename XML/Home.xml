@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol always="false">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onload>
@@ -30,7 +31,7 @@
  		<control type="multiimage" id="7977">
             <fadetime>300</fadetime>
             <animation effect="fade" time="200" tween="cubic">Visible</animation>
-            <animation effect="fade" end="0" time="2000" tween="cubic">WindowClose</animation>
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
             <include>FullscreenDimensions</include>
             <imagepath background="true">$VAR[HomeBackgroundVar]</imagepath>
         </control>
@@ -50,6 +51,7 @@
         </control>
         <control type="image">
             <visible>![Player.HasVideo + [Container(9000).HasFocus(90005) | Container(9000).HasFocus(90004) | Container(9000).HasFocus(90003) | Container(9000).HasFocus(90002)]]</visible>
+            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 			<animation type="Conditional" condition="!Control.HasFocus(9010) + !Control.HasFocus(9000) + !Control.HasFocus(9001) + Window.IsActive(home)" reversible="false">
 				<effect type="fade" delay="0" start="55" end="0" time="1000" />
 			</animation>

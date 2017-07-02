@@ -79,7 +79,7 @@
 							<textoffsetx>15</textoffsetx>
 							<label>$VAR[PlayerTitleLabelVar]</label>
 							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
-							<onclick>noop</onclick>
+							
 							<texturefocus>blank.png</texturefocus>
 							<visible>!VideoPlayer.Content(episodes)</visible>
 						</control>
@@ -94,7 +94,7 @@
 							<textoffsetx>15</textoffsetx>
 							<label>$INFO[VideoPlayer.Season,[B],[/B]X]$INFO[VideoPlayer.Episode,,. ]$VAR[PlayerTitleLabelVar]</label>
 							<label2>$INFO[System.Time,, ]$INFO[Weather.Temperature,[B],[/B]]</label2>
-							<onclick>noop</onclick>
+							
 							<texturefocus>blank.png</texturefocus>
 							<visible>VideoPlayer.Content(episodes)</visible>
 						</control>
@@ -114,7 +114,7 @@
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 								<label>$INFO[VideoPlayer.Year,[B],[/B] ]$INFO[VideoPlayer.Genre]</label>
 								<label2>$VAR[TopbarOSDLabel]</label2>
-								<onclick>noop</onclick>
+								
 								<texturefocus>blank.png</texturefocus>
 								<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)</visible>
 							</control>
@@ -132,7 +132,7 @@
 								<textcolor>$VAR[ColorMenuVar]</textcolor>
 								<label>$INFO[VideoPlayer.TVShowTitle]</label>
 								<label2>$VAR[TopbarOSDLabel]</label2>
-								<onclick>noop</onclick>
+								
 								<texturefocus>blank.png</texturefocus>
 								<visible>VideoPlayer.Content(episodes)</visible>
 							</control>

@@ -205,6 +205,7 @@
 		<value>$INFO[Window(home).Property(ImageFiltercfa)]</value>
 	</variable>
 	<variable name="GlobalBackgroundVar">
+		<value condition="!String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)"></value>
 		<value condition="String.IsEqual(ListItem.Label, ..) + !String.IsEmpty(ListItem(1).Art(fanart)) + !Skin.HasSetting(Disable.Fanart)">$INFO[ListItem(1).Art(fanart)]</value>
 		<value condition="String.IsEqual(ListItem.Label, ..) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.IsEmpty(ListItem(2).Art(fanart)) + !Skin.HasSetting(Disable.Fanart)">$INFO[ListItem(2).Art(fanart)]</value>
 		<value condition="Skin.HasSetting(ViewFanart.Extra.Fanart) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>

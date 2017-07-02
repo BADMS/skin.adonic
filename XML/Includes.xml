@@ -1620,7 +1620,7 @@
 					<textoffsetx>18</textoffsetx>
 					<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
 					<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
-					<onclick>noop</onclick>
+					
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
 					<visible>!Window.IsVisible(DialogFullScreenInfo.xml)</visible>
@@ -1644,7 +1644,7 @@
 						-->
 						<label>$VAR[BreadcrumbsVar]</label>
 						<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
-						<onclick>noop</onclick>
+						
 						<texturefocus>blank.png</texturefocus>
 					</control>
 					<control type="label">
@@ -1671,7 +1671,7 @@
 					<textoffsetx>18</textoffsetx>
 					<label>$VAR[BreadcrumbsVar]</label>
 					<label2>$VAR[TopbarFadeLabel2]</label2>
-					<onclick>noop</onclick>
+					
 					<texturefocus>blank.png</texturefocus>
 					<visible>Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml)</visible>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
@@ -1715,7 +1715,7 @@
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
 					<label>$INFO[Window(Home).Property(LabelFilterTHREE)]</label>
 					<label2>$VAR[TopbarOSDLabel]</label2>
-					<onclick>noop</onclick>
+					
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
@@ -1726,6 +1726,38 @@
 					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
 					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
 					<visible>Window.IsVisible(DialogSubtitles.xml) | Window.IsVisible(DialogSettings.xml) | Window.IsVisible(VideoOSD.xml) | Window.IsVisible(MusicOSD.xml) | Window.IsVisible(MyPlaylist.xml) | Window.IsVisible(SmartPlaylistRule.xml)</visible>
+				</control>
+				<control type="label">
+					<top>59</top>
+					<left>120</left>
+					<width min="1228" max="1678">auto</width>
+					
+					<height>45</height>
+					<font>topbar</font>
+					<scroll>true</scroll>
+					<scrollspeed>150</scrollspeed>
+					<textcolor>$VAR[ColorMenuVar]</textcolor>
+					<label>$INFO[System.CurrentControl,[B],[/B]]$INFO[Container(90600).ListItem.Label2, ,]</label>
+					<visible>Window.IsVisible(custom_1121_Dependencies.xml)</visible>
+					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
+					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
+					<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+					<visible>!Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
+					<visible>!Window.IsVisible(DialogTextViewer.xml)</visible>
+					<visible>!Window.IsVisible(DialogMediaSource.xml)</visible>
+					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
+					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
+					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+					<visible>!Window.IsVisible(DialogSettings.xml)</visible>
+					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
+					<visible>!String.IsEqual(System.CurrentControlID, 3)</visible>
+					<visible>!String.IsEqual(System.CurrentControlID, 6)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 9010)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 8011)</visible>
+					<visible>!String.StartsWith(System.CurrentControlID, 909)</visible>
+					<visible>!Control.IsVisible(12346)</visible>
 				</control>
 				<control type="label">
 					<top>59</top>

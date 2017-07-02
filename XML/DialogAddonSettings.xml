@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<onload>Dialog.Close(146,true)</onload>
-	<defaultcontrol always="true">9</defaultcontrol>
+	<defaultcontrol always="true">3</defaultcontrol>
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
@@ -19,17 +19,17 @@
 				<param name="DialogBackgroundWidth" value="1346" />
 				<param name="DialogBackgroundHeight" value="680" />
 				<param name="DialogHeaderLabel" value="-" />
-				<param name="DialogHeaderId" value="20" />
+				<param name="DialogHeaderId" value="2" />
 			</include>
 			<!-- left group -->
-			<control type="grouplist" id="9">
+			<control type="grouplist" id="3">
 				<left>70</left>
 				<width>340</width>
 				<height>310</height>
-				<onup>9</onup>
-				<ondown>9</ondown>
+				<onup>3</onup>
+				<ondown>3</ondown>
 				<onleft>59</onleft>
-				<onright>2</onright>
+				<onright>5</onright>
 				<orientation>Vertical</orientation>
 				
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
@@ -37,17 +37,17 @@
 			</control>
 			<!-- right group -->
 			<control type="group">
-				<control type="grouplist" id="2">
+				<control type="grouplist" id="5">
 					<description>control area</description>
 					<left>410</left>
 					<width>1320</width>
 					<height>310</height>
 					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
-					<onleft>9</onleft>
+					<onleft>3</onleft>
 					<onright>60</onright>
-					<onup>2</onup>
-					<ondown>2</ondown>
+					<onup>5</onup>
+					<ondown>5</ondown>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					
 				</control>
@@ -55,7 +55,7 @@
 					<left>1730</left>
 					<width>10</width>
 					<height>310</height>
-					<onleft>2</onleft>
+					<onleft>5</onleft>
 					<onright>Action(back)</onright>
 					<ondown>60</ondown>
 					<onup>60</onup>
@@ -63,7 +63,7 @@
 				</control>
 				<control type="scrollbar" id="59">
 					<onleft>111</onleft>
-					<onright>9</onright>
+					<onright>3</onright>
 					<ondown>59</ondown>
 					<onup>59</onup>
 					<left>60</left>
@@ -82,7 +82,7 @@
 				<label></label>
 				<align>center</align>
 				<font>IconButton</font>
-				<onclick>SendClick(10)</onclick>
+				<onclick>SendClick(28)</onclick>
 				<onup>113</onup>
 				<ondown>112</ondown>
 				<onleft>Action(back)</onleft>
@@ -99,7 +99,7 @@
 				<label></label>
 				<align>center</align>
 				<font>IconButton</font>
-				<onclick>SendClick(11)</onclick>
+				<onclick>SendClick(29)</onclick>
 				<onup>111</onup>
 				<ondown>113</ondown>
 				<onleft>Action(back)</onleft>
@@ -116,7 +116,7 @@
 				<label></label>
 				<align>center</align>
 				<font>IconButton</font>
-				<onclick>SendClick(12)</onclick>
+				<onclick>SendClick(30)</onclick>
 				<onup>112</onup>
 				<ondown>111</ondown>
 				<onleft>Action(back)</onleft>
@@ -124,7 +124,7 @@
 				<texturefocus/>
 				<focusedcolor>$VAR[MenuListColorHighlightVar]</focusedcolor>
 			</control>
-			<control type="button" id="13">
+			<control type="button" id="10">
 				<description>Default Category Button</description>
 				<height>62</height>
 				<width>340</width>
@@ -134,7 +134,7 @@
 				<textoffsetx>0</textoffsetx>
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 			</control>
-			<control type="button" id="3">
+			<control type="button" id="7">
 				<description>Default Button</description>
 				<width>1320</width>
 				<height>62</height>
@@ -144,7 +144,7 @@
 				<textcolor>$VAR[ColorTextVar]</textcolor>
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 			</control>
-			<control type="radiobutton" id="4">
+			<control type="radiobutton" id="8">
 				<description>Default RadioButton</description>
 				<width>1320</width>
 				<height>62</height>
@@ -153,7 +153,7 @@
 				<focusedcolor>$VAR[ColorTextVar]</focusedcolor>
 				<textwidth>880</textwidth>
 			</control>
-			<control type="spincontrolex" id="5">
+			<control type="spincontrolex" id="9">
 				<description>Default spincontrolex</description>
 				<width>1320</width>
 				<height>62</height>
@@ -163,21 +163,20 @@
 				
 				<reverse>yes</reverse>
 			</control>
-			<control type="image" id="6">
+			<control type="image" id="11">
 				<description>Default Separator</description>
 				<width>1320</width>
 				<height>1</height>
 				<visible>false</visible>
 			</control>
-			<control type="label" id="7">
+			<control type="label" id="14">
 				<width>1320</width>
 				<height>62</height>
 				<font>font30</font>
 				
 				
-				<label />
 			</control>
-			<control type="sliderex" id="8">
+			<control type="sliderex" id="13">
 				<description>Default Slider</description>
 				<width>1320</width>
 				<height>62</height>

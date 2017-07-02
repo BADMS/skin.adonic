@@ -332,7 +332,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<label>$LOCALIZE[33007]</label>
@@ -341,7 +341,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day1.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<label>$INFO[Window(weather).Property(Day2.Title)]</label>
@@ -350,7 +350,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day2.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<label>$INFO[Window(weather).Property(Day3.Title)]</label>
@@ -359,7 +359,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day3.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<visible>!Skin.HasSetting(Enable.BasicWeatherView)</visible>
@@ -369,7 +369,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day4.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<visible>!Skin.HasSetting(Enable.BasicWeatherView)</visible>
@@ -379,7 +379,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day5.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 				<item>
 					<visible>!Skin.HasSetting(Enable.BasicWeatherView)</visible>
@@ -389,7 +389,7 @@
 					<thumb>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Day6.FanartCode),,.png]</thumb>
 					<property name="HighTemp">$INFO[Window(weather).Property(Day6.HighTemp)]$INFO[System.TemperatureUnits]</property>
 					<property name="LowTemp">$INFO[Window(weather).Property(Day6.LowTemp)]$INFO[System.TemperatureUnits]</property>
-					<onclick>noop</onclick>
+					
 				</item>
 			</content>
 		</control>
