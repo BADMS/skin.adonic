@@ -4,11 +4,11 @@
 	<menucontrol>9000</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<views>50</views>
-	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
+	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10])</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
-	<onunload>SetProperty(Colorbox_shuffle,1,home)</onunload>
+	<onunload>SetProperty(Colorbox_shuffle,2,home)</onunload>
 	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>Skin.SetString(background_fx,$INFO[Window(home).Property(cfa_daemon_set)])</onunload>
 	<onunload>Skin.SetString(focus_fx,$INFO[Window(home).Property(FIVE_daemon_set)])</onunload>
@@ -27,10 +27,19 @@
 			<visible>String.IsEmpty(Control.GetLabel(7355))</visible>
 		</control>
 		<control type="group">
-			<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
+			<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle),2)</visible>
 			<control type="group">
 	            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
-	            <animation effect="fade" end="100" time="1000" tween="cubic" delay="1000">WindowOpen</animation>
+	            <animation effect="fade" start="0" end="0" time="0" tween="cubic" delay="0" condition="!String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)" reversible="false">Conditional</animation>
+	            <animation effect="fade" start="0" end="100" time="400" tween="cubic" delay="0" condition="String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)" reversible="false">Conditional</animation>
+				<control type="multiimage">
+					<description>Normal Default Background Image</description>
+					<left>0</left>
+					<top>0</top>
+					<width>FullScreenWidth</width>
+					<height>1080</height>
+					<imagepath background="true">$VAR[GlobalBackgroundVar]</imagepath>
+				</control>
 				<include>CommonBackground</include>
 			</control>
 			<control type="group">
@@ -119,7 +128,7 @@
 		</control>
 		-->
 		<control type="group">
-			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),2)</visible>
+			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
 			<include>Screen_Blockers_Out</include>
 		</control>
 	</controls>

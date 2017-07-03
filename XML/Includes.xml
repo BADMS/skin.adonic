@@ -131,7 +131,7 @@
 				<height>250</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.zero))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.zero),1)</visible>
 			</control>
 			<control type="image">
 				<left>470</left>
@@ -140,7 +140,7 @@
 				<height>830</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.one))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.one),1)</visible>
 			</control>
 			<control type="image">
 				<left>1300</left>
@@ -149,7 +149,7 @@
 				<height>830</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.two))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.two),1)</visible>
 			</control>
 			<control type="image">
 				<left>1580</left>
@@ -158,7 +158,7 @@
 				<height>955</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.three))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.three),1)</visible>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -167,7 +167,7 @@
 				<height>830</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.four))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.four),1)</visible>
 			</control>
 			<control type="image">
 				<left>470</left>
@@ -176,7 +176,7 @@
 				<height>250</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.five))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.five),1)</visible>
 			</control>
 			<control type="image">
 				<left>720</left>
@@ -185,7 +185,7 @@
 				<height>125</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.six))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.six),1)</visible>
 			</control>
 			<control type="image">
 				<left>720</left>
@@ -194,7 +194,7 @@
 				<height>125</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.seven))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.seven),1)</visible>
 			</control>
 			<control type="image">
 				<left>1795</left>
@@ -203,7 +203,7 @@
 				<height>125</height>
 				<texture>black.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.eight))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.eight),1)</visible>
 			</control>
 			<!--
 			<control type="image">
@@ -213,7 +213,7 @@
 				<height>200</height>
 				<texture>background.png</texture>
 				<colordiffuse>$VAR[ColorMenuVar]</colordiffuse>
-				<visible>!String.IsEmpty(Window(Home).Property(Colorbox_shuffle.nine))</visible>
+				<visible>!String.IsEqual(Window(Home).Property(Colorbox_shuffle.nine),1)</visible>
 			</control>
 			-->
 		</control>

@@ -205,7 +205,6 @@
 		<value>$INFO[Window(home).Property(ImageFiltercfa)]</value>
 	</variable>
 	<variable name="GlobalBackgroundVar">
-		<value condition="!String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)"></value>
 		<value condition="String.IsEqual(ListItem.Label, ..) + !String.IsEmpty(ListItem(1).Art(fanart)) + !Skin.HasSetting(Disable.Fanart)">$INFO[ListItem(1).Art(fanart)]</value>
 		<value condition="String.IsEqual(ListItem.Label, ..) + String.IsEqual(ListItem(1).Label, $LOCALIZE[20366]) + !String.IsEmpty(ListItem(2).Art(fanart)) + !Skin.HasSetting(Disable.Fanart)">$INFO[ListItem(2).Art(fanart)]</value>
 		<value condition="Skin.HasSetting(ViewFanart.Extra.Fanart) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)]</value>
@@ -213,13 +212,6 @@
 		<value condition="!String.IsEmpty(Container.Art(set.fanart))">$INFO[Container.Art(set.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),1)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),2)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),3)">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),4)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),5)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
-		<value condition="String.IsEqual(Container(9033).ListItem.Art(Thumb),6)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanartExtension]</value>
-		<value condition="!String.IsEmpty(Container(9033).ListItem.Art(Thumb))">$INFO[Container(9033).ListItem.Art(Thumb)]</value>
 	</variable>
 	<variable name="HomeBackgroundVar">
 
