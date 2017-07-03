@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="false">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
+	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onload>

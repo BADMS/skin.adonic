@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">95</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
+	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	
 	<allowoverlay>no</allowoverlay>

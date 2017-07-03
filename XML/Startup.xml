@@ -54,7 +54,6 @@
 		<control type="button" id="10">
 			<description>trigger</description>
 			<onfocus>Skin.SetBool(first.run)</onfocus>
-			<onfocus condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired.Update) + Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
@@ -64,7 +63,6 @@
 			<description>trigger with startup Playlist</description>
 			<onfocus>Skin.SetBool(first.run)</onfocus>
 			<onfocus>PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
-			<onfocus condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired.Update) + Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>

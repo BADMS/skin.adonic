@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1134">
 	<defaultcontrol always="true">90001</defaultcontrol>
-	<onload>SetProperty(Colorbox_shuffle,1,home)</onload>
+	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
 	<onload>Skin.Reset(SS_Helper)</onload>
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu)</onunload>
 	<menucontrol>9000</menucontrol>
