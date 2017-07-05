@@ -12,7 +12,7 @@
 	<onload>SetProperty(FIVE_daemon_set,$INFO[Skin.String(focus_fx)],home)</onload>
 	<onunload>Dialog.Close(all,true)</onunload>
 	<!--
-	<onunload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10])</onunload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10],var=$NUMBER[120])</onload>
 	<onload>RunScript(script.colorbox,info=pixelate,id=$VAR[HomeBackgroundVar],prefix=widget1,pixelsize=50)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,typeout='"testing testing testing testing testing testing "',prop=testType)</onload>
 	<onunload>ClearProperty(ImageFIVE,Home)</onunload>

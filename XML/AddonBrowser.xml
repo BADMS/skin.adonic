@@ -5,7 +5,7 @@
 	<allowoverlay>no</allowoverlay>
 	<views>50</views>
 	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
-	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10])</onload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10],var=$NUMBER[120])</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
 	<onunload>SetProperty(Colorbox_shuffle,2,home)</onunload>
@@ -31,7 +31,7 @@
 			<control type="group">
 	            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
 	            <animation effect="fade" start="0" end="0" time="0" tween="cubic" delay="0" condition="!String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)" reversible="false">Conditional</animation>
-	            <animation effect="fade" start="0" end="100" time="400" tween="cubic" delay="0" condition="String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)" reversible="false">Conditional</animation>
+	            <animation effect="fade" start="0" end="100" time="400" tween="cubic" delay="400" condition="String.IsEqual(Window(Home).Property(Colorbox_shuffle),0)" reversible="false">Conditional</animation>
 				<control type="multiimage">
 					<description>Normal Default Background Image</description>
 					<left>0</left>
