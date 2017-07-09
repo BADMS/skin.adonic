@@ -1618,8 +1618,8 @@
 					
 					
 					<textoffsetx>18</textoffsetx>
-					<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
-					<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
+					<label>$VAR[BreadcrumbsVar]$VAR[HeaderSubLabel, ,]</label>
+					<label2>$VAR[TopbarFadeLabel2]$VAR[TopbarFadeLabel1, ,]</label2>
 					
 					<texturefocus>blank.png</texturefocus>
 					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
@@ -1640,10 +1640,10 @@
 						
 						<textoffsetx>18</textoffsetx>
 						<!--
-						<label>$VAR[BreadcrumbsVar,, ]$VAR[HeaderSubLabel]</label>
+						<label>$VAR[BreadcrumbsVar]$VAR[HeaderSubLabel, ,]</label>
 						-->
 						<label>$VAR[BreadcrumbsVar]</label>
-						<label2>$VAR[TopbarFadeLabel2,, ]$VAR[TopbarFadeLabel1]</label2>
+						<label2>$VAR[TopbarFadeLabel2]$VAR[TopbarFadeLabel1, ,]</label2>
 						
 						<texturefocus>blank.png</texturefocus>
 					</control>
@@ -1687,7 +1687,7 @@
 					<scroll>true</scroll>
 					<scrollspeed>150</scrollspeed>
 					<textcolor>$VAR[ColorMenuVar]</textcolor>
-					<label>$INFO[Window(Home).Property(LabelFilterTHREE),, ]$INFO[Window(Home).Property(LabelFilterFOUR)]</label>
+					<label>$INFO[Window(Home).Property(LabelFilterTHREE)]$INFO[Window(Home).Property(LabelFilterFOUR), ,]</label>
 					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
 					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
 					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
