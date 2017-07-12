@@ -33,16 +33,17 @@
 	<controls>
 		<control type="button" id="10">
 			<description>trigger with startup Playlist</description>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetBool(Colorbox.header)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(MenuDefaultIconsPath,special://skin/extras/icons/)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_quality,8)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_blursize,5)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_bitsize,1)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_pixelsize,12)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_black,000000)</onfocus>
-			<onfocus condition="!Skin.HasSetting(first.run)">Skin.SetString(colorbox_white,ffffff)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetBool(Colorbox.header)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetBool(Colorbox.background)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(MenuDefaultIconsPath,special://skin/extras/icons/)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_quality,8)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_blursize,5)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_bitsize,1)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_pixelsize,12)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_black,000000)</onfocus>
+			<onfocus condition="!Skin.HasSetting(second.run)">Skin.SetString(colorbox_white,ffffff)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(highlightcolor.name))">Skin.SetString(highlightcolor.name,FFD1D1D1)</onfocus>
-			<onfocus condition="String.IsEmpty(Skin.String(backgroundcolor.name))">Skin.SetString(backgroundcolor.name,FF0A1F2A)</onfocus>
+			<onfocus condition="String.IsEmpty(Skin.String(backgroundcolor.name))">Skin.SetString(backgroundcolor.name,FF7D6D4)</onfocus>
 			<onfocus condition="Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,ff000000)</onfocus>
 			<onfocus condition="!Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,-)</onfocus>
 			<onfocus condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onfocus>
@@ -50,7 +51,7 @@
 			<onfocus condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(focus_fx))">Skin.SetString(focus_fx,blur)</onfocus>
 			<onfocus condition="Skin.HasSetting(Use_Startup_Playlist)">PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
-			<onfocus>Skin.SetBool(first.run)</onfocus>
+			<onfocus>Skin.SetBool(second.run)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>

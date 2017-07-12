@@ -552,7 +552,9 @@
 						<item>
 							<property name="MovieInfoIconThumbImage">$INFO[ListItem.Path]</property>
 							<thumb>$VAR[MovieInfoIconThumbImage]</thumb>
-							<onclick>SendClick(8)</onclick>
+							<onclick condition="Window.IsVisible(home) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
+							<onclick condition="Window.IsVisible(home) + String.IsEqual(ListItem.DBType,movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
+							<onclick condition="!Window.IsVisible(home)">SendClick(8)</onclick>
 						</item>
 						<item>
 							<label>$LOCALIZE[208] $INFO[ListItem.Label,[LIGHT],[/LIGHT]]</label>
