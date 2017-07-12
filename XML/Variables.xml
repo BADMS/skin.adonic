@@ -751,8 +751,8 @@
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !Window.IsActive(movieinformation) + [[!ControlGroup(97631).HasFocus + Window.IsVisible(MyWeather.xml)] | [!ControlGroup(97631).HasFocus + Window.IsVisible(script-skinshortcuts.xml)] | [!ControlGroup(97631).HasFocus + String.Contains(Window.Property(xmlfile), etting)] | [[Control.HasFocus(8011) | Control.HasFocus(9010) | Control.HasFocus(9000) | Control.HasFocus(9001) | String.StartsWith(Window.Property(xmlfile), Dialog)] + [String.Contains(Window.Property(xmlfile), etting) | Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(MyWeather.xml) | Window.IsVisible(home)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN))]]">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE)) + Skin.HasSetting(Colorbox.contrast)">$VAR[ColorBWInvertFIVE]</value>
 		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorFIVE))">$INFO[Window(home).Property(ImageCColorFIVE)]</value>
-		<value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
-		<value>maintext</value>
+		<value condition="Skin.HasSetting(ColorBox.Icons) + !String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value>
+		<value>FFFFFFFF</value>
 	</variable>
 	<variable name="HeaderIconColorVar">
 		<value condition="Skin.HasSetting(ColorBox.Icons)">FFFFFFFF</value>
@@ -1050,6 +1050,7 @@
     <variable name="MovieInfoIconThumbImage">
     	<value condition="Window.IsVisible(home) + String.StartsWith(ListItem.Path, plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
     	<value condition="String.StartsWith(ListItem.Path, plugin://script.extended)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
+    	<value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
     	<value>$INFO[Skin.String(MenuDefaultIconsPath)]play.png</value>
     </variable>
     <variable name="SquareLine">
