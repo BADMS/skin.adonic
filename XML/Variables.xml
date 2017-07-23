@@ -126,6 +126,7 @@
     <value condition="String.Contains(ListItem.Duration,:59:)">59m</value>
 </variable>
 <variable name="DurationStartCheck">
+    <value condition="String.StartsWith(ListItem.Duration,00:)">1$VAR[HorM]</value>
     <value condition="String.StartsWith(ListItem.Duration,01:)">1$VAR[HorM]</value>
     <value condition="String.StartsWith(ListItem.Duration,02:)">2$VAR[HorM]</value>
     <value condition="String.StartsWith(ListItem.Duration,03:)">3$VAR[HorM]</value>
