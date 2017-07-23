@@ -193,7 +193,7 @@
 							<visible>!String.IsEmpty(ListItem.mpaa)</visible>
 						</item>
 						<item>
-							<label>$VAR[DurationVar]</label>
+							<label>$VAR[DurationStartCheck]$VAR[DurationHourCheck]</label>
 							<label2>$LOCALIZE[180]:</label2>
 							<onclick>noop</onclick>
 							<visible>![$EXP[isTvshow]]</visible>
