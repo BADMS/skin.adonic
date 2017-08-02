@@ -8,7 +8,7 @@
 	<onunload condition="Window.IsActive(home)">ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>AlarmClock(exfa1,SetProperty(SkinHelper.ListItem.Art.ExtraFanArt,$INFO[Skin.String(SkinHelper_ExtraFanArtPath)],home),00:01,silent)</onunload>
 	<onunload>AlarmClock(exfa2,Skin.Reset(SkinHelper_ExtraFanArtPath),00:01,true)</onunload>
-	<onload>SetFocus(9000,0)</onload>
+	<onload>SetFocus(9000,90002)</onload>
 	<onload>AlarmClock(foc1,SetFocus(61),00:01,silent)</onload>
 	<onload>SetProperty(cfa_daemon_fire,True,home)</onload>
 	<onunload condition="Skin.String(OSDCast,1)">ActivateWindow(fullscreenvideo)</onunload>
@@ -193,7 +193,7 @@
 							<visible>!String.IsEmpty(ListItem.mpaa)</visible>
 						</item>
 						<item>
-							<label>$VAR[DurationStartCheck]$VAR[DurationHourCheck]</label>
+							<label>$INFO[ListItem.Duration,,m]</label>
 							<label2>$LOCALIZE[180]:</label2>
 							<onclick>noop</onclick>
 							<visible>![$EXP[isTvshow]]</visible>
@@ -631,8 +631,8 @@
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">Hidden</animation>
-			<animation effect="slide" time="300" delay="0" start="0" end="0,483" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Window.IsVisible(1130) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(FileBrowser.xml) + [Integer.IsLess(System.CurrentControlID, 6000) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [[String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Weather.IsFetched] | [!Control.IsVisible(12345) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]">Conditional</animation>
-			<animation effect="slide" time="300" delay="0" start="0" end="0,163" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Control.HasFocus(9010) + [Integer.IsLess(System.CurrentControlID, 6000) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [String.IsEmpty(Container(9000).ListItem.Property(widgetName))]">Conditional</animation>
+			<animation effect="slide" time="300" delay="0" start="0" end="0,483" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Window.IsVisible(1130) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(FileBrowser.xml) + [Integer.IsLess(System.CurrentControlID, 6002) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [[String.IsEqual(Container(9000).ListItem.Property(widget),weather) + Weather.IsFetched] | [!Control.IsVisible(12345) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !String.IsEmpty(Container(9000).ListItem.Property(widgetName))]]">Conditional</animation>
+			<animation effect="slide" time="300" delay="0" start="0" end="0,163" tween="cubic" reversible="true" condition="!Window.IsVisible(DialogConfirm.xml) + !Window.IsVisible(DialogTextViewer.xml) + !Window.IsVisible(DialogButtonMenu.xml) + !Window.IsVisible(DialogKeyboard.xml) + !Window.IsVisible(DialogNumeric.xml) + !Control.HasFocus(9010) + !Window.IsVisible(FileBrowser.xml) + [Integer.IsLess(System.CurrentControlID, 6002) | Integer.IsGreaterOrEqual(System.CurrentControlID, 9050)] + [!String.StartsWith(System.CurrentControlID, 8011) + !String.StartsWith(System.CurrentControlID, 909)] + [String.IsEmpty(Container(9000).ListItem.Property(widgetName))]">Conditional</animation>
 			<control type="group">
 				<include>HomeDefault</include>
 			</control>

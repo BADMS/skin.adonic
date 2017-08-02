@@ -73,7 +73,7 @@
 					<left>-184</left>
 					<width>2540</width>
 					<height>384</height>
-					<onup>9001</onup>
+					<onup>Action(back)</onup>
 					<ondown>Action(back)</ondown>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
@@ -176,6 +176,7 @@
 				<visible>false</visible>
 			</control>
 			<control type="grouplist" id="9001">
+				<visible>!Control.IsVisible(6)</visible>
 				<left>-30</left>
 				<top>604</top>
 				<width>62</width>

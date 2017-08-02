@@ -1338,9 +1338,17 @@
     </variable>
     <variable name="ContentStats">
     	<value condition="Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)">$INFO[ListItem.Property(TotalEpisodes)]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,,m]</value>
+    	<value>$INFO[ListItem.DBTYPE]</value>
+    </variable>
+	<!-- leia
+    <variable name="ContentStats">
+    	<value condition="Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)">$INFO[ListItem.Property(TotalEpisodes)]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,,m]</value>
 		<value condition="!String.IsEmpty(ListItem.Duration)">$VAR[DurationStartCheck]$VAR[DurationHourCheck]</value>
     	<value>$INFO[ListItem.DBTYPE]</value>
     </variable>
+	-->
     <variable name="LibraryStatsVar">
 		<value condition="Skin.HasSetting(Enable.Library.Stats) + [Container.Content(movie) | Container.Content(movies)]">$INFO[Window(Home).Property(Movies.Count),, ]$INFO[Window(Home).Property(Movies.Watched),[I][LIGHT], $LOCALIZE[16102][/LIGHT][/I]]</value>
 		<value condition="Skin.HasSetting(Enable.Library.Stats) + [Container.Content(tvshow) | Container.Content(tvshows)]">$INFO[Window(Home).Property(TVShows.Count),, ]$INFO[Window(Home).Property(Episodes.UnWatched),[I][LIGHT],]$INFO[Window(Home).Property(Episodes.Count), / , $LOCALIZE[20360] $LOCALIZE[16101][/LIGHT][/I]]</value>

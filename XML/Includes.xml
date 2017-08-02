@@ -1578,7 +1578,7 @@
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))</visible>
-					<top>14</top>
+					<top>13</top>
 					<left>13</left>
 					<control type="image">
 						<width>92</width>
