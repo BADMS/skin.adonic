@@ -20,31 +20,11 @@
 	<onunload>Skin.SetString(background_fx,$INFO[Window(home).Property(cfa_daemon_set)])</onunload>
 	<onunload>Skin.SetString(focus_fx,$INFO[Window(home).Property(FIVE_daemon_set)])</onunload>
 	<onunload>ClearProperty(RefreshItem,Home)</onunload>
-	<!--
-	<onunload>ClearProperty(ImageFilterFIVE,Home)</onunload>
-	<onunload>ClearProperty(ImageFIVE,Home)</onunload>
-		<control type="image" id="7355"><left>2117</left><texture>$VAR[ThumbVar]</texture></control>
-		<control type="multiimage" id="7975">
-			<left>-2160</left>
-			<imagepath background="true">special://skin/media/adonic.jpg</imagepath>
-			<visible>String.IsEmpty(Control.GetLabel(7355))</visible>
-		</control>
-	-->
 	<controls>
 		<control type="multiimage" id="7975">
 			<left>-2160</left>
 			<imagepath background="true">$VAR[ThumbVar]</imagepath>
 		</control>
-	<!--
-		<control type="multiimage" id="7988">
-			<left>-2160</left>
-			<imagepath background="true">$VAR[ThumbVar]</imagepath>
-		</control>
-		<control type="multiimage" id="7989">
-			<left>-2160</left>
-			<imagepath background="true">$VAR[ThumbVar]</imagepath>
-		</control>
-	-->
 		<control type="group">
 			<animation effect="fade" end="0" time="0" condition="String.IsEqual(Window(Home).Property(Colorbox_shuffle),2)" reversible="false">Conditional</animation>
 			<control type="group">
@@ -177,12 +157,6 @@
 				</control>
 			</control>
         </control>
-		<!--
-		<control type="group">
-			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
-			<include>Screen_Blockers_In</include>
-		</control>
-		-->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(Colorbox_shuffle),1)</visible>
 			<include>Screen_Blockers_Out</include>

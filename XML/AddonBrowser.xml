@@ -6,6 +6,7 @@
 	<views>50</views>
 	<onload>SetProperty(Colorbox_shuffle,2,home)</onload>
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=shuffle,id=$NUMBER[10],var=$NUMBER[120])</onload>
+	<onload>ClearProperty(SkinHelper.ListItem.Art.ClearLogo,Home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
 	<onunload>SetProperty(Colorbox_shuffle,2,home)</onunload>
@@ -62,24 +63,22 @@
 						<label>24999</label>
 					</control>
 					<control type="label" id="10">
-						<top></top>
 						<width>400</width>
-						<height>52</height>
+						<height>60</height>
 						
 						<font>font13_title</font>
 						<textcolor>$VAR[ColorHighlightVar]</textcolor>
 						<label>31301</label>
 					</control>
 					<control type="label" id="11">
-						<top></top>
 						<width>400</width>
-						<height>52</height>
+						<height>60</height>
 						
 						<label>$INFO[Window.Property(Updated)]</label>
 					</control>
 					<control type="label" id="201">
 						<width>400</width>
-						<height>52</height>
+						<height>60</height>
 						
 						<font>font13_title</font>
 						<textcolor>$VAR[ColorHighlightVar]</textcolor>
