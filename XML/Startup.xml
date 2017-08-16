@@ -50,7 +50,7 @@
 			<onfocus condition="String.IsEmpty(Skin.String(background_fx))">Skin.SetString(background_fx,blur)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(focus_fx))">Skin.SetString(focus_fx,blur)</onfocus>
 			<onfocus condition="Skin.HasSetting(Use_Startup_Playlist)">PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
-			<onfocus condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=comp,set=fixcomp|var=bump,set=16|var=hsv,set=0;-0.2;0.2|var=hls,set=0.0;0.4;0.6|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onfocus>
+			<onfocus condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=comp,set=fixcomp|var=bump,set=16|var=hsv,set=0;-0.2;0.2|var=hls,set=0.0;0.6;0.5|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onfocus>
 			<onfocus>Skin.SetBool(second.run)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>

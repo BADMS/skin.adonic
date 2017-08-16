@@ -1083,7 +1083,7 @@
 			<label>32009</label>
 			<label2>$INFO[Skin.String(colorbox_comp),[UPPERCASE],[/UPPERCASE]]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32009],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,8)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,9)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Complimentary)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=comp",home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Bump RGB Comp)</onclick>
@@ -1092,14 +1092,16 @@
 			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=hue",home))</onclick>
 			<onclick>SetProperty(Dialog.4.Label,Lighten HLS Main)</onclick>
 			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=light",home))</onclick>
-			<onclick>SetProperty(Dialog.5.Label,Fix Comp HLS)</onclick>
+			<onclick>SetProperty(Dialog.5.Label,Fix CMain +HLS)</onclick>
 			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fix",home))</onclick>
-			<onclick>SetProperty(Dialog.6.Label,Fix Both HLS)</onclick>
+			<onclick>SetProperty(Dialog.6.Label,Fix Both +HLS)</onclick>
 			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixboth",home))</onclick>
-			<onclick>SetProperty(Dialog.7.Label,Fix Main HLS)</onclick>
+			<onclick>SetProperty(Dialog.7.Label,Fix Comp +HLS)</onclick>
 			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixcomp",home))</onclick>
-			<onclick>SetProperty(Dialog.8.Label,Fix Bump HLS)</onclick>
+			<onclick>SetProperty(Dialog.8.Label,Fix Bump +HLS)</onclick>
 			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixbump",home))</onclick>
+			<onclick>SetProperty(Dialog.9.Label,Fix Main +HLS)</onclick>
+			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixbump",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Highlight Colorbox)</onclick>
 			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>

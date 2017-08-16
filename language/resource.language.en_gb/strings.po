@@ -1551,3 +1551,7 @@ msgstr ""
 msgctxt "#32008"
 msgid "Seconds"
 msgstr ""
+
+msgctxt "#32009"
+msgid "Highlight Color"
+msgstr ""
