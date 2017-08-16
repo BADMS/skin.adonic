@@ -1158,6 +1158,14 @@
 						<fadetime>400</fadetime>
 						<texture background="true" colordiffuse="$VAR[ListColorHighlightVar]">$VAR[FocusImage]</texture>
 					</control>
+					<control type="image">
+						<top>438</top>
+						<bottom>120</bottom>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<fadetime>400</fadetime>
+						<texture>background.png</texture>
+						<colordiffuse>$VAR[ColorBackgroundVar]</colordiffuse>
+					</control>
 					<control type="textbox">
 						<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 						<visible>Skin.HasSetting(Show.Plot.TV)</visible>
