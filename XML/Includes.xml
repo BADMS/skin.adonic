@@ -792,14 +792,12 @@
 			<onclick>Container.NextSortMethod</onclick>
 			<enable>Control.IsEnabled(3)</enable>
 		</control>
-		<!--
-		<control type="button" id="1804">
+		<control type="radiobutton" id="1804">
 			<label>$LOCALIZE[31152]</label>
-			<label2>$VAR[ArtLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.ToggleSetting(Artwork.Toggle)</onclick>
+			<onclick>Skin.ToggleSetting(Videoinfo.Full.Screen)</onclick>
+			<selected>Skin.HasSetting(Videoinfo.Full.Screen)</selected>
 		</control>
-		-->
 		<control type="radiobutton" id="1807">
 			<label>32005</label>
 			<include>ButtonCommonValues</include>
@@ -1618,7 +1616,7 @@
 					<left>32</left>
 					<width>54</width>
 					<height>54</height>
-					<texture colordiffuse="$VAR[ColorTextVar]" fallback="special://skin/extras/spinners/Sun.png">$VAR[SpinnerIcon]</texture>
+					<texture fallback="special://skin/extras/spinners/Sun.png">$VAR[SpinnerIcon]</texture>
 					<aspectratio>keep</aspectratio>
 					<animation effect="rotate" start="360" end="0" center="auto" time="3000" loop="true" condition="true">conditional</animation>
 				</control>
