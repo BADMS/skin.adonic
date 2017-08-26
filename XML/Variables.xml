@@ -979,6 +979,10 @@
         <value condition="Skin.HasSetting(weatherfanart.multi)">/</value>
         <value>.jpg</value>
     </variable>
+    <variable name="SpinnerIcon">
+        <value condition="String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0)">special://skin/extras/spinners/Colorbox.png</value>
+        <value>$INFO[Skin.String(busyloader)]</value>
+    </variable>
     <variable name="HeaderIcon">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">BLOB.png</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + !String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>

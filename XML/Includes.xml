@@ -878,7 +878,7 @@
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(cfa_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
-			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(cfa_daemon_set,pixelate,home))</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(cfa_daemon_set,pixelate-shiftblock,home))</onclick>
 			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
 			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(cfa_daemon_set,posterize,home))</onclick>
 			<onclick>SetProperty(Dialog.4.Label,Distort)</onclick>
@@ -910,7 +910,7 @@
 			<onclick>SetProperty(Dialog.17.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
-			<onunfocus>SetProperty(cfa_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onclick>
 		</control>
 		<control type="button" id="11115">
 			<description>widget</description>
@@ -922,7 +922,7 @@
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(FIVE_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
-			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(FIVE_daemon_set,pixelate,home))</onclick>
+			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(FIVE_daemon_set,pixelate-pixelwaves,home))</onclick>
 			<onclick>SetProperty(Dialog.3.Label,Posterize)</onclick>
 			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(FIVE_daemon_set,posterize,home))</onclick>
 			<onclick>SetProperty(Dialog.4.Label,Distort)</onclick>
@@ -954,7 +954,7 @@
 			<onclick>SetProperty(Dialog.17.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 		</control>
 		<control type="button" id="11116">
 			<description>widget</description>
@@ -984,7 +984,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Quality Colorbox)</onclick>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 		</control>
 		<control type="button" id="11117">
 			<description>widget</description>
@@ -1014,7 +1014,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),blur) | String.IsEqual(Window(home).Property(FIVE_daemon_set),blur)</visible>
 		</control>
 		<control type="button" id="11118">
@@ -1041,7 +1041,7 @@
 			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
 			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=8",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),posterize) | String.IsEqual(Window(home).Property(FIVE_daemon_set),posterize)</visible>
 		</control>
 		<control type="button" id="11119">
@@ -1052,8 +1052,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32001],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),pixelate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),pixelate) | String.Contains(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
 		</control>
 		<control type="button" id="11120">
 			<description>widget</description>
@@ -1063,7 +1063,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[353],home)</onclick>
 			<onclick>Skin.SetString(colorbox_black)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home)</onunfocus>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="button" id="11121">
@@ -1074,36 +1074,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[742],home)</onclick>
 			<onclick>Skin.SetString(colorbox_white)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
-		</control>
-		<control type="button" id="11122">
-			<description>widget</description>
-			<include>ButtonCommonValues</include>
-			<label>32009</label>
-			<label2>$INFO[Skin.String(colorbox_comp),[UPPERCASE],[/UPPERCASE]]</label2>
-			<onclick>SetProperty(RefreshItem,$LOCALIZE[32009],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,9)</onclick>
-			<onclick>SetProperty(Dialog.1.Label,Comp)</onclick>
-			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=comp",home))</onclick>
-			<onclick>SetProperty(Dialog.2.Label,Bump RGB Comp)</onclick>
-			<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=bump",home))</onclick>
-			<onclick>SetProperty(Dialog.3.Label,Hue HSV Main)</onclick>
-			<onclick>SetProperty(Dialog.3.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=hue",home))</onclick>
-			<onclick>SetProperty(Dialog.4.Label,Light HLS Main)</onclick>
-			<onclick>SetProperty(Dialog.4.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=light",home))</onclick>
-			<onclick>SetProperty(Dialog.5.Label,Comp Main +HLS)</onclick>
-			<onclick>SetProperty(Dialog.5.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fix",home))</onclick>
-			<onclick>SetProperty(Dialog.6.Label,Fix Both +HLS)</onclick>
-			<onclick>SetProperty(Dialog.6.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixboth",home))</onclick>
-			<onclick>SetProperty(Dialog.7.Label,Fix Comp +HLS)</onclick>
-			<onclick>SetProperty(Dialog.7.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixcomp",home))</onclick>
-			<onclick>SetProperty(Dialog.8.Label,Bump Comp +HLS)</onclick>
-			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixbump",home))</onclick>
-			<onclick>SetProperty(Dialog.9.Label,Fix Main +HLS)</onclick>
-			<onclick>SetProperty(Dialog.9.BuiltIn,SetProperty(NINE_manual_set,"var=comp,set=fixmain",home))</onclick>
-			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Highlight Colorbox)</onclick>
-			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="radiobutton" id="11217">
 			<label>32006</label>
@@ -1554,6 +1526,7 @@
 					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>$VAR[HeaderIcon]</texture>
+					<visible>!String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0)</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)] | String.IsEqual(ListItem.Label, ..)</visible>
@@ -1639,13 +1612,13 @@
 					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
 						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
 					</animation>
-					<visible>Window.IsVisible(DialogBusy.xml) | Control.IsVisible(12345) | Container.IsUpdating</visible>
+					<visible>String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0) | Window.IsVisible(DialogBusy.xml) | Control.IsVisible(12345) | Container.IsUpdating</visible>
 					<description>Busy animation</description>
 					<top>32</top>
 					<left>32</left>
 					<width>54</width>
 					<height>54</height>
-					<texture colordiffuse="$VAR[ColorTextVar]" fallback="special://skin/extras/spinners/Sun.png">$INFO[Skin.String(busyloader)]</texture>
+					<texture colordiffuse="$VAR[ColorTextVar]" fallback="special://skin/extras/spinners/Sun.png">$VAR[SpinnerIcon]</texture>
 					<aspectratio>keep</aspectratio>
 					<animation effect="rotate" start="360" end="0" center="auto" time="3000" loop="true" condition="true">conditional</animation>
 				</control>
@@ -2435,8 +2408,8 @@
 			<control type="image">
 				<description>avatar</description>
 				<animation effect="fade" time="500">Visible</animation>
-				<left>1821</left>
-				<top>19</top>
+				<left>1820</left>
+				<top>20</top>
 				<width>80</width>
 				<height>80</height>
 				<aspectratio align="center" aligny="center">keep</aspectratio>

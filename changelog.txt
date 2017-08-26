@@ -1,2 +1,10 @@
+[B]1.0.2[/B]
+- noop fix for skinsettings
+- use blank proertys for colorbox (v2.0.3)
+[B]1.0.1[/B]
+- New view for other
+- Tweeks to usage
+- New fill in animation
+- New uses of colorbox
 [B]1.0.0[/B]
 - Initial release.
