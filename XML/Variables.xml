@@ -363,12 +363,41 @@
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),0) + !Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),39)">selectedRed</value>
 		<value>$VAR[ColorHighlightVar]</value>
 	</variable>
+	<variable name="TMDBTens">
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),1.)">1</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),2.)">2</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),3.)">3</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),4.)">4</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),5.)">5</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),6.)">6</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),7.)">7</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),8.)">8</value>
+		<value condition="String.StartsWith(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),9.)">9</value>
+	</variable>
+	<variable name="TMDBOnes">
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.1)">1</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.2)">2</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.3)">3</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.4)">4</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.5)">5</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.6)">6</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.7)">7</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.8)">8</value>
+		<value condition="String.Contains(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB),.9)">9</value>
+		<value>0</value>
+	</variable>
 	<variable name="IMDBIcon">
 		<value></value>
 	</variable>
+	<!--
 	<variable name="RottenTomatoesIcon">
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)"></value>
 		<value condition="!Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)"></value>
+	</variable>
+	-->
+	<variable name="RottenTomatoesIcon">
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)">special://skin/extras/misc/rtf.png</value>
+		<value condition="!Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)">special://skin/extras/misc/rts.png</value>
 	</variable>
 	<variable name="RottenTomatoesIconColour">
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)">red</value>
