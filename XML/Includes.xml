@@ -2056,9 +2056,9 @@
 					<control type="image">
 						<visible>!ListItem.IsParentFolder</visible>
 						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>45</width>
+						<width>42</width>
 						<height>45</height>
-						<align>center</align>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture colordiffuse="$VAR[CommunityRatingColour]">special://skin/extras/misc/metacritic.png</texture>
 						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
@@ -2093,9 +2093,9 @@
 					<control type="image">
 						<visible>!ListItem.IsParentFolder</visible>
 						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>45</width>
+						<width>42</width>
 						<height>45</height>
-						<align>center</align>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture>special://skin/extras/misc/imdb.png</texture>
 						<visible>!String.IsEmpty(ListItem.Rating))</visible>
 					</control>
@@ -2110,9 +2110,9 @@
 					<control type="image">
 						<visible>!ListItem.IsParentFolder</visible>
 						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>45</width>
+						<width>42</width>
 						<height>45</height>
-						<align>center</align>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture>special://skin/extras/misc/tmdb.png</texture>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
 					</control>
@@ -2121,7 +2121,7 @@
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
 						<width>auto</width>
-						<label>$VAR[TMDBTens]$VAR[TMDBOnes]% </label>
+						<label>$VAR[TMDBTens]$VAR[TMDBOnes,,% ]</label>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
 					</control>
 					<!--
@@ -2142,8 +2142,9 @@
 						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<texture>$VAR[RottenTomatoesIcon]</texture>
 						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
+						<width>42</width>
 						<height>45</height>
-						<width>45</width>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
 					</control>
