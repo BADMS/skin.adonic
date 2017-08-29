@@ -43,6 +43,7 @@
 				<right>20</right>
 				<height>40</height>
 				<font>font28_title</font>
+				<textcolor>$VAR[ColorHighlightVar]</textcolor>
 				<scrollout>false</scrollout>
 				<pauseatend>2000</pauseatend>
 			</control>
