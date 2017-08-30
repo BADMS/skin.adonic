@@ -1085,7 +1085,7 @@
 			<label>32010</label>
 			<label2>$INFO[Skin.String(colorbox_desat)]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32010],home)</onclick>
-			<onclick>Skin.SetString(colorbox_desat)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_desat)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunfocus>
 			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),desaturate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
@@ -1096,7 +1096,7 @@
 			<label>32011</label>
 			<label2>$INFO[Skin.String(colorbox_sharp)]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32011],home)</onclick>
-			<onclick>Skin.SetString(colorbox_sharp)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_sharp)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
 			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),sharpness) | String.IsEqual(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
