@@ -953,8 +953,12 @@
 			<onclick>SetProperty(Dialog.15.BuiltIn,SetProperty(FIVE_daemon_set,halftone,home))</onclick>
 			<onclick>SetProperty(Dialog.16.Label,Dither)</onclick>
 			<onclick>SetProperty(Dialog.16.BuiltIn,SetProperty(FIVE_daemon_set,dither,home))</onclick>
-			<onclick>SetProperty(Dialog.17.Label,None)</onclick>
-			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
+			<onclick>SetProperty(Dialog.17.Label,Desaturate)</onclick>
+			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(FIVE_daemon_set,desaturate,home))</onclick>
+			<onclick>SetProperty(Dialog.18.Label,Sharpness)</onclick>
+			<onclick>SetProperty(Dialog.18.BuiltIn,SetProperty(FIVE_daemon_set,sharpness,home))</onclick>
+			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
 			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 		</control>
@@ -2123,7 +2127,7 @@
 						<height>45</height>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture>special://skin/extras/misc/imdb.png</texture>
-						<visible>!String.IsEmpty(ListItem.Rating))</visible>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<font>topbar</font>
