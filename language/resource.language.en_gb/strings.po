@@ -630,7 +630,7 @@ msgid "Wrap list"
 msgstr ""
 
 msgctxt "#31152"
-msgid "Art"
+msgid "Fullscreen Video Info"
 msgstr ""
 
 msgctxt "#31153"
@@ -1554,4 +1554,12 @@ msgstr ""
 
 msgctxt "#32009"
 msgid "Highlight Color"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Desaturation amount"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Sharpness amount"
 msgstr ""

@@ -872,7 +872,7 @@
 			<label>31972</label>
 			<label2>$INFO[Window(home).Property(cfa_daemon_set),[UPPERCASE],[/UPPERCASE]]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[31972],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,17)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,19)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(cfa_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
@@ -905,8 +905,12 @@
 			<onclick>SetProperty(Dialog.15.BuiltIn,SetProperty(cfa_daemon_set,halftone,home))</onclick>
 			<onclick>SetProperty(Dialog.16.Label,Dither)</onclick>
 			<onclick>SetProperty(Dialog.16.BuiltIn,SetProperty(cfa_daemon_set,dither,home))</onclick>
-			<onclick>SetProperty(Dialog.17.Label,None)</onclick>
-			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
+			<onclick>SetProperty(Dialog.17.Label,Desaturate)</onclick>
+			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(cfa_daemon_set,desaturate,home))</onclick>
+			<onclick>SetProperty(Dialog.18.Label,Sharpness)</onclick>
+			<onclick>SetProperty(Dialog.18.BuiltIn,SetProperty(cfa_daemon_set,sharpness,home))</onclick>
+			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
 			<onclick>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onclick>
 		</control>
@@ -1074,6 +1078,28 @@
 			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
 			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
 			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+		</control>
+		<control type="button" id="11122">
+			<description>widget</description>
+			<include>ButtonCommonValues</include>
+			<label>32010</label>
+			<label2>$INFO[Skin.String(colorbox_desat)]</label2>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32010],home)</onclick>
+			<onclick>Skin.SetString(colorbox_desat)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),desaturate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
+		</control>
+		<control type="button" id="11123">
+			<description>widget</description>
+			<include>ButtonCommonValues</include>
+			<label>32011</label>
+			<label2>$INFO[Skin.String(colorbox_sharp)]</label2>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32011],home)</onclick>
+			<onclick>Skin.SetString(colorbox_sharp)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
+			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),sharpness) | String.IsEqual(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
 		</control>
 		<control type="radiobutton" id="11217">
 			<label>32006</label>
