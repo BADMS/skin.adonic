@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Square -->
+	<include name="View_55_SquareWidget">
+		<control type="group">
+			<include>Animation.Common</include>
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="400" tween="quadratic" easing="out" condition="Window.IsActive(filebrowser)">Conditional</animation>
+				<left>1800</left>
+				<width>120</width>
+				<height>960</height>
+				<top>0</top>
+				<control type="panel" id="55">
+					<width>120</width>
+					<height>960</height>
+					<onleft condition="Control.IsVisible(6002)">6002</onleft>
+					<onleft condition="!Control.IsVisible(6002)">SetProperty(MediaMenu,True,home)</onleft>
+					<onleft condition="!Control.IsVisible(6002)">SetFocus(9050)</onleft>
+					<onright condition="Container(50).HasNext | Container(50).HasPrevious">500</onright>
+					<onright condition="!Container(50).HasNext + !Container(50).HasPrevious + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">500</onright>
+					<onright condition="!Container(50).HasNext + !Container(50).HasPrevious">9000</onright>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(55).ListItem.Label])</onclick>
+					<oninfo condition="$EXP[PluginAdvancedLauncher] + System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=textviewer,header='"$INFO[ListItem.Label]"',text='"$VAR[AdvancedLauncherPlotVar]"')</oninfo>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>500</pagecontrol>
+					<preloaditems>2</preloaditems>
+					<scrolltime tween="quadratic" easing="out">200</scrolltime>
+					<itemlayout height="192" width="120">
+						<control type="image">
+							<fadetime>400</fadetime>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout height="192" width="120">
+						<control type="group">
+							<include>SquareIconBG</include>
+							<animation effect="slide" start="0" end="-20" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+					</focusedlayout>
+					<content target="video">$VAR[ContentLibraryProvider]</content>
+				</control>
+			</control>
+		</control>
+	</include>
 	<include name="View_50_Square">
 		<control type="group">
 			<animation effect="slide" end="-1860" time="400" condition="[!String.IsEmpty(Window(Home).Property(WideToggle))] + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">Conditional</animation>

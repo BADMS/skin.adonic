@@ -897,8 +897,8 @@
 			<onclick>SetProperty(Dialog.11.BuiltIn,SetProperty(cfa_daemon_set,pixelfedges,home))</onclick>
 			<onclick>SetProperty(Dialog.12.Label,Pixeledges)</onclick>
 			<onclick>SetProperty(Dialog.12.BuiltIn,SetProperty(cfa_daemon_set,pixeledges,home))</onclick>
-			<onclick>SetProperty(Dialog.13.Label,Fakelight)</onclick>
-			<onclick>SetProperty(Dialog.13.BuiltIn,SetProperty(cfa_daemon_set,fakelight,home))</onclick>
+			<onclick>SetProperty(Dialog.13.Label,Angletone)</onclick>
+			<onclick>SetProperty(Dialog.13.BuiltIn,SetProperty(cfa_daemon_set,angletone,home))</onclick>
 			<onclick>SetProperty(Dialog.14.Label,Dataglitch)</onclick>
 			<onclick>SetProperty(Dialog.14.BuiltIn,SetProperty(cfa_daemon_set,dataglitch,home))</onclick>
 			<onclick>SetProperty(Dialog.15.Label,Halftone)</onclick>
@@ -912,7 +912,7 @@
 			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
-			<onclick>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onclick>
+			<onunfocus>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onunfocus>
 		</control>
 		<control type="button" id="11115">
 			<description>widget</description>
@@ -945,8 +945,8 @@
 			<onclick>SetProperty(Dialog.11.BuiltIn,SetProperty(FIVE_daemon_set,pixelfedges,home))</onclick>
 			<onclick>SetProperty(Dialog.12.Label,Pixeledges)</onclick>
 			<onclick>SetProperty(Dialog.12.BuiltIn,SetProperty(FIVE_daemon_set,pixeledges,home))</onclick>
-			<onclick>SetProperty(Dialog.13.Label,Fakelight)</onclick>
-			<onclick>SetProperty(Dialog.13.BuiltIn,SetProperty(FIVE_daemon_set,fakelight,home))</onclick>
+			<onclick>SetProperty(Dialog.13.Label,Angletone)</onclick>
+			<onclick>SetProperty(Dialog.13.BuiltIn,SetProperty(FIVE_daemon_set,angletone,home))</onclick>
 			<onclick>SetProperty(Dialog.14.Label,Dataglitch)</onclick>
 			<onclick>SetProperty(Dialog.14.BuiltIn,SetProperty(FIVE_daemon_set,dataglitch,home))</onclick>
 			<onclick>SetProperty(Dialog.15.Label,Halftone)</onclick>
@@ -960,7 +960,7 @@
 			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
 		</control>
 		<control type="button" id="11116">
 			<description>widget</description>
@@ -990,7 +990,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Quality Colorbox)</onclick>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
 		</control>
 		<control type="button" id="11117">
 			<description>widget</description>
@@ -1020,8 +1020,8 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),blur) | String.IsEqual(Window(home).Property(FIVE_daemon_set),blur)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),blur) | String.Contains(Window(home).Property(FIVE_daemon_set),blur)</visible>
 		</control>
 		<control type="button" id="11118">
 			<description>widget</description>
@@ -1047,8 +1047,8 @@
 			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
 			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=8",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),posterize) | String.IsEqual(Window(home).Property(FIVE_daemon_set),posterize)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),posterize) | String.Contains(Window(home).Property(FIVE_daemon_set),posterize)</visible>
 		</control>
 		<control type="button" id="11119">
 			<description>widget</description>
@@ -1058,7 +1058,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32001],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),pixelate) | String.Contains(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
 		</control>
 		<control type="button" id="11120">
@@ -1069,8 +1069,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[353],home)</onclick>
 			<onclick>Skin.SetString(colorbox_black)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home)</onunfocus>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),twotone) | String.Contains(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="button" id="11121">
 			<description>widget</description>
@@ -1080,8 +1080,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[742],home)</onclick>
 			<onclick>Skin.SetString(colorbox_white)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),twotone) | String.IsEqual(Window(home).Property(FIVE_daemon_set),twotone)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),twotone) | String.Contains(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="button" id="11122">
 			<description>widget</description>
@@ -1091,8 +1091,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32010],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_desat)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunfocus>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),desaturate) | String.IsEqual(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),desaturate) | String.Contains(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
 		</control>
 		<control type="button" id="11123">
 			<description>widget</description>
@@ -1102,8 +1102,8 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32011],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_sharp)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
-			<onclick>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onclick>
-			<visible>String.IsEqual(Window(home).Property(cfa_daemon_set),sharpness) | String.IsEqual(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
+			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<visible>String.Contains(Window(home).Property(cfa_daemon_set),sharpness) | String.Contains(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
 		</control>
 		<control type="radiobutton" id="11217">
 			<label>32006</label>
@@ -1554,7 +1554,7 @@
 					<!-- <colordiffuse>$VAR[HeaderIconColorVar]</colordiffuse> -->
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>$VAR[HeaderIcon]</texture>
-					<visible>!String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0)</visible>
+					<visible>!String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0) + !String.IsEqual(Window(home).Property(Daemon_cfa_ImageUpdating), 0)</visible>
 					<visible>!Control.IsVisible(12345)</visible>
 					<visible>!Control.IsVisible(12346)</visible>
 					<visible>String.Contains(ListItem.Path,plugin://) | [!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(episode)] | String.IsEqual(ListItem.Label, ..)</visible>
@@ -1640,7 +1640,7 @@
 					<animation type="Conditional" condition="!Window.IsActive(movieinformation) + [ControlGroup(97631).HasFocus + [Window.IsVisible(script-skinshortcuts.xml) | String.Contains(Window.Property(xmlfile), etting) | Window.IsActive(MyWeather.xml)]]" reversible="true">
 						<effect type="slide" time="400" start="0" end="0,-60" tween="back" easing="inout" />
 					</animation>
-					<visible>String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0) | Window.IsVisible(DialogBusy.xml) | Control.IsVisible(12345) | Container.IsUpdating</visible>
+					<visible>String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0) | String.IsEqual(Window(home).Property(Daemon_cfa_ImageUpdating), 0) | Window.IsVisible(DialogBusy.xml) | Control.IsVisible(12345) | Container.IsUpdating</visible>
 					<description>Busy animation</description>
 					<top>32</top>
 					<left>32</left>
@@ -2126,23 +2126,6 @@
 						<width>42</width>
 						<height>45</height>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<texture>special://skin/extras/misc/imdb.png</texture>
-						<visible>!String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<font>topbar</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>45</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Rating,, ]</label>
-						<visible>!String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="image">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>42</width>
-						<height>45</height>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture>special://skin/extras/misc/tmdb.png</texture>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
 					</control>
@@ -2188,6 +2171,23 @@
 						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),,% ]</label>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
 						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
+					</control>
+					<control type="image">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
+						<width>42</width>
+						<height>45</height>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<texture>special://skin/extras/misc/imdb.png</texture>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<font>topbar</font>
+						<textcolor>$VAR[ColorTopbarVar]</textcolor>
+						<height>45</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Rating,, ]</label>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
 						<font>IconMedium</font>
@@ -2583,8 +2583,8 @@
 			<onleft condition="Window.IsActive(addoninformation) | Window.IsActive(settings)">9990</onleft>
 			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(50)</onright>
 			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetProperty(WideToggle,True,home)</onright>
-			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
-			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
+			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(55)</onright>
+			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(55)</onright>
 			<ondown>500</ondown>
 			<onup>500</onup>
 			<showonepage>true</showonepage>

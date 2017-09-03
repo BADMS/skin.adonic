@@ -24,9 +24,9 @@
 				<top>20</top>
 				<width>80</width>
 				<height>80</height>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio>scale</aspectratio>
 			</control>
-			<control type="image" id="400">
+			<control type="image" id="399">
 				<animation effect="rotate" time="300" delay="0" end="90" center="auto" reversible="true" condition="True">Conditional</animation>		
 				<left>20</left>
 				<top>20</top>

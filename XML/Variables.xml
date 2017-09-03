@@ -1009,7 +1009,7 @@
         <value>.jpg</value>
     </variable>
     <variable name="SpinnerIcon">
-        <value condition="String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0)">special://skin/extras/spinners/Colorbox.png</value>
+        <value condition="String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating), 0) | String.IsEqual(Window(home).Property(Daemon_cfa_ImageUpdating), 0)">special://skin/extras/spinners/Colorbox.png</value>
         <value>$INFO[Skin.String(busyloader)]</value>
     </variable>
     <variable name="HeaderIcon">
@@ -1368,6 +1368,10 @@
     </variable>
     <variable name="AddonNews">
     	<value condition="!String.IsEmpty(ListItem.AddonNews)">[COLOR $VAR[ColorHighlightVar]]$LOCALIZE[24054]: [/COLOR][CR]$INFO[ListItem.AddonNews][CR]</value>
+    </variable>
+    <variable name="ContentLibraryProvider">
+    	<value condition="!String.Contains(ListItem.DBTYPE, set)">plugin://service.library.data.provider?type=actors&amp;dbid=$INFO[ListItem.DBID]&amp;dbtype=$INFO[ListItem.DBType]</value>
+		<value condition="String.Contains(ListItem.DBTYPE, set)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
     </variable>
     <variable name="ContentStats">
     	<value condition="Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)">$INFO[ListItem.Property(TotalEpisodes)]</value>

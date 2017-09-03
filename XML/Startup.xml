@@ -18,8 +18,9 @@
 	<onload>SetProperty(EIGHT_daemon_fallback,adonic.jpg,home)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,3)</onload>
 	<onload>SetProperty(ImageFilterFIVE,adonic.jpg,home)</onload>
+	<onload condition="System.HasAddon(service.smartish.widgets)">Skin.SetBool(enable.smartish.widgets)</onload>
 	<!--
-	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,multis=$NUMBER[7988]:MYMULTI_ONE.:blur|$NUMBER[7989]:MYMULTI_TOO.:pixelate)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,multis=$NUMBER[7988]:MYMULTI_ONE.:blur:5|$NUMBER[7989]:MYMULTI_TOO.:pixelate:1)</onload>
 	<onload>RunScript(script.colorbox,var=quality,set=$INFO[Skin.String(colorbox_quality)])</onload>
 	<onload>RunScript(script.colorbox,var=blursize,set=$INFO[Skin.String(colorbox_blursize)])</onload>
 	<onload>RunScript(script.colorbox,var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)])</onload>
