@@ -2583,8 +2583,8 @@
 			<onleft condition="Window.IsActive(addoninformation) | Window.IsActive(settings)">9990</onleft>
 			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(50)</onright>
 			<onright condition="String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetProperty(WideToggle,True,home)</onright>
-			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(55)</onright>
-			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(55)</onright>
+			<onright condition="!String.IsEmpty(Window(Home).Property(WideToggle)) + [[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
+			<onright condition="![[Skin.HasSetting(Enable.WideList.Misc) + ![Container.Content(movies) | Container.Content(movie)]] | [Skin.HasSetting(Enable.WideList.Movies) + [Container.Content(movies) | Container.Content(movie)] + !Window.IsActive(movieinformation)]]">SetFocus(9000)</onright>
 			<ondown>500</ondown>
 			<onup>500</onup>
 			<showonepage>true</showonepage>
