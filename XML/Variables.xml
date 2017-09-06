@@ -1262,8 +1262,8 @@
     <variable name="HeaderSubTagline">
     	<value condition="ListItem.IsParentFolder"></value>
     	<value condition="[!String.IsEmpty(Window(Home).Property(WideToggle)) | Window.IsActive(movieinformation)] + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
-    	<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Plots))">$INFO[Window(Home).Property(SkinHelper.ListItem.Plots)]</value>
-    	<value condition="!Window.IsActive(movieinformation) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus)) + !String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.DBTYPE,episodes) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBTYPE)">$INFO[Window(Home).Property(SkinHelper.ListItem.Plot),[I],[/I]]</value>
+    	<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Plots)) + !Skin.HasSetting(Hide.Spoilers.Movies)">$INFO[Window(Home).Property(SkinHelper.ListItem.Plots)]</value>
+    	<value condition="!Window.IsActive(movieinformation) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus)) + !String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.DBTYPE,episodes) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.DBTYPE) + !Skin.HasSetting(Hide.Spoilers.Movies)">$INFO[Window(Home).Property(SkinHelper.ListItem.Plot),[I],[/I]]</value>
     	<value condition="!String.IsEmpty(ListItem.DBTYPE)">$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus),[I]","[/I]  ]$VAR[LabelNextAiredDetails]</value>
     	<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription,[B],[/B]]</value>
     </variable>
