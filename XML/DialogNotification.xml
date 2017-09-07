@@ -8,6 +8,7 @@
 	<include>dialogeffectr</include>
 	<controls>
 		<control type="group">
+			<visible>!String.StartsWith(Control.GetLabel(401), extendedinfo script error)</visible>
 			<animation effect="rotate" time="300" delay="0" end="-90" center="auto" reversible="true" condition="True">Conditional</animation>		
 			<left>840</left>
 			<top>0</top>

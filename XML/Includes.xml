@@ -912,7 +912,7 @@
 			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
-			<onunfocus>AlarmClock(nms1,SetProperty(cfa_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(cfa_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11115">
 			<description>widget</description>
@@ -960,7 +960,7 @@
 			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
 			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11116">
 			<description>widget</description>
@@ -990,7 +990,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=quality,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Quality Colorbox)</onclick>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="button" id="11117">
 			<description>widget</description>
@@ -1020,7 +1020,7 @@
 			<onclick>SetProperty(Dialog.10.Label,10)</onclick>
 			<onclick>SetProperty(Dialog.10.BuiltIn,SetProperty(NINE_manual_set,"var=blursize,set=10",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),blur) | String.Contains(Window(home).Property(FIVE_daemon_set),blur)</visible>
 		</control>
 		<control type="button" id="11118">
@@ -1047,7 +1047,7 @@
 			<onclick>SetProperty(Dialog.8.Label,8)</onclick>
 			<onclick>SetProperty(Dialog.8.BuiltIn,SetProperty(NINE_manual_set,"var=bitsize,set=8",home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Quality Colorbox)</onclick>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),posterize) | String.Contains(Window(home).Property(FIVE_daemon_set),posterize)</visible>
 		</control>
 		<control type="button" id="11119">
@@ -1058,7 +1058,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32001],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_pixelsize)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]",home)</onunfocus>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),pixelate) | String.Contains(Window(home).Property(FIVE_daemon_set),pixelate)</visible>
 		</control>
 		<control type="button" id="11120">
@@ -1069,7 +1069,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[353],home)</onclick>
 			<onclick>Skin.SetString(colorbox_black)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=black,set=$INFO[Skin.String(colorbox_black)]",home)</onunfocus>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),twotone) | String.Contains(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="button" id="11121">
@@ -1080,7 +1080,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[742],home)</onclick>
 			<onclick>Skin.SetString(colorbox_white)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=white,set=$INFO[Skin.String(colorbox_white)]",home)</onunfocus>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),twotone) | String.Contains(Window(home).Property(FIVE_daemon_set),twotone)</visible>
 		</control>
 		<control type="button" id="11122">
@@ -1091,7 +1091,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32010],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_desat)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunfocus>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),desaturate) | String.Contains(Window(home).Property(FIVE_daemon_set),desaturate)</visible>
 		</control>
 		<control type="button" id="11123">
@@ -1102,7 +1102,7 @@
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[32011],home)</onclick>
 			<onclick>Skin.SetNumeric(colorbox_sharp)</onclick>
 			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
-			<onunfocus>AlarmClock(nms1,SetProperty(FIVE_daemon_fire,True,home),00:01,true)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),sharpness) | String.Contains(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
 		</control>
 		<control type="radiobutton" id="11217">
@@ -1160,123 +1160,6 @@
 			<onclick condition="Skin.HasSetting(Text.Shadow.Enable)">Skin.SetString(Text.Shadow.Colour,-)</onclick>
 			<onclick>Skin.ToggleSetting(Text.Shadow.Enable)</onclick>
 			<selected>Skin.HasSetting(Text.Shadow.Enable)</selected>
-		</control>
-	</include>
-	<include name="PVRMediaMenu">
-		<control type="group">
-			<left>-400</left>
-			<include>SideBladeLeft</include>
-			<control type="grouplist" id="9050">
-				<include>MediaMenuTop</include>
-				<control type="radiobutton" id="31">
-					<description>Filter</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>587</label>
-					<selected>Container.Filtered</selected>
-					<onclick>right</onclick>
-					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
-				</control>
-				<control type="button" id="28">
-					<description>Channel Groups</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>-</label>
-					<visible>Window.IsActive(TVChannels) | Window.IsActive(TVGuide)</visible>
-				</control>
-				<control type="radiobutton" id="5">
-					<description>Group recording items by folder structure</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>19270</label>
-					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
-				</control>
-				<control type="radiobutton" id="6">
-					<description>Show hidden channels</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>19051</label>
-					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
-				</control>
-				<control type="radiobutton" id="7">
-					<description>Show deleted recordings</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>19184</label>
-					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
-				</control>
-				<control type="radiobutton" id="8">
-					<description>Hide disabled timers</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>19077</label>
-					<visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>
-				</control>
-				<control type="button" id="203">
-					<description>View options</description>
-					<textwidth>352</textwidth>
-					<font>font13_title</font>
-					<include>ButtonCommonValues</include>
-					<label>31039</label>
-					<enable>no</enable>
-					<disabledcolor>$VAR[ColorHighlightVar]</disabledcolor>
-				</control>
-				<control type="button" id="100">
-					<description>Channels</description>
-					<label>19019</label>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<onclick>ClearProperty(MediaMenu,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
-				</control>
-				<control type="button" id="101">
-					<description>Guide</description>
-					<label>22020</label>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<onclick>ClearProperty(MediaMenu,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
-				</control>
-				<control type="button" id="102">
-					<description>Recordings</description>
-					<label>19163</label>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<onclick>ClearProperty(MediaMenu,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
-				</control>
-				<control type="button" id="105">
-					<description>Timer Rules</description>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>19138</label>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
-				</control>
-				<control type="button" id="103">
-					<description>Timers</description>
-					<label>19040</label>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<onclick>ClearProperty(MediaMenu,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
-				</control>
-				<control type="button" id="104">
-					<description>Search</description>
-					<label>137</label>
-					<textwidth>352</textwidth>
-					<include>ButtonCommonValues</include>
-					<onclick>ClearProperty(MediaMenu,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
-				</control>
-				<!--<control type="button" id="201"><description>View options</description><textwidth>352</textwidth><font>font13_title</font><include>ButtonCommonValues</include><label>31026</label><enable>no</enable><disabledcolor>$VAR[ColorHighlightVar]</disabledcolor></control>-->
-				<include>PlaylistButtons</include>
-			</control>
 		</control>
 	</include>
 	<include name="SettingsMediaMenu">
@@ -1421,90 +1304,6 @@
 					<visible>Window.IsActive(SettingsCategory.xml)</visible>
 				</control>
 				<include>PlaylistButtons</include>
-			</control>
-		</control>
-	</include>
-	<include name="MenuPlayerControls">
-		<control type="group" id="1810">
-			<visible>Player.HasMedia + Control.IsVisible(9050)</visible>
-			<control type="grouplist" id="6050">
-				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-				<top>0</top>
-				<left>0</left>
-				<height>60</height>
-				<width>400</width>
-				
-				<scrolltime tween="sine">200</scrolltime>
-				<orientation>horizontal</orientation>
-				<onup>614</onup>
-				<ondown>$PARAM[PlayerControlsOnDown]</ondown>
-				<onleft>6050</onleft>
-				<onright>6050</onright>
-				<onback>ClearProperty(MediaMenu,Home)</onback>
-				<onback>50</onback>
-				<control type="button" id="6051">
-					<label></label>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<onclick>PlayerControl(Previous)</onclick>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="button" id="6052">
-					<label></label>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<onclick>PlayerControl(Rewind)</onclick>
-					<enable>Player.SeekEnabled</enable>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="togglebutton" id="6053">
-					<label></label>
-					<altlabel></altlabel>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<onclick>PlayerControl(Play)</onclick>
-					<enable>Player.PauseEnabled</enable>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="button" id="6054">
-					<label></label>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<onclick>PlayerControl(Stop)</onclick>
-					<onclick>SetFocus($PARAM[PlayerControlsOnDown],0)</onclick>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="button" id="6055">
-					<label></label>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<onclick>PlayerControl(Forward)</onclick>
-					<enable>Player.SeekEnabled</enable>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="button" id="6056">
-					<label></label>
-					<width>57</width>
-					<font>IconPlayer</font>
-					<onclick>PlayerControl(Next)</onclick>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
-				<control type="button" id="6057">
-					<label></label>
-					<width>58</width>
-					<font>IconPlayer</font>
-					<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-					<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
-					<textoffsetx>0</textoffsetx>
-					<align>center</align>
-				</control>
 			</control>
 		</control>
 	</include>

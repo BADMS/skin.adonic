@@ -13,6 +13,7 @@
 	<onload>SetProperty(cfa_daemon_fire,True,home)</onload>
 	<onunload condition="Skin.String(OSDCast,1)">ActivateWindow(fullscreenvideo)</onunload>
 	<onunload>Skin.SetString(OSDCast,0)</onunload>
+	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<controls>
 		<control type="multiimage" id="7975">
 			<left>-2160</left>
