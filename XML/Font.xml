@@ -200,6 +200,12 @@
 			<size>40</size>
 		</font>
 		<font>
+			<name>font_SubMenuW</name>
+			<filename>MavenPro-Regular.ttf</filename>
+			<linespacing>1.13</linespacing>
+			<size>40</size>
+		</font>
+		<font>
 			<name>BigAssFont</name>
 			<filename>MavenPro-Bold.ttf</filename>
 			<size>50</size>
@@ -455,6 +461,12 @@
 			<name>font_SubMenu</name>
 			<filename>Roboto-Regular.ttf</filename>
 			<linespacing>1.01</linespacing>
+			<size>40</size>
+		</font>
+		<font>
+			<name>font_SubMenuW</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<linespacing>1.13</linespacing>
 			<size>40</size>
 		</font>
 		<font>
@@ -718,6 +730,12 @@
 			<name>font_SubMenu</name>
 			<filename>Montserrat-Medium.ttf</filename>
 			<linespacing>1.01</linespacing>
+			<size>40</size>
+		</font>
+		<font>
+			<name>font_SubMenuW</name>
+			<filename>Montserrat-Regular.ttf</filename>
+			<linespacing>1.06</linespacing>
 			<size>40</size>
 		</font>
 		<font>
