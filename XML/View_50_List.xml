@@ -1261,7 +1261,7 @@
 				<top>26</top>
 				<width>1090</width>
 				<height>480</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$VAR[VideoInfoPlotVar]</label>
 				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
 				<shadowcolor></shadowcolor>
@@ -1274,7 +1274,7 @@
 				<top>26</top>
 				<width>940</width>
 				<height>920</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$INFO[ListItem.AddonDescription]</label>
 				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
 				<shadowcolor></shadowcolor>
@@ -1287,7 +1287,7 @@
 				<top>26</top>
 				<width>940</width>
 				<height>480</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2)]</label>
 				<textcolor>$INFO[Skin.String(Text.Shadow.Colour)]</textcolor>
 				<shadowcolor></shadowcolor>
@@ -1300,7 +1300,7 @@
 				<top>20</top>
 				<width>1090</width>
 				<height>480</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$VAR[VideoInfoPlotVar]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
@@ -1311,7 +1311,7 @@
 				<top>20</top>
 				<width>940</width>
 				<height>920</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$INFO[ListItem.AddonDescription]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
@@ -1322,7 +1322,7 @@
 				<top>20</top>
 				<width>940</width>
 				<height>480</height>
-				<font>font_SubMenu</font>
+				<font>font_SubMenuW</font>
 				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Tracks.Formatted2)]</label>
 				<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
 			</control>
