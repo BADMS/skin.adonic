@@ -418,7 +418,7 @@
 	</variable>
 	<variable name="ColorboxImage">
 		<value condition="String.IsEqual(Window(home).Property(cfa_daemon_set),None)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="String.IsEqual(Window(home).Property(Daemon_cfa_ImageUpdating),0)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="String.IsEqual(Window(home).Property(Daemon_cfa_ImageUpdating),0) | String.IsEqual(Window(home).Property(Daemon_FIVE_ImageUpdating),0)">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[Window(home).Property(ImageFiltercfa)]</value>
 	</variable>
 	<variable name="GlobalBackgroundVar">

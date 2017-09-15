@@ -40,6 +40,7 @@
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_quality))">Skin.SetString(colorbox_quality,8)</onfocus>
 			<onfocus>Skin.SetString(colorbox_main,main:)</onfocus>
 			<onfocus>Skin.SetString(colorbox_comp,main:hls*0.33;0;0@hsv*0;-0.1;0.3)</onfocus>
+			<onfocus>Skin.SetString(colorbox_blend,100)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_blursize))">Skin.SetString(colorbox_blursize,5)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_desat))">Skin.SetString(colorbox_desat,30)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_sharp))">Skin.SetString(colorbox_sharp,0)</onfocus>
@@ -54,7 +55,7 @@
 			<onfocus condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onfocus>
 			<onfocus condition="Skin.HasSetting(Use_Startup_Playlist)">PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
-			<onfocus condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=desat,set=$INFO[Skin.String(colorbox_desat)]|var=sharp,set=$INFO[Skin.String(colorbox_sharp)]|var=lgsteps,set=20|var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onfocus>
+			<onfocus condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=blend,set=$INFO[Skin.String(colorbox_blend)]|var=desat,set=$INFO[Skin.String(colorbox_desat)]|var=sharp,set=$INFO[Skin.String(colorbox_sharp)]|var=lgsteps,set=20|var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>

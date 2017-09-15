@@ -1563,3 +1563,7 @@ msgstr ""
 msgctxt "#32011"
 msgid "Sharpness amount"
 msgstr ""
+
+msgctxt "#32012"
+msgid "Blend amount"
+msgstr ""

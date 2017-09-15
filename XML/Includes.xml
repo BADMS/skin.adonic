@@ -872,7 +872,7 @@
 			<label>31972</label>
 			<label2>$INFO[Window(home).Property(cfa_daemon_set),[UPPERCASE],[/UPPERCASE]]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[31972],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,19)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,20)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(cfa_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
@@ -909,8 +909,10 @@
 			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(cfa_daemon_set,desaturate,home))</onclick>
 			<onclick>SetProperty(Dialog.18.Label,Sharpness)</onclick>
 			<onclick>SetProperty(Dialog.18.BuiltIn,SetProperty(cfa_daemon_set,sharpness,home))</onclick>
-			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
-			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
+			<onclick>SetProperty(Dialog.19.Label,Splicer)</onclick>
+			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(cfa_daemon_set,splicer,home))</onclick>
+			<onclick>SetProperty(Dialog.20.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.20.BuiltIn,SetProperty(cfa_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Effect)</onclick>
 			<onunfocus>SetProperty(cfa_daemon_fire,True,home)</onunfocus>
 		</control>
@@ -920,7 +922,7 @@
 			<label>31973</label>
 			<label2>$INFO[Window(home).Property(FIVE_daemon_set),[UPPERCASE],[/UPPERCASE]]</label2>
 			<onclick>SetProperty(RefreshItem,$LOCALIZE[31973],home)</onclick>
-			<onclick>SetProperty(Dialog.NumItems,17)</onclick>
+			<onclick>SetProperty(Dialog.NumItems,20)</onclick>
 			<onclick>SetProperty(Dialog.1.Label,Blur)</onclick>
 			<onclick>SetProperty(Dialog.1.BuiltIn,SetProperty(FIVE_daemon_set,blur,home))</onclick>
 			<onclick>SetProperty(Dialog.2.Label,Pixelate)</onclick>
@@ -957,8 +959,10 @@
 			<onclick>SetProperty(Dialog.17.BuiltIn,SetProperty(FIVE_daemon_set,desaturate,home))</onclick>
 			<onclick>SetProperty(Dialog.18.Label,Sharpness)</onclick>
 			<onclick>SetProperty(Dialog.18.BuiltIn,SetProperty(FIVE_daemon_set,sharpness,home))</onclick>
-			<onclick>SetProperty(Dialog.19.Label,None)</onclick>
-			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
+			<onclick>SetProperty(Dialog.19.Label,Splicer)</onclick>
+			<onclick>SetProperty(Dialog.19.BuiltIn,SetProperty(FIVE_daemon_set,splicer,home))</onclick>
+			<onclick>SetProperty(Dialog.20.Label,None)</onclick>
+			<onclick>SetProperty(Dialog.20.BuiltIn,SetProperty(FIVE_daemon_set,,home))</onclick>
 			<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Focus Effect)</onclick>
 			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
@@ -1104,6 +1108,16 @@
 			<onunfocus>SetProperty(NINE_manual_set,"var=sharp,set=$INFO[Skin.String(colorbox_sharp)]",home)</onunfocus>
 			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 			<visible>String.Contains(Window(home).Property(cfa_daemon_set),sharpness) | String.Contains(Window(home).Property(FIVE_daemon_set),sharpness)</visible>
+		</control>
+		<control type="button" id="11124">
+			<description>widget</description>
+			<include>ButtonCommonValues</include>
+			<label>32012</label>
+			<label2>$INFO[Skin.String(colorbox_blend)]</label2>
+			<onclick>SetProperty(RefreshItem,$LOCALIZE[32011],home)</onclick>
+			<onclick>Skin.SetNumeric(colorbox_blend)</onclick>
+			<onunfocus>SetProperty(NINE_manual_set,"var=blend,set=$INFO[Skin.String(colorbox_blend)]",home)</onunfocus>
+			<onunfocus>SetProperty(FIVE_daemon_fire,True,home)</onunfocus>
 		</control>
 		<control type="radiobutton" id="11217">
 			<label>32006</label>

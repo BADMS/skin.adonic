@@ -25,7 +25,7 @@
 	<onload condition="System.HasAddon(script.randomart)">RunScript(script.randomart,info=randomart_color,prefix=$INFO[System.Time(hh:mm:ss)])</onload>
 	<onload condition="System.HasAddon(script.randomart)">RunScript(script.randomart,info=randomart_gray,prefix=$INFO[System.Time(hh:mm:ss)])</onload>
 	<onload condition="System.HasAddon(script.randomart)">RunScript(script.randomart,info=randomart_eqn,prefix=$INFO[System.Time(hh:mm:ss)])</onload>
-	<onload condition="System.HasAddon(script.randomart)">RunScript(script.randomart,info=randomart_eqn)</onload>
+	<onload condition="System.HasAddon(script.mosaic)">RunScript(script.mosaic)</onload>
 	-->
 	<controls>
  		<control type="multiimage" id="7977">
