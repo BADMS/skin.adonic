@@ -40,7 +40,7 @@
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_quality))">Skin.SetString(colorbox_quality,8)</onfocus>
 			<onfocus>Skin.SetString(colorbox_main,main:)</onfocus>
 			<onfocus>Skin.SetString(colorbox_comp,main:hls*0.33;0;0@hsv*0;-0.1;0.3)</onfocus>
-			<onfocus>Skin.SetString(colorbox_blend,100)</onfocus>
+			<onfocus condition="String.IsEmpty(Skin.String(colorbox_blend))">Skin.SetString(colorbox_blend,100)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_blursize))">Skin.SetString(colorbox_blursize,5)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_desat))">Skin.SetString(colorbox_desat,30)</onfocus>
 			<onfocus condition="String.IsEmpty(Skin.String(colorbox_sharp))">Skin.SetString(colorbox_sharp,0)</onfocus>

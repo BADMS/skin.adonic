@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<menucontrol>9000</menucontrol>
+	<onload>ClearProperty(ImageFiltercfa,Home)</onload>
 	<onload>ClearProperty(RefreshItem,Home)</onload>
 	<onload condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">Skin.SetString(SkinHelper_ExtraFanArtPath,$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)])</onload>
 	<onunload condition="Window.IsActive(home)">ClearProperty(ImageFiltercfa,Home)</onunload>
@@ -16,7 +17,7 @@
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<controls>
 		<control type="multiimage" id="7975">
-			<left>-2160</left>
+			<top>1200</top>
 			<imagepath background="true">$VAR[ThumbVarInfo]</imagepath>
 		</control>
 		<include condition="System.HasAddon(script.extendedinfo)">HiddenActorList</include>
@@ -86,7 +87,6 @@
 			<top>0</top>
 			<width>1090</width>
 			<height>960</height>
-			<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">Conditional</animation>
 			<include>FullscreenDimensions</include>
 			<control type="image">
 				<fadetime>400</fadetime>
@@ -110,7 +110,6 @@
 			<top>0</top>
 			<width>1920</width>
 			<height>1080</height>
-			<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">Conditional</animation>
 			<include>FullscreenDimensions</include>
 			<control type="image">
 				<fadetime>400</fadetime>
