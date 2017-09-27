@@ -95,7 +95,7 @@
 							<height>310</height>
 							<bordersize>6</bordersize>
 							<texture fallback="DefaultFolderBack.png">special://skin/extras/icons/DefaultFolderBack.png</texture>
-							<colordiffuse>$VAR[IconColorVar]</colordiffuse>
+							<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="image">
@@ -104,7 +104,7 @@
 							<height>310</height>
 							<bordersize>6</bordersize>
 							<texture fallback="DefaultAddonSource.png">$INFO[ListItem.Icon]</texture>
-							<colordiffuse>$VAR[IconColorVar]</colordiffuse>
+							<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 					</itemlayout>

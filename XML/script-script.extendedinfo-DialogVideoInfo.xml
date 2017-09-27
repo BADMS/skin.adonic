@@ -3,29 +3,12 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<menucontrol>9000</menucontrol>
-	<onload>ClearProperty(ImageFiltercfa,Home)</onload>
-	<onload>ClearProperty(RefreshItem,Home)</onload>
-	<onload condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">Skin.SetString(SkinHelper_ExtraFanArtPath,$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)])</onload>
-	<onunload condition="Window.IsActive(home)">ClearProperty(ImageFiltercfa,Home)</onunload>
-	<onunload>AlarmClock(exfa1,SetProperty(SkinHelper.ListItem.Art.ExtraFanArt,$INFO[Skin.String(SkinHelper_ExtraFanArtPath)],home),00:01,silent)</onunload>
-	<onunload>AlarmClock(exfa2,Skin.Reset(SkinHelper_ExtraFanArtPath),00:01,true)</onunload>
 	<onload>SetFocus(9000,90002)</onload>
 	<onload>AlarmClock(foc1,SetFocus(61),00:00,silent)</onload>
-	<onload>SetProperty(cfa_daemon_fire,True,home)</onload>
 	<onunload condition="Skin.String(OSDCast,1)">ActivateWindow(fullscreenvideo)</onunload>
 	<onunload>Skin.SetString(OSDCast,0)</onunload>
-	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
 	<controls>
-		<control type="multiimage" id="7975">
-			<top>1200</top>
-			<imagepath background="true">$VAR[ThumbVarInfo]</imagepath>
-		</control>
-		<include condition="System.HasAddon(script.extendedinfo)">HiddenActorList</include>
-		<include condition="System.HasAddon(script.extendedinfo)">HiddenSetList</include>
-		<include condition="System.HasAddon(script.extendedinfo)">HiddenSimilarList</include>
-		<include condition="System.HasAddon(script.extendedinfo)">HiddenYTList</include>
 		<control type="group">
-			<visible>Window.IsActive(movieinformation)</visible>
 			<control type="image">
 				<fadetime>400</fadetime>
 				<left>-580</left>
@@ -58,7 +41,7 @@
 			<control type="group">
 				<left>1160</left>
 				<width>760</width>
-				<visible>[Skin.HasSetting(Enable.WideList.Misc) + Container.Content(episodes)] | [Window.IsActive(movieinformation) + Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
+				<visible>[Skin.HasSetting(Enable.WideList.Misc) + Container.Content(episodes)] | [Container.Content(episode) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 				<control type="image">
 					<height>570</height>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
@@ -135,7 +118,7 @@
 				<top>10</top>
 				<width>1030</width>
 				<height>904</height>
-				<control type="panel">
+				<control type="panel" id="1050">
 					<visible>Skin.HasSetting(Videoinfo.Full.Screen)</visible>
 					<top>118</top>
 					<width>1680</width>
@@ -143,43 +126,28 @@
 					<orientation>horizontal</orientation>
 					<pagecontrol>61</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="50" width="1680" condition="Skin.HasSetting(Videoinfo.Full.Screen)">
-						<control type="label">
-							<width>180</width>
-							<height>50</height>
-							<font>font15</font>
-							<textcolor>$VAR[ColorHighlightVar]</textcolor>
-							<label>$INFO[ListItem.Label2]</label>
-						</control>
-						<control type="label">
-							<left>180</left>
+					<itemlayout height="300" width="1680" condition="Skin.HasSetting(Videoinfo.Full.Screen)">
+						<control type="textbox">
 							<width>1680</width>
-							<height>50</height>
-							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<align>top</align>
+							<font>font15_textbox</font>
+							<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+							<textcolor>$VAR[ColorHighlightVar]</textcolor>
+							<label>$INFO[ListItem.Property(Author),$LOCALIZE[32013] [B],[/B]][CR]$INFO[ListItem.Property(Content)]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="50" width="1680" condition="Skin.HasSetting(Videoinfo.Full.Screen)">
-						<control type="label">
-							<width>180</width>
-							<height>50</height>
-							<font>font15</font>
-							<textcolor>$VAR[ColorHighlightVar]</textcolor>
-							<label>$INFO[ListItem.Label2]</label>
-						</control>
-						<control type="label">
-							<left>180</left>
+					<focusedlayout height="300" width="1680" condition="Skin.HasSetting(Videoinfo.Full.Screen)">
+						<control type="textbox">
 							<width>1680</width>
-							<height>50</height>
-							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<align>top</align>
+							<font>font15_textbox</font>
+							<textcolor>$VAR[ColorHighlightVar]</textcolor>
+							<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+							<label>$INFO[ListItem.Property(Author),$LOCALIZE[32013] [B],[/B]][CR]$INFO[ListItem.Property(Content)]</label>
 						</control>
 					</focusedlayout>
-					<content>
-						<include>videoinfo-items</include>
-					</content>
 				</control>
-				<control type="panel">
+				<control type="panel" id="1050">
 					<visible>!Skin.HasSetting(Videoinfo.Full.Screen)</visible>
 					<top>118</top>
 					<width>1030</width>
@@ -187,41 +155,24 @@
 					<orientation>horizontal</orientation>
 					<pagecontrol>61</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
-					<itemlayout height="50" width="1150" condition="!Skin.HasSetting(Videoinfo.Full.Screen)">
+					<itemlayout height="300" width="1150" condition="!Skin.HasSetting(Videoinfo.Full.Screen)">
 						<control type="label">
-							<width>180</width>
-							<height>50</height>
+							<width>1150</width>
 							<font>font15</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
-							<label>$INFO[ListItem.Label2]</label>
-						</control>
-						<control type="label">
-							<left>180</left>
-							<width>1150</width>
-							<height>50</height>
-							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+							<label>$INFO[ListItem.Property(Author),$LOCALIZE[32013] [B],[/B]][CR]$INFO[ListItem.Property(Content)]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="50" width="1150" condition="!Skin.HasSetting(Videoinfo.Full.Screen)">
+					<focusedlayout height="300" width="1150" condition="!Skin.HasSetting(Videoinfo.Full.Screen)">
 						<control type="label">
-							<width>180</width>
-							<height>50</height>
+							<width>1150</width>
 							<font>font15</font>
 							<textcolor>$VAR[ColorHighlightVar]</textcolor>
-							<label>$INFO[ListItem.Label2]</label>
-						</control>
-						<control type="label">
-							<left>180</left>
-							<width>1150</width>
-							<height>50</height>
-							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+							<label>$INFO[ListItem.Property(Author),$LOCALIZE[32013] [B],[/B]][CR]$INFO[ListItem.Property(Content)]</label>
 						</control>
 					</focusedlayout>
-					<content>
-						<include>videoinfo-items</include>
-					</content>
 				</control>
 				<control type="scrollbar" id="61">
 					<visible>!Skin.HasSetting(Videoinfo.Full.Screen)</visible>
@@ -256,43 +207,6 @@
 				<control type="textbox" id="4">
 					<description>Plot</description>
 					<include>HiddenObject</include>
-				</control>
-				<control type="textbox" id="400">
-					<visible>!Skin.HasSetting(Videoinfo.Full.Screen)</visible>
-					<description>Plot</description>
-					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
-					<left>20</left>
-					<top>440</top>
-					<width>1000</width>
-					<height>520</height>
-					<font>font1450</font>
-					<label>$VAR[VideoInfoPlotVar]</label>
-					<pagecontrol>60</pagecontrol>
-					<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
-				</control>
-				<control type="textbox" id="400">
-					<visible>Skin.HasSetting(Videoinfo.Full.Screen)</visible>
-					<description>Plot</description>
-					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
-					<left>20</left>
-					<top>440</top>
-					<width>1660</width>
-					<height>520</height>
-					<font>font1450</font>
-					<label>$VAR[VideoInfoPlotVar]</label>
-					<pagecontrol>60</pagecontrol>
-					<autoscroll time="2000" delay="2000" repeat="4000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
-				</control>
-				<control type="scrollbar" id="60">
-					<left>0</left>
-					<top>440</top>
-					<width>10</width>
-					<bottom>-166</bottom>
-					<onup>61</onup>
-					<onleft>9000</onleft>
-					<onright>61</onright>
-					<ondown>9000</ondown>
-					<orientation>vertical</orientation>
 				</control>
 				<!--
 				<control type="image">
@@ -469,50 +383,10 @@
 					<focusedlayout height="525" width="375" />
 					<content>
 						<item>
-							<property name="MovieInfoIconThumbImage">$INFO[ListItem.Path]</property>
-							<thumb>$VAR[MovieInfoIconThumbImage]</thumb>
-							<onclick condition="Window.IsVisible(home) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-							<onclick condition="Window.IsVisible(home) + String.IsEqual(ListItem.DBType,movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-							<onclick condition="!Window.IsVisible(home)">SendClick(8)</onclick>
-						</item>
-						<item>
-							<label>$LOCALIZE[208] $INFO[ListItem.Label,[LIGHT],[/LIGHT]]</label>
-							<label2>$LOCALIZE[208] $INFO[ListItem.Label]</label2>
-							<icon>$INFO[Skin.String(MenuDefaultIconsPath)]stopplay.png</icon>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]stopplay.png</thumb>
-							<onclick>PlayerControl(Stop)</onclick>
-							<onclick>PlayMedia($INFO[Container(150).ListItem.File])</onclick>
-							<visible>Window.IsActive(home) + Window.IsActive(movieinformation) + !String.IsEmpty(ListItem.File)</visible>
-						</item>
-						<item>
-							<property name="widgetName">$LOCALIZE[206]</property>
-							<label2>cast</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultActor.png</thumb>
-							<onclick>SendClick(555)</onclick>
-							<visible>Integer.IsGreater(Container(90019).NumItems,0) | Integer.IsGreater(Container(50).NumItems,0)</visible>
-						</item>
-						<item>
-							<property name="widgetName">Set</property>
-							<label2>sets</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]set.png</thumb>
-							<onclick>SendClick(206)</onclick>
-							<visible>$EXP[isMovie] + !String.IsEmpty(ListItem.SetID)</visible>
-							<visible>Integer.IsGreater(Container(88821).NumItems,1)</visible>
-						</item>
-						<item>
-							<property name="widgetName">$LOCALIZE[31185]</property>
-							<label2>similar</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultPlaylist.png</thumb>
-							<onclick>SendClick(203)</onclick>
-							<visible>!$EXP[isEpisode]</visible>
-							<visible>Integer.IsGreater(Container(88820).NumItems,0)</visible>
-						</item>
-						<item>
-							<property name="widgetName">$LOCALIZE[31070]</property>
-							<label2>youtube</label2>
-							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]youtube.png</thumb>
-							<onclick>SendClick(204)</onclick>
-							<visible>Integer.IsGreater(Container(88822).NumItems,0)</visible>
+							<property name="widgetName">$LOCALIZE[32014]</property>
+							<label2>crew</label2>
+							<thumb>$INFO[Skin.String(MenuDefaultIconsPath)]DefaultStudios.png</thumb>
+							<visible>Integer.IsGreater(Container(750).NumItems,0)</visible>
 						</item>
 						<item>
 							<label>12005</label>
@@ -546,7 +420,6 @@
 			<include>Scrollbar_Vertical</include>
 		</control>
 		<control type="group" id="97631">
-			<visible>Window.IsActive(movieinformation)</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>

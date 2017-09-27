@@ -1567,3 +1567,11 @@ msgstr ""
 msgctxt "#32012"
 msgid "Blend amount"
 msgstr ""
+
+msgctxt "#32013"
+msgid "Review by"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Crew"
+msgstr ""

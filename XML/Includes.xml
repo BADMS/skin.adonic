@@ -1943,6 +1943,8 @@
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TMDB))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -1995,6 +1997,8 @@
 						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -2003,6 +2007,8 @@
 						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<textcolor>orange</textcolor>
 						<height>45</height>
@@ -2011,6 +2017,8 @@
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -2019,6 +2027,8 @@
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<textcolor>orange</textcolor>
 						<height>45</height>
@@ -2027,6 +2037,8 @@
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -2035,6 +2047,8 @@
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<textcolor>blue</textcolor>
 						<height>45</height>
@@ -2043,6 +2057,8 @@
 						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -2051,6 +2067,8 @@
 						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<textcolor>yellow</textcolor>
 						<height>45</height>
@@ -2059,6 +2077,8 @@
 						<visible>!String.IsEmpty(ListItem.Top250)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorTopbarVar]</textcolor>
 						<height>45</height>
@@ -2067,6 +2087,8 @@
 						<visible>!String.IsEmpty(ListItem.Top250)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>IconMedium</font>
 						<label>$VAR[LabelUserRating]</label>
 						<textcolor>$VAR[ColorUserRating]</textcolor>
@@ -2075,6 +2097,8 @@
 						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<font>topbar</font>
 						<textcolor>$VAR[ColorUserRating]</textcolor>
 						<height>45</height>
@@ -2083,6 +2107,8 @@
 						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 					</control>
 					<control type="label">
+						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
 						<width min="1228" max="1678">auto</width>
 						<height>45</height>
 						<font>topbar</font>
@@ -2092,214 +2118,6 @@
 						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
 					</control>
 				</control>
-				<!--
-				<control type="grouplist">
-					<animation effect="slide" time="0" delay="0" start="0" end="100" reversible="true" condition="!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))">Conditional</animation>
-					<visible>Control.IsVisible(50) + !String.IsEmpty(Window(Home).Property(WideToggle)) + !Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsVisible(songinformation)</visible>
-					<visible>!Window.IsVisible(DialogPictureInfo.xml)</visible>
-					<visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
-					<visible>!Window.IsVisible(DialogFavourites.xml)</visible>
-					<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-					<visible>!Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
-					<visible>!Window.IsVisible(DialogTextViewer.xml)</visible>
-					<visible>!Window.IsVisible(DialogMediaSource.xml)</visible>
-					<visible>!Window.IsVisible(DialogKeyboard.xml)</visible>
-					<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
-					<visible>!Window.IsVisible(DialogConfirm.xml)</visible>
-					<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-					<visible>!Window.IsVisible(DialogSettings.xml)</visible>
-					<visible>!Window.IsVisible(DialogSelect.xml)</visible>
-					<visible>!String.IsEqual(System.CurrentControlID, 3)</visible>
-					<visible>!String.IsEqual(System.CurrentControlID, 6)</visible>
-					<visible>!String.StartsWith(System.CurrentControlID, 9010)</visible>
-					<visible>!String.StartsWith(System.CurrentControlID, 8011)</visible>
-					<visible>!String.StartsWith(System.CurrentControlID, 909)</visible>
-					<visible>!Control.IsVisible(12346)</visible>
-					<left>20</left>
-					<top>18</top>
-					<width>1800</width>
-					<height>80</height>
-					<orientation>horizontal</orientation>
-					<itemgap>6</itemgap>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>orange</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>Container.Content(actors) + !String.IsEmpty(ListItem.Appearances)</visible>
-					</control>
-					<control type="label">
-						<width>auto</width>
-						<height>80</height>
-						<font>topbar_toggle</font>
-						<scroll>true</scroll>
-						<scrollspeed>150</scrollspeed>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<label>$INFO[ListItem.Appearances,, ]</label>
-						<visible>Container.Content(actors) + !String.IsEmpty(ListItem.Appearances)</visible>
-					</control>
-					<control type="button">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>80</width>
-						<height>80</height>
-						<textcolor>black</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)]</label>
-						<font>font13_toggle</font>
-						<align>center</align>
-						<texturefocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturefocus>
-						<texturenofocus colordiffuse="$VAR[CommunityRatingColour]">metacritic_box.png</texturenofocus>
-						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating))</visible>
-						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a)</visible>
-					</control>
-					<control type="label">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>6</width>
-						<label> </label>
-						<visible>![String.IsEqual(Listitem.Label, ..) | String.IsEqual(ListItem(1).Label, $LOCALIZE[20366])]</visible>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + !String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>yellow</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$VAR[IMDBIcon]</label>
-						<visible>!String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Rating,, ]</label>
-						<visible>!String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<width>6</width>
-						<label> </label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating),n/a) + String.IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<font>IconMedium_toggle</font>
-						<textcolor>$VAR[RottenTomatoesIconColour]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$VAR[RottenTomatoesIcon]</label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
-						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
-					</control>
-					<control type="label">
-						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!String.IsEmpty(ListItem.DBTYPE)</visible>
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),,% ]</label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
-						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),n/a)</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>orange</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.SongCount),, ]</label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.SongCount))</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>orange</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),, ]</label>
-						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Count))</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>blue</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Duration),, ]</label>
-						<visible>Window.IsVisible(MyMusicNav.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration))</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<textcolor>yellow</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label></label>
-						<visible>!String.IsEmpty(ListItem.Top250)</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Top250,#, ]</label>
-						<visible>!String.IsEmpty(ListItem.Top250)</visible>
-					</control>
-					<control type="label">
-						<font>IconMedium_toggle</font>
-						<label>$VAR[LabelUserRating]</label>
-						<textcolor>$VAR[ColorUserRating]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
-					</control>
-					<control type="label">
-						<font>topbar_toggle</font>
-						<textcolor>$VAR[ColorUserRating]</textcolor>
-						<height>80</height>
-						<width>auto</width>
-						<label>$INFO[ListItem.Userrating,, ]</label>
-						<visible>!String.IsEmpty(ListItem.Userrating)</visible>
-					</control>
-					<control type="label">
-						<visible>!String.Contains(ListItem.Path,plugin://)</visible>
-						<width min="1228" max="1500">auto</width>
-						<height>80</height>
-						<font>topbar_toggle</font>
-						<scroll>true</scroll>
-						<scrollspeed>150</scrollspeed>
-						<textcolor>$VAR[ColorTopbarVar]</textcolor>
-						<label>$INFO[Window(Home).Property(LabelFilterTWO)]</label>
-					</control>
-				</control>
-				-->
 			</control>
 			<control type="image">
 				<description>avatar</description>

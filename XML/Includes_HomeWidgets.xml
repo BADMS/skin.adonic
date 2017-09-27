@@ -36,7 +36,10 @@
 				<animation effect="slide" time="0" start="0,0" end="0,-70" condition="Window.IsActive(home) + system.getbool(lookandfeel.enablerssfeeds)">Conditional</animation>
 				
 				<include condition="!Window.IsVisible(musicinformation) + !Window.IsVisible(songinformation) + !Window.IsVisible(movieinformation)">skinshortcuts-template-widget-defaultpanel</include>
-				<include condition="Window.IsVisible(musicinformation) | Window.IsVisible(songinformation) | Window.IsVisible(movieinformation)">InfoDefaultWidgets</include>
+				<include condition="Window.IsVisible(musicinformation) | Window.IsVisible(songinformation) | Window.IsVisible(movieinformation) | Window.IsVisible(DialogVideoInfo.xml)">InfoDefaultWidgets</include>
+				<include content="WidgetBusyAnimation">
+					<param name="id">750</param>
+				</include>
 				<include content="WidgetBusyAnimation">
 					<param name="id">90919</param>
 				</include>
@@ -70,6 +73,9 @@
 	</include>
 	<include name="InfoDefaultWidgets">
 		<include content="FocusedImageWidget">
+			<param name="FocusImageWidgetID" value="750" />
+		</include>
+		<include content="FocusedImageWidget">
 			<param name="FocusImageWidgetID" value="90919" />
 		</include>
 		<include content="FocusedImageWidget">
@@ -81,6 +87,79 @@
 		<include content="FocusedImageWidget">
 			<param name="FocusImageWidgetID" value="90922" />
 		</include>
+    	<control type="panel" id="750">
+			<visible>[String.IsEqual(Container(9000).ListItem.Label2,crew)]</visible>
+			<animation effect="fade" start="0" end="100" delay="200" time="300" easing="out">Visible</animation>
+			<left>29</left>
+			<top>610</top>
+			<width>1864</width>
+			<height>310</height>
+			<onup>61</onup>
+			<ondown>9000</ondown>
+			<onleft>750</onleft>
+			<onright>750</onright>
+			<viewtype label="">list</viewtype>
+			<scrolltime tween="quadratic" easing="out">300</scrolltime>
+			<orientation>horizontal</orientation>
+			<itemlayout height="304" width="207">
+				<control type="group">
+					<left>0</left>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true">special://skin/extras/icons/DefaultAddonSource.png</texture>
+					</control>
+					<control type="image">
+						<top>199</top>
+						<left>12</left>
+						<width>189</width>
+						<bottom>6</bottom>
+						<texture>background.png</texture>
+						<colordiffuse>$VAR[MenuListColorHighlightVar]</colordiffuse>
+					</control>
+					<control type="textbox">
+						<left>16</left>
+						<top>202</top>
+						<width>175</width>
+						<height>90</height>
+						<font>font_Actor</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(department),[B],[/B] ]$INFO[ListItem.Label,, ]$INFO[ListItem.Property(job),[LIGHT][LOWERCASE]$LOCALIZE[20347] [/LOWERCASE],[/LIGHT]]</label>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout height="304" width="207">
+				<control type="group">
+					<left>0</left>
+					<include>PanelFocusedItemZoom</include>
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>SetProperty(FIVE_daemon_fallback,$INFO[Container(750).ListItem.Thumb],home)</onfocus>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true">special://skin/extras/icons/add.png</texture>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
     	<control type="panel" id="90919">
 			<visible>[String.IsEqual(Container(9000).ListItem.Label2,cast)]</visible>
 			<animation effect="fade" start="0" end="100" delay="200" time="300" easing="out">Visible</animation>

@@ -124,7 +124,7 @@
 			</control>
 		</control>
 		<control type="group" id="97631">
-			<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + [[!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] | [Window.IsActive(MyPics.xml) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(addonbrowser) | Container.Content(files) | String.StartsWith(Container.FolderPath, sources:)] | [String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..)] | [!String.IsEqual(Window(home).Property(FIVE_daemon_set),None) + String.IsEqual(ListItem.Label, ..) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE))] | [Control.IsVisible(50) + !String.IsEmpty(Window(home).Property(ImageFilterFIVE)) + !String.IsEqual(Window(home).Property(FIVE_daemon_set),None)]]</visible>
+				<visible>!Window.IsActive(songinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(movieinformation) + !Window.IsActive(DialogVideoInfo.xml) + [[Container.Content() | Container.Content(genres) | Window.IsActive(MyPics.xml) | Window.IsActive(MyMusicNav.xml) | Window.IsActive(addonbrowser) | Container.Content(files) | String.StartsWith(Container.FolderPath, sources:)] | [Control.IsVisible(50)]]</visible>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">WindowOpen</animation>
 			<animation effect="slide" tween="cubic" time="300" start="0,0" end="0,700" reversible="false">WindowClose</animation>
 			<animation effect="slide" tween="cubic" time="600" start="0,700" end="0,0" reversible="false">Visible</animation>

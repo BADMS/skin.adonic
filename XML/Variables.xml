@@ -238,10 +238,10 @@
 		<value>listselect_fo.png</value>
 	</variable>
 	<variable name="MenuPanelBackground">
-		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
+		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">special://skin/media/adonic.jpg</value>
 		<value condition="!String.IsEmpty(Skin.String(View.Panel.Image))">$INFO[Skin.String(View.Panel.Image)]</value>
-		<value condition="!Container(9990).HasFocus(8)">background.png</value>
-		<value>background.png</value>
+		<value condition="!Container(9990).HasFocus(8)">special://skin/media/background.png</value>
+		<value>special://skin/media/background.png</value>
 	</variable>
 	<variable name="MenuPanelBackgroundWide">
 		<value condition="Window.IsVisible(SkinSettings.xml) + Container(9990).HasFocus(8)">adonic.jpg</value>
@@ -1120,6 +1120,7 @@
 		<value condition="Control.Hasfocus(9010)"></value>
 		<value condition="String.StartsWith(System.CurrentControlID, 8011)">$INFO[Skin.String(WidgetLine)]</value>
 		<value condition="String.StartsWith(System.CurrentControlID, 90919)">$INFO[Container(90919).ListItem.Label,,]$INFO[Container(90919).ListItem.Label2, [LIGHT][LOWERCASE]$LOCALIZE[20347] [/LOWERCASE],[/LIGHT]]</value>
+		<value condition="String.StartsWith(System.CurrentControlID, 750)">$INFO[Container(750).ListItem.Property(department),[B],[/B] ]$INFO[Container(750).ListItem.Label]$INFO[Container(750).ListItem.Property(job), [LIGHT][LOWERCASE]$LOCALIZE[20347] [/LOWERCASE],[/LIGHT]]</value>
 		<value condition="String.StartsWith(System.CurrentControlID, 90920)">$INFO[Container(90920).ListItem.Label]</value>
 		<value condition="String.StartsWith(System.CurrentControlID, 90921)">$INFO[Container(90921).ListItem.Label]</value>
 		<value condition="String.StartsWith(System.CurrentControlID, 90922)">$INFO[Container(90922).ListItem.Label]</value>
