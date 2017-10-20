@@ -6,6 +6,9 @@
 	<onload>ClearProperty(ImageFiltercfa,Home)</onload>
 	<onload>ClearProperty(RefreshItem,Home)</onload>
 	<onload condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt))">Skin.SetString(SkinHelper_ExtraFanArtPath,$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ExtraFanArt)])</onload>
+	<!--
+	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,tvshowtitle=$ESCINFO[ListItem.TVShowTitle])</onload>
+	-->
 	<onunload condition="Window.IsActive(home)">ClearProperty(ImageFiltercfa,Home)</onunload>
 	<onunload>AlarmClock(exfa1,SetProperty(SkinHelper.ListItem.Art.ExtraFanArt,$INFO[Skin.String(SkinHelper_ExtraFanArtPath)],home),00:01,silent)</onunload>
 	<onunload>AlarmClock(exfa2,Skin.Reset(SkinHelper_ExtraFanArtPath),00:01,true)</onunload>

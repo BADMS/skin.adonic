@@ -1437,6 +1437,23 @@
 						<aspectratio align="center" aligny="top">keep</aspectratio>
 					</control>
 				</control>
+				<!--
+				<control type="group">
+					<visible>!String.IsEqual(ListItem.Label, ..)</visible>
+					<visible>!Control.IsVisible(12345)</visible>
+					<visible>!Control.IsVisible(12346)</visible>
+					<visible>!String.Contains(ListItem.Path,plugin://) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(episode)] + !String.IsEmpty(Window(home).Property(Show_Percentage))</visible>
+					<top>13</top>
+					<left>13</left>
+					<control type="label">
+						<width>92</width>
+						<height>89</height>
+						<align>center</align>
+						<font>IconCC</font>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					</control>
+				</control>
+				-->
 				<control type="label">
 					<top>20</top>
 					<left>20</left>

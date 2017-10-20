@@ -1136,9 +1136,15 @@
     	<value condition="!String.IsEmpty(ListItem.DBTYPE)">$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Consensus),[I]","[/I]  ]$VAR[LabelNextAiredDetails]</value>
     	<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription,[B],[/B]]</value>
     </variable>
+	<!--
 	<variable name="LabelNextAiredDetails">
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Title),[B],[/B] ]$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime.label.short),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate),[LIGHT],[/LIGHT]]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Title),[B],[/B] - ]$INFO[Window(Home).Property(SkinHelper.ListItem.Network),$LOCALIZE[145] , ]$INFO[Window(Home).Property(SkinHelper.ListItem.LastEpisode.Airdate),, ]$INFO[Window(Home).Property(SkinHelper.ListItem.Status),[I][LIGHT],[/I][/LIGHT]]</value>
+	</variable>
+	-->
+	<variable name="LabelNextAiredDetails">
+		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(NextAired.NextTitle),[B],[/B] ]$INFO[Window(Home).Property(NextAired.Network),- , - ]$INFO[Window(Home).Property(NextAired.AirTime),[LIGHT],[/LIGHT] ]$INFO[Window(Home).Property(NextAired.NextDate),[LIGHT],[/LIGHT]]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">$INFO[Window(Home).Property(NextAired.LatestTitle),[B],[/B] ]$INFO[Window(Home).Property(NextAired.Network),- , - ]$INFO[Window(Home).Property(NextAired.LatestDate),[LIGHT],[/LIGHT] ]$INFO[Window(Home).Property(NextAired.Status),[I][LIGHT],[/I][/LIGHT]]</value>
 	</variable>
     <variable name="MovieInfoIconThumbImage">
     	<value condition="Window.IsVisible(home) + String.StartsWith(ListItem.Path, plugin://)">$INFO[Skin.String(MenuDefaultIconsPath)]DefaultIconInfo.png</value>
@@ -1232,7 +1238,8 @@
 		<value condition="String.Contains(ListItem.DBTYPE, set)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
     </variable>
     <variable name="ContentStats">
-    	<value condition="Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)">$INFO[ListItem.Property(TotalEpisodes)]</value>
+    	<value condition="[Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)">$INFO[ListItem.Property(UnWatchedEpisodes),[LIGHT],/[/LIGHT]]$INFO[ListItem.Property(TotalEpisodes)]</value>
+    	<value condition="[Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)]">$INFO[ListItem.Property(TotalEpisodes)]</value>
 		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,,m]</value>
     	<value>$INFO[ListItem.DBTYPE]</value>
     </variable>

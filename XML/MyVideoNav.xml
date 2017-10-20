@@ -12,6 +12,7 @@
 	<onload>ClearProperty(ImageFIVE,Home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onload>ClearProperty(WideToggle,Home)</onload>
+	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload>SetProperty(Colorbox_shuffle,2,home)</onunload>
 	<onunload>ClearProperty(WideToggle,Home)</onunload>
 	<onunload>ClearProperty(ImageFiltercfa,Home)</onunload>
@@ -29,6 +30,11 @@
 			<animation effect="fade" end="0" time="0" condition="String.IsEqual(Window(Home).Property(Colorbox_shuffle),2)" reversible="false">Conditional</animation>
 			<control type="group">
 	            <animation effect="fade" end="0" time="400" tween="cubic">WindowClose</animation>
+				<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(MediaMenu))" reversible="true">
+					<effect type="slide" end="-120" time="400" tween="linear" easing="out" />
+					<effect type="zoom" center="auto" end="120" time="400" tween="linear" easing="out" />
+					<effect type="rotatey" center="auto" end="-3" time="400" tween="linear" easing="out" />
+				</animation>
 				<control type="multiimage">
 					<description>Normal Default Background Image</description>
 					<left>0</left>

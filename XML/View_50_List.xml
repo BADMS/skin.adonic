@@ -469,6 +469,24 @@
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
+						<control type="image">
+							<top>60</top>
+							<left>60</left>
+							<height>60</height>
+							<width>12</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<top>108</top>
+							<left>60</left>
+							<height>12</height>
+							<width>60</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
 						<include>ParentItem</include>
 						<control type="label">
 							<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
@@ -647,6 +665,24 @@
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
+						<control type="image">
+							<top>60</top>
+							<left>60</left>
+							<height>60</height>
+							<width>12</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<top>108</top>
+							<left>60</left>
+							<height>12</height>
+							<width>60</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
 						<include>ParentItem</include>
 						<control type="label">
 							<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[13409])</visible>
@@ -807,6 +843,24 @@
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
 						</control>
+						<control type="image">
+							<top>30</top>
+							<left>60</left>
+							<height>30</height>
+							<width>12</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<top>48</top>
+							<left>60</left>
+							<height>12</height>
+							<width>30</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
 						<include>ParentItem</include>
 						<control type="group">
 							<left>100</left>
@@ -950,6 +1004,24 @@
 							<animation effect="fade" start="100" end="60" time="800" tween="quadratic" easing="out" condition="Skin.HasSetting(Enable.Pulse.Focus)" loop="true" center="auto" reversible="true">Conditional</animation>
 							<left>60</left>
 							<texture colordiffuse="$VAR[50ListColorHighlightVar]">listselect_fo.png</texture>
+						</control>
+						<control type="image">
+							<top>30</top>
+							<left>60</left>
+							<height>30</height>
+							<width>12</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<top>48</top>
+							<left>60</left>
+							<height>12</height>
+							<width>30</width>
+							<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+							<texture colordiffuse="$VAR[ColorMenuVar]">listselect_fo.png</texture>
+							<animation effect="fade" end="35" time="0" delay="0" condition="true">Conditional</animation>
 						</control>
 						<include>ParentItem</include>
 						<control type="group">

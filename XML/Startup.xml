@@ -17,7 +17,7 @@
 	<onload>SetProperty(FIVE_daemon_fallback,adonic.jpg,home)</onload>
 	<onload>SetProperty(EIGHT_daemon_fallback,adonic.jpg,home)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,3)</onload>
-	<onload>SetProperty(ImageFilterFIVE,adonic.jpg,home)</onload>
+	<onload>SetProperty(ImageFilterFIVE,special://skin:/media/adonic.jpg,home)</onload>
 	<onload condition="System.HasAddon(service.smartish.widgets)">Skin.SetBool(enable.smartish.widgets)</onload>
 	<!--
 	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True,multis=$NUMBER[7988]:MYMULTI_ONE.:blur:5|$NUMBER[7989]:MYMULTI_TOO.:pixelate:1)</onload>
